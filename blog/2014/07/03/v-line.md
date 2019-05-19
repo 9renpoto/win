@@ -8,7 +8,7 @@ categories:
 
 # v-line edit
 
-![image](http://i.gyazo.com/aa2a62f42d40670cbfb4a9edb48e0ed0.gif)
+![image](https://i.gyazo.com/aa2a62f42d40670cbfb4a9edb48e0ed0.gif)
 
 同じ変数名を利用してハッシュのようなものを作成するときに
 情弱で、愚直な操作をしてしまっている。

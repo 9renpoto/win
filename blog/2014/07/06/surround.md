@@ -8,7 +8,7 @@ categories:
 
 # Surround
 
-![image](http://i.gyazo.com/b1e2f9fd3623adf1a00afaf738c900de.gif)
+![image](https://i.gyazo.com/b1e2f9fd3623adf1a00afaf738c900de.gif)
 
 surround.vim便利
 sublime-textでも使えるようですが

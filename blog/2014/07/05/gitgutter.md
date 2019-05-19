@@ -8,7 +8,7 @@ categories:
 
 # Gutter
 
-![image](http://i.gyazo.com/9dda194e4854fcbe6f09e39c99f91273.png)
+![image](https://i.gyazo.com/9dda194e4854fcbe6f09e39c99f91273.png)
 
 githubなどで開発しているとPRが便利で
 良くコードを見るようになりました

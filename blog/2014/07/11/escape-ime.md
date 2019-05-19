@@ -10,11 +10,11 @@ permalink: '/entry/2014/07/11/escape-ime/'
 
 どうもGoogleIMEには神設定があるらしい。
 
-![image-googe-input](http://i.gyazo.com/64daf9848e558c14efc0df858aef8388.png)
+![image-googe-input](https://i.gyazo.com/64daf9848e558c14efc0df858aef8388.png)
 
 これで `Esc` を使って快適に抜けられる最高。
 
-![image](http://i.gyazo.com/2708f90efe1cebb5d4f5aad5195b1ce8.gif)
+![image](https://i.gyazo.com/2708f90efe1cebb5d4f5aad5195b1ce8.gif)
 
 ## 参考
 

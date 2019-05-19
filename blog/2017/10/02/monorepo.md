@@ -35,4 +35,4 @@ category: 'js'
   - issueは200以上ある
 - 早めに地雷を踏んでおく
 
-![image](http://3.bp.blogspot.com/-R1W3888HcbU/V9ppr9A_NHI/AAAAAAAA9wE/CuzJ-JfOQz8Ht6w-jNN79_vh6-TeVOGNACLcB/s800/jirai_tanchiki_man.png)
+![image](https://3.bp.blogspot.com/-R1W3888HcbU/V9ppr9A_NHI/AAAAAAAA9wE/CuzJ-JfOQz8Ht6w-jNN79_vh6-TeVOGNACLcB/s800/jirai_tanchiki_man.png)

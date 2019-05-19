@@ -8,6 +8,6 @@ permalink: '/entry/2017/08/15/sake/'
 
 雄町はうまい。
 
-![sake](http://yoshidaya.ocnk.net/data/yoshidaya/product/20170228_b6fed8.jpg)
+![sake](https://yoshidaya.ocnk.net/data/yoshidaya/product/20170228_b6fed8.jpg)
 
 至福の一杯。

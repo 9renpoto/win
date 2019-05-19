@@ -2,8 +2,7 @@
 title: 'クラス図を簡単に - PlantUML'
 date: '2013-11-13'
 permalink: '/entry/2013/11/13/escape-ime/'
-categories:
-  - 'uml'
+tags: ['uml']
 ---
 
 # PlantUML
@@ -13,8 +12,6 @@ categories:
 
 久々に「クラス図を書いてみよう」という話になり
 どう書こうとなったのでメモ。
-
-![image](http://plantuml.sourceforge.net/logoc.png)
 
 CUIで書けるのが最高です。
 
@@ -77,8 +74,6 @@ Officeなどを使って作っても良いのですが、
 専用のツールもメモ。
 
 ### astah\*
-
-![astah](http://astah-cdn2.change-vision.com/ja/images/stories/logo/astah_community_rectangle_m.png.pagespeed.ce.C-174ew438.png)
 
 Officeツール以外で関連ツールを探すと上位に出てくる[良いツール](http://astah.change-vision.com/ja/product/astah-community.html)です。
 

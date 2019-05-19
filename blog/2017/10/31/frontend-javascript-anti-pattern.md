@@ -12,7 +12,7 @@ category: 'js'
 
 ## test
 
-```js
+```javascript
 import assert from 'assert'
 
 describe('test', () => {

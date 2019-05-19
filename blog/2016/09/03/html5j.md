@@ -10,7 +10,7 @@ categories:
 
 # html5j
 
-![logo](http://events.html5j.org/conference/2016/9/assets/img/header/logo.svg)
+![logo](https://events.html5j.org/conference/2016/9/assets/img/header/logo.svg)
 
 `http://events.html6j.org/conference/2017/10/`
 
