@@ -9,7 +9,7 @@ title: '退職'
 - 退職いたしました
 - 現在求人募集中です
 
-![img](/static/toa.png)
+![img](./toa.png)
 
 ## Self
 
