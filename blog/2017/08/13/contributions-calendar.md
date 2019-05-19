@@ -18,7 +18,7 @@ category: 'js'
 
 ## 記事がかけていないことを可視化する
 
-![image](/static/contributions-calendar.png)
+![image](./contributions-calendar.png)
 
 見事にサボっている。
 
