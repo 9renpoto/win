@@ -7,14 +7,15 @@ date: '2019-07-04T11:00:00+09:00'
 - いろいろな書き方があるのは難しい
 
 ```ruby
+# NoMethodError
 if a.b.preset?
   a.b(c)
 end
 ```
 
 ```ruby
-  defined?(bacon)
-  # nil
+defined?(bacon)
+# nil
 ```
 
 - <https://www.rubyguides.com/2018/10/defined-keyword/>
