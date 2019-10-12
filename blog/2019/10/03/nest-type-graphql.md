@@ -15,4 +15,5 @@ categories:
 
 - <https://github.com/9renpoto/frontend/pull/1115>
 - 型情報が近いものを記述する形になるが、宣言的に記述でき、かつどちらかだけ必要なものを書き分けられる
-- createdAt, updatedAtなど共通型を継承して管理できる？ <https://github.com/9renpoto/frontend/pull/1127>
+- ~~ createdAt, updatedAtなど共通型を継承して管理できる？ <https://github.com/9renpoto/frontend/pull/1127> ~~
+  - `@Entity` に見えないとColumnsと評価できないため継承することは難しかった <https://github.com/9renpoto/frontend/pull/1156>
