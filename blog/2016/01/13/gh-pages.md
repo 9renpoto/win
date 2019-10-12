@@ -15,7 +15,7 @@ categories:
 
 公式ドキュメントでwercker-ciを利用したデプロイ方法が[紹介](https://gohugo.io/hosting-and-deployment/deployment-with-wercker/)されており、そちらを利用していましたが。
 
-```sh
+```shell
 http://9renpoto.github.io/<project_name>
 ```
 
@@ -26,7 +26,7 @@ http://9renpoto.github.io/<project_name>
 
 を参考に問題を解決するために手を動かし始めました。
 
-```sh
+```shell
 <username>.github.io
 ```
 

@@ -28,7 +28,7 @@ brew 'neovim'
 - `~/.vimrc` を見ていないようなので調整
 - 基本的に設定は使い回せる
 
-```zsh
+```shell
 export XDG_CONFIG_HOME=~/src/github.com/9renpoto/dotfiles/.config
 ```
 
