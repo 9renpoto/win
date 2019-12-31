@@ -24,4 +24,4 @@ Homebrew 1.2.4
 
 ## Before
 
-- <https://9renpoto.github.io/entry/2017/06/22/brew-cask-language/>
+- <https://9renpoto.dev/2017/06/22/brew-cask-language/>

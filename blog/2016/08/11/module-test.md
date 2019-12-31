@@ -1,13 +1,12 @@
 ---
 date: '2016-08-11T21:43:32+09:00'
-permalink: '/entry/2016/08/11/module-test/'
 title: TypeScript with power-assert
 category: js
 ---
 
 # TypeScriptでpower-assertを使いたい
 
-[TypeScript テストについて](https://9renpoto.github.io/entry/2016/06/23/typescript-module-test/) 少し調べました。
+[TypeScript テストについて](https://9renpoto.dev/2016/06/23/typescript-module-test/) 少し調べました。
 
 - <https://github.com/9renpoto/ts/pull/31>
 
