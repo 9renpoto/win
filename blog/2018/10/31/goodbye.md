@@ -1,6 +1,5 @@
 ---
 date: '2018-10-31T00:00:00+09:00'
-permalink: '/entry/2018/10/31/goodbye/'
 title: '退職'
 ---
 
