@@ -7,14 +7,14 @@ category: service
 
 # TL;DR
 
-- 時代はworkflowなんですね
+- 時代は workflow なんですね
 
 ## Travis Stages
 
 - <https://docs.travis-ci.com/user/build-stages/>
-  - 多分workflowをstage単位に組めるんだと思っている
-  - matrixと異なり依存を自分で記述していきたい感じ
-  - 個人的にはifとか便利なきがしている
+  - 多分 workflow を stage 単位に組めるんだと思っている
+  - matrix と異なり依存を自分で記述していきたい感じ
+  - 個人的には if とか便利なきがしている
 
 ## Try
 

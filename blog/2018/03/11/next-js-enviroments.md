@@ -8,11 +8,11 @@ category: js
 # TL;DR
 
 - 結局うまく動いてない
-- configをwrapするんじゃねえ頼む
+- config を wrap するんじゃねえ頼む
 
 ## Refs
 
-- babel依存
+- babel 依存
   - <https://github.com/zeit/next.js/tree/master/examples/with-universal-configuration-build-time>
-- webpack依存
+- webpack 依存
   - <https://github.com/zeit/next.js/issues/159>

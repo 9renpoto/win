@@ -8,9 +8,9 @@ title: Frontend Meetup 01 参加メモ
 
 <https://connpass.com/event/38112/>
 
-## React/Reduxで快適フロントエンドライフ（仮）
+## React/Redux で快適フロントエンドライフ（仮）
 
-by @takayuki_shmz (株式会社FiNC)
+by @takayuki_shmz (株式会社 FiNC)
 
 <https://tech.nikkeibp.co.jp/it/atcl/column/16/050900104/051000005/>
 
@@ -24,18 +24,18 @@ by @takayuki_shmz (株式会社FiNC)
 - 最初に抑えるべき
   - 正しいコンポーネント思考
     - smart component
-      - dumbコンポーネントとaction, storeを繋ぐ
+      - dumb コンポーネントと action, store を繋ぐ
     - dumb component
-- Statelessコンポーネントが原則
-  - case by caseだけども
-- cssはコンポーネントと1v1
+- Stateless コンポーネントが原則
+  - case by case だけども
+- css はコンポーネントと 1v1
 - this.contents
   - <https://reactjs.org/docs/context.html>
-  - API層をcontextに渡しcontainerを呼ぶ
+  - API 層を context に渡し container を呼ぶ
 
-## 革命と秩序とSPA(React、flux、flowtype)
+## 革命と秩序と SPA(React、flux、flowtype)
 
-by @joe_re (freee株式会社）
+by @joe_re (freee 株式会社）
 
 <https://speakerdeck.com/joere/ge-ming-tozhi-xu-tospa>
 
@@ -44,14 +44,14 @@ by @joe_re (freee株式会社）
 - vue
   - mvvm
 - react & flux
-  - single-stateを途中から導入するのがツラい
+  - single-state を途中から導入するのがツラい
   - flux-utils
     - サポートの範囲が小さい分外しやすい
 - flowtype
 
-## Angularと心中する（仮）
+## Angular と心中する（仮）
 
-by @Quramy (株式会社WACUL)
+by @Quramy (株式会社 WACUL)
 
 <https://quramy.github.io/spa-knowhow-note/#/>
 
@@ -62,46 +62,46 @@ by @Quramy (株式会社WACUL)
   - component
   - コードの自動生成
   - エラー周り
-- style管理問題
+- style 管理問題
   - BEM
   - component:css = 1:1
   - <https://github.com/ukyo/angular-simple-bem>
 - Rollbar
-  - 裏でsourcemap連携
+  - 裏で sourcemap 連携
 
-##　コンテンツ配信とSPA。
+##　コンテンツ配信と SPA。
 
 by @konpyu (Piece of cake,Inc)
 
 - note <https://note.mu/>
   - angular 1.3
-  - mobile遅い
+  - mobile 遅い
 - Drupal8
 - SSR
 - HTTP2
 
-## SPAと覚悟
+## SPA と覚悟
 
 by @teppeis (サイボウズ）
 
 - SPA
-  - ブラウザーにとっては1枚のページに見えている
+  - ブラウザーにとっては 1 枚のページに見えている
   - ブラウザーの体験を超える覚悟がある
 - 初回ロード
 - a11y
 - ブラウザーを越えすぎても駄目
 
-## Angular2でつまづいたところ（仮）
+## Angular2 でつまづいたところ（仮）
 
 by @nacika_ins
 
-## 1pxをめぐる戦い
+## 1px をめぐる戦い
 
 @yoshiko_pg
 
 <https://yoshiko-pg.github.io/slides/20160916-spa/>
 
-## SPAでのセッション管理とセキュリティ
+## SPA でのセッション管理とセキュリティ
 
 by @uryyyyyyy
 

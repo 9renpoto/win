@@ -11,7 +11,7 @@ category: 'js'
 
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-`eslint --fix` が最高だと思っていたがまた新たにformatterが出たので依存する。
+`eslint --fix` が最高だと思っていたがまた新たに formatter が出たので依存する。
 
 ## eslint-config-prettier
 
@@ -21,7 +21,7 @@ category: 'js'
   - <https://github.com/9renpoto/frontend/pull/25>
 - 困りごと
   - <https://github.com/standard/eslint-config-standard> に依存している（**セミコロン除外**）と現状相性が悪い
-  - issueがあるようなので今後見直す
+  - issue があるようなので今後見直す
 
 ## prettier-eslint / prettier-eslint-cli
 
@@ -32,4 +32,4 @@ category: 'js'
 ## TypeScript
 
 - <https://github.com/eslint/typescript-eslint-parser> とは干渉して動かない
-- TypeScriptのformatも計画されているようで期待
+- TypeScript の format も計画されているようで期待

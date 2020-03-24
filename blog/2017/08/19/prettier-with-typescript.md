@@ -7,12 +7,12 @@ category: 'js'
 
 # TL;DR
 
-- TypeScriptもprettier正式採用で快適フォーマット
-- eslintも進んで来ており快適に
+- TypeScript も prettier 正式採用で快適フォーマット
+- eslint も進んで来ており快適に
 
 ## Prettier
 
-- すっかり気に入って使っているが、TypeScriptも正式サポート始まり嬉しい
+- すっかり気に入って使っているが、TypeScript も正式サポート始まり嬉しい
 - 型定義ファイルのフォーマットにも対応
 
 ## 入れてみた

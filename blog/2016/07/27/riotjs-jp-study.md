@@ -5,7 +5,7 @@ title: 'riot.js 勉強会 #1'
 category: 'js'
 ---
 
-# Riot.js勉強会 \#1
+# Riot.js 勉強会 \#1
 
 - <https://riotjs-jp.connpass.com/event/35724/>
 
@@ -16,18 +16,18 @@ category: 'js'
 
 ## 悩み
 
-- web component時代のcss , htmlとの付き合い方
-  - styleguideはどこまで責任を持つべきか
-    - web componentライブラリーを含めて書くべきか
+- web component 時代の css , html との付き合い方
+  - styleguide はどこまで責任を持つべきか
+    - web component ライブラリーを含めて書くべきか
   - <https://morishitter.hatenablog.com/entry/2016/07/29/204642>
-    - まだCSS Modulesを使うべきか個人レベルではわからない
+    - まだ CSS Modules を使うべきか個人レベルではわからない
     - この記事を理解するための勉強あ必要
 
 ## Next
 
-- styleguideを書く
+- styleguide を書く
   - <https://github.com/9renpoto/style>
-- riotを使った簡単なものを作る
+- riot を使った簡単なものを作る
   - `https://github.com/9renpoto/profile`
 
 ## 気持ち

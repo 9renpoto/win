@@ -4,16 +4,16 @@ permalink: '/entry/2016/09/25/ssh-agent/'
 title: macOS キーチェインが動かなくなったので keychain を導入する
 ---
 
-# macOS updateメモ
+# macOS update メモ
 
-ssh passphraseを常に問い合わされるようになった。
+ssh passphrase を常に問い合わされるようになった。
 
 ## 調査
 
 - keychain
 - ssh-agent
 
-## keychain入れてみる
+## keychain 入れてみる
 
 - <https://github.com/9renpoto/dotfiles/pull/32>
 

@@ -4,7 +4,7 @@ title: TypeScript with power-assert
 category: js
 ---
 
-# TypeScriptでpower-assertを使いたい
+# TypeScript で power-assert を使いたい
 
 [TypeScript テストについて](https://9renpoto.dev/2016/06/23/typescript-module-test/) 少し調べました。
 
@@ -12,7 +12,7 @@ category: js
 
 ## 原因
 
-- TypeScriptがファイルパスを相対パスか絶対パスのどちらかで返す場合がある
+- TypeScript がファイルパスを相対パスか絶対パスのどちらかで返す場合がある
   - <https://github.com/Microsoft/TypeScript/blob/204f2c16c0d6ff851e4798c03a9646b625ac2bd7/src/compiler/core.ts#L821-L825>
 
 ## 対策

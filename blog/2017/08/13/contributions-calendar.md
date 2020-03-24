@@ -13,7 +13,7 @@ category: 'js'
 
 ## contributions calendar
 
-- githubのカレンダーによるフィードバックはモチベーションにつながる
+- github のカレンダーによるフィードバックはモチベーションにつながる
 - コミットすることが生活の一部になってきた
 
 ## 記事がかけていないことを可視化する
@@ -24,4 +24,4 @@ category: 'js'
 
 ## next
 
-無駄にauto-completeつけたい。
+無駄に auto-complete つけたい。

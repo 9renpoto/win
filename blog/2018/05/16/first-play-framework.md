@@ -8,5 +8,5 @@ permalink: '/entry/2018/05/16/first-play-framework/'
 
 - <https://github.com/9renpoto/scala>
 
-- とりあえずgenerateして何がでてくるか
-- CIでテストを1つだけ動かす
+- とりあえず generate して何がでてくるか
+- CI でテストを 1 つだけ動かす

@@ -35,4 +35,4 @@ categories:
 
 ## 余談
 
-Overwatchで勝てないのが厳しい。
+Overwatch で勝てないのが厳しい。

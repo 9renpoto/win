@@ -7,21 +7,21 @@ category: react
 
 # TL;DR
 
-- gatsbyjsでブログを立て直した
+- gatsbyjs でブログを立て直した
 - goodbye hugo
 
 ## 経緯
 
-- Hugoを使っていたが `Go Template` に勉強要素がなかった
-- SPAベースのブログとして拡張可能なものを探した
+- Hugo を使っていたが `Go Template` に勉強要素がなかった
+- SPA ベースのブログとして拡張可能なものを探した
 - その他に検討したもの
   - nextin
-    - next.jsベース
-    - cssの扱いで苦戦
+    - next.js ベース
+    - css の扱いで苦戦
       - <https://github.com/kriasoft/isomorphic-style-loader>
-    - いい加減 `jsx` extension使わせてくれ
+    - いい加減 `jsx` extension 使わせてくれ
   - nuxt.js
-    - React優先したら後回しに
+    - React 優先したら後回しに
 
 ## 作業内容
 
@@ -29,7 +29,7 @@ category: react
 
 - <https://github.com/gatsbyjs/gatsby-starter-blog>
   - 不要な依存を削除
-  - SSRするために `style-loader` が使えなかったため `static` ファイルを参照するアプローチ
+  - SSR するために `style-loader` が使えなかったため `static` ファイルを参照するアプローチ
     - <https://www.gatsbyjs.org/docs/importing-assets-into-files/>
 
 ![mind](https://media.giphy.com/media/tT0wtdSJvE0Rq/giphy.gif)

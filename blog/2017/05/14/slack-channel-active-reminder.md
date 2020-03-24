@@ -11,13 +11,13 @@ category: 'js'
 
 ![image](./slack-channel-active-reminder.png)
 
-slackの部屋は便利に増やしていけますが、
+slack の部屋は便利に増やしていけますが、
 同じような部屋が散乱したり、入ってみたものの活動が薄かったり様々あるので
 一定時間発言がない部屋に対してメッセージを送りつけるようなものを書いた。
 
 ## Usage
 
-Cronなどと合わせて仕込んで良いタイミングで発言がなさそうなところに対してメッセージを送る。
+Cron などと合わせて仕込んで良いタイミングで発言がなさそうなところに対してメッセージを送る。
 
 ```javascript
 const CronJob = require('cron').CronJob
@@ -27,21 +27,21 @@ const reminder = new Reminder()
 
 const job = new CronJob({
   cronTime: '0 00 18 * * 1-5',
-  onTick: function() {
+  onTick: function () {
     reminder.postRemindMessage()
   },
   start: false,
-  timeZone: 'Asia/Tokyo'
+  timeZone: 'Asia/Tokyo',
 })
 job.start()
 ```
 
 中身は `@slack/client` を使っているだけ。
-便利なAPIが多いと助かる。
+便利な API が多いと助かる。
 
 ## 追記
 
 <https://github.com/9renpoto/slack-channel-active-reminder/pull/9>
 
 `flow gen-flow-files` が良いものをだしてくれないため外す。
-早く1.0が待ち遠しい。
+早く 1.0 が待ち遠しい。

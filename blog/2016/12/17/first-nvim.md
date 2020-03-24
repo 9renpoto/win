@@ -9,8 +9,8 @@ categories:
 
 # TL;DR
 
-- neovimは早いように感じる
-- lua拡張は動かない様子
+- neovim は早いように感じる
+- lua 拡張は動かない様子
 
 ## Install
 
@@ -32,7 +32,7 @@ brew 'neovim'
 export XDG_CONFIG_HOME=~/src/github.com/9renpoto/dotfiles/.config
 ```
 
-neocompleteが使えないようだがこの際プラグインを見直したいので一旦保留。
+neocomplete が使えないようだがこの際プラグインを見直したいので一旦保留。
 
 - <https://github.com/9renpoto/dotfiles/pull/45>
 

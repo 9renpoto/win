@@ -7,31 +7,31 @@ category: vuejs
 
 # TL;DR
 
-- SSRかと思ったら静的サイトも生成できる時代
+- SSR かと思ったら静的サイトも生成できる時代
 - 良い素振り環境であれば進んで移行
 
 ## gatsby
 
 <https://www.staticgen.com/gatsby>
 
-- Reactベースで、ブログやドキュメントのような静的サイトを生成出来るツールとして様子を見ていた
-- webpack v1系の依存が取れなていない
-  - webpack v3-rcが来てしまったことを考えると厳しそう
-  - @storybook/reactの苦い経験
-- Routerの素振り環境として魅力的だったものの尻込みしていた
+- React ベースで、ブログやドキュメントのような静的サイトを生成出来るツールとして様子を見ていた
+- webpack v1 系の依存が取れなていない
+  - webpack v3-rc が来てしまったことを考えると厳しそう
+  - @storybook/react の苦い経験
+- Router の素振り環境として魅力的だったものの尻込みしていた
 
 ## nuxt.js
 
 <https://www.staticgen.com/nuxt>
 
-- inspired by next.jsなライブラリ
+- inspired by next.js なライブラリ
 - 存在は知っていたがまさか静的サイト生成が可能らしい
-  - staticgen.com参照して気づく
+  - staticgen.com 参照して気づく
 - 触ってみる価値はあると判断
-- RSSなどブログっぽいものはない可能性
+- RSS などブログっぽいものはない可能性
 
 ## next.js
 
-- next.jsも同様に可能？
+- next.js も同様に可能？
   - <https://github.com/zeit/next.js/issues/604>
-- 普段はReactを触っていることが多いため可能ならこちらから
+- 普段は React を触っていることが多いため可能ならこちらから

@@ -6,33 +6,33 @@ categories:
   - 'go'
 ---
 
-# Go Conference参加メモ
+# Go Conference 参加メモ
 
 ![image](https://lh5.googleusercontent.com/-QHzKGzPe248/UtoeV0tBZyI/AAAAAAAAEuA/zr0wYEPCETE/s583-no/IMG_0299.JPG)
 
-## Go言語で作るWebアプリ @tenntenn
+## Go 言語で作る Web アプリ @tenntenn
 
-HTTPサーバー簡単に書ける。
+HTTP サーバー簡単に書ける。
 
 - <https://docs.google.com/presentation/d/1rrY2oibeUrqjF4ga5L3EhDioIURcMCUOz7jBXHWBdOM/pub?start=false&loop=false&delayms=3000#slide=id.gb8818ff4_2_0>
 
 ## Go on AppEngine @najeira
 
-- Go言語のメリット
+- Go 言語のメリット
   - 簡単
-  - Nativeで速い、少メモリ
+  - Native で速い、少メモリ
   - モダン（並列、型推論、Stractual subtyping(部分型）
-- AppEngineのメリット
+- AppEngine のメリット
   - 保守しなくてよいので開発に集中できる
   - 大規模、伸縮
-  - モダン（TQ、memcachedサポート）
+  - モダン（TQ、memcached サポート）
 - Testing
-  - AppEngine上でGo言語だけでテストを行うことは難しい
+  - AppEngine 上で Go 言語だけでテストを行うことは難しい
   - testbed <https://github.com/najeira/testbed>
-- Goの優位性
-  - 起動が速い（AppEngineとの相性は良い）
+- Go の優位性
+  - 起動が速い（AppEngine との相性は良い）
 - 速度についての補足
-  - 常にGoが速いというわけではない（I/O、etc)
+  - 常に Go が速いというわけではない（I/O、etc)
 - まだ完全以降にコストかけて頑張るほどのノウハウはたまってない
 
 ## Gorutine and channel @Jxck\_
@@ -45,9 +45,9 @@ HTTPサーバー簡単に書ける。
   - Goroutine
     - 奥が深い
 
-## Goのどのあたりが良いか鵜飼さん
+## Go のどのあたりが良いか鵜飼さん
 
-- Goの第一印象
+- Go の第一印象
   - 慣れた言語から見ると違和感がある
 - 設計方針
 
@@ -66,23 +66,23 @@ HTTPサーバー簡単に書ける。
   - 型定義
   - 型に対してメソッドを追加する
 - 使われないコード
-  - Goはコンパイルエラーを徹底的に出す
+  - Go はコンパイルエラーを徹底的に出す
   - 大規模なコードになってきたとき、容易に肥大化してしまう問題を防ぐ
 - エラー処理
-  - try ~ catchにしたがる
+  - try ~ catch にしたがる
     - 制御の流れが複雑になる
-    - 変なGOTOをしているような感じ
+    - 変な GOTO をしているような感じ
   - 基本的にエラーはその場で処理させる
 
 ## 無題 @moriyoshi
 
-- Goでゲームを作るためのライブラリー紹介
+- Go でゲームを作るためのライブラリー紹介
   - 画面出力
-    - SDL系： go-sdl / gosdl
-    - OpenGL系： gl / GoGL
+    - SDL 系： go-sdl / gosdl
+    - OpenGL 系： gl / GoGL
   - 音
     - portaudio-go / go-openal / pulsego
   - 入力
-    - 入力のSDL系は標準でできる
-    - OpenGL系ではGo-GLUT / glfwなど使える
+    - 入力の SDL 系は標準でできる
+    - OpenGL 系では Go-GLUT / glfw など使える
 - <https://github.com/moriyoshi/gohex>

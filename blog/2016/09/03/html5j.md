@@ -21,19 +21,19 @@ speaker: 中村修。
 大規模分散オペレーティングシステム。
 
 - HDR
-- WebはWeb以外に存在するデータ表現を全てできるべき
-- 全てinternetの上にある発想
+- Web は Web 以外に存在するデータ表現を全てできるべき
+- 全て internet の上にある発想
   1. Big Data
   1. AI
   1. IoT
 - Distributed Operating System
-- 縦書きcss
+- 縦書き css
   - 日本頑張ってる
 
 speaker: 及川卓也。
 
-- IE7担当してました
-- アプリケーションとしてのWeb
+- IE7 担当してました
+- アプリケーションとしての Web
   - API
   - Web Components
   - PWApps
@@ -41,34 +41,34 @@ speaker: 及川卓也。
 - モバイルデバイスの普及
   - ニュースキュレーションアプリ
   - AMP
-    - CMSやツールに依存している場合
-- 今こそWebに再投資しよう
+    - CMS やツールに依存している場合
+- 今こそ Web に再投資しよう
 
-## Reactの最新動向とベストプラクティス
+## React の最新動向とベストプラクティス
 
 speaker: @koba04
 
 - Stateless Function Components(SFC)
-- stateはviewに関係あるものだけで十分
+- state は view に関係あるものだけで十分
 - React.PureComponent(v15.3.0~)
-  - ShoudComponentUpdateに類似（後で調べる）
+  - ShoudComponentUpdate に類似（後で調べる）
 - `react-addons-perf`
   - 計測ツール
 - React.createClass
   - 徐々に非推奨
-  - React.Componentへ
+  - React.Component へ
 - High Order Function
   - 関数型っぽい
   - `acdlite/recomponse`
-- stateの管理
+- state の管理
   - なるべく一箇所で管理
   - Redux
     - Container Component
       - 更新処理・状態管理
-      - DOMを持たない
+      - DOM を持たない
     - Presentational Component
-      - Viewの構築を担う
-- Componentをテストする
+      - View の構築を担う
+- Component をテストする
   - TestUtil.renderInfoDocument
   - shallowRender
   - `react-test-renderer`
@@ -102,7 +102,7 @@ speaker: @laco0416
   - `@angular/http`
   - `@angular/router`
 - TypeScript
-  - 常に正しいAPI
+  - 常に正しい API
 - API
   - `@component`
   - `@input` / `@output`
@@ -110,7 +110,7 @@ speaker: @laco0416
   - `@pipe`
   - `@NgModule`
 
-## Webパフォーマンス最前線
+## Web パフォーマンス最前線
 
 - High Performance Web User Interface
   - パフォーマンスに対する優先度
@@ -121,17 +121,17 @@ speaker: @laco0416
       - Loa
   - `transform: translateZ(0)`
     - 凶悪
-    - Web標準： `will-change: transform`
+    - Web 標準： `will-change: transform`
       - Reduce GPU Memory
 - Scroll Performance
   - `<img lazyload>` :innocent:
   - `intersectionObserver`
   - throttle <https://blog.tsumikiinc.com/article/20141125_javascript-event-throttle.html>
-    - TODO調べる
+    - TODO 調べる
 - Task Optimization
   - <https://devpixiv.hatenablog.com/entry/2015/12/24/182248>
 
-## Progressive Web Appsの導入基礎
+## Progressive Web Apps の導入基礎
 
 - Push Notification
   - service worker

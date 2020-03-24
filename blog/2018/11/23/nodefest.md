@@ -49,29 +49,29 @@ categories:
 - <https://twitter.com/sekikazu01/status/1065833675688894464>
 - <https://twitter.com/sekikazu01/status/1065825419213991937>
 
-## Reactにおけるパフォーマンスチューニング
+## React におけるパフォーマンスチューニング
 
 - <https://nodefest.jp/2018/schedule.html#conference-2-5>
 - <https://recruit-tech.co.jp/blog/2018/09/19/react_spa_performance_tuning/>
 
-## WebアプリをNativeアプリにするCapacitorが広げるWebの可能性
+## Web アプリを Native アプリにする Capacitor が広げる Web の可能性
 
 - <https://nodefest.jp/2018/schedule.html#conference-2-6>
 - <https://github.com/ionic-team/capacitor>
 
-## 実践GraphQL forクライアント側
+## 実践 GraphQL for クライアント側
 
 - <https://nodefest.jp/2018/schedule.html#conference-2-7>
 - <https://speakerdeck.com/petitviolet/real-world-graphql-on-scala>
 - <https://github.com/petitviolet/graphql_on_scala>
 
-## Service Workerを用いたキャッシング戦略 〜Wikiアプリケーションを例に〜
+## Service Worker を用いたキャッシング戦略 〜Wiki アプリケーションを例に〜
 
 - <https://nodefest.jp/2018/schedule.html#conference-2-8>
 - <https://scrapbox.io/daiiz/ServiceWorker%E3%82%92%E7%94%A8%E3%81%84%E3%81%9F%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%B3%E3%82%B0%E6%88%A6%E7%95%A5_~Wiki%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E4%BE%8B%E3%81%AB~>
 - <https://caniuse.com/#search=network>
 
-## Vue.js/Nuxt.jsで実現できたPWAのリアルタイム動画ラップ・バトル・アプリ
+## Vue.js/Nuxt.js で実現できた PWA のリアルタイム動画ラップ・バトル・アプリ
 
 - <https://nodefest.jp/2018/schedule.html#conference-2-10>
 - <https://riotz.works/slides/?2018-nodefest>

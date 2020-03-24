@@ -18,12 +18,12 @@ category: react
 ## `babel-plugin-transform-define` を使う
 
 - refs: <https://github.com/zeit/next.js/tree/master/examples/with-universal-configuration-build-time>
-- babel7に対応してない（2018/12現在）。[PR はあるけれど放置されている](https://github.com/FormidableLabs/babel-plugin-transform-define/pull/49)
+- babel7 に対応してない（2018/12 現在）。[PR はあるけれど放置されている](https://github.com/FormidableLabs/babel-plugin-transform-define/pull/49)
 
 ## `dotenv-webpack` を使う
 
 - refs: <https://github.com/zeit/next.js/tree/canary/examples/with-dotenv>
-- dockerの下りで `.envrc` ではなく `.env` を利用するプロダクトが増えた
+- docker の下りで `.envrc` ではなく `.env` を利用するプロダクトが増えた
 - よしなに展開してくれる
 
 ## 標準で用意されている仕組みを使う
@@ -31,5 +31,5 @@ category: react
 - refs
   - <https://spectrum.chat/next-js/general/runtime-configs-with-process-env~55b503c2-07f4-4da3-9ba4-287733b3d622>
   - <https://github.com/zeit/next.js#exposing-configuration-to-the-server--client-side>
-- clientでは配信したくない環境変数とか確かにある
+- client では配信したくない環境変数とか確かにある
 - 面倒だけれど別々に宣言的管理する

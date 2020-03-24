@@ -11,9 +11,9 @@ categories:
 - ブログを `octpress` から `hugo` へ移行しました
 - [hugo theme](https://github.com/9renpoto/delic) 書きました
 
-## themeを書くために
+## theme を書くために
 
-cmd1つでテンプレート作成。
+cmd1 つでテンプレート作成。
 
 ```sh
 $ hugo new theme foo
@@ -42,12 +42,12 @@ $ hugo new theme foo
 ## TODO
 
 - `layouts/_default` 以外の使い方調べる
-- rss作成
-- bower installするbuild script
+- rss 作成
+- bower install する build script
 
 ## 感想
 
-octpressの時はtheme流用してたので手作りも勉強になりました。
+octpress の時は theme 流用してたので手作りも勉強になりました。
 
-t32kさんの[mol](https://github.com/t32k/mol)を参考（ほぼコピー&ペーストして）に作りました
+t32k さんの[mol](https://github.com/t32k/mol)を参考（ほぼコピー&ペーストして）に作りました
 ありがとうございます。

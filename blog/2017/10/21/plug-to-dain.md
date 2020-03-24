@@ -6,7 +6,7 @@ permalink: '/entry/2017/10/21/plug-to-dain/'
 
 # TL;DR
 
-- vimrcもtomlで書く時代になったのか
+- vimrc も toml で書く時代になったのか
 
 ## before
 
@@ -15,7 +15,7 @@ permalink: '/entry/2017/10/21/plug-to-dain/'
 
 ## after
 
-- とりあえずlightline, vim-guttierいれて簡単なコードを読めるように
+- とりあえず lightline, vim-guttier いれて簡単なコードを読めるように
 - <https://github.com/9renpoto/dotfiles/pull/106>
 - <https://github.com/9renpoto/dotfiles/pull/107>
 

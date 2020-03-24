@@ -11,9 +11,9 @@ permalink: '/entry/2017/08/19/avast/'
 
 ## 経緯
 
-1. avastが警告を発しあるモジュールがダウンロードできない
+1. avast が警告を発しあるモジュールがダウンロードできない
    1. <https://github.com/takuyaa/kuromoji.js/issues/19>
-1. virtualbox上で警告のあった指定箇所を確認
+1. virtualbox 上で警告のあった指定箇所を確認
 1. 修正
    1. <https://github.com/takuyaa/kuromoji.js/pull/20>
 

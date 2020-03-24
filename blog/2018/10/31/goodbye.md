@@ -12,8 +12,8 @@ title: '退職'
 
 ## Self
 
-- TypeScript / Reactちょっとできる
-- Perl / Python / Scalaちょっとできる
+- TypeScript / React ちょっとできる
+- Perl / Python / Scala ちょっとできる
 
 ## 今後
 

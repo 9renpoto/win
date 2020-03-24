@@ -7,8 +7,8 @@ category: 'js'
 
 # TL;DR
 
-- nycが公式でサポート
-- 事前のtscしてremap-istanbulしなくても良くなりました（後述）
+- nyc が公式でサポート
+- 事前の tsc して remap-istanbul しなくても良くなりました（後述）
 
 ## Usage
 
@@ -18,7 +18,7 @@ category: 'js'
 ## メリット
 
 - 前回：<https://9renpoto.dev/2016/08/20/typescript-coverage/>
-- tscする一手間を省略して`ts-node`に任せるだけでよくなりました
+- tsc する一手間を省略して`ts-node`に任せるだけでよくなりました
 
 ## Refs
 

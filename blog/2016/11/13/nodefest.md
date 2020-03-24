@@ -12,16 +12,16 @@ categories:
 ## Building Interactive npm Command Line Modules
 
 - arguments parsing
-  - 200種以上のpackage
+  - 200 種以上の package
 - yargs
   - `.help()` 便利
-  - Interactiveなオプションを宣言的に記述できる
+  - Interactive なオプションを宣言的に記述できる
 
 <https://lrlna.github.io/nodefest-2016/#1>
 
 ## Famicom programming with JavaScript
 
-- backgroundの背景を替えるためにはfor-loop4回
+- background の背景を替えるためには for-loop4 回
 
 ## GraphQL for the RESTful crowd
 
@@ -41,7 +41,7 @@ categories:
 
 ## The Seif Project
 
-- webの問題はpassword, 簡単に盗まれる
+- web の問題は password, 簡単に盗まれる
 - `Seif Project` の中ではカギ認証
 - seifnode
 - <https://github.com/paypal/seifnode>
@@ -52,7 +52,7 @@ categories:
 
 - <https://github.com/RichardLitt/standard-readme>
 
-## Vue.js 2.0サーバサイドレンダリング
+## Vue.js 2.0 サーバサイドレンダリング
 
 - レンダラ
 - ハイドレーション
@@ -61,7 +61,7 @@ categories:
 
 サンプル <https://github.com/vuejs/vue-hackernews-2.0>
 
-## React + Reduxを使った大規模商用サービスの開発
+## React + Redux を使った大規模商用サービスの開発
 
 1. Transition
    - react-router
@@ -71,17 +71,17 @@ categories:
    - webpack `require.ensure`
    - <https://github.com/richardscarrott/require-error-handler-webpack-plugin>
 1. SSR
-   - Reactそのものは別に遅くない
+   - React そのものは別に遅くない
    - Solution
      1. Partial Rendering
-        - firstViewだけSSR
+        - firstView だけ SSR
    - Composite Rendering
 
 ## PostCSS: Build your own CSS processor
 
-- reworkcssが元になっている
+- reworkcss が元になっている
 
-## JavaScriptによる並列処理：共有メモリとロック
+## JavaScript による並列処理：共有メモリとロック
 
 <https://speakerdeck.com/chikoski/20161113-nodefest>
 

@@ -8,7 +8,7 @@ categories:
 
 # yapc asia memo
 
-yapcasiaに参加したときのメモを残します。
+yapcasia に参加したときのメモを残します。
 
 ## Effective ES6
 
@@ -26,15 +26,15 @@ var p = Person('bob');
 
 - class
   - constractor
-  - newナシで呼ぶとError
-- IE11 ES6は実装しない
+  - new ナシで呼ぶと Error
+- IE11 ES6 は実装しない
 - transpiler
   - ES6 to ES5
 - polyfill
-  - buildinのclassをjs環境で動かすようにする
+  - buildin の class を js 環境で動かすようにする
 - Babel
 
-  - core.js # polyfill toolsもあるよ
+  - core.js # polyfill tools もあるよ
 
 - ES6 feature
 
@@ -93,10 +93,10 @@ var p = Person('bob');
     - template literal
       \` で文字列を囲むと改行付き文字列が定義できる
     - Promise
-      - callback地獄回避
+      - callback 地獄回避
     - map/set
     - codePoint
-      - 吉野家isvalid
+      - 吉野家 isvalid
 
   - trap
 
@@ -104,12 +104,12 @@ var p = Person('bob');
   if (a => 1) # if ( a >= 1 ) が正
   ```
 
-  - balelっていこう
+  - balel っていこう
 
 ## 今フロントエンドで何が起こっているのか
 
-- htmlだけ返せばよかったような時代
-- ajaxの登場
+- html だけ返せばよかったような時代
+- ajax の登場
   - google map etc
   - ECMAscript5
 - coffeescript
@@ -151,9 +151,9 @@ var p = Person('bob');
 - Redux
   - Inspired by Flux and Elm
 
-## どうしてこうなったNode.jsとio.jsの分裂と統合の行方。これからどう進化していくのか
+## どうしてこうなった Node.js と io.js の分裂と統合の行方。これからどう進化していくのか
 
-### Node.jsの歴史 (Node.jsとは、Node.jsが生まれた背景）
+### Node.js の歴史 (Node.js とは、Node.js が生まれた背景）
 
 - 2001
   - C10K Problem
@@ -165,16 +165,16 @@ var p = Person('bob');
     - Evented Non Blocking I/O
     - v8
   - EventLoop Model
-    - libebb => libev/libeio & libuv (Windows向け）
+    - libebb => libev/libeio & libuv (Windows 向け）
     - netv8 => node
   - Joyent
   - 破壊と創造
-    - APIがかなり深刻に変わる
+    - API がかなり深刻に変わる
   - BDFL (優しい終身の独裁者モデル）
 - 2012 ~ 2014
   - Socket.IO
 
-### Node/io.jsの機能的な違いと性能的な違い
+### Node/io.js の機能的な違いと性能的な違い
 
 - 2014 ~
   - node forward
@@ -187,11 +187,11 @@ var p = Person('bob');
     - major.minor.patch
   - オープンガバナーンスモデル
   - Feature Node.js
-  - io.jsのこと
+  - io.js のこと
   - node Foundation
   - log term suport
 
-### Node/io.jsのロードマップ
+### Node/io.js のロードマップ
 
 - ES6 compat ％ up
 - StrongScript
