@@ -13,7 +13,7 @@ categories:
 
 ## Log
 
-```sh
+```shell
 ➜  ~ brew cask search firefox
 ==> Exact Match
 firefox
@@ -29,7 +29,7 @@ Error: invalid option: --language=en
 - <https://rcmdnk.com/blog/2016/10/31/computer-mac-homebrew-firefox/>
 - <https://github.com/Homebrew/homebrew-cask/blob/master/doc/cask_language_reference/stanzas/language.md#installation>
 
-### 追記 1 [2017/06/25]
+### 追記1 [2017/06/25]
 
 - 修正リリースを待つ
   - [homebrew-cask/issues/35448](https://github.com/Homebrew/homebrew-cask/issues/35448#issuecomment-308112366)

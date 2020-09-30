@@ -7,11 +7,11 @@ date: '2019-07-06T11:00:00+09:00'
 
 - 設定ファイルの中に一部環境変数を適応したい
 - 環境変数を読み取るには `Lua` などで拡張することが必要
-- Docker 上に変更のための構造をできるだけ入れたくなかった => `envsubst` を使って置換する
+- Docker上に変更のための構造をできるだけ入れたくなかった => `envsubst` を使って置換する
 
 ## Dockerfile
 
-- `alpine` を使っていると `bash` もなかったり `sed` もなかったりで conf を置換する方法がない
+- `alpine` を使っていると `bash` もなかったり `sed` もなかったりでconfを置換する方法がない
 - `envsubst` を使って入れ替えてしまうことが推奨されている？
 
 ```dockerfile
@@ -22,7 +22,7 @@ COPY ./bin/docker-endpoint.sh /bin/docker-endpoint.sh
 ENTRYPOINT ["bin/docker-endpoint.sh"]
 ```
 
-```sh
+```shell
 #!/bin/ash
 cat /etc/nginx/template/nginx.tpl.default.conf \
   | envsubst '$SERVER_NAME' \
@@ -36,4 +36,4 @@ echo "###############################"
 ```
 
 - <https://hub.docker.com/_/nginxz>
-- <http://www.mpon.me/entry/2018/02/07/200000>
+- <https://www.mpon.me/entry/2018/02/07/200000>

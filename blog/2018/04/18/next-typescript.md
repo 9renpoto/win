@@ -7,16 +7,16 @@ category: react
 
 # TL;DR
 
-```sh
+```shell
 npm i  @zeit/next-typescript
 ```
 
 ## 感想
 
-- TypeScript を使うために一度手前で tsc したりしてましたが、何時のまにか念願のサポートが入った
-- 実際 webpack のオプションが設定できるのだからできて当然だと思っていたが公式から来ると嬉しい
+- TypeScriptを使うために一度手前でtscしたりしてましたが、何時のまにか念願のサポートが入った
+- 実際webpackのオプションが設定できるのだからできて当然だと思っていたが公式から来ると嬉しい
 
 ## Refs
 
-- <https://github.com/zeit/next-plugins/tree/master/packages/next-typescript>
+- <https://github.com/vercel/next-plugins/tree/master/packages/next-typescript>
 - <https://github.com/9renpoto/archive/pull/140>

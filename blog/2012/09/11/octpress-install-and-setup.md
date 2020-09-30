@@ -4,11 +4,11 @@ date: '2012-09-11'
 permalink: '/entry/2012/09/11/octpress-install-and-setup/'
 ---
 
-# octpress 試す
+# octpress試す
 
-Octpress の利用を始めたので、簡単にインストール方法と設定、使い方などをメモ。
+Octpressの利用を始めたので、簡単にインストール方法と設定、使い方などをメモ。
 
-## github page の初期化
+## github pageの初期化
 
 ```bash
 mkdir username.github.com
@@ -23,11 +23,11 @@ git remote add origin git@GitHub.com:username/username.github.com.git
 git push -u origin master
 ```
 
-### octpress のインストール
+### octpressのインストール
 
-先ほど作成した _username.github.com_ と同じ階層に octpress を clone する。
+先ほど作成した _username.github.com_ と同じ階層にoctpressをcloneする。
 
-```sh
+```shell
 git clone git://github.com/imathis/octopress.git octopress
 
 cd octopress
@@ -45,15 +45,15 @@ rake deploy
 
 ### 記事投稿
 
-記事の作成もコマンド 1 つタイトルは英語で。
+記事の作成もコマンド1つタイトルは英語で。
 
-```sh
+```shell
 rake new_post["my-new-page"]
 # zshは以下のように書く
 rake new_post\["my-new-page"\]
 ```
 
-markdown の勉強にもなるし、GitHub とも仲良くなれるし、なかなかに良い仕組み。
+markdownの勉強にもなるし、GitHubとも仲良くなれるし、なかなかに良い仕組み。
 
 いろいろ勉強します。
 
