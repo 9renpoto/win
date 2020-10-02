@@ -2,7 +2,6 @@
 title: 'クラス図を簡単に - PlantUML'
 date: '2013-11-13'
 permalink: '/entry/2013/11/13/escape-ime/'
-tags: ['uml']
 ---
 
 # PlantUML
@@ -13,7 +12,7 @@ tags: ['uml']
 久々に「クラス図を書いてみよう」という話になり
 どう書こうとなったのでメモ。
 
-CUI で書けるのが最高です。
+CUIで書けるのが最高です。
 
 依存関係をテキストベースのみで記述できるので非常に助かりました。
 
@@ -24,10 +23,10 @@ wget http://sourceforge.net/projects/plantuml/files/plantuml.jar/download -O pla
 java -jar "plantuml.jarのパス" [option] 入力ファイル [...]
 ```
 
-で入力ファイルを目的の UML を生成します。
+で入力ファイルを目的のUMLを生成します。
 
-Graphviz が必要なのでインストールしておきます
-mac は brew だけで入りました。
+Graphvizが必要なのでインストールしておきます
+macはbrewだけで入りました。
 
 ```bash
 brew install graphviz
@@ -68,17 +67,17 @@ Auther --_ Comments
 - <https://abicky.net/2012/10/16/093737/>
 - <http://yohshiy.blog.fc2.com/blog-entry-152.html>
 
-## GUI 関連
+## GUI関連
 
-Office などを使って作っても良いのですが、
+Officeなどを使って作っても良いのですが、
 専用のツールもメモ。
 
 ### astah\*
 
-Office ツール以外で関連ツールを探すと上位に出てくる[良いツール](http://astah.change-vision.com/ja/product/astah-community.html)です。
+Officeツール以外で関連ツールを探すと上位に出てくる[良いツール](https://astah.change-vision.com/ja/product/astah-community.html)です。
 
 ### Cacoo
 
-今までなかなか縁がなく利用していなかった Cacoo ですが、そういえば使ってなかったなと思い軽く使ってみました。
+今までなかなか縁がなく利用していなかったCacooですが、そういえば使ってなかったなと思い軽く使ってみました。
 
-ChromeApp などで使えますし、お気軽さではダントツ。
+ChromeAppなどで使えますし、お気軽さではダントツ。
