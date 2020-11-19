@@ -9,17 +9,18 @@ title: Code-First GraphQL server
 
 ## Code-First GraphQL server
 
+[隅田川.js](https://sumidagawajs.connpass.com/event/193786/) というイベントで[発表してきました](https://code-first-graphql-server.web.app/)
 
 初めてGraphQLサーバーを書くためのWAFとして自分は `@nestjs` を採用しました。理由は下記のようなものがあります。
 
-- TypeScript をメインで利用する
+- TypeScriptをメインで利用する
 - Node.jsでサーバーを書く際に構造化された一定のルールがほしい
-- REST API も同じサーバー上から提供できる
+- REST APIも同じサーバー上から提供できる
 - **GraphQLのための記述量を抑えられる**
 
 ## GraphQL serverを書く順序
 
-`@nestjs/graphql` を用いた開発の場合、Code-First な開発とSDL(Schema Definition Language)-Firstな開発手法を選択することができます。
+`@nestjs/graphql` を用いた開発の場合、Code-Firstな開発とSDL(Schema Definition Language)-Firstな開発手法を選択することができます。
 
 - https://docs.nestjs.com/graphql/quick-start#code-first
 - https://docs.nestjs.com/graphql/quick-start#schema-first
@@ -58,23 +59,23 @@ export class UserRepository extends BaseRepository<User> {}
 
 対してSDL-Firstなアプローチでサーバーを開発した際の流れとして
 
-1. GraphQL ファイルを定義する
+1. GraphQLファイルを定義する
 1. 手動で作成した `graphql` ファイルよりTypeScript Interfaceとなる型情報生成する
 1. `implements` 等を用い型安全性を確保する
 1. **`graphql` で生成したファイルに沿ったResolverを作成する**
 
-といった流れになるかと思います。この2つを比較した際にCode-First な開発のメリットは **Resolverの実装とGraphQL定義との乖離をTypeScriptレベルで確認できる**
-ことにあると考えています。また、nest.js に関してはSDL-First、Code-Firstそれぞれに対してモデルファイルの作成（または生成）は必要であるため、記述量に関してもCode-Firstで作成される際にはメリットがあります。
+といった流れになるかと思います。この2つを比較した際にCode-Firstな開発のメリットは **Resolverの実装とGraphQL定義との乖離をTypeScriptレベルで確認できる**
+ことにあると考えています。また、nest.jsに関してはSDL-First、Code-Firstそれぞれに対してモデルファイルの作成（または生成）は必要であるため、記述量に関してもCode-Firstで作成される際にはメリットがあります。
 
-Code-First による記述のデメリットとして、**デコレータが多段で定義されがち** ということがあります。
+Code-Firstによる記述のデメリットとして、**デコレータが多段で定義されがち** ということがあります。
 
 ## Prisma | Hasura
 
-GraphQL サーバーを構築するにあたり、これらの2つは十分検討に値する仕組みが出来上がっていると思います。
+GraphQLサーバーを構築するにあたり、これらの2つは十分検討に値する仕組みが出来上がっていると思います。
 
 > Prisma is a GraphQL ORM for your GraphQL (or REST) servers and not your frontend apps, kind of like a replacement for JDBC, SQL Alchemy, ActiveRecord and so on.
 
-[hasuraの記事を引用](https://hasura.io/blog/hasura-vs-prisma-9ffc7271eda8/) **Prisma はGraphQL ORM**だ、という表現をされています。
+[hasura の記事を引用](https://hasura.io/blog/hasura-vs-prisma-9ffc7271eda8/) **PrismaはGraphQL ORM**だ、という表現をされています。
 
 ```
 generator client {
@@ -95,7 +96,7 @@ model User {
 ```
 
 Prismaでは独自のSDLとして `.prisma` ファイルを作成します。
-比較のために nest.js と Prismaを併用しているサンプルを引用します。
+比較のためにnest.jsとPrismaを併用しているサンプルを引用します。
 
 ```typescript
 // https://github.com/prisma/prisma-examples/blob/latest/typescript/graphql-nestjs/src/user.ts
@@ -125,8 +126,8 @@ export class User {
 記述量という点では `typeorm` を使わない `@nestjs/graphql` と言った感じなると思っています。database migrationやschemaの型やrelationといった情報を **Prisma** に移管できるようです。
 
 上記まででは `typeorm` と `prisma` を好みで選択するようになる印象ですが、
-Prisma はtypeormと異なりGraphQLに最適化されたdataloaderのような機構のクエリーを発行できるかもしれないので、
-`@nestjs/graphql` + `typeorm` + `dataloader` といった記述量が削減できるかもしれないことや、Paginate に関するサポートがないか期待しています。
+Prismaはtypeormと異なりGraphQLに最適化されたdataloaderのような機構のクエリーを発行できるかもしれないので、
+`@nestjs/graphql` + `typeorm` + `dataloader` といった記述量が削減できるかもしれないことや、Paginateに関するサポートがないか期待しています。
 
 - https://stackshare.io/stackups/hasura-vs-prisma
 - https://hasura.io/blog/hasura-vs-prisma-9ffc7271eda8/
@@ -135,3 +136,8 @@ Prisma はtypeormと異なりGraphQLに最適化されたdataloaderのような�
 - https://nexusjs.org/docs/adoption-guides/neuxs-framework-prisma-users
 - https://github.com/prisma/prisma-examples/tree/latest/typescript/graphql-apollo-server
 - https://github.com/prisma/prisma-examples/tree/latest/typescript/graphql-nestjs
+
+## Hasura
+
+- Schema生成、GraphQL定義、認証周りの一部コードの作成、反映といったところまでWebUIをベースに、CLIはおまけで提供されている印象
+- Migration機能や、`Hasura actions` などの定義によって同一機能のサーバーを定義できるようにはなっている（yml, graphlqによる管理）
