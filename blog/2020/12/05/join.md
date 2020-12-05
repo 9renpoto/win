@@ -18,7 +18,7 @@ title: CADDi株式会社にJoinしました
 
 入社以前は [sottar](https://www.sottar.io/blogs/leave_mercari/) さんのエントリーを見ておりました。
 
-決め手は [Konashi](https://www.wantedly.com/id/a_kobashi_a) よりお声がけ頂いたことが大きいです。
+決め手は [Kobashi](https://www.wantedly.com/id/a_kobashi_a) よりお声がけ頂いたことが大きいです。
 きっかけとしてはお声がけ頂いたことですが、内容として私が追いかけているマイナーなライブラリのことに関して言及頂いたことや、
 また対話の中で技術というものへの向き合い方や、正直な内情などについて議論させていただきました。
 
