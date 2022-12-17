@@ -1,23 +1,11 @@
-# Title
+# fresh project
 
-This is an example file with default selections.
+### Usage
 
-## Install
-
-```
+Start the project:
 
 ```
-
-## Usage
-
+deno task start
 ```
 
-```
-
-## Contributing
-
-PRs accepted.
-
-## License
-
-MIT © TBD
+This will watch the project directory and restart as necessary.
