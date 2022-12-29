@@ -1,5 +1,5 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { getPost, getPosts, Post } from "@/utils/posts.ts";
+import { getPosts, type Post } from "@/utils/posts.ts";
 
 export const handler: Handlers<Post[]> = {
   async GET(_req, ctx) {
@@ -8,8 +8,7 @@ export const handler: Handlers<Post[]> = {
   },
 };
 
-export default function BlogIndexPage(props: PageProps<Post[]>) {
-  const posts = props.data;
+export default function BlogIndexPage({ data: posts }: PageProps<Post[]>) {
   return (
     <main class="max-w-screen-md px-4 pt-16 mx-auto">
       <h1 class="text-5xl font-bold">Blog</h1>
@@ -20,8 +19,7 @@ export default function BlogIndexPage(props: PageProps<Post[]>) {
   );
 }
 
-function PostCard(props: { post: Post }) {
-  const { post } = props;
+export function PostCard({ post }: { post: Post }) {
   return (
     <div class="py-8 border(t gray-200)">
       <a class="sm:col-span-2" href={`/${post.slug}`}>
