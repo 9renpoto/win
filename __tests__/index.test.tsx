@@ -3,7 +3,7 @@ import {
   describe,
   it,
 } from "https://deno.land/std@0.148.0/testing/bdd.ts";
-import { assertExists, render, DOMParser } from "./deps.ts";
+import { assertExists, DOMParser, render } from "./deps.ts";
 
 import { PostCard } from "../routes/index.tsx";
 
