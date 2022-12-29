@@ -9,7 +9,10 @@ import { PostCard } from "../routes/index.tsx";
 
 describe("PostCard", () => {
   beforeEach(() => {
-    window.document = new DOMParser().parseFromString("", "text/html") as any;
+    window.document = new DOMParser().parseFromString(
+      "",
+      "text/html",
+    ) as unknown as HTMLDocument;
   });
 
   it("should exists.", () => {
