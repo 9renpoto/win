@@ -10,8 +10,10 @@ permalink: '/entry/2017/10/21/plug-to-dain/'
 
 ## before
 
-- [vim-plug](https://github.com/junegunn/vim-plug) が流行っているらしいから使っていた
-- [vim bootstrap](https://github.com/avelino/vim-bootstrap) で作成したものを使っていたが、これがさっぱり動かない
+- [vim-plug](https://github.com/junegunn/vim-plug)
+  が流行っているらしいから使っていた
+- [vim bootstrap](https://github.com/avelino/vim-bootstrap)
+  で作成したものを使っていたが、これがさっぱり動かない
 
 ## after
 

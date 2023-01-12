@@ -11,12 +11,14 @@ category: 'js'
 
 ## npm or yarn
 
-- npmClient を指定できるようだが、yarn を指定すると永遠にインストールが終わらない問題に出くわす
+- npmClient を指定できるようだが、yarn
+  を指定すると永遠にインストールが終わらない問題に出くわす
   - <https://travis-ci.org/9renpoto/eslint-config/builds/281805776>
   - `concurrency=1` を指定するなど試すも retry してやっと動く程度
     - 期待する port に接続できていない？
 - npm v5
-  - 何故か lerna を通してやると `dependencies` が root に展開されず見つからない場合がある
+  - 何故か lerna を通してやると `dependencies` が root
+    に展開されず見つからない場合がある
   - ディレクトリ直下でやると問題ない場合がある
     - バグっている気持ち
 

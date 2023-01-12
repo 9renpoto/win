@@ -14,7 +14,8 @@ category: 'react'
 `webpack v2` の流れもあり開発が止まってた storybook の開発が、
 別のコントリビュータが入ったことで再開された。
 
-`@kadira/storybook` から `@storybook/react` へ名前を変えてめでたく`rc`がリリースされることなったようです。
+`@kadira/storybook` から `@storybook/react`
+へ名前を変えてめでたく`rc`がリリースされることなったようです。
 
 - 対応した PR <https://github.com/9renpoto/style/pull/160>
 

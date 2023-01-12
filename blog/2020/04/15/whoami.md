@@ -20,11 +20,15 @@ title: Who am i
 - 2020 年
   - <https://gist.github.com/9renpoto/a7f7a2a4dead3bf5c95d8898a62e1cec>
 - 2019 年
-  - TypeScript / (P)react / Next.js チョットデキる ([refs](https://9renpoto.dev/2019/12/08/next-stack/))
-  - TypeScript / Nest.js (express) チョットデキる ([refs](https://9renpoto.dev/2019/12/08/next-stack/))
+  - TypeScript / (P)react / Next.js チョットデキる
+    ([refs](https://9renpoto.dev/2019/12/08/next-stack/))
+  - TypeScript / Nest.js (express) チョットデキる
+    ([refs](https://9renpoto.dev/2019/12/08/next-stack/))
 - 2018 年
-  - TypeScript / React チョットデキる ([refs](https://9renpoto.dev/2018/10/31/goodbye/))
-  - Perl / Python / Scala チョットデキる([refs](https://9renpoto.dev/2018/10/31/goodbye/))
+  - TypeScript / React チョットデキる
+    ([refs](https://9renpoto.dev/2018/10/31/goodbye/))
+  - Perl / Python / Scala
+    チョットデキる([refs](https://9renpoto.dev/2018/10/31/goodbye/))
 
 ## できないこと
 

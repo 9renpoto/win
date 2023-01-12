@@ -13,7 +13,8 @@ category: 'js'
   - 既存のコードにも強気で入れられる flowtype は魅力的
 - `gulp` への依存は最小限、`npm-run-all` で手軽に対応
 - `mocha`, `power-assert` 便利だし特に困っていない
-  - `karma`, `jsdom` との組み合わせを試したがそれぞれできることとできないことはある
+  - `karma`, `jsdom`
+    との組み合わせを試したがそれぞれできることとできないことはある
   - e2e は別でする
 
 | sum | name                                             |

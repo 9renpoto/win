@@ -19,7 +19,8 @@ category: 'js'
 
 - テンプレートエンジンなどで locale 特定が必要？
 - `sprintf`のような表現には対応していない
-  - 議論中 [i18n-webpack-plugin/pull/42](https://github.com/webpack-contrib/i18n-webpack-plugin/pull/42)
+  - 議論中
+    [i18n-webpack-plugin/pull/42](https://github.com/webpack-contrib/i18n-webpack-plugin/pull/42)
 - 読み込む locale ファイルの生成には関与しない
   - 手動で JSON は作成、メンテナンス
 

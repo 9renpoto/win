@@ -6,7 +6,8 @@ category: js
 
 # TypeScript で power-assert を使いたい
 
-[TypeScript テストについて](https://9renpoto.dev/2016/06/23/typescript-module-test/) 少し調べました。
+[TypeScript テストについて](https://9renpoto.dev/2016/06/23/typescript-module-test/)
+少し調べました。
 
 - <https://github.com/9renpoto/ts/pull/31>
 

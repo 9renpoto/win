@@ -9,8 +9,7 @@ permalink: '/entry/2013/11/13/escape-ime/'
 これから設計をはじめます、という時に
 今までは小さな機能では、スキーマの設計から始めてしまっていたのですが。
 
-久々に「クラス図を書いてみよう」という話になり
-どう書こうとなったのでメモ。
+久々に「クラス図を書いてみよう」という話になり どう書こうとなったのでメモ。
 
 CUIで書けるのが最高です。
 
@@ -25,8 +24,7 @@ java -jar "plantuml.jarのパス" [option] 入力ファイル [...]
 
 で入力ファイルを目的のUMLを生成します。
 
-Graphvizが必要なのでインストールしておきます
-macはbrewだけで入りました。
+Graphvizが必要なのでインストールしておきます macはbrewだけで入りました。
 
 ```bash
 brew install graphviz
@@ -34,7 +32,7 @@ brew install graphviz
 
 これだけで使えます。
 
-```markdown
+```plantuml
 @startuml
 class Bugs {
 -bug_id
@@ -69,8 +67,7 @@ Auther --_ Comments
 
 ## GUI関連
 
-Officeなどを使って作っても良いのですが、
-専用のツールもメモ。
+Officeなどを使って作っても良いのですが、 専用のツールもメモ。
 
 ### astah\*
 

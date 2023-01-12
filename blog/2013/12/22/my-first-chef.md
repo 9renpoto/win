@@ -10,8 +10,7 @@ categories:
 # chef memo
 
 環境構築といえば、chefだという噂を随分と聞くようになってきましたが、
-なんだかんだと使ってなかったのでメモ。
-とはいえ、レシピは誰かが書いてるので、
+なんだかんだと使ってなかったのでメモ。 とはいえ、レシピは誰かが書いてるので、
 今回は出来る限りレシピを使う方法で構築を目指す。
 
 ## 前準備
@@ -62,7 +61,8 @@ git add 。
 git commit -m 'first commit'
 ```
 
-公式なり、Githubにて公開されているレシピを利用しやすくるものとして **Berksfile** があります。
+公式なり、Githubにて公開されているレシピを利用しやすくるものとして **Berksfile**
+があります。
 
 ```ruby
 site :opscode # Berksfile
@@ -87,8 +87,7 @@ vagrant側でchefが使えるように以下のコマンドを実行。
 bundle exec knife solo prepare nodename
 ```
 
-インストールしたいレシピを追加
-node/nodename.json。
+インストールしたいレシピを追加 node/nodename.json。
 
 ```js
 {

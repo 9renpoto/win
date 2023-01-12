@@ -13,18 +13,19 @@ category: 'js'
 ## test
 
 ```javascript
-import assert from 'assert'
+import assert from "assert";
 
-describe('test', () => {
-  const { func } = require('./module')
-  it('func', () => {
-    assert(func('a') === 'a')
-  })
-})
+describe("test", () => {
+  const { func } = require("./module");
+  it("func", () => {
+    assert(func("a") === "a");
+  });
+});
 ```
 
 1. 1 ファイル、single `describe`
-   1. 親を 1 つ `describe.skip` `describe.only` できれば一旦闇を保留にできることが多い
+   1. 親を 1 つ `describe.skip` `describe.only`
+      できれば一旦闇を保留にできることが多い
    1. 1 ファイルの持っている役割が大きすぎない、特に困っていない
 1. テスト対象は `describe` の中で require する
    1. `describe.only` 実行をした際に不要な src を読み込まなくて良い
@@ -56,15 +57,15 @@ function mapStateToProps({ todos }: State) {
    1. ファイルサイズがデカくなる
 
 ```js
-var touch = 'touch'
-$('#id').on(`${touch}start ${touch}end`, (e) => {
-  console.log(e)
-})
+var touch = "touch";
+$("#id").on(`${touch}start ${touch}end`, (e) => {
+  console.log(e);
+});
 
 function a(element) {
   // var element と書く３文字を省略して１文字にできる
-  element = document.getElementById('foo')
-  element.addEventListener('click', (e) => console.log(e))
+  element = document.getElementById("foo");
+  element.addEventListener("click", (e) => console.log(e));
 }
 ```
 

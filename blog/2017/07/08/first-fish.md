@@ -19,7 +19,8 @@ categories:
 
 <https://github.com/9renpoto/dotfiles/pull/98>
 
-- 実は bash だったり zsh だったりの syntax に依存しているところを細々と直していくことは必要
+- 実は bash だったり zsh だったりの syntax
+  に依存しているところを細々と直していくことは必要
   - tmux,keychain,PATH
 
 ![image](https://qiita-image-store.s3.amazonaws.com/0/4943/5cd6ec85-0654-04eb-03c1-f792115e6a72.png)

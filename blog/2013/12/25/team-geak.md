@@ -32,8 +32,8 @@ category: 'book'
 > 問題は解決「できる」と「できない」しかない．
 > 説明を「引き伸ばす」ことはしない．事実だけを話す．
 >
-> Brian W.Fitzpatrick, Ben Collins-Sussman（2013)
-> 『Team Geek Google のギークたちはいかにしてチームを作るのか』株式会社オライリー・ジャパン 150pp.
+> Brian W.Fitzpatrick, Ben Collins-Sussman（2013) 『Team Geek Google
+> のギークたちはいかにしてチームを作るのか』株式会社オライリー・ジャパン 150pp.
 
 学びとは少しそれた話ですが、上記の言葉が何よりも共感できました。
 

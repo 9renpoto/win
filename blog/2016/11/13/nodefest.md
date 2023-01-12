@@ -90,23 +90,23 @@ categories:
 ```js
 // 提案中..
 window.setImmidiate(() => {
-  doTask()
-})
+  doTask();
+});
 ```
 
 ```js
 // 別threadで実行したいjsを指定する
-const worker = new Worker('worker.js')
+const worker = new Worker("worker.js");
 ```
 
 `arrayBuffer` はポインタ渡し可能になった => `SharedArrayButter`
 
 ```js
 // 割り込まれない処理の記述
-Atomics
+Atomics;
 ```
 
 ```js
-Atomics.wake
-Atomics.wait
+Atomics.wake;
+Atomics.wait;
 ```

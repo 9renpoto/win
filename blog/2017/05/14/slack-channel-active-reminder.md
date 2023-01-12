@@ -17,31 +17,31 @@ slack の部屋は便利に増やしていけますが、
 
 ## Usage
 
-Cron などと合わせて仕込んで良いタイミングで発言がなさそうなところに対してメッセージを送る。
+Cron
+などと合わせて仕込んで良いタイミングで発言がなさそうなところに対してメッセージを送る。
 
 ```javascript
-const CronJob = require('cron').CronJob
-const Reminder = require('slack-channel-active-reminder').default
+const CronJob = require("cron").CronJob;
+const Reminder = require("slack-channel-active-reminder").default;
 
-const reminder = new Reminder()
+const reminder = new Reminder();
 
 const job = new CronJob({
-  cronTime: '0 00 18 * * 1-5',
+  cronTime: "0 00 18 * * 1-5",
   onTick: function () {
-    reminder.postRemindMessage()
+    reminder.postRemindMessage();
   },
   start: false,
-  timeZone: 'Asia/Tokyo',
-})
-job.start()
+  timeZone: "Asia/Tokyo",
+});
+job.start();
 ```
 
-中身は `@slack/client` を使っているだけ。
-便利な API が多いと助かる。
+中身は `@slack/client` を使っているだけ。 便利な API が多いと助かる。
 
 ## 追記
 
 <https://github.com/9renpoto/slack-channel-active-reminder/pull/9>
 
-`flow gen-flow-files` が良いものをだしてくれないため外す。
-早く 1.0 が待ち遠しい。
+`flow gen-flow-files` が良いものをだしてくれないため外す。 早く 1.0
+が待ち遠しい。

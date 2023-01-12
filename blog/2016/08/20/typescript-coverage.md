@@ -18,8 +18,10 @@ category: 'js'
 
 ## Memo
 
-- `tsc` > `npm test` という流れになったため JavaScript としてテストをする形になる
-- [espower-typescript](https://www.npmjs.com/package/espower-typescript) を使わないようになる
+- `tsc` > `npm test` という流れになったため JavaScript
+  としてテストをする形になる
+- [espower-typescript](https://www.npmjs.com/package/espower-typescript)
+  を使わないようになる
   - `espower-typescript` は tsc の wrapper なので tsc する場合は使えなそう
 - `power-assert` が上手く構造を解釈してくれてなさそう
   - `espower-typescript` が担っていた役割を別で与える必要がある

@@ -7,8 +7,7 @@ category: 'elixir'
 
 # Elixirはじめよう
 
-Elixir楽しそうなので勉強はじめます
-まずはerlangのinstallから。
+Elixir楽しそうなので勉強はじめます まずはerlangのinstallから。
 
     brew install erlang
 

@@ -3,9 +3,10 @@ date: '2020-12-05T12:00:00+09:00'
 title: CADDi株式会社にJoinしました
 ---
 
-> この記事は、[CADDi Advent Calendar](https://adventar.org/calendars/5140) 2020 の 5 日目にエントリーしています。
+> この記事は、[CADDi Advent Calendar](https://adventar.org/calendars/5140) 2020
+> の 5 日目にエントリーしています。
 
-昨日の記事はandyさんによる[【大公開】キャディのエンジニア採用 History ](https://note.com/andy_caddi/n/n59c23c659ddd)でした
+昨日の記事はandyさんによる[【大公開】キャディのエンジニア採用 History](https://note.com/andy_caddi/n/n59c23c659ddd)でした
 
 # TL;DR
 
@@ -16,9 +17,11 @@ title: CADDi株式会社にJoinしました
 
 ## CADDiにJoinを決めた訳
 
-入社以前は [sottar](https://www.sottar.io/blogs/leave_mercari/) さんのエントリーを見ておりました。
+入社以前は [sottar](https://www.sottar.io/blogs/leave_mercari/)
+さんのエントリーを見ておりました。
 
-決め手は [Kobashi](https://www.wantedly.com/id/a_kobashi_a) よりお声がけ頂いたことが大きいです。
+決め手は [Kobashi](https://www.wantedly.com/id/a_kobashi_a)
+よりお声がけ頂いたことが大きいです。
 きっかけとしてはお声がけ頂いたことですが、内容として私が追いかけているマイナーなライブラリのことに関して言及頂いたことや、
 また対話の中で技術というものへの向き合い方や、正直な内情などについて議論させていただきました。
 
@@ -35,7 +38,8 @@ title: CADDi株式会社にJoinしました
 入社後に一番印象的であったことはプロダクトオーナーの方が優秀であることです。
 また、会社としてプロダクト開発のOKRやロードマップはプロダクトオーナーに責務を大きくもたせられており、開発者が課題に向き合うことに集中できる環境があるように感じました。
 
-`Whole Product` という言葉はCADDiにJoinするまで自身で言語化したことはありませんでしたが
+`Whole Product`
+という言葉はCADDiにJoinするまで自身で言語化したことはありませんでしたが
 複雑な課題に対して自身のプロダクトや、我々が作る情報システムだけではなく、組織そのものが向き合っている物理世界の課題を含めた優先度付けに向き合おうとしていることが
 入社して時間がたち課題の解像度が自分の中で上がっていくほどより見えてくるようになったと思います。
 
@@ -58,5 +62,7 @@ title: CADDi株式会社にJoinしました
 
 ## Refs
 
-- The Whole Product－CADDiのサービス開発を貫くPhilosophy: <https://note.com/sasaguchisan/n/n65ee9266bc25>
-- プロダクトマネージャー視点から見る製造業プラットフォーム"CADDi": <https://note.com/yosukeshirai/n/n28fffca59eab>
+- The Whole Product－CADDiのサービス開発を貫くPhilosophy:
+  <https://note.com/sasaguchisan/n/n65ee9266bc25>
+- プロダクトマネージャー視点から見る製造業プラットフォーム"CADDi":
+  <https://note.com/yosukeshirai/n/n28fffca59eab>

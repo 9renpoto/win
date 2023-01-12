@@ -16,12 +16,12 @@ yapcasia に参加したときのメモを残します。
 
 ```javascript
 function Persion(name) {
-  this.name = name
+  this.name = name;
 }
 
-var p = Person('bob');
-# p.name == undefined
-# window.name = 'bob'
+var p = Person("bob");
+#p.name == undefined;
+#window.name = "bob";
 ```
 
 - class
@@ -53,8 +53,8 @@ var p = Person('bob');
     ```javascript
     class Programmer extends Person {
       constracor(name, language) {
-        super(name)
-        this.language = language
+        super(name);
+        this.language = language;
       }
     }
     ```
@@ -71,12 +71,13 @@ var p = Person('bob');
     - block scope
 
     ```javascript
-    var a = 'outer'
+    var a = "outer";
     function bar() {
-        console.log(a);
-        a = 'inner';
+      console.log(a);
+      a = "inner";
     }
-    bar(); # undefined
+    bar();
+    #undefined;
     ```
 
     - arguments
@@ -90,8 +91,7 @@ var p = Person('bob');
     }
     ```
 
-    - template literal
-      \` で文字列を囲むと改行付き文字列が定義できる
+    - template literal \` で文字列を囲むと改行付き文字列が定義できる
     - Promise
       - callback 地獄回避
     - map/set

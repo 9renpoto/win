@@ -80,7 +80,8 @@ speaker: @koba04
 
 speaker: @horo
 
-slide: <https://docs.google.com/presentation/d/19x3yi7Jn-6In5igGYfEiK0tBfNI290BAclT0AiqDj4Q/pub?slide=id.p>
+slide:
+<https://docs.google.com/presentation/d/19x3yi7Jn-6In5igGYfEiK0tBfNI290BAclT0AiqDj4Q/pub?slide=id.p>
 
 <https://jakearchibald.github.io/isserviceworkerready/>
 
@@ -126,7 +127,8 @@ speaker: @laco0416
 - Scroll Performance
   - `<img lazyload>` :innocent:
   - `intersectionObserver`
-  - throttle <https://blog.tsumikiinc.com/article/20141125_javascript-event-throttle.html>
+  - throttle
+    <https://blog.tsumikiinc.com/article/20141125_javascript-event-throttle.html>
     - TODO 調べる
 - Task Optimization
   - <https://devpixiv.hatenablog.com/entry/2015/12/24/182248>

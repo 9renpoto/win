@@ -14,7 +14,8 @@ category: vuejs
 
 <https://www.staticgen.com/gatsby>
 
-- React ベースで、ブログやドキュメントのような静的サイトを生成出来るツールとして様子を見ていた
+- React
+  ベースで、ブログやドキュメントのような静的サイトを生成出来るツールとして様子を見ていた
 - webpack v1 系の依存が取れなていない
   - webpack v3-rc が来てしまったことを考えると厳しそう
   - @storybook/react の苦い経験

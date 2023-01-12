@@ -7,7 +7,8 @@ category: 'fire'
 
 # TL;DR
 
-- [ガスランタン](https://www.amazon.co.jp/gp/product/B00279LZ0G/) には **マントル** という消耗品が必要
+- [ガスランタン](https://www.amazon.co.jp/gp/product/B00279LZ0G/) には
+  **マントル** という消耗品が必要
 - ノーブランドから存在するがサイズに非常に注意する
 
 ## ST260
@@ -19,7 +20,8 @@ category: 'fire'
 ## Amazon
 
 - アウトドア用品を売っているスペースに純正品などあった
-- 消耗品だし手に入るだろうとアマゾンで [ノーブランド品](https://www.amazon.co.jp/gp/product/B01DG1VLSY/) を購入
+- 消耗品だし手に入るだろうとアマゾンで
+  [ノーブランド品](https://www.amazon.co.jp/gp/product/B01DG1VLSY/) を購入
   - 多分だけどこれは少し大きめであってない。..
 
 ## ランタンは良い。きちんと調べよう

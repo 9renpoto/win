@@ -7,7 +7,8 @@ title: expect(null).toBeDefined() // pass
 
 ![null](./expect_null.png)
 
-refs: https://github.com/facebook/jest/blob/v26.0.1/packages/expect/src/matchers.ts#L196-L212
+refs:
+https://github.com/facebook/jest/blob/v26.0.1/packages/expect/src/matchers.ts#L196-L212
 
 ```ts
   toBeDefined(this: MatcherState, received: unknown, expected: void) {

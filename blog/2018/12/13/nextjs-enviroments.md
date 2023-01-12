@@ -13,12 +13,15 @@ category: react
 
 - refs: <https://github.com/zeit/next.js/issues/3605>
 - なれてるし使いたい。わかる
-- イマイチ推奨されてないようで、 [複数のサンプルが紹介されている](https://github.com/zeit/next.js/issues/3605#issuecomment-359512586)
+- イマイチ推奨されてないようで、
+  [複数のサンプルが紹介されている](https://github.com/zeit/next.js/issues/3605#issuecomment-359512586)
 
 ## `babel-plugin-transform-define` を使う
 
-- refs: <https://github.com/zeit/next.js/tree/master/examples/with-universal-configuration-build-time>
-- babel7 に対応してない（2018/12 現在）。[PR はあるけれど放置されている](https://github.com/FormidableLabs/babel-plugin-transform-define/pull/49)
+- refs:
+  <https://github.com/zeit/next.js/tree/master/examples/with-universal-configuration-build-time>
+- babel7 に対応してない（2018/12
+  現在）。[PR はあるけれど放置されている](https://github.com/FormidableLabs/babel-plugin-transform-define/pull/49)
 
 ## `dotenv-webpack` を使う
 

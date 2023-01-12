@@ -38,7 +38,8 @@ category: 'js'
 }
 ```
 
-`tsc` ・ `webpack` しても問題ないように見えるが、 `karma` を通した場合 `SyntaxError` など出てきて非常に厳しい。
+`tsc` ・ `webpack` しても問題ないように見えるが、 `karma` を通した場合
+`SyntaxError` など出てきて非常に厳しい。
 
 <https://github.com/9renpoto/karma-power-assert-typescript-mocha-webpack-sample>
 

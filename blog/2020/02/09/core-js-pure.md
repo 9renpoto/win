@@ -5,8 +5,10 @@ title: Preact with storyshots
 
 # TL;DR
 
-- `preact-compat` を使って `react-test-renderer` を都合よく動かせなかったのでテスト時には `react` に依存する
-- `core-js-pure` が webpack の設定次第で意図せぬ変換をされてエラーになるので exclude
+- `preact-compat` を使って `react-test-renderer`
+  を都合よく動かせなかったのでテスト時には `react` に依存する
+- `core-js-pure` が webpack の設定次第で意図せぬ変換をされてエラーになるので
+  exclude
 
 ## Preact only development
 
@@ -19,7 +21,8 @@ title: Preact with storyshots
     - ちゃっかり内部で `react-test-renderer` に依存している
 - <https://github.com/preactjs/enzyme-adapter-preact-pure>
   - 試したいけど preact only で開発できるほどのコンポーネントがほしい
-  - <https://github.com/prateekbh/preact-material-components> を見ているけど中身 esmodule build でテストを書いたりするのが辛い
+  - <https://github.com/prateekbh/preact-material-components> を見ているけど中身
+    esmodule build でテストを書いたりするのが辛い
   - `next.js` っぽいなにかが使いたい（まだ見つけられていない）
 
 ## Refs

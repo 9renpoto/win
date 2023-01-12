@@ -12,8 +12,10 @@ date: '2019-08-15T01:00:00+09:00'
 ## Sunsama.com
 
 - もともと[sunrise](https://blog.sunrise.am/post/144196642739/its-almost-time-to-say-goodbye)というカレンダーのファンであった
-  - Outlook チームに合流したのはともかくサービスが停止したことに非常にがっかりしていた
-- [waffle.io が close してがっかりして](https://9renpoto.netlify.com/2019/05/26/goodbye-waffle-io/) タスク管理ツールは Github Project に絞っていこうと努力を始めていた
+  - Outlook
+    チームに合流したのはともかくサービスが停止したことに非常にがっかりしていた
+- [waffle.io が close してがっかりして](https://9renpoto.netlify.com/2019/05/26/goodbye-waffle-io/)
+  タスク管理ツールは Github Project に絞っていこうと努力を始めていた
 - 見積もりの甘さやタスクがさばけていないという問題には結果的にゆるく向き合う形であったが、自分のマネジメントとしては少し計画の可視化をしたいと思っていた
   - => 連携の心地よさが今回の要求とマッチ
 
@@ -23,5 +25,7 @@ date: '2019-08-15T01:00:00+09:00'
 - **1 issue 6 時間以内** というポリシーで基本的にタスク分割を目指している
 - 目標実装時間は 1/3 の 2 時間として活動を目指す
 - タスクの差し込みやレビュー、マネジメントやバグなどの対応によるタスク集中期間が取りにくい環境であることもあり、タスクマネジメントや工数実績管理などは実質諦めていた
-- [git-time-metric/gtm](https://github.com/git-time-metric/gtm) を試して、 [wakatime](https://wakatime.com/@9renpoto) で大枠の作業時間を計測・可視化するようになった
+- [git-time-metric/gtm](https://github.com/git-time-metric/gtm) を試して、
+  [wakatime](https://wakatime.com/@9renpoto)
+  で大枠の作業時間を計測・可視化するようになった
 - 全体として時間管理をしたければ Github は向いてない

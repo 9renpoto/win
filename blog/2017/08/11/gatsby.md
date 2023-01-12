@@ -29,7 +29,8 @@ category: react
 
 - <https://github.com/gatsbyjs/gatsby-starter-blog>
   - 不要な依存を削除
-  - SSR するために `style-loader` が使えなかったため `static` ファイルを参照するアプローチ
+  - SSR するために `style-loader` が使えなかったため `static`
+    ファイルを参照するアプローチ
     - <https://www.gatsbyjs.org/docs/importing-assets-into-files/>
 
 ![mind](https://media.giphy.com/media/tT0wtdSJvE0Rq/giphy.gif)

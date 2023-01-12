@@ -51,8 +51,8 @@ HTTP サーバー簡単に書ける。
   - 慣れた言語から見ると違和感がある
 - 設計方針
 
-  > many on the decisions in Go are motivated by experience working on
-  > and maintaing large code bases at Google.
+  > many on the decisions in Go are motivated by experience working on and
+  > maintaing large code bases at Google.
 
   - 書きやすさより読みやすさ、修正しやすさ
   - シンプルな仕様、簡潔な文法
