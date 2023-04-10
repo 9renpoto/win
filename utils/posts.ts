@@ -1,7 +1,7 @@
 import { extract } from "$std/encoding/front_matter.ts";
 import { join } from "$std/path/posix.ts";
 
-const DIRECTORY = './posts'
+const DIRECTORY = "./posts";
 
 export interface Post {
   slug: string;
@@ -17,15 +17,19 @@ export async function getPosts(): Promise<Post[]> {
     if (e1.isDirectory) {
       for await (const e2 of Deno.readDir(join(DIRECTORY, e1.name))) {
         if (e2.isDirectory) {
-          for await (const e3 of Deno.readDir(join(DIRECTORY, e1.name, e2.name))) {
+          for await (
+            const e3 of Deno.readDir(join(DIRECTORY, e1.name, e2.name))
+          ) {
             if (e3.isDirectory) {
-              for await (const file of Deno.readDir(join(DIRECTORY, e1.name, e2.name, e3.name))) {
-
-                  if (file.isFile && file.name.includes('.md')) {
-
-    const slug = file.name.replace(".md", "");
-    promises.push(getPost(join(e1.name, e2.name, e3.name, slug)));
-                  }
+              for await (
+                const file of Deno.readDir(
+                  join(DIRECTORY, e1.name, e2.name, e3.name),
+                )
+              ) {
+                if (file.isFile && file.name.includes(".md")) {
+                  const slug = file.name.replace(".md", "");
+                  promises.push(getPost(join(e1.name, e2.name, e3.name, slug)));
+                }
               }
             }
           }
