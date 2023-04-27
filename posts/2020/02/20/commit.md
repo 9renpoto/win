@@ -5,7 +5,7 @@ title: Happy Contributions 10,000
 
 # TL;DR
 
-![current commit](./current.png)
+![current commit](/current.png)
 
 - 目標していた `10,000` コミットを超えた
 - 直近 1 年少しは極力コードをかける環境を維持できている気はする
@@ -19,7 +19,7 @@ title: Happy Contributions 10,000
 
 ## History
 
-![image](./contributions.png)
+![image](/contributions.png)
 
 - 転職などの関係で過去のコミットは少なく見えることも多い
 

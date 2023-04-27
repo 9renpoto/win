@@ -1,6 +1,5 @@
 ---
 date: '2017-02-26T00:48:56+09:00'
-permalink: '/entry/2017/02/26/goodbye-ps4/'
 title: PS4破損
 categories:
   - 'life'
@@ -11,7 +10,7 @@ categories:
 - 修理は見送り
 - 気が向いたらスリムを買い直す（4K テレビを買う予定がない）
 
-![ps4](./ps4-CUH-1200AB01.png)
+![ps4](/ps4-CUH-1200AB01.png)
 
 ## 言われてみれば PlayStation は初破損
 

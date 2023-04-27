@@ -1,7 +1,6 @@
 ---
 title: 'モチベーションを上げるためにカレンダーを書く'
 date: '2017-08-13T19:36:00+09:00'
-permalink: '/entry/2017/08/13/contributions-calendar/'
 category: 'js'
 ---
 
@@ -18,7 +17,7 @@ category: 'js'
 
 ## 記事がかけていないことを可視化する
 
-![image](./contributions-calendar.png)
+![image](/contributions-calendar.png)
 
 見事にサボっている。
 

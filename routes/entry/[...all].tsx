@@ -5,7 +5,6 @@ import { CSS, render } from "$gfm";
 
 export const handler: Handlers<Post> = {
   async GET(_req, ctx) {
-    console.warn(ctx);
     const post = await getPost(ctx.params.all);
     return ctx.render(post as Post);
   },

@@ -45,12 +45,12 @@ export async function getPosts(): Promise<Post[]> {
 export async function getPost(slug: string): Promise<Post> {
   const text = await Deno.readTextFile(join(DIRECTORY, `${slug}.md`));
   const { attrs, body } = extract<
-    Omit<Post, "publishedAt"> & { published_at: string }
+    Omit<Post, "published_at"> & { date: string }
   >(text);
   return {
     slug,
     title: attrs.title,
-    publishedAt: new Date(attrs.published_at),
+    publishedAt: new Date(attrs.date),
     content: body,
     snippet: attrs.snippet,
   };

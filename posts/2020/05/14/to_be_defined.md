@@ -5,7 +5,7 @@ title: expect(null).toBeDefined() // pass
 
 泣いた
 
-![null](./expect_null.png)
+![null](/expect_null.png)
 
 refs:
 https://github.com/facebook/jest/blob/v26.0.1/packages/expect/src/matchers.ts#L196-L212

@@ -12,7 +12,7 @@ category: 'js'
 - `_gaexp`という名前で記録されている
 - **規約は読んで自己責任で参照しましょう**
 
-![optimize](./google-optimize-logo.jpg)
+![optimize](/google-optimize-logo.jpg)
 
 ## 軽く調べた結果
 
