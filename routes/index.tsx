@@ -1,6 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { getPosts, type Post } from "@/utils/posts.ts";
-import { Bio } from "@/components/Bio.tsx"
+import { Bio } from "@/components/Bio.tsx";
 
 export const handler: Handlers<Post[]> = {
   async GET(_req, ctx) {
