@@ -1,6 +1,6 @@
 import { Head } from "$fresh/runtime.ts";
 import { AppProps, Handlers } from "$fresh/src/server/types.ts";
-import { createReporter } from "https://deno.land/x/g_a@0.1.2/mod.ts";
+import { createReporter } from "$g_a";
 
 const ga = createReporter({ id: "G-5SVZ0B41GD" });
 
