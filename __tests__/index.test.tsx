@@ -1,9 +1,6 @@
-import {
-  beforeEach,
-  describe,
-  it,
-} from "https://deno.land/std@0.148.0/testing/bdd.ts";
-import { assertExists, DOMParser, render } from "./deps.ts";
+import { beforeEach, describe, it } from "$std/testing/bdd.ts";
+import { assertExists } from "$std/testing/asserts.ts";
+import { DOMParser, render } from "./deps.ts";
 
 import { PostCard } from "../routes/index.tsx";
 
@@ -12,7 +9,7 @@ describe("PostCard", () => {
     window.document = new DOMParser().parseFromString(
       "",
       "text/html",
-    ) as unknown as HTMLDocument;
+    ) as unknown as Document;
   });
 
   it("should exists.", () => {
