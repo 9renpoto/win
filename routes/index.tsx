@@ -1,5 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { getPosts, type Post } from "@/utils/posts.ts";
+import { Bio } from "@/components/Bio.tsx"
 
 export const handler: Handlers<Post[]> = {
   async GET(_req, ctx) {
@@ -11,7 +12,8 @@ export const handler: Handlers<Post[]> = {
 export default function BlogIndexPage({ data: posts }: PageProps<Post[]>) {
   return (
     <main class="max-w-screen-md px-4 pt-16 mx-auto">
-      <h1 class="text-5xl font-bold">Blog</h1>
+      <h1 class="text-5xl font-bold mb-8">:-) 🏕</h1>
+      <Bio />
       <div class="mt-8">
         {posts.map((post) => <PostCard post={post} />)}
       </div>

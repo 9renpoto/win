@@ -52,6 +52,6 @@ export async function getPost(slug: string): Promise<Post> {
     title: attrs.title,
     publishedAt: new Date(attrs.date),
     content: body,
-    snippet: attrs.snippet,
+    snippet: attrs.snippet || body.slice(0, 150),
   };
 }
