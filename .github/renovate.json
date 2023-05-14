@@ -1,35 +1,58 @@
 {
+  "assignees": [
+    "9renpoto"
+  ],
   "extends": [
     "config:base"
   ],
+  "packageRules": [
+    {
+      "automerge": true,
+      "updateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ]
+    }
+  ],
   "regexManagers": [
     {
-      "fileMatch": ["\\.tsx?$"],
+      "datasourceTemplate": "deno",
+      "fileMatch": [
+        "\\.tsx?$"
+      ],
       "matchStrings": [
         "(?:im|ex)port(?:.|\\s)+?from\\s*['\"](?<depName>https://deno.land/.+?)@v?(?<currentValue>\\d+?\\.\\d+?\\.\\d+?).*?['\"]"
-      ],
-      "datasourceTemplate": "deno"
+      ]
     },
     {
-      "fileMatch": ["^import_map.json$"],
+      "datasourceTemplate": "deno",
+      "fileMatch": [
+        "^import_map.json$"
+      ],
       "matchStrings": [
         "\".+?\"\\s*:\\s*\"(?<depName>https://deno.land/.+?)@v?(?<currentValue>\\d+?\\.\\d+?\\.\\d+?).*?\""
-      ],
-      "datasourceTemplate": "deno"
+      ]
     },
     {
-      "fileMatch": ["\\.tsx?$"],
+      "datasourceTemplate": "npm",
+      "fileMatch": [
+        "\\.tsx?$"
+      ],
       "matchStrings": [
         "(?:im|ex)port(?:.|\\s)+?from\\s*['\"]npm:(?<depName>.+?)@(?<currentValue>\\d+?\\.\\d+?\\.\\d+?).*?['\"]"
-      ],
-      "datasourceTemplate": "npm"
+      ]
     },
     {
-      "fileMatch": ["^import_map.json$"],
+      "datasourceTemplate": "npm",
+      "fileMatch": [
+        "^import_map.json$"
+      ],
       "matchStrings": [
         "\".+?\"\\s*:\\s*\"npm:(?<depName>.+?)@(?<currentValue>\\d+?\\.\\d+?\\.\\d+?).*?\""
-      ],
-      "datasourceTemplate": "npm"
+      ]
     }
-  ]
+  ],
+  "semanticCommits": true
 }
