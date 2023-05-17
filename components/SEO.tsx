@@ -4,9 +4,10 @@ export const SEO = ({ title, description, ogImage, keywords }: {
   title: string;
   description: string;
   ogImage: string;
-  keywords: string
+  keywords: string;
 }) => (
   <>
+    <title>{title}</title>
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
     <meta property="og:image" content={ogImage} />

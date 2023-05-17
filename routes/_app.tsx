@@ -22,7 +22,12 @@ export default function App({ Component }: AppProps) {
   return (
     <html lang="ja">
       <Head>
-        <SEO title={title} description={description} keywords={[].join(',')} ogImage="https://avatars3.githubusercontent.com/u/520693?s=460&v=4"/>
+        <SEO
+          title={title}
+          description={description}
+          keywords={["life"].join(",")}
+          ogImage="https://avatars3.githubusercontent.com/u/520693?s=460&v=4"
+        />
       </Head>
       <body>
         <Header title={title} />
