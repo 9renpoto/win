@@ -43,8 +43,8 @@ export const handler: Handlers = {
           }]]></description>
             <author><![CDATA[${escapeCdata(author)}]]></author>
             <pubDate>${publishedAt}</pubDate>
-            <link>${domainUrl}/${slug}</link>
-            <guid>${domainUrl}/${slug}</guid>
+            <link>${domainUrl}/entry/${slug}</link>
+            <guid>${domainUrl}/entry/${slug}</guid>
           </item>
         `.trim()
         )
