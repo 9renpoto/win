@@ -1,5 +1,6 @@
 import Campfire from "https://deno.land/x/tabler_icons_tsx@0.0.3/tsx/campfire.tsx";
 import BrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.3/tsx/brand-github.tsx";
+import { author } from "@/utils/website.ts";
 
 export function Footer() {
   const menus = [
@@ -17,7 +18,7 @@ export function Footer() {
         <div class="flex items-center gap-1">
           <Campfire class="inline-block" />
           <div class="font-bold text-2xl">
-            Keisuke Umeno
+            {author}
           </div>
         </div>
         <div class="text-gray-500">

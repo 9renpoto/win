@@ -2,6 +2,7 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 import { getPosts, type Post } from "@/utils/posts.ts";
 import { Bio } from "@/components/Bio.tsx";
 import { Head } from "$fresh/runtime.ts";
+import { author, title } from "@/utils/website.ts";
 
 export const handler: Handlers<Post[]> = {
   async GET(_req, ctx) {
@@ -14,10 +15,10 @@ export default function BlogIndexPage({ data: posts }: PageProps<Post[]>) {
   return (
     <>
       <Head>
-        <title>:-) 🏕</title>
+        <title>{title}</title>
       </Head>
       <main class="max-w-screen-lg w-full px-4 pt-16 mx-auto">
-        <Bio />
+        <Bio author={author} />
         <div class="mt-8">
           {posts.map((post) => <PostCard post={post} />)}
         </div>

@@ -2,6 +2,7 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
 import { getPost, Post } from "@/utils/posts.ts";
 import { CSS, render } from "$gfm";
+import { title } from "@/utils/website.ts";
 
 export const handler: Handlers<Post> = {
   async GET(_req, ctx) {
@@ -15,7 +16,7 @@ export default function PostPage(props: PageProps<Post>) {
   return (
     <>
       <Head>
-        <title>{post.title} | :-) 🏕</title>
+        <title>{post.title} | {title}</title>
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
       <main class="max-w-screen-md w-full px-4 pt-16 mx-auto">
