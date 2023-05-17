@@ -2,6 +2,8 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
 import { getPost, Post } from "@/utils/posts.ts";
 import { CSS, render } from "$gfm";
+import { description, title } from "@/utils/website.ts";
+import { SEO } from "@/components/SEO.tsx";
 
 export const handler: Handlers<Post> = {
   async GET(_req, ctx) {
@@ -15,7 +17,12 @@ export default function PostPage(props: PageProps<Post>) {
   return (
     <>
       <Head>
-        <title>{post.title} | :-) 🏕</title>
+        <SEO
+          title={`${post.title} | ${title}`}
+          description={description}
+          keywords={["life"].join(",")}
+          ogImage="https://avatars3.githubusercontent.com/u/520693?s=460&v=4"
+        />
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
       <main class="max-w-screen-md w-full px-4 pt-16 mx-auto">
