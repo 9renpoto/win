@@ -14,7 +14,7 @@ categories:
 ## Background
 
 - I originally preferred the service `IFTTT`
-- I have not been highly motivated to update my social network in recent years
+- I have not been highly motivated to update my SNS in recent years
 
 ## お気持ち
 
