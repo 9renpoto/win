@@ -1,6 +1,6 @@
 ---
 date: '2023-05-23'
-title: y
+title: Post blog rss feed via dlvrit
 categories:
   - blog
   - rss
