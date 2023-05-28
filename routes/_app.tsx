@@ -29,7 +29,7 @@ export default function App({ Component }: AppProps) {
           ogImage="https://avatars3.githubusercontent.com/u/520693?s=460&v=4"
         />
       </Head>
-      <body>
+      <body class="flex flex-col min-h-screen">
         <Header title={title} />
         <Component />
         <Footer />
