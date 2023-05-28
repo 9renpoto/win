@@ -6,7 +6,7 @@ export function Header({ title }: { title: string }) {
     { name: <IconRss />, href: "/rss.xml" },
   ];
   return (
-    <header class="w-full max-w-screen-lg py-6 px-8 flex flex-col md:flex-row gap-4">
+    <header class="w-full py-6 px-8 flex flex-col md:flex-row gap-4">
       <div class="flex items-center flex-1">
         <Campfire />
         <a href="/">
