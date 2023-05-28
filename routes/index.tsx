@@ -12,7 +12,7 @@ export const handler: Handlers<Post[]> = {
 
 export default function BlogIndexPage({ data: posts }: PageProps<Post[]>) {
   return (
-    <main class="max-w-screen-lg w-full px-4 pt-16 mx-auto">
+    <main class="max-w-screen-lg w-full px-4 pt-4 mx-auto">
       <Bio author={author} />
       <div class="mt-8">
         {posts.map((post) => <PostCard post={post} />)}
@@ -23,7 +23,7 @@ export default function BlogIndexPage({ data: posts }: PageProps<Post[]>) {
 
 export function PostCard({ post }: { post: Post }) {
   return (
-    <div class="py-8 border(t gray-200)">
+    <div class="flex-grow py-8 border(t gray-200)">
       <a class="sm:col-span-2" href={`/entry/${post.slug}`}>
         <h3 class="text(3xl gray-900) font-bold">
           {post.title}

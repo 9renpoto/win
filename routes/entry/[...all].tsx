@@ -25,7 +25,7 @@ export default function PostPage(props: PageProps<Post>) {
         />
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
-      <main class="max-w-screen-md w-full px-4 pt-16 mx-auto">
+      <main class="flex-grow max-w-screen-md w-full px-4 pt-4 mx-auto">
         <h1 class="text-5xl font-bold">{post.title}</h1>
         <time class="text-gray-500">
           {new Date(post.publishedAt).toLocaleDateString("en-us", {
