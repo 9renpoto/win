@@ -5,8 +5,8 @@ export const Bio = ({ author }: { author: string }) => (
       Written by <strong>{author}</strong>{" "}
       who lives and works in Japan building useful things.
       {` `}
-      <a href={`https://twitter.com/9renpoto`}>
-        You should follow him on Twitter
+      <a href={`https://www.threads.net/@9renpoto`}>
+        You should follow him on Threads
       </a>
     </p>
   </div>
