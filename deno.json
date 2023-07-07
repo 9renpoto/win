@@ -20,6 +20,6 @@
     "@/": "./",
     "./": "./",
     "$gfm": "https://deno.land/x/gfm@0.1.26/mod.ts",
-    "$g_a": "https://deno.land/x/g_a@0.1.2/mod.ts"
+    "$ga4": "https://raw.githubusercontent.com/denoland/ga4/main/mod.ts"
   }
 }
