@@ -30,4 +30,4 @@ export async function handler(
       err,
     );
   }
-};
+}
