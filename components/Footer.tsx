@@ -7,7 +7,7 @@ export function Footer() {
     {
       title: "Links",
       children: [
-        { name: "Upptime", href: "https://9renpoto.github.io/upptime/" },
+        { name: "Status", href: "https://9renpoto.github.io/upptime/" },
       ],
     },
   ];

@@ -1,9 +1,11 @@
 import Campfire from "https://deno.land/x/tabler_icons_tsx@0.0.4/tsx/campfire.tsx";
 import IconRss from "https://deno.land/x/tabler_icons_tsx@0.0.4/tsx/rss.tsx";
+import IconActivity from "https://deno.land/x/tabler_icons_tsx@0.0.3/tsx/activity.tsx";
 
 export function Header({ title }: { title: string }) {
   const menus = [
     { name: <IconRss />, href: "/rss.xml" },
+    { name: <IconActivity />, href: "https://9renpoto.github.io/upptime/" },
   ];
   return (
     <header class="w-full py-6 px-8 flex flex-col md:flex-row gap-4">
