@@ -1,6 +1,6 @@
 import Campfire from "https://deno.land/x/tabler_icons_tsx@0.0.4/tsx/campfire.tsx";
 import IconRss from "https://deno.land/x/tabler_icons_tsx@0.0.4/tsx/rss.tsx";
-import IconActivity from "https://deno.land/x/tabler_icons_tsx@0.0.3/tsx/activity.tsx"
+import IconActivity from "https://deno.land/x/tabler_icons_tsx@0.0.3/tsx/activity.tsx";
 
 export function Header({ title }: { title: string }) {
   const menus = [

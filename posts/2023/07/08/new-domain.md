@@ -11,7 +11,7 @@ snippet: .dev ドメインはGoogle様しか保守していないようで変更
 
 ## Thank you google domain
 
-Google domain seems to be ending its role.
-There are only a few name servers that can handle .dev domains.
+Google domain seems to be ending its role. There are only a few name servers
+that can handle .dev domains.
 
 We will change the domain to operate the site.
