@@ -22,7 +22,8 @@ snippet: node:test を動かしたかった
 ## Not Sure
 
 - Asynchronous process not terminated 😶‍🌫️
-- API is different on `node18` `node20` <https://github.com/kachick/times_kachick/issues/192>
+- API is different on `node18` `node20`
+  <https://github.com/kachick/times_kachick/issues/192>
 
 ## Visual
 
