@@ -13,7 +13,7 @@ export function Footer() {
   ];
 
   return (
-    <footer class="flex flex-col md:flex-row w-full gap-8 md:gap-16 px-8 py-8 text-sm">
+    <footer class="flex flex-col md:flex-row w-full gap-8 md:gap-16 px-4 py-8 text-sm">
       <div class="flex-1">
         <div class="flex items-center gap-1">
           <Campfire class="inline-block" />

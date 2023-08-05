@@ -8,7 +8,7 @@ export function Header({ title }: { title: string }) {
     { name: <IconActivity />, href: "https://9renpoto.github.io/upptime/" },
   ];
   return (
-    <header class="w-full py-6 px-8 flex flex-col md:flex-row gap-4">
+    <header class="w-full py-6 px-4 flex flex-col md:flex-row gap-4">
       <div class="flex items-center flex-1">
         <Campfire />
         <a href="/">
