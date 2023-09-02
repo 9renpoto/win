@@ -5,18 +5,20 @@
 import * as $0 from "./routes/_404.tsx";
 import * as $1 from "./routes/_app.tsx";
 import * as $2 from "./routes/_middleware.ts";
-import * as $3 from "./routes/entry/[...all].tsx";
-import * as $4 from "./routes/index.tsx";
-import * as $5 from "./routes/rss.xml.ts";
+import * as $3 from "./routes/about/index.tsx";
+import * as $4 from "./routes/entry/[...all].tsx";
+import * as $5 from "./routes/index.tsx";
+import * as $6 from "./routes/rss.xml.ts";
 
 const manifest = {
   routes: {
     "./routes/_404.tsx": $0,
     "./routes/_app.tsx": $1,
     "./routes/_middleware.ts": $2,
-    "./routes/entry/[...all].tsx": $3,
-    "./routes/index.tsx": $4,
-    "./routes/rss.xml.ts": $5,
+    "./routes/about/index.tsx": $3,
+    "./routes/entry/[...all].tsx": $4,
+    "./routes/index.tsx": $5,
+    "./routes/rss.xml.ts": $6,
   },
   islands: {},
   baseUrl: import.meta.url,

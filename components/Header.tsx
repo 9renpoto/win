@@ -6,6 +6,7 @@ export function Header({ title }: { title: string }) {
   const menus = [
     { name: <IconRss />, href: "/rss.xml" },
     { name: <IconActivity />, href: "https://9renpoto.github.io/upptime/" },
+    { name: <>About me</>, href: "/about" },
   ];
   return (
     <header class="w-full py-6 px-4 flex flex-col md:flex-row gap-4">

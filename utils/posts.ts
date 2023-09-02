@@ -42,8 +42,8 @@ export async function getPosts(): Promise<Post[]> {
   return posts;
 }
 
-export async function getPost(slug: string): Promise<Post> {
-  const text = await Deno.readTextFile(join(DIRECTORY, `${slug}.md`));
+export async function getPost(slug: string, dir = DIRECTORY): Promise<Post> {
+  const text = await Deno.readTextFile(join(dir, `${slug}.md`));
   const { attrs, body } = extract<
     Omit<Post, "published_at"> & { date: string }
   >(text);
