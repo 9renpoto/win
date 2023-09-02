@@ -7,7 +7,7 @@ import { SEO } from "@/components/SEO.tsx";
 
 export const handler: Handlers<Post> = {
   async GET(_req, ctx) {
-    const post = await getPost('about', './routes/about');
+    const post = await getPost("about", "./routes/about");
     return ctx.render(post as Post);
   },
 };
