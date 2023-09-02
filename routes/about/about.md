@@ -6,16 +6,17 @@ title: About me
 ## Profile
 
 - [梅野 圭祐](https://www.wantedly.com/id/keisuke_umeno)
-- ウェブでは [@9renpoto](https://github.com/9renpoto/upptime) という名前で活動しています
+- ウェブでは [@9renpoto](https://github.com/9renpoto/upptime)
+  という名前で活動しています
 
 ## 職務履歴
 
-|             | 会社経歴                                                       | 部門     |
-| :---------- | :------------------------------------------------------------- | :------- |
-| 2020年7月   | [株式会社キャディ](https://caddi.jp/company/) 入社             | 開発部門 |
-| 2018年6月 | 開業(フリーランス) | 開発部門 |
-| 2014年10月  | [株式会社 UNCOVER TRUTH](https://www.uncovertruth.co.jp/) 入社 | 開発部門 |
-| 2012年04月  | [株式会社カヤック](https://www.kayac.com)入社　                | 技術部   |
+|            | 会社経歴                                                       | 部門     |
+| :--------- | :------------------------------------------------------------- | :------- |
+| 2020年7月  | [株式会社キャディ](https://caddi.jp/company/) 入社             | 開発部門 |
+| 2018年6月  | 開業(フリーランス)                                             | 開発部門 |
+| 2014年10月 | [株式会社 UNCOVER TRUTH](https://www.uncovertruth.co.jp/) 入社 | 開発部門 |
+| 2012年04月 | [株式会社カヤック](https://www.kayac.com)入社　                | 技術部   |
 
 ## 仕事的な活動
 
