@@ -1,5 +1,5 @@
-import Campfire from "https://deno.land/x/tabler_icons_tsx@0.0.4/tsx/campfire.tsx";
-import BrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.4/tsx/brand-github.tsx";
+import Campfire from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/campfire.tsx";
+import BrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/brand-github.tsx";
 import { author } from "@/utils/website.ts";
 
 export function Footer() {
