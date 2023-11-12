@@ -22,5 +22,5 @@
     "$ga4": "https://raw.githubusercontent.com/denoland/ga4/main/mod.ts"
   },
   "lint": { "rules": { "tags": ["fresh", "recommended"] } },
-  "exclude": ["**/_fresh/*"]
+  "exclude": ["**/_fresh/*", "cache"]
 }
