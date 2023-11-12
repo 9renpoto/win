@@ -1,6 +1,7 @@
 ---
 date: '2023-11-12'
 title: dlvrit をやめてGithub Actions でRSSからSNSに投稿する
+snippet: share new articles via gh-actions
 ---
 
 > Before: [Post blog rss feed via dlvrit](/entry/2023/05/21/twitter-post)
