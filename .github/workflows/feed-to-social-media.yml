@@ -26,5 +26,6 @@ jobs:
           # Bluesky settings
           blueskyEnable: true
           blueskyAppPassword: ${{ secrets.BSKY_APP_PASSWORD }}
+          blueskyHandle: '9renpoto.bsky.social'
           blueskyOwnerHandle: '9renpoto.bsky.social'
           blueskyOwnerContact: '9renpoto+bsky@gmail.com'
