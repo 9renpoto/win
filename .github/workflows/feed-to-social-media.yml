@@ -1,0 +1,27 @@
+name: Feed to social media
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  Feed2SocialMedia:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Feed to social media
+        uses: lwojcik/github-action-feed-to-social-media@v2
+        with:
+          feedUrl: 'https://9renpoto.win/rss.xml'
+          newestItemStrategy: 'latestDate'
+          postFormat: "Blogged: {title}\n\n{link}"
+          # Twitter settings
+          twitterEnable: true
+          twitterApiKey: ${{ secrets.X_API_KEY }}
+          twitterApiKeySecret: ${{ secrets.X_API_SECRET }}
+          twitterAccessToken: ${{ secrets.X_ACCESS_TOKEN }}
+          twitterAccessTokenSecret: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          # Bluesky settings
+          blueskyEnable: true
+          blueskyAppPassword: ${{ secrets.BSKY_APP_PASSWORD }}
+          blueskyOwnerHandle: '9renpoto.bsky.social'
+          blueskyOwnerContact: '9renpoto+bsky@gmail.com'
