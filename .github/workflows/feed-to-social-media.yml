@@ -20,3 +20,8 @@ jobs:
           twitterApiKeySecret: ${{ secrets.X_API_SECRET }}
           twitterAccessToken: ${{ secrets.X_ACCESS_TOKEN }}
           twitterAccessTokenSecret: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          # Bluesky settings
+          blueskyEnable: true
+          blueskyAppPassword: ${{ secrets.BSKY_APP_PASSWORD }}
+          blueskyOwnerHandle: '9renpoto.bsky.social'
+          blueskyOwnerContact: '9renpoto+bsky@gmail.com'
