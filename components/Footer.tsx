@@ -51,7 +51,7 @@ export function Footer() {
         </div>
 
         <a
-          href="https://github.com/9renpoto/poem"
+          href="https://github.com/9renpoto/win"
           class="inline-block hover:text-black"
         >
           <BrandGithub />
