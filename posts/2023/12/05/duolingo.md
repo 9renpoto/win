@@ -19,8 +19,7 @@ snippet: What kind of measures can be continued every day?
 
 ### 毎日続けられないことを考える
 
-> Rebuild: 217: Socially Awkward Hip-hop (higepon)
-> https://rebuild.fm/217/
+> Rebuild: 217: Socially Awkward Hip-hop (higepon) https://rebuild.fm/217/
 
 > 468 「コンフォートゾーンを打ち破る」という生き方
 > https://donguri.fm/n/nd999ff46a340
@@ -41,6 +40,4 @@ snippet: What kind of measures can be continued every day?
 - 毎日ちょっとだけ違うことをして成功・失敗をする
 - １２月中に来年の目標をたてて、何か自分のコンフォートゾーンを出る
 
-
 ![duolingo](/Duolingo_Sharing.jpg)
-
