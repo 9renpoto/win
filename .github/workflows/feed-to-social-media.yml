@@ -2,7 +2,7 @@ name: Feed to social media
 on:
   workflow_dispatch:
   schedule:
-    - cron: '15 3,10 * * *'
+    - cron: "15 3,10 * * *"
 
 permissions:
   contents: write # To write the generated contents to the readme
@@ -14,8 +14,8 @@ jobs:
       - name: Feed to social media
         uses: lwojcik/github-action-feed-to-social-media@v2
         with:
-          feedUrl: 'https://9renpoto.win/rss.xml'
-          newestItemStrategy: 'latestDate'
+          feedUrl: "https://9renpoto.win/rss.xml"
+          newestItemStrategy: "latestDate"
           postFormat: "Blogged: {title}\n\n{link}"
           # Twitter settings
           twitterEnable: true
@@ -26,6 +26,6 @@ jobs:
           # Bluesky settings
           blueskyEnable: true
           blueskyAppPassword: ${{ secrets.BSKY_APP_PASSWORD }}
-          blueskyHandle: '9renpoto.bsky.social'
-          blueskyOwnerHandle: '9renpoto.bsky.social'
-          blueskyOwnerContact: '9renpoto+bsky@gmail.com'
+          blueskyHandle: "9renpoto.bsky.social"
+          blueskyOwnerHandle: "9renpoto.bsky.social"
+          blueskyOwnerContact: "9renpoto+bsky@gmail.com"
