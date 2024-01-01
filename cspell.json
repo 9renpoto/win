@@ -1,0 +1,22 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "useGitignore": true,
+  "dictionaries": [
+    "html",
+    "en_US",
+    "softwareTerms",
+    "typescript",
+    "css",
+    "node",
+    "rust",
+    "npm",
+    "fonts",
+    "filetypes"
+  ],
+  "words": [
+    "9renpoto",
+    "bluesky",
+    "denoland"
+  ]
+}
