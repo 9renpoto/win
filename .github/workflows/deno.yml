@@ -10,9 +10,17 @@ name: Deno
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - "main"
+    paths:
+      - "**.json"
+      - "**.ts"
+      - "**.tsx"
   pull_request:
-    branches: ["main"]
+    paths:
+      - "**.json"
+      - "**.ts"
+      - "**.tsx"
 
 permissions:
   contents: read
