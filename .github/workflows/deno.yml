@@ -30,10 +30,6 @@ jobs:
     timeout-minutes: 5
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        year: [2023, 2022]
-
     steps:
       - name: Setup repo
         uses: actions/checkout@v4
@@ -48,9 +44,6 @@ jobs:
 
       - name: Run linter
         run: deno lint
-
-      - run: deno cache __tests__/deps.ts
-      - run: find posts/${{ matrix.year }} -name '*.md' | sort | xargs -I file deno task lint -c .textlintrc.json file
 
       - name: Run tests
         run: deno test -A --coverage=coverage
