@@ -4,10 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "**.json"
-      - "**.ts"
-      - "**.tsx"
 
   pull_request:
     paths:
