@@ -24,4 +24,4 @@ Homebrew 1.2.4
 
 ## Before
 
-- <https://9renpoto.win/2017/06/22/brew-cask-language/>
+- [brew caskにlanguageを指定するらしいけれど](/entry/2017/06/22/brew-cask-language/)

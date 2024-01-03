@@ -25,7 +25,7 @@ snippet: Next year, a second life will begin
 
 ## 来年
 
-- [地方移住に挑戦](https://9renpoto.win/entry/2023/09/09/migration-plan)
+- [地方移住に挑戦](/entry/2023/09/09/migration-plan)
   - 移住しても月1程度は東京近辺に行けそうです
   - 転職に興味のある方、ぜひオンライン・オフラインどちらも構いませんので雑談しましょう
 - ウェブ屋からアプリ屋に
@@ -36,7 +36,7 @@ snippet: Next year, a second life will begin
 
 ## 過去
 
-- [2019 年終わり](https://9renpoto.win/2019/12/31/)
-- [2018 年終わり](https://9renpoto.win/2018/12/31/2018-end/)
-- [2017 年終わり](https://9renpoto.win/2017/12/31/2017-end/)
-- [2016 年終わり](https://9renpoto.win/2017/01/01/2016/)
+- [2019 年終わり](/entry/2019/12/31/)
+- [2018 年終わり](/entry/2018/12/31/2018-end/)
+- [2017 年終わり](/entry/2017/12/31/2017-end/)
+- [2016 年終わり](/entry/2017/01/01/2016/)

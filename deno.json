@@ -4,9 +4,13 @@
   "tasks": {
     "start": "deno run -A --watch=static/,routes/ dev.ts",
     "build": "deno run -A dev.ts build",
+    "lint": "deno run -A npm:textlint",
     "preview": "deno run -A main.ts"
   },
-  "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  },
   "lock": false,
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.6.1/",
@@ -24,6 +28,16 @@
     "$gfm": "https://deno.land/x/gfm@0.1.26/mod.ts",
     "$ga4": "https://raw.githubusercontent.com/denoland/ga4/main/mod.ts"
   },
-  "lint": { "rules": { "tags": ["fresh", "recommended"] } },
-  "exclude": ["**/_fresh/*", "cache"]
+  "lint": {
+    "rules": {
+      "tags": [
+        "fresh",
+        "recommended"
+      ]
+    }
+  },
+  "exclude": [
+    "**/_fresh/*",
+    "cache"
+  ]
 }

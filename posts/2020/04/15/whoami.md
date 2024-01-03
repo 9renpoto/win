@@ -21,14 +21,14 @@ title: Who am i
   - <https://gist.github.com/9renpoto/a7f7a2a4dead3bf5c95d8898a62e1cec>
 - 2019 年
   - TypeScript / (P)react / Next.js チョットデキる
-    ([refs](https://9renpoto.win/2019/12/08/next-stack/))
+    ([refs](/entry/2019/12/08/next-stack/))
   - TypeScript / Nest.js (express) チョットデキる
-    ([refs](https://9renpoto.win/2019/12/08/next-stack/))
+    ([refs](/entry/2019/12/08/next-stack/))
 - 2018 年
   - TypeScript / React チョットデキる
-    ([refs](https://9renpoto.win/2018/10/31/goodbye/))
+    ([refs](/entry/2018/10/31/goodbye/))
   - Perl / Python / Scala
-    チョットデキる([refs](https://9renpoto.win/2018/10/31/goodbye/))
+    チョットデキる([refs](/entry/2018/10/31/goodbye/))
 
 ## できないこと
 
@@ -62,7 +62,7 @@ title: Who am i
 
 - なりたくないなと思っていたけど、旬を過ぎてそうなってきている
 - 成長（コミット数）が止まったら能力衰退が加速していく恐怖(定期)
-  - <https://9renpoto.win/2018/04/10/works/>
-  - <https://9renpoto.win/2017/10/24/full-stack-engineer/>
-  - <https://9renpoto.win/2016/09/05/study-motivation/>
+  - [エンジニアリングと仕事](/entry/2018/04/10/works/)
+  - [フルスタックと器用貧乏](/entry/2017/10/24/full-stack-engineer/)
+  - [勉強を続けること](/entry/2016/09/05/study-motivation/)
 - 今までとやり方を変える必要は感じる
