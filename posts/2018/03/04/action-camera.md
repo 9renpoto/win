@@ -22,4 +22,4 @@ title: 'アクションカムとバイクの組み合わせ妄想'
 
 ## Dream
 
-- wifi connect して google photo に auto upload
+- wifi connectしてgoogle photoにauto upload

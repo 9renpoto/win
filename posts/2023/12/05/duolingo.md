@@ -13,7 +13,7 @@ snippet: What kind of measures can be continued every day?
 
 > [Happy Contributions 10,000](/entry/2020/02/20/commit)
 
-- Github へアウトプットを残すことは自然と続けられるようになった
+- Githubへアウトプットを残すことは自然と続けられるようになった
 - 毎日少しづつでもやってることを楽しいと思ってやっている
 - 毎日続けてられるようになったことと、そうでないことの違いを考えている
 
@@ -38,6 +38,6 @@ snippet: What kind of measures can be continued every day?
 ### やりたいこと
 
 - 毎日ちょっとだけ違うことをして成功・失敗をする
-- １２月中に来年の目標をたてて、何か自分のコンフォートゾーンを出る
+- 12月中に来年の目標をたてて、何か自分のコンフォートゾーンを出る
 
 ![duolingo](/Duolingo_Sharing.jpg)

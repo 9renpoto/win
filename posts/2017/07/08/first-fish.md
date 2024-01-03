@@ -9,9 +9,9 @@ categories:
 
 # TL;DR
 
-- fishshell に移行した
-- fisherman を導入したらほぼ独自に記述することがなくなった
-  - fishfile だけ管理していれば良さそう
+- fishshellに移行した
+- fishermanを導入したらほぼ独自に記述することがなくなった
+  - fishfileだけ管理していれば良さそう
 - 補完的に速度が気持だけ遅くなった？
   - 設定が必要？
 
@@ -19,7 +19,7 @@ categories:
 
 <https://github.com/9renpoto/dotfiles/pull/98>
 
-- 実は bash だったり zsh だったりの syntax
+- 実はbashだったりzshだったりのsyntax
   に依存しているところを細々と直していくことは必要
   - tmux,keychain,PATH
 
@@ -33,4 +33,4 @@ categories:
 
 ## 調べてないこと
 
-- hyper term が起動しなくなった
+- hyper termが起動しなくなった

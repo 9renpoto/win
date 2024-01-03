@@ -13,7 +13,7 @@ category: js
 
 ## 原因
 
-- TypeScript がファイルパスを相対パスか絶対パスのどちらかで返す場合がある
+- TypeScriptがファイルパスを相対パスか絶対パスのどちらかで返す場合がある
   - <https://github.com/Microsoft/TypeScript/blob/204f2c16c0d6ff851e4798c03a9646b625ac2bd7/src/compiler/core.ts#L821-L825>
 
 ## 対策

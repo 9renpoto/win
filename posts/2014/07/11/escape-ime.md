@@ -6,9 +6,9 @@ permalink: '/entry/2014/07/11/escape-ime/'
 
 # vim など使ってると Escape して IME が残ってるとイライライラ
 
-[ESC で確実に IME をオフにする](http://nobeans.hatenablog.com/entry/20090211/1234326782)を参考に設定を反映してみるも直ってないご様子。
+[ESC で確実に IME をオフにする](https://nobeans.hatenablog.com/entry/20090211/1234326782)を参考に設定を反映してみるも直ってないご様子。
 
-どうも GoogleIME には神設定があるらしい。
+どうもGoogleIMEには神設定があるらしい。
 
 ![image-googe-input](https://i.gyazo.com/64daf9848e558c14efc0df858aef8388.png)
 
@@ -18,5 +18,5 @@ permalink: '/entry/2014/07/11/escape-ime/'
 
 ## 参考
 
-- Vim でコマンドモードに戻るとき IME をオフにする `hotolab.net/blog/vim_ime`
-- [ESC で確実に IME をオフにする](http://nobeans.hatenablog.com/entry/20090211/1234326782)
+- Vimでコマンドモードに戻るときIMEをオフにする `hotolab.net/blog/vim_ime`
+- [ESC で確実に IME をオフにする](https://nobeans.hatenablog.com/entry/20090211/1234326782)

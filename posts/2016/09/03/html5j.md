@@ -21,19 +21,19 @@ speaker: 中村修。
 大規模分散オペレーティングシステム。
 
 - HDR
-- Web は Web 以外に存在するデータ表現を全てできるべき
-- 全て internet の上にある発想
+- WebはWeb以外に存在するデータ表現を全てできるべき
+- 全てinternetの上にある発想
   1. Big Data
   1. AI
   1. IoT
 - Distributed Operating System
-- 縦書き css
+- 縦書きcss
   - 日本頑張ってる
 
 speaker: 及川卓也。
 
-- IE7 担当してました
-- アプリケーションとしての Web
+- IE7担当してました
+- アプリケーションとしてのWeb
   - API
   - Web Components
   - PWApps
@@ -41,40 +41,40 @@ speaker: 及川卓也。
 - モバイルデバイスの普及
   - ニュースキュレーションアプリ
   - AMP
-    - CMS やツールに依存している場合
-- 今こそ Web に再投資しよう
+    - CMSやツールに依存している場合
+- 今こそWebに再投資しよう
 
 ## React の最新動向とベストプラクティス
 
 speaker: @koba04
 
 - Stateless Function Components(SFC)
-- state は view に関係あるものだけで十分
+- stateはviewに関係あるものだけで十分
 - React.PureComponent(v15.3.0~)
-  - ShoudComponentUpdate に類似（後で調べる）
+  - ShoudComponentUpdateに類似（後で調べる）
 - `react-addons-perf`
   - 計測ツール
 - React.createClass
   - 徐々に非推奨
-  - React.Component へ
+  - React.Componentへ
 - High Order Function
   - 関数型っぽい
   - `acdlite/recomponse`
-- state の管理
+- stateの管理
   - なるべく一箇所で管理
   - Redux
     - Container Component
       - 更新処理・状態管理
-      - DOM を持たない
+      - DOMを持たない
     - Presentational Component
-      - View の構築を担う
-- Component をテストする
+      - Viewの構築を担う
+- Componentをテストする
   - TestUtil.renderInfoDocument
   - shallowRender
   - `react-test-renderer`
 - 開発をサポートするツール
   - <https://github.com/zalmoxisus/redux-devtools-extension>
-  - <https://github.com/storybooks/storybook>
+  - <https://github.com/storybookjs/storybook>
 
 ## Service Worker Deep Dive
 
@@ -103,7 +103,7 @@ speaker: @laco0416
   - `@angular/http`
   - `@angular/router`
 - TypeScript
-  - 常に正しい API
+  - 常に正しいAPI
 - API
   - `@component`
   - `@input` / `@output`
@@ -115,21 +115,20 @@ speaker: @laco0416
 
 - High Performance Web User Interface
   - パフォーマンスに対する優先度
-    - `RAIL` <http://furoshiki.hatenadiary.jp/entry/2015/06/01/122537>
+    - `RAIL` <https://furoshiki.hatenadiary.jp/entry/2015/06/01/122537>
       - Response
       - Animation
       - Idle
       - Loa
   - `transform: translateZ(0)`
     - 凶悪
-    - Web 標準： `will-change: transform`
+    - Web標準： `will-change: transform`
       - Reduce GPU Memory
 - Scroll Performance
   - `<img lazyload>` :innocent:
   - `intersectionObserver`
-  - throttle
-    <https://blog.tsumikiinc.com/article/20141125_javascript-event-throttle.html>
-    - TODO 調べる
+  - throttle <https://tsumikiinc.com/news/article/000337.html>
+    - TODO調べる
 - Task Optimization
   - <https://devpixiv.hatenablog.com/entry/2015/12/24/182248>
 

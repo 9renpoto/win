@@ -12,13 +12,13 @@ category: 'js'
 <https://github.com/prettier/eslint-config-prettier>
 
 - `prettier` で直してくれそうな機能を `off` にして干渉を回避する
-  - linter にはならないので警告されない
+  - linterにはならないので警告されない
 - `pretter-atom`の挙動が若干不審
-- `prettier`に config 設定がないようなのでまだまだフォーマットが変わる
+- `prettier`にconfig設定がないようなのでまだまだフォーマットが変わる
 
 ## next
 
 - `pretter-atom` を読む
   - `prettier-eslint` が並行して動くことが最低条件
 - 更新を見守る
-  - 特に standard、Flow との関係
+  - 特にstandard、Flowとの関係

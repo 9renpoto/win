@@ -6,7 +6,7 @@ permalink: '/entry/2018/05/16/first-play-framework/'
 
 # 環境
 
-- <https://github.com/9renpoto/scala>
+- <https://github.com/9renpoto/play>
 
-- とりあえず generate して何がでてくるか
-- CI でテストを 1 つだけ動かす
+- とりあえずgenerateして何がでてくるか
+- CIでテストを1つだけ動かす

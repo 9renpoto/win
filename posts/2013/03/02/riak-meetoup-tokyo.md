@@ -10,15 +10,15 @@ categories:
 
 @kuenishi
 
-分散システムの研究や開発は 5 年ぐらい 日本法人が 9 月に出来た。
+分散システムの研究や開発は5年ぐらい日本法人が9月に出来た。
 
 ## Riak の紹介
 
-- Dynamo にインスパイアされた
-- Consistent Hassing による水平分割する
-- Vector Clocks を用いてレプリケーション
-- Erlang/OTP で動作
-- 分散 KVS
+- Dynamoにインスパイアされた
+- Consistent Hassingによる水平分割する
+- Vector Clocksを用いてレプリケーション
+- Erlang/OTPで動作
+- 分散KVS
 
 - HTTP / Protocol Buffers
 - Secondary Index/ MapReduce
@@ -34,11 +34,11 @@ categories:
 
 ## RICON について
 
-- 分散システム、分散 DB のカンファレンス
+- 分散システム、分散DBのカンファレンス
 
 ### 事例
 
-- Redis 側でロックして、裏側は Riak で構築
+- Redis側でロックして、裏側はRiakで構築
   - 壊れても大丈夫なようにするのが鉄板のパターン
 
 ## 面白かった話
@@ -51,11 +51,11 @@ categories:
 
 ## Riak with Engine yard
 
-- EC2 上の Gentoo
-- すべては Chef で構築
+- EC2上のGentoo
+- すべてはChefで構築
 - その上にアプリをデプロイ
-- 再起動も 1 から構築
-- ssh / sudo 可能
+- 再起動も1から構築
+- ssh / sudo可能
 - 何台、何度でも再現可能
 
 - DB
@@ -64,6 +64,6 @@ categories:
   - MySQL
   - Riak
 
-- Riak はバックエンドでたてないとダメ
-- Riak Search を使って全文検索が可能
-- 今後、Yokozuna に移行予定
+- Riakはバックエンドでたてないとダメ
+- Riak Searchを使って全文検索が可能
+- 今後、Yokozunaに移行予定

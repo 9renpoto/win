@@ -10,37 +10,37 @@ categories:
 
 ## Cloudera Impala について
 
-@shiumachi さんより。
+@shiumachiさんより。
 
 ### Impala とは
 
-- Cloudera が開発した低レイテンシ・分析特化型のクエリ実行基盤
-  - google Dremel, Google F1 などにインスパイアされて開発された
+- Clouderaが開発した低レイテンシ・分析特化型のクエリ実行基盤
+  - google Dremel, Google F1などにインスパイアされて開発された
 - データサイエンティストが使うことを想定している
-- Hadoop はクエリの内容がメモリーに乗っからなかった場合、HDD に逃げちゃう
-- Impala はオンメモリー上で頑張ろうとする
+- Hadoopはクエリの内容がメモリーに乗っからなかった場合、HDDに逃げちゃう
+- Impalaはオンメモリー上で頑張ろうとする
 
 #### Impala support 状況
 
 ##### 02 時点
 
-- Trevni, RCFile のサポートは現状まだ、今後に対応予定
-- Hive で出来ることは、基本的に Impala では出来ないと思ってよい
+- Trevni, RCFileのサポートは現状まだ、今後に対応予定
+- Hiveで出来ることは、基本的にImpalaでは出来ないと思ってよい
 
 ### なぜ開発されたのか
 
 Hadoop(Map Reduce)だと高レイテンシで、すぐに結果が欲しくても処理に時間がかかる。
 
-Hive のようで手軽に使える SQL
+Hiveのようで手軽に使えるSQL
 のインターフェイスをもち、かつ低レイテンシエンジンが欲しかったからです。
 
 ### MapReduce とは
 
-- Apache MapReduce とは
+- Apache MapReduceとは
   - バッチ処理を分散して行うシステム
 - Apache Hive
-  - SQL ライクに書ける
-- MapReduce の問題
+  - SQLライクに書ける
+- MapReduceの問題
   - レイテンシが高い
   - 小さいキューを出しても数十秒時間かかる
 
@@ -48,17 +48,17 @@ Hive のようで手軽に使える SQL
 
 #### Q もう Hive いらないんじゃない
 
-- 定期的に実行を行うクエリなどは Hive のほうが適しているのではないか
+- 定期的に実行を行うクエリなどはHiveのほうが適しているのではないか
 
 #### Qimpala が落ちたらどうするの
 
 - クエリが全部こけます
-- JOIN のサイズ制限あるの
+- JOINのサイズ制限あるの
   - あります
 
 ## Python in Webkit
 
-@omo2009 さんより。
+@omo2009さんより。
 
 ### Third party Tools
 
@@ -89,17 +89,17 @@ Hive のようで手軽に使える SQL
 - 誰にレビューしてもらったか忘れちゃう
 - 探すのに便利
 
-IRC でレビューを頼むと断られにくい。
+IRCでレビューを頼むと断られにくい。
 
 ## Connpass について
 
-@lanMLewis, @ae35 概要と技術について。
+@lanMLewis, @ae35概要と技術について。
 
 ### connpass とは
 
-- BePROUD で運営しているイベント支援サイト
+- BePROUDで運営しているイベント支援サイト
   - 2010/08 django dash
-    - django を使って 48 時間でサービスを作ろう
+    - djangoを使って48時間でサービスを作ろう
     - 既存のイベント支援サービス（ATND)使いにくいよね
     - 作ってみよう
   - 大事だと思ってること
@@ -119,21 +119,21 @@ IRC でレビューを頼むと断られにくい。
 - クライアントサイド
   - CoffeeScript
   - REQUIRE JS
-  - JavaScript 怖い
+  - JavaScript怖い
 
 ## PHP Language Update
 
 ### PHP 5.5 の目玉
 
 - ジェネレートとコールーチン
-  - yield キーワードの追加
-- foreach で変数分解だ
+  - yieldキーワードの追加
+- foreachで変数分解だ
 - empty()の括弧内に変数以外が指定可能に
 - `finally`
   - `try-catch-finally`
     - なぜ今までになかったのか
-  - fatal error が発生すると `finaly` が呼ばれない
+  - fatal errorが発生すると `finaly` が呼ばれない
 
-Python でお仕事している人が日本にもたくさんいて嬉しいです。
+Pythonでお仕事している人が日本にもたくさんいて嬉しいです。
 
 発表者のみなさまおつかれさまでした。

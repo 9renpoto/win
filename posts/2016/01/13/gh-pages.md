@@ -8,12 +8,12 @@ categories:
 
 # TL;DR
 
-- Hugo を利用して `<username>.github.io` に公開
+- Hugoを利用して `<username>.github.io` に公開
 - [mozilla/oghliner](https://github.com/mozilla/oghliner)を利用してオフライン対応
 
 ## Hugo を利用して gh-pages にデプロイ
 
-公式ドキュメントで wercker-ci
+公式ドキュメントでwercker-ci
 を利用したデプロイ方法が[紹介](https://gohugo.io/hosting-and-deployment/deployment-with-wercker/)されており、そちらを利用していましたが。
 
 ```shell
@@ -31,15 +31,15 @@ http://9renpoto.github.io/<project_name>
 <username>.github.io
 ```
 
-リポジトリーを作成し `master` ブランチに push されることによって公開される（not
+リポジトリーを作成し `master` ブランチにpushされることによって公開される（not
 gh-pages branch)ようなので。
 
-`public/` に生成されたものを `<username>.github.io` に dest
+`public/` に生成されたものを `<username>.github.io` にdest
 するように修正しました。
 
 ## オフライン対応
 
-[mozilla/oghliner](https://github.com/mozilla/oghliner)が serviceWorker
+[mozilla/oghliner](https://github.com/mozilla/oghliner)がserviceWorker
 を利用したオフライン化を簡単に提供していたので試しに使ってみる。
 
 ## Feature

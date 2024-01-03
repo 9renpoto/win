@@ -10,9 +10,9 @@ title: Frontend Meetup 01 参加メモ
 
 ## React/Redux で快適フロントエンドライフ（仮）
 
-by @takayuki_shmz (株式会社 FiNC)
+by @takayuki_shmz (株式会社FiNC)
 
-<https://tech.nikkeibp.co.jp/it/atcl/column/16/050900104/051000005/>
+<https://xtech.nikkei.com/it/atcl/column/16/050900104/051000005/>
 
 - React & Redux
   - 学習コスト
@@ -24,18 +24,18 @@ by @takayuki_shmz (株式会社 FiNC)
 - 最初に抑えるべき
   - 正しいコンポーネント思考
     - smart component
-      - dumb コンポーネントと action, store を繋ぐ
+      - dumbコンポーネントとaction, storeを繋ぐ
     - dumb component
-- Stateless コンポーネントが原則
-  - case by case だけども
-- css はコンポーネントと 1v1
+- Statelessコンポーネントが原則
+  - case by caseだけども
+- cssはコンポーネントと1v1
 - this.contents
-  - <https://reactjs.org/docs/context.html>
-  - API 層を context に渡し container を呼ぶ
+  - <https://legacy.reactjs.org/docs/context.html>
+  - API層をcontextに渡しcontainerを呼ぶ
 
 ## 革命と秩序と SPA(React、flux、flowtype)
 
-by @joe_re (freee 株式会社）
+by @joe_re (freee株式会社）
 
 <https://speakerdeck.com/joere/ge-ming-tozhi-xu-tospa>
 
@@ -44,14 +44,14 @@ by @joe_re (freee 株式会社）
 - vue
   - mvvm
 - react & flux
-  - single-state を途中から導入するのがツラい
+  - single-stateを途中から導入するのがツラい
   - flux-utils
     - サポートの範囲が小さい分外しやすい
 - flowtype
 
 ## Angular と心中する（仮）
 
-by @Quramy (株式会社 WACUL)
+by @Quramy (株式会社WACUL)
 
 <https://quramy.github.io/spa-knowhow-note/#/>
 
@@ -62,20 +62,20 @@ by @Quramy (株式会社 WACUL)
   - component
   - コードの自動生成
   - エラー周り
-- style 管理問題
+- style管理問題
   - BEM
   - component:css = 1:1
   - <https://github.com/ukyo/angular-simple-bem>
 - Rollbar
-  - 裏で sourcemap 連携
+  - 裏でsourcemap連携
 
-##　コンテンツ配信と SPA。
+##　コンテンツ配信とSPA。
 
 by @konpyu (Piece of cake,Inc)
 
-- note <https://note.mu/>
+- note <https://note.com/>
   - angular 1.3
-  - mobile 遅い
+  - mobile遅い
 - Drupal8
 - SSR
 - HTTP2
@@ -85,7 +85,7 @@ by @konpyu (Piece of cake,Inc)
 by @teppeis (サイボウズ）
 
 - SPA
-  - ブラウザーにとっては 1 枚のページに見えている
+  - ブラウザーにとっては1枚のページに見えている
   - ブラウザーの体験を超える覚悟がある
 - 初回ロード
 - a11y

@@ -8,7 +8,7 @@ categories:
 
 # yapc asia memo
 
-yapcasia に参加したときのメモを残します。
+yapcasiaに参加したときのメモを残します。
 
 ## Effective ES6
 
@@ -26,15 +26,15 @@ var p = Person("bob");
 
 - class
   - constractor
-  - new ナシで呼ぶと Error
-- IE11 ES6 は実装しない
+  - newナシで呼ぶとError
+- IE11 ES6は実装しない
 - transpiler
   - ES6 to ES5
 - polyfill
-  - buildin の class を js 環境で動かすようにする
+  - buildinのclassをjs環境で動かすようにする
 - Babel
 
-  - core.js # polyfill tools もあるよ
+  - core.js # polyfill toolsもあるよ
 
 - ES6 feature
 
@@ -93,10 +93,10 @@ var p = Person("bob");
 
     - template literal \` で文字列を囲むと改行付き文字列が定義できる
     - Promise
-      - callback 地獄回避
+      - callback地獄回避
     - map/set
     - codePoint
-      - 吉野家 isvalid
+      - 吉野家isvalid
 
   - trap
 
@@ -104,12 +104,12 @@ var p = Person("bob");
   if (a => 1) # if ( a >= 1 ) が正
   ```
 
-  - balel っていこう
+  - balelっていこう
 
 ## 今フロントエンドで何が起こっているのか
 
-- html だけ返せばよかったような時代
-- ajax の登場
+- htmlだけ返せばよかったような時代
+- ajaxの登場
   - google map etc
   - ECMAscript5
 - coffeescript
@@ -165,11 +165,11 @@ var p = Person("bob");
     - Evented Non Blocking I/O
     - v8
   - EventLoop Model
-    - libebb => libev/libeio & libuv (Windows 向け）
+    - libebb => libev/libeio & libuv (Windows向け）
     - netv8 => node
   - Joyent
   - 破壊と創造
-    - API がかなり深刻に変わる
+    - APIがかなり深刻に変わる
   - BDFL (優しい終身の独裁者モデル）
 - 2012 ~ 2014
   - Socket.IO
@@ -187,7 +187,7 @@ var p = Person("bob");
     - major.minor.patch
   - オープンガバナーンスモデル
   - Feature Node.js
-  - io.js のこと
+  - io.jsのこと
   - node Foundation
   - log term suport
 

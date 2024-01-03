@@ -7,8 +7,8 @@ category: 'js'
 
 # TL;DR
 
-- google optimize で今適応されているテストは何か調べた
-- テストの結果は first party cookie
+- google optimizeで今適応されているテストは何か調べた
+- テストの結果はfirst party cookie
 - `_gaexp`という名前で記録されている
 - **規約は読んで自己責任で参照しましょう**
 
@@ -18,16 +18,16 @@ category: 'js'
 
 - [公開情報](https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage?hl=en#optimize)
   - `_gaexp`という名前で記録されている
-  - cookie はデフォルト 90 日保存
+  - cookieはデフォルト90日保存
 
 ## おそらく操作しているところ
 
 - `m[0]` は `experimentid`
 - `m[2]` がテストのパターンを表している
-  - cookie の一番最後の number
+  - cookieの一番最後のnumber
   - これだけだと `variationid`
     としては使えないので何かと複合してユニークになっている
-- `m[1]` は number だが何の値かはすぐにはわからなかった
+- `m[1]` はnumberだが何の値かはすぐにはわからなかった
 
 ```js
 Zg = function (a, b) {
@@ -71,9 +71,9 @@ Zg = function (a, b) {
 ## Extra
 
 - [stackoverflow](https://stackoverflow.com/questions/44412241/is-it-possible-to-read-experimentid-and-variationid-in-javascript-with-google-op)
-  - AB テストとして JavaScript が実行できるので、自分でユニークな ID
+  - ABテストとしてJavaScriptが実行できるので、自分でユニークなID
     を配信して実行されているテストを特定しましょう
   - リバースエンジニアリングして危ない道を渡るよりも現実的
-  - ちゃんと AB テストの記録は計測できます、そう google analytics ならね！
+  - ちゃんとABテストの記録は計測できます、そうgoogle analyticsならね！
 
 Happy Hacking!

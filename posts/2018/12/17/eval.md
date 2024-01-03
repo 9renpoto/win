@@ -33,6 +33,6 @@ title: 評価
 
 ## だから何
 
-- [評価システム](https://github.com/g59/rate)
+- [評価システム](https://github.com/9renpoto/ranking)
   を勉強がてら書いているが進捗が芳しくない
 - 年末までに動いてなくてもホストしたい

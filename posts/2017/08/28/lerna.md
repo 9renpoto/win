@@ -7,19 +7,19 @@ category: 'js'
 
 # TL;DR
 
-- lerna は大きすぎない package を複数管理するときに割りと便利
-- lerna で便利なものと、対応していないものがある
+- lernaは大きすぎないpackageを複数管理するときに割りと便利
+- lernaで便利なものと、対応していないものがある
   - flow-typed, etc
 
 ## Lerna
 
-- babel 等で使われており存在は知っていたが、プラグイン等を管理するような package
+- babel等で使われており存在は知っていたが、プラグイン等を管理するようなpackage
   を持っておらず使うつもりはなかった
-- greenkeeper に対応していない
-  - issue はあがっている
-- release コマンドを普段使わない
-  - git master commit の発生が気に食わない
-  - 素直に publish だけしてほしい
+- greenkeeperに対応していない
+  - issueはあがっている
+- releaseコマンドを普段使わない
+  - git master commitの発生が気に食わない
+  - 素直にpublishだけしてほしい
 - それでも環境を分ける場合が増えてきたので使ってみる
   - eslintrc
   - babelrc

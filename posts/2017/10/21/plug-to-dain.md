@@ -6,18 +6,18 @@ permalink: '/entry/2017/10/21/plug-to-dain/'
 
 # TL;DR
 
-- vimrc も toml で書く時代になったのか
+- vimrcもtomlで書く時代になったのか
 
 ## before
 
 - [vim-plug](https://github.com/junegunn/vim-plug)
   が流行っているらしいから使っていた
-- [vim bootstrap](https://github.com/avelino/vim-bootstrap)
+- [vim bootstrap](https://github.com/editor-bootstrap/vim-bootstrap)
   で作成したものを使っていたが、これがさっぱり動かない
 
 ## after
 
-- とりあえず lightline, vim-guttier いれて簡単なコードを読めるように
+- とりあえずlightline, vim-guttierいれて簡単なコードを読めるように
 - <https://github.com/9renpoto/dotfiles/pull/106>
 - <https://github.com/9renpoto/dotfiles/pull/107>
 

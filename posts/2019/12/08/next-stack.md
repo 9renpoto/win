@@ -7,11 +7,10 @@ date: '2019-12-08T12:00:00+09:00'
 
 - <https://www.stackshare.io/9renpoto>
 - Rails => [NestJS](https://github.com/9renpoto/backend)
-- Swagger =>
-  [GraphQL](https://github.com/9renpoto/backend/tree/master/apps/core)
+- Swagger => [GraphQL](https://github.com/9renpoto/backend/tree/main/apps/core)
 - React => Preact
   - <https://github.com/9renpoto/frontend>
-  - <https://github.com/g59/ranking>
+  - <https://github.com/9renpoto/ranking>
 - Self make auth => Firebase
 
 ## NestJS ( with GraphQL )
