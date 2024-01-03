@@ -10,9 +10,7 @@
     "max-ten": {
       "max": 3
     },
-    "no-dead-link": {
-      "ignore": []
-    },
+    "no-dead-link": true,
     "no-double-negative-ja": true,
     "no-doubled-conjunction": true,
     "no-doubled-conjunctive-particle-ga": true,
