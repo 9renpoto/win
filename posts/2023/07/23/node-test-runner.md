@@ -4,7 +4,7 @@ title: Try `node:test` with TypeScript
 snippet: node:test を動かしたかった
 ---
 
-## TL;DR 🚶‍♂️🚶‍♂️🚶‍♂️
+# TL;DR 🚶‍♂️🚶‍♂️🚶‍♂️
 
 - Output: <https://github.com/g59/bot/pull/1037>
 - Must be used with a loader to use TypeScript
