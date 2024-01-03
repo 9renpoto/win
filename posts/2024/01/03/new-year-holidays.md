@@ -1,7 +1,7 @@
 ---
 date: '2024-01-03'
-title: 新年の休みを利用して
-snippet:
+title: 新年の休みを利用してAstroNvimを触る
+snippet: Satisfy your curiosity with a vacation 😎
 ---
 
 # TL;DR
