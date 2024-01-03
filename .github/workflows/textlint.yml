@@ -1,0 +1,36 @@
+name: textlint
+
+on:
+  push:
+    branches:
+      - "main"
+    paths:
+      - "**.md"
+  pull_request:
+    paths:
+      - "**.md"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        year: [2024, 2023]
+
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@v4
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+
+      - run: deno cache __tests__/deps.ts
+      - run: find posts/${{ matrix.year }} -name '*.md' | sort | xargs -I file deno task lint file
+

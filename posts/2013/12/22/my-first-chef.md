@@ -87,7 +87,7 @@ vagrant側でchefが使えるように以下のコマンドを実行。
 bundle exec knife solo prepare nodename
 ```
 
-インストールしたいレシピを追加 node/nodename.json。
+インストールしたいレシピを追加node/nodename.json。
 
 ```js
 {

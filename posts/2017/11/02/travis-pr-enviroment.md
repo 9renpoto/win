@@ -6,7 +6,7 @@ permalink: '/entry/2017/11/02/travis-pr-enviroment/'
 
 # TL;DR
 
-- travis で環境変数が引き継がれない
+- travisで環境変数が引き継がれない
   - 仕様だった
 - <https://docs.travis-ci.com/user/pull-requests/#Pull-Requests-and-Security-Restrictions>
 

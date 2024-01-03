@@ -13,4 +13,4 @@ title: Monorepo coverage
 - <https://caddi.tech/archives/1640>
 - <https://github.com/0xProject/0x-monorepo>
 - <https://github.com/marketplace/actions/coveralls-github-action#complete-parallel-job-example>
-- <https://github.com/g59/.59-node/blob/011890f572a6a00258f72a9d25ab7f67e69590be/.github/workflows/nodejs.yml#L44-L59>
+- <https://github.com/9renpoto/.59-node/blob/011890f572a6a00258f72a9d25ab7f67e69590be/.github/workflows/nodejs.yml#L44-L59>

@@ -10,5 +10,5 @@ categories:
 
 ![image](https://i.gyazo.com/b1e2f9fd3623adf1a00afaf738c900de.gif)
 
-surround.vim 便利 sublime-text でも使えるようですが atom
+surround.vim便利sublime-textでも使えるようですがatom
 の公式パッケージにも早くほしい。

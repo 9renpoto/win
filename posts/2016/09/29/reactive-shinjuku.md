@@ -12,12 +12,12 @@ title: 第3回 Reactive System Meetup in 西新宿
 
 ## リアクティブ DDD について
 
-株式会社 ChatWork 加藤潤一氏（@j5ik2o）
+株式会社ChatWork加藤潤一氏（@j5ik2o）
 
-- リアクティブ DDD
+- リアクティブDDD
   - リアクティブシステム && ドメイン駆動設計
-- Actor は DDD で示されるコンセプトを表現できる
-- リアクティブシステムと Akka
+- ActorはDDDで示されるコンセプトを表現できる
+- リアクティブシステムとAkka
 - リアクティブ宣言 <https://www.reactivemanifesto.org/>
   - Elastic
   - Responsive
@@ -30,7 +30,7 @@ title: 第3回 Reactive System Meetup in 西新宿
   - 故障（failure)
 - メッセージ駆動
 - Akka
-  - 2011 年の記事では Erlang の 2 倍のスループットを発揮した
+  - 2011年の記事ではErlangの2倍のスループットを発揮した
 - ドメインモデル
   - `モデル = 考え方とコードを結びつけたソフトウェア` を実現する
 - ドメイン層の隔離
@@ -41,12 +41,12 @@ title: 第3回 Reactive System Meetup in 西新宿
 
 ## Lagom で学ぶ Reactive Microservices Architecture
 
-株式会社 TIS 根来和輝（@negokaz）
+株式会社TIS根来和輝（@negokaz）
 
 - Reactive Microservices Architecture
 - Lagom
-  - 非同期・ノンブロッキング API
-  - Sharding によるステートフルアーキテクト
+  - 非同期・ノンブロッキングAPI
+  - Shardingによるステートフルアーキテクト
   - 分散型の永続化機構
     - CQRS + Event Sroucing
   - Circuit Breaker

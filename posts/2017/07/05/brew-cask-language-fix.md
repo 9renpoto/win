@@ -9,11 +9,11 @@ categories:
 # TL;DR
 
 - brew cask `--language` オプションが治りました
-- firefix nightly がインストールできるようになりました
+- firefix nightlyがインストールできるようになりました
 
 ## 気持
 
-めでたい。少し Firefox をデフォルトブラウザとして頑張る。
+めでたい。少しFirefoxをデフォルトブラウザとして頑張る。
 
 ```shell
 ➜  ~ brew --version
@@ -24,4 +24,4 @@ Homebrew 1.2.4
 
 ## Before
 
-- <https://9renpoto.win/2017/06/22/brew-cask-language/>
+- [brew caskにlanguageを指定するらしいけれど](/entry/2017/06/22/brew-cask-language/)

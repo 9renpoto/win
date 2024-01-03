@@ -7,8 +7,8 @@ A little while ago, [the service](https://github.com/waffleio/waffle.io) I used
 all the time closed. waffle.io was an essential tool for my study.
 
 Currently, we are trying to substitute alternatives using
-[github project](https://help.github.com/en/articles/about-project-boards) and
-[auto-assign](https://probot.github.io/apps/auto-assign/), but we have not
+[github project](https://docs.github.com/en/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards)
+and [auto-assign](https://probot.github.io/apps/auto-assign/), but we have not
 reached the point of request.
 
 Thank you for waffle.io team works.

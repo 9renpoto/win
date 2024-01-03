@@ -12,16 +12,16 @@ categories:
 ## Building Interactive npm Command Line Modules
 
 - arguments parsing
-  - 200 種以上の package
+  - 200種以上のpackage
 - yargs
   - `.help()` 便利
-  - Interactive なオプションを宣言的に記述できる
+  - Interactiveなオプションを宣言的に記述できる
 
 <https://lrlna.github.io/nodefest-2016/#1>
 
 ## Famicom programming with JavaScript
 
-- background の背景を替えるためには for-loop4 回
+- backgroundの背景を替えるためにはfor-loop4回
 
 ## GraphQL for the RESTful crowd
 
@@ -41,7 +41,7 @@ categories:
 
 ## The Seif Project
 
-- web の問題は password, 簡単に盗まれる
+- webの問題はpassword, 簡単に盗まれる
 - `Seif Project` の中ではカギ認証
 - seifnode
 - <https://github.com/paypal/seifnode>
@@ -71,15 +71,15 @@ categories:
    - webpack `require.ensure`
    - <https://github.com/richardscarrott/require-error-handler-webpack-plugin>
 1. SSR
-   - React そのものは別に遅くない
+   - Reactそのものは別に遅くない
    - Solution
      1. Partial Rendering
-        - firstView だけ SSR
+        - firstViewだけSSR
    - Composite Rendering
 
 ## PostCSS: Build your own CSS processor
 
-- reworkcss が元になっている
+- reworkcssが元になっている
 
 ## JavaScript による並列処理：共有メモリとロック
 

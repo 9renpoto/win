@@ -12,17 +12,17 @@ category: 'js'
 ## TL;DR
 
 - 必要最低限の機能・サイズになる
-- 事前に i18n 後の JS として複数の output とするアプローチ
+- 事前にi18n後のJSとして複数のoutputとするアプローチ
 - できることはシンプル（現状）
 
 ## 懸念
 
-- テンプレートエンジンなどで locale 特定が必要？
+- テンプレートエンジンなどでlocale特定が必要？
 - `sprintf`のような表現には対応していない
   - 議論中
     [i18n-webpack-plugin/pull/42](https://github.com/webpack-contrib/i18n-webpack-plugin/pull/42)
-- 読み込む locale ファイルの生成には関与しない
-  - 手動で JSON は作成、メンテナンス
+- 読み込むlocaleファイルの生成には関与しない
+  - 手動でJSONは作成、メンテナンス
 
 ## 現状
 

@@ -21,7 +21,7 @@ chmod +x pythonbrew-install
 ./pythonbrew-install
 ```
 
-pythonbrewの環境変数を通す zshの場合でも以下の内容を書くらしい。
+pythonbrewの環境変数を通すzshの場合でも以下の内容を書くらしい。
 
 ```shell
 [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc

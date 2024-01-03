@@ -16,13 +16,13 @@ permalink: '/entry/2017/08/14/document/'
 
 ## リーダブルコード
 
-- [過去ログ](https://9renpoto.win/2013/02/03/readable-code/)
+- [過去ログ](/entry/2013/02/03/readable-code/)
 - [`コメントは領域に対する情報の比率が高くなければならない`](https://gist.github.com/AKB428/b8970cea987577ec93c2#%E7%AC%AC%EF%BC%96%E5%B1%A4-%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AF%E6%AD%A3%E7%A2%BA%E3%81%A7%E7%B0%A1%E6%BD%94%E3%81%AB)
 
 ## 自分の考え
 
 - ドキュメントを書くつもりでテストを書く
-- Doc Test 不要論
+- Doc Test不要論
   - 動かせるのでメンテナンスはされている（Good）
   - ソースコードよりも長いテストを書くことは珍しくない
   - ソースの情報が増える、が情報の比重が高いとは限らない

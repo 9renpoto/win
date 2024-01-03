@@ -7,7 +7,7 @@ category: 'js'
 
 # 上手く動かない
 
-<https://travis-ci.org/9renpoto/ts/builds/156475663>
+<https://app.travis-ci.com/9renpoto/ts/builds/156475663>
 
 - アバウトな構成
 

@@ -6,7 +6,7 @@ permalink: '/entry/2017/10/05/slides/'
 
 # TL;DR
 
-- JavaScript が苦手な方にという発表を社内でしました
+- JavaScriptが苦手な方にという発表を社内でしました
 
 ## slides
 
