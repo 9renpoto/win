@@ -45,7 +45,7 @@ jobs:
       - name: Run linter
         run: deno lint
 
-      - run: deno task lint "posts/**"
+      - run: find posts -name '*.md' | xargs -I file deno task lint file
 
       - name: Run tests
         run: deno test -A --coverage=coverage
