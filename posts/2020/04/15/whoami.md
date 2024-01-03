@@ -25,10 +25,8 @@ title: Who am i
   - TypeScript / Nest.js (express) チョットデキる
     ([refs](/entry/2019/12/08/next-stack/))
 - 2018 年
-  - TypeScript / React チョットデキる
-    ([refs](/entry/2018/10/31/goodbye/))
-  - Perl / Python / Scala
-    チョットデキる([refs](/entry/2018/10/31/goodbye/))
+  - TypeScript / React チョットデキる ([refs](/entry/2018/10/31/goodbye/))
+  - Perl / Python / Scala チョットデキる([refs](/entry/2018/10/31/goodbye/))
 
 ## できないこと
 
