@@ -49,7 +49,7 @@ jobs:
       - name: Run linter
         run: deno lint
 
-      - run: find posts/${{ matrix.year }} -name '*.md' | xargs -I file deno task lint file
+      - run: find posts/${{ matrix.year }} -name '*.md' | xargs -I file deno task lint -c .textlintrc.json file
 
       - name: Run tests
         run: deno test -A --coverage=coverage
