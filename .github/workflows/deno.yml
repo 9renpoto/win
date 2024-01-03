@@ -17,6 +17,7 @@ on:
       - "**.json"
       - "**.ts"
       - "**.tsx"
+      - "**.md"
 
 permissions:
   contents: read
