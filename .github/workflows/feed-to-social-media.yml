@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Feed to social media
-        uses: lwojcik/github-action-feed-to-social-media@v2
+        uses: lwojcik/github-action-feed-to-social-media@v2.4.1
         with:
           feedUrl: "https://9renpoto.win/rss.xml"
           newestItemStrategy: "latestDate"
@@ -27,6 +27,6 @@ jobs:
           # Bluesky settings
           blueskyEnable: true
           blueskyAppPassword: ${{ secrets.BSKY_APP_PASSWORD }}
-          blueskyHandle: "9renpoto.bsky.social"
-          blueskyOwnerHandle: "9renpoto.bsky.social"
+          blueskyHandle: "9renpoto.win"
+          blueskyOwnerHandle: "9renpoto.win"
           blueskyOwnerContact: "9renpoto+bsky@gmail.com"
