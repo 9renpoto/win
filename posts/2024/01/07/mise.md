@@ -1,7 +1,7 @@
 ---
 date: '2024-01-07'
 title: 新年の休みを利用してasdfを卒業してmiseを触る
-snippet: Satisfy your curiosity with a vacation 😎
+snippet: とりあえずRust化の流れを眺める☕
 ---
 
 # TL;DR
