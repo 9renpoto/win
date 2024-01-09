@@ -25,7 +25,7 @@
     "$std/": "https://deno.land/std@0.192.0/",
     "@/": "./",
     "./": "./",
-    "$gfm": "https://deno.land/x/gfm@0.1.26/mod.ts",
+    "$gfm": "https://deno.land/x/gfm@0.3.0/mod.ts",
     "$ga4": "https://raw.githubusercontent.com/denoland/ga4/main/mod.ts"
   },
   "lint": {

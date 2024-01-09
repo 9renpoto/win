@@ -5,6 +5,9 @@ import { CSS, render } from "$gfm";
 import { description, title } from "@/utils/website.ts";
 import { SEO } from "@/components/SEO.tsx";
 
+import "https://esm.sh/prismjs@1.29.0/components/prism-typescript?no-check";
+import "https://esm.sh/prismjs@1.29.0/components/prism-bash?no-check";
+
 export const handler: Handlers<Post> = {
   async GET(_req, ctx) {
     const post = await getPost(ctx.params.all);
