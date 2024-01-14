@@ -48,7 +48,7 @@ Github
 
 > [Changing the layout of a view](https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/changing-the-layout-of-a-view)
 
-最初これが１つのプロジェクトという表現の中でなんで分けられる様になってるのだろうとか、このViewはどういうときに使いたくなるのだろうと分からなかった。
+最初これが1つのプロジェクトという表現の中でなんで分けられる様になってるのだろうとか、このViewはどういうときに使いたくなるのだろうと分からなかった。
 結果的にはフィルターと組み合わせることで実際のプロジェクトに合わせ使いやすくカスタマイズ可能な要素だと理解できた。
 
 また、Viewはソートの設定やグローバル設定とローカル設定の管理を別々にできるなどこれまた痒いところに手が届いている。
@@ -59,7 +59,7 @@ Github
 
 > [Understanding fields](https://docs.github.com/en/issues/planning-and-tracking-with-projects/understanding-fields)
 
-Github にはスタンダードな管理方法として `label` と `milestone`
+Githubにはスタンダードな管理方法として `label` と `milestone`
 があり、長くこれらの機能の組み合わせで開発プロジェクトの運用ができるようルールを設けたりなどしていた。
 これらの標準項目はいずれもリポジトリ固有な設定であり、設定を同期したりそれらの仕組みを組んだりなどが必要であった。
 
@@ -68,8 +68,21 @@ Github にはスタンダードな管理方法として `label` と `milestone`
 その中で一番好きだった機能が「ステータスとラベルの連動機能」だ。いい感じにラベルを操作していたら、カンバンもいい感じになる。カンバンを操作していてもGithub
 にいい感じのラベルがついている。
 
-# Ref
+上記の機能がカスタムフィールドではほぼ表現可能であった。
+またカスタムフィールドは**プロジェクト全体で共通** なことが理解するととても使い勝手通い。
+
+最後にカスタムフィールドは1つの値しか指定できない成約も理解するととても使い勝手が良い。複数指定したい場合などはラベルを使っている。
+
+## まとめ
+
+- Github Projectいいぞ
+- Githubだけで完結する世界線は快適たぞ
+- PRもIssueも全部プロジェクトに入れてフィルタで使いたいようにカスタマイズしよう
+- Githubありがとう🐙
+
+## Ref
 
 - [GitHub Projects を利用したタスク管理 | 一休 Developers Blog](https://user-first.ikyu.co.jp/entry/2023/11/09/175121)
 - [GitHub Projects を導入した話 | KAKEHASHI Tech Blog](https://kakehashi-dev.hatenablog.com/entry/2023/02/28/090000)
 - [Thank you, waffle.io | 9renpoto.win](https://9renpoto.win/entry/2019/05/26/goodbye-waffle-io)
+- [github projectsが少し良くなっていた | 9renpoto.win](http://localhost:8000/entry/2018/01/21/github-projects)
