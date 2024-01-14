@@ -27,7 +27,8 @@ snippet: Project development done exclusively through Github 🐙
 
 ## Github Projects押しの機能
 
-上記プロジェクト管理に必要な設定がGithub Projectだとどのようにできるのかは[一休Developers Blog](https://user-first.ikyu.co.jp/entry/2023/11/09/175121)の記事がとてもわかりやすい。
+上記プロジェクト管理に必要な設定がGithub
+Projectだとどのようにできるのかは[一休Developers Blog](https://user-first.ikyu.co.jp/entry/2023/11/09/175121)の記事がとてもわかりやすい。
 大枠はそちらの記事に任せるとして、この記事では私の押しのGithub
 Projectの機能を記述する。
 
@@ -69,7 +70,8 @@ Githubにはスタンダードな管理方法として `label` と `milestone`
 にいい感じのラベルがついている。
 
 上記の機能がカスタムフィールドではほぼ表現可能であった。
-またカスタムフィールドは**プロジェクト全体で共通** なことが理解するととても使い勝手通い。
+またカスタムフィールドは**プロジェクト全体で共通**
+なことが理解するととても使い勝手通い。
 
 最後にカスタムフィールドは1つの値しか指定できない成約も理解するととても使い勝手が良い。複数指定したい場合などはラベルを使っている。
 
@@ -77,7 +79,7 @@ Githubにはスタンダードな管理方法として `label` と `milestone`
 
 - Github Projectいいぞ
 - Githubだけで完結する世界線は快適たぞ
-- PRもIssueも全部プロジェクトに入れてフィルタで使いたいようにカスタマイズしよう
+- PRもIssueも全部プロジェクトに入れてフィルタでカスタマイズしよう
 - Githubありがとう🐙
 
 ## Ref
