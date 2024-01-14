@@ -26,18 +26,23 @@ snippet: Project development done exclusively through Github 🐙
 
 ## Github Projects 押しの機能
 
-上記プロジェクト管理に必要な設定がGithub Project だとどのようにできるのかは[一休Developers Blog](https://user-first.ikyu.co.jp/entry/2023/11/09/175121)の記事がとてもわかりやすい。
-大枠はそちらの記事に任せるとして、この記事では私の押しのGithub Projectの機能を記述する。
+上記プロジェクト管理に必要な設定がGithub Project
+だとどのようにできるのかは[一休Developers Blog](https://user-first.ikyu.co.jp/entry/2023/11/09/175121)の記事がとてもわかりやすい。
+大枠はそちらの記事に任せるとして、この記事では私の押しのGithub
+Projectの機能を記述する。
 
 ### フィルターが強力
 
-Github はissueやpull-requestの管理、検索などに提供されているフィルターの機能が強力だ。この機能がいい感じ
+Github
+はissueやpull-requestの管理、検索などに提供されているフィルターの機能が強力だ。この機能がいい感じ
 に[Github Projectでも拡張](https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/filtering-projects)され、活用し易いようになっている。
 
 お気に入りのフィルターは下記がある。
 
-- [last-updated:](https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/filtering-projects#filtering-for-when-an-item-was-last-updated) 最近更新されたっぽいのを取ってくる
-- [field:](https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/filtering-projects#filtering-number-date-and-iteration-fields) プロジェクト固有のカスタムフィールドを比較演算使って絞り込み
+- [last-updated:](https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/filtering-projects#filtering-for-when-an-item-was-last-updated)
+  最近更新されたっぽいのを取ってくる
+- [field:](https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/filtering-projects#filtering-number-date-and-iteration-fields)
+  プロジェクト固有のカスタムフィールドを比較演算使って絞り込み
 
 ### View を複数持ったプロジェクトを建てられる
 
@@ -47,21 +52,24 @@ Github はissueやpull-requestの管理、検索などに提供されている�
 結果的にはフィルターと組み合わせることで実際のプロジェクトに合わせ使いやすくカスタマイズ可能な要素だと理解できた。
 
 また、Viewはソートの設定やグローバル設定とローカル設定の管理を別々にできるなどこれまた痒いところに手が届いている。
-全体のViewに影響を与えず、手元では `assignee:9renpoto` などフィルタした状態で膨大なタスクの海を直感的に操作できる。
+全体のViewに影響を与えず、手元では `assignee:9renpoto`
+などフィルタした状態で膨大なタスクの海を直感的に操作できる。
 
 ### プロジェクト（カンバン）を操作しなくてもステータスを更新できる手段が豊富
 
 > [Understanding fields](https://docs.github.com/en/issues/planning-and-tracking-with-projects/understanding-fields)
 
-Github にはスタンダードな管理方法として `label` と `milesone` があり、長くこれらの機能の組み合わせで開発プロジェクトの運用ができるようルールを設けたりなどしていた。
+Github にはスタンダードな管理方法として `label` と `milesone`
+があり、長くこれらの機能の組み合わせで開発プロジェクトの運用ができるようルールを設けたりなどしていた。
 これらの標準項目はいずれもリポジトリ固有な設定であり、設定を同期したりそれらの仕組みを組んだりなどが必要であった。
 
-私はずっと [waffle.io](https://github.com/waffleio) というGithub 連携可能なプロジェクト管理ツールが大好きであった。
-その中で一番好きだった機能が「ステータスとラベルの連動機能」だ。いい感じにラベルを操作していたら、カンバンもいい感じになる。カンバンを操作していてもGithub にいい感じのラベルがついている。
+私はずっと [waffle.io](https://github.com/waffleio) というGithub
+連携可能なプロジェクト管理ツールが大好きであった。
+その中で一番好きだった機能が「ステータスとラベルの連動機能」だ。いい感じにラベルを操作していたら、カンバンもいい感じになる。カンバンを操作していてもGithub
+にいい感じのラベルがついている。
 
 # Ref
 
 - [GitHub Projects を利用したタスク管理 | 一休 Developers Blog](https://user-first.ikyu.co.jp/entry/2023/11/09/175121)
 - [GitHub Projects を導入した話 | KAKEHASHI Tech Blog](https://kakehashi-dev.hatenablog.com/entry/2023/02/28/090000)
 - [Thank you, waffle.io | 9renpoto.win](https://9renpoto.win/entry/2019/05/26/goodbye-waffle-io)
-
