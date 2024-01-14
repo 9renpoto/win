@@ -6,28 +6,28 @@ snippet: Project development done exclusively through Github 🐙
 
 # TL;DR
 
-- Github Project の進化がすごい（実はずっとすごかった）
+- Github Projectの進化がすごい（実はずっとすごかった）
 - カスタマイズ性が高く、エンジニアフレンドリー
 - フィルタとの組み合わせが強力
 
-## Github を利用した開発タスク管理
+## Githubを利用した開発タスク管理
 
-近年、GithubとJIRAを組み合わせたスクラム開発を数年回していた。理由はGithubでは十分なタスク管理ができないからということで組織全体で採用されていた。
+近年、GithubとJIRAを組み合わせたスクラム開発を数年回していた。
+理由はGithubでは十分なタスク管理ができないからということで採用されていた。
 スクラムやチーム開発の中でタスク管理ツールに求めていたものには下記のような要件があったように考える。
 
 1. カンバン表示ができ、進捗状態を可視化できる
 1. カンバン、およびバックログなどに優先度が付けられる（優先度順にソートできる）
-1. 複数のチーム、職能が存在していた際にViewを直感的に分けられる（swimlaneなど)
+1. 複数のチーム、職能が存在していた際にViewを直感的に分けられる（swimlaneなど）
 1. エピック・ロードマップが管理でき、簡易的なガントチャートが管理できる
 1. ストーリーポイントなど、ベロシティやタスクの大きさを一定入力できる
 1. 複数のリポジトリにまたがるタスクを同列に管理できること
 
 チームタスク管理でやりたいこと多すぎるが、これらを十分にカバーできるような機能が揃って来ている。
 
-## Github Projects 押しの機能
+## Github Projects押しの機能
 
-上記プロジェクト管理に必要な設定がGithub Project
-だとどのようにできるのかは[一休Developers Blog](https://user-first.ikyu.co.jp/entry/2023/11/09/175121)の記事がとてもわかりやすい。
+上記プロジェクト管理に必要な設定がGithub Projectだとどのようにできるのかは[一休Developers Blog](https://user-first.ikyu.co.jp/entry/2023/11/09/175121)の記事がとてもわかりやすい。
 大枠はそちらの記事に任せるとして、この記事では私の押しのGithub
 Projectの機能を記述する。
 
@@ -44,7 +44,7 @@ Github
 - [field:](https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/filtering-projects#filtering-number-date-and-iteration-fields)
   プロジェクト固有のカスタムフィールドを比較演算使って絞り込み
 
-### View を複数持ったプロジェクトを建てられる
+### Viewを複数持ったプロジェクトを建てられる
 
 > [Changing the layout of a view](https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/changing-the-layout-of-a-view)
 
@@ -59,7 +59,7 @@ Github
 
 > [Understanding fields](https://docs.github.com/en/issues/planning-and-tracking-with-projects/understanding-fields)
 
-Github にはスタンダードな管理方法として `label` と `milesone`
+Github にはスタンダードな管理方法として `label` と `milestone`
 があり、長くこれらの機能の組み合わせで開発プロジェクトの運用ができるようルールを設けたりなどしていた。
 これらの標準項目はいずれもリポジトリ固有な設定であり、設定を同期したりそれらの仕組みを組んだりなどが必要であった。
 
