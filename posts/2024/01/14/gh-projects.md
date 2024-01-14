@@ -79,7 +79,7 @@ Githubにはスタンダードな管理方法として `label` と `milestone`
 
 - Github Projectいいぞ
 - Githubだけで完結する世界線は快適たぞ
-- PRもIssueも全部プロジェクトに入れてフィルタでカスタマイズしよう
+- PR、Issue全部プロジェクトに入れてフィルタでカスタマイズしよう
 - Githubありがとう🐙
 
 ## Ref
