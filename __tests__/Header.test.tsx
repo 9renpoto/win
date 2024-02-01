@@ -5,6 +5,7 @@ import { Header } from "../components/Header.tsx";
 
 describe("Header", () => {
   beforeEach(() => {
+    // deno-lint-ignore no-window
     window.document = new DOMParser().parseFromString(
       "",
       "text/html",

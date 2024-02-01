@@ -6,6 +6,7 @@ import { PostCard } from "../routes/index.tsx";
 
 describe("PostCard", () => {
   beforeEach(() => {
+    // deno-lint-ignore no-window
     window.document = new DOMParser().parseFromString(
       "",
       "text/html",
