@@ -1,5 +1,5 @@
-import { MiddlewareHandlerContext } from "$fresh/server.ts";
-import type { Event } from "$ga4";
+import { FreshContext } from "$fresh/server.ts";
+import type { Event, PrimaryEvent } from "$ga4";
 import { GA4Report, isDocument, isServerError } from "$ga4";
 
 const GA4_MEASUREMENT_ID = Deno.env.get("GA4_MEASUREMENT_ID");
@@ -8,7 +8,7 @@ let showedMissingEnvWarning = false;
 
 function ga4(
   request: Request,
-  conn: MiddlewareHandlerContext,
+  conn: FreshContext,
   response: Response,
   _start: number,
   error?: unknown,
@@ -37,7 +37,7 @@ function ga4(
 
     let event: Event | null = null;
     const contentType = response.headers.get("content-type");
-    if (/text\/html/.test(contentType!)) {
+    if (contentType && /text\/html/.test(contentType)) {
       event = { name: "page_view", params: {} }; // Probably an old browser.
     }
 
@@ -46,7 +46,7 @@ function ga4(
     }
 
     // If an exception was thrown, build a separate event to report it.
-    let exceptionEvent;
+    let exceptionEvent: PrimaryEvent | null;
     if (error != null) {
       exceptionEvent = {
         name: "exception",
@@ -56,12 +56,23 @@ function ga4(
         },
       };
     } else {
-      exceptionEvent = undefined;
+      exceptionEvent = null;
+    }
+    if (conn.url.pathname === "/healthz") {
+      return;
     }
 
     // Create basic report.
     const measurementId = GA4_MEASUREMENT_ID;
-    const report = new GA4Report({ measurementId, request, response, conn });
+    const report = new GA4Report({
+      measurementId,
+      request,
+      response,
+      conn: {
+        localAddr: conn.localAddr as Deno.Addr,
+        remoteAddr: conn.remoteAddr,
+      },
+    });
 
     // Override the default (page_view) event.
     report.event = event;
@@ -79,13 +90,15 @@ function ga4(
 
 export async function handler(
   req: Request,
-  ctx: MiddlewareHandlerContext,
+  conn: FreshContext,
 ): Promise<Response> {
-  let err;
-  let res: Response;
+  let err: unknown;
+  let res = new Response("Internal Server Error", {
+    status: 500,
+  });
   const start = performance.now();
   try {
-    const resp = await ctx.next();
+    const resp = await conn.next();
     const headers = new Headers(resp.headers);
     res = new Response(resp.body, { status: resp.status, headers });
     return res;
@@ -98,8 +111,8 @@ export async function handler(
   } finally {
     ga4(
       req,
-      ctx,
-      res!,
+      conn,
+      res,
       start,
       err,
     );
