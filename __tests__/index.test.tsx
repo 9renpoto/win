@@ -1,17 +1,11 @@
-import { beforeEach, describe, it } from "$std/testing/bdd.ts";
+import { afterEach, beforeAll, describe, it } from "$std/testing/bdd.ts";
 import { assertExists } from "$std/testing/asserts.ts";
-import { DOMParser, render } from "./deps.ts";
-
+import { cleanup, render, setup } from "$fresh-testing-library/components.ts";
 import { PostCard } from "../routes/index.tsx";
 
 describe("PostCard", () => {
-  beforeEach(() => {
-    // deno-lint-ignore no-window
-    window.document = new DOMParser().parseFromString(
-      "",
-      "text/html",
-    ) as unknown as Document;
-  });
+  beforeAll(setup);
+  afterEach(cleanup);
 
   it("should exists.", () => {
     const { container } = render(

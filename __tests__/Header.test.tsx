@@ -1,18 +1,13 @@
-import { beforeEach, describe, it } from "$std/testing/bdd.ts";
+import { afterEach, beforeAll, describe, it } from "$std/testing/bdd.ts";
 import { assertExists } from "$std/testing/asserts.ts";
-import { DOMParser, render } from "./deps.ts";
+import { cleanup, render, setup } from "$fresh-testing-library/components.ts";
 import { Header } from "../components/Header.tsx";
 
 describe("Header", () => {
-  beforeEach(() => {
-    // deno-lint-ignore no-window
-    window.document = new DOMParser().parseFromString(
-      "",
-      "text/html",
-    ) as unknown as Document;
-  });
+  beforeAll(setup);
+  afterEach(cleanup);
 
-  it.skip("should exists.", () => {
+  it("should exists.", () => {
     const { container } = render(
       <Header title="title" />,
     );
