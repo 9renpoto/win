@@ -86,5 +86,5 @@ Githubにはスタンダードな管理方法として `label` と `milestone`
 
 - [GitHub Projects を利用したタスク管理 | 一休 Developers Blog](https://user-first.ikyu.co.jp/entry/2023/11/09/175121)
 - [GitHub Projects を導入した話 | KAKEHASHI Tech Blog](https://kakehashi-dev.hatenablog.com/entry/2023/02/28/090000)
-- [Thank you, waffle.io | 9renpoto.win](/entry/2019/05/26/goodbye-waffle-io)
+- [Thank you, waffle.io | 9renpoto.win](https://9renpoto.win/entry/2019/05/26/goodbye-waffle-io)
 - [github projectsが少し良くなっていた | 9renpoto.win](https://9renpoto.win/entry/2018/01/21/github-projects)
