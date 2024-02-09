@@ -17,7 +17,7 @@ category: 'js'
 
 ## メリット
 
-- 前回：<https://9renpoto.win/2016/08/20/typescript-coverage/>
+- [前回](/entry/2016/08/20/typescript-coverage)
 - tscする一手間を省略して`ts-node`に任せるだけでよくなりました
 
 ## Refs
