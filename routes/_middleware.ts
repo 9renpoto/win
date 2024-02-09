@@ -58,7 +58,11 @@ function ga4(
     } else {
       exceptionEvent = null;
     }
-    if (conn.url.pathname === "/healthz") {
+    const userAgents: Array<string | null> = ['textlint-rule-no-dead-link/1.0']
+    if(userAgents.includes(request.headers.get("user-agent"))) {
+      return
+    }
+    if (conn.url.pathname === "/healthz"){
       return;
     }
 
