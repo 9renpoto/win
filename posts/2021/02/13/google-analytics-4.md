@@ -7,14 +7,14 @@ title: GoogleAnalytics 4でカスタムディメンションが設定できて�
 
 - 現在進行形
 - 解決したいがとりあえず軌跡を記録する
-- 目指したいゴールはGTMから配信されているGA4 にカスタムディメンションを適応する
+- 目指したいゴールはGTMから配信されているGA4にカスタムディメンションを適応する
 
 ## Google Analytics 4
 
 - firebase analytics統合版みたいなものが使える様になって気付いたらv4
   という更新としてリリースしたようだ
 - 取り敢えずGoogle Analytics 4から設定する
-  - https://support.google.com/analytics/answer/10075209?hl=ja
+  - https://support.google.com/analytics/answer/14240153?hl=ja&visit_id=638430859981796861-106775261&rd=1
 - カスタムディメンションの個数制限はそのまま？
 - インデックス表記ではなくこちらで名前を割り当てていける？
 - タグマネージャーからは **ユーザープロパティ** と **設定フィールド** という2
