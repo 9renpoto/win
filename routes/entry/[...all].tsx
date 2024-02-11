@@ -30,13 +30,16 @@ export default function PostPage(props: PageProps<Post>) {
       </Head>
       <main class="flex-grow max-w-screen-md w-full px-4 pt-4 mx-auto">
         <h1 class="text-2xl font-bold">{post.title}</h1>
-        <time class="text-gray-500">
-          {new Date(post.publishedAt).toLocaleDateString("en-us", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
-        </time>
+        <div class="grid grid-cols-2 gap-4">
+          <time class="text-gray-500">
+            {new Date(post.publishedAt).toLocaleDateString("en-us", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </time>
+          <p class="text-gray-500">Number of word {post.content.length}</p>
+        </div>
         <div
           class="mt-8 markdown-body"
           dangerouslySetInnerHTML={{ __html: render(post.content) }}
