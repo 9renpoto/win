@@ -8,7 +8,7 @@ snippet:
 
 私信です。
 
-- From: [CADDi Inc](https://caddi.com/)
+- From: [CADDi Inc](https://caddi.com)
 - To: [ROLLCAKE Inc](https://rollcake.co/)
 
 ## ROLLCAKEのJoinを決めた理由
