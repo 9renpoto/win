@@ -1,7 +1,7 @@
 import { afterEach, beforeAll, describe, it } from "$std/testing/bdd.ts";
 import { assertExists } from "$std/testing/asserts.ts";
 import { cleanup, render, setup } from "$fresh-testing-library/components.ts";
-import { PostCard } from "../routes/index.tsx";
+import { PostCard } from "@/routes/index.tsx";
 
 describe("PostCard", () => {
   beforeAll(setup);
