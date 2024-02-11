@@ -20,7 +20,7 @@ jobs:
 
     strategy:
       matrix:
-        year: [2024, 2023]
+        year: [2024, 2023, 2021]
 
     steps:
       - name: Setup repo
@@ -33,4 +33,3 @@ jobs:
 
       - run: deno cache __tests__/deps.ts
       - run: find posts/${{ matrix.year }} -name '*.md' | sort | xargs -I file deno task lint file
-
