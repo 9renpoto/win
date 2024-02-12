@@ -20,7 +20,8 @@ title: GoogleAnalytics 4でカスタムディメンションが設定できて�
 - タグマネージャーからは **ユーザープロパティ** と **設定フィールド** という2
   種類の概念が登場する
   - https://support.google.com/tagmanager/answer/9442095?hl=ja
-  - `config` で設定するか `dataLayer` で設定するか
+  - `config` で設定するか
+  - `dataLayer` で設定するか
   - 一時的なものか恒久的なものかで設定の方法が違う？
 - GoogleAnalyticsの設定のデバッグには
   https://chrome.google.com/webstore/detail/google-analytics-debugger/jnkmfdileelhofjcijamephohjechhna/reviews?hl=ja
@@ -38,7 +39,7 @@ title: GoogleAnalytics 4でカスタムディメンションが設定できて�
 
 - データを送っているようで入ってほしいところにはいらない
   - debug viewからはdata
-    は送ってそうに見えるがユーザープロパティとしてデータが送られることが正しそうなのにそのように見えない
+    は送ってそうに見えるがユーザープロパティとしてデータを送られることが正しそうなのにそのように見えない
   - データが正しく適応できていないため目的のフォーマットでデータがはいらない
 - Google Tag Managerを経由して変数をGA4にわたす場合
   - `dataLayer` 変数を経由して渡す必要があると思っているがうまく渡らない
