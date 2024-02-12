@@ -19,8 +19,8 @@ title: Brew Alternative Installs ( Intel mac )
 - もともとinstall `/user/local`
   配下にインストールが推奨されていたが適切な場所ではないと判断し `/opt/homebrew`
   へinstallを変更していた
-- 今回 **ARM** 版Macの誕生により`/opt/homebrew` 配下へのinstallが推奨され、 Intel
-  Macで `/opt/homebrew` 配下にbrewを配置している場合動かなくなっていそう
+- 今回 **ARM** 版Macの誕生により`/opt/homebrew` 配下へのinstallが推奨され、
+  Intel Macで `/opt/homebrew` 配下にbrewを配置している場合動かなくなっていそう
 
 ```
 Error: Cannot install in Homebrew on Intel processor in ARM default prefix (/opt/homebrew)!
