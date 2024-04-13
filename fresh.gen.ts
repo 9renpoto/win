@@ -10,7 +10,7 @@ import * as $entry_all_ from "./routes/entry/[...all].tsx";
 import * as $healthz from "./routes/healthz.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $rss_xml from "./routes/rss.xml.ts";
-
+import * as $SearchButton from "./islands/SearchButton.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -24,7 +24,9 @@ const manifest = {
     "./routes/index.tsx": $index,
     "./routes/rss.xml.ts": $rss_xml,
   },
-  islands: {},
+  islands: {
+    "./islands/SearchButton.tsx": $SearchButton,
+  },
   baseUrl: import.meta.url,
 } satisfies Manifest;
 
