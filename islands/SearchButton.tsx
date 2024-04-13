@@ -17,9 +17,9 @@ export default function SearchButton(
   useEffect(() => {
     if (ref.current) {
       props.docsearch || docsearch({
-        appId: process.env["ALGOLIA_APP_ID"],
-        apiKey: process.env["ALGOLIA_API_KEY"],
-        indexName: process.env["ALGOLIA_INDEX_NAME"],
+        appId: "SV4Q5O4SYJ",
+        apiKey: "73f700bbeef663cb76e7c4d3ca2f0fc4",
+        indexName: "9renpoto.win",
         container: ref.current,
       });
     }
@@ -34,7 +34,7 @@ export default function SearchButton(
       </Head>
       <div
         title="Search Button"
-        class={"h-9 mb-6 " + (props.class ?? "")}
+        class={`h-9 mb-6 ${props.class ?? ""}`}
         ref={ref}
       >
       </div>
