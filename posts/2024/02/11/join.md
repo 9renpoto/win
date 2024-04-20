@@ -1,7 +1,6 @@
 ---
 date: 2024-02-11
 title: ROLLCAKE株式会社にJoinしました
-snippet:
 ---
 
 # TL;DR
