@@ -18,7 +18,10 @@
     "9renpoto",
     "bluesky",
     "denoland",
+    "hadolint",
     "healthz",
-    "preact"
+    "preact",
+    "tailwindcss",
+    "textlint"
   ]
 }

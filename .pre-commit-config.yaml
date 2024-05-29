@@ -1,0 +1,15 @@
+repos:
+  - repo: https://github.com/streetsidesoftware/cspell-cli
+    rev: v8.8.2
+    hooks:
+      - id: cspell
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.12.0
+    hooks:
+      - id: hadolint
+  - repo: local
+    hooks:
+    -   id: secretlint
+        name: secretlint
+        language: docker_image
+        entry: secretlint/secretlint:latest secretlint

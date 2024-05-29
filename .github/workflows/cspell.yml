@@ -1,6 +1,6 @@
 name: Check spelling
 on:
-  pull_request:
+  pull_request: null
 jobs:
   spellcheck:
     runs-on: ubuntu-latest
@@ -10,3 +10,5 @@ jobs:
         with:
           incremental_files_only: true
           strict: false
+words:
+  - textlint
