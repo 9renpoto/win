@@ -32,4 +32,4 @@ jobs:
           deno-version: v1.x
 
       - run: deno cache __tests__/deps.ts
-      - run: deno task lint posts/${{ matrix.year }}
+      - run: find posts/${{ matrix.year }} -name '*.md' | sort | xargs -I file deno task lint file
