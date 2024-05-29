@@ -29,7 +29,7 @@ jobs:
       - name: Setup Deno
         uses: denoland/setup-deno@v1
         with:
-          deno-version: v1.x
+          deno-version: v1.43.6
 
       - run: deno cache __tests__/deps.ts
       - run: find posts/${{ matrix.year }} -name '*.md' | sort | xargs -I file deno task lint file
