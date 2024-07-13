@@ -1,5 +1,5 @@
-import { afterEach, beforeAll, describe, it } from "$std/testing/bdd.ts";
-import { assertExists } from "$std/testing/asserts.ts";
+import { afterEach, beforeAll, describe, it } from "@std/testing/bdd";
+import { assertExists } from "@std/testing/asserts";
 import { cleanup, render, setup } from "$fresh-testing-library/components.ts";
 import { Header } from "@/components/Header.tsx";
 

@@ -1,7 +1,7 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
 import { getPost, Post } from "@/utils/posts.ts";
-import { CSS, render } from "$gfm";
+import { CSS, render } from "@deno/gfm";
 import { description, title } from "@/utils/website.ts";
 import { SEO } from "@/components/SEO.tsx";
 

@@ -1,5 +1,5 @@
-import { extract } from "$std/front_matter/any.ts";
-import { join } from "$std/path/posix.ts";
+import { extract } from "@std/front-matter/any";
+import { join } from "@std/path/posix";
 
 const DIRECTORY = "./posts";
 
