@@ -36,17 +36,10 @@ jobs:
         with:
           deno-version: v1.x
 
-      - name: Verify formatting
-        run: deno fmt --check
-
-      - name: Run linter
-        run: deno lint
-
-      - name: Run tests
-        run: deno test -A --coverage=coverage
-
-      - name: Create coverage report
-        run: deno coverage ./coverage --lcov > coverage.lcov
+      - run: deno fmt --check
+      - run: deno lint
+      - run: deno test -A --coverage=coverage
+      - run: deno coverage ./coverage --lcov > coverage.lcov
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4
