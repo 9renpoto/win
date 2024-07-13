@@ -7,8 +7,10 @@
     "lint": "deno run -A npm:textlint",
     "preview": "deno run -A main.ts"
   },
-  "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
-  "lock": false,
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  },
   "imports": {
     "$fresh-testing-library/": "https://deno.land/x/fresh_testing_library@0.12.0/",
     "$fresh/": "https://deno.land/x/fresh@1.6.8/",
@@ -28,6 +30,16 @@
     "tailwindcss/": "npm:tailwindcss@3.4.1/",
     "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js"
   },
-  "lint": { "rules": { "tags": ["fresh", "recommended"] } },
-  "exclude": ["**/_fresh/*", "cache"]
+  "lint": {
+    "rules": {
+      "tags": [
+        "fresh",
+        "recommended"
+      ]
+    }
+  },
+  "exclude": [
+    "**/_fresh/*",
+    "cache"
+  ]
 }
