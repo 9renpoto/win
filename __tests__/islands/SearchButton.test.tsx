@@ -1,7 +1,7 @@
-import { assert } from "$std/testing/asserts.ts";
+import { assert } from "@std/testing/asserts";
 import { cleanup, render, setup } from "$fresh-testing-library/components.ts";
 import { fn } from "$fresh-testing-library/expect.ts";
-import { afterEach, beforeAll, describe, it } from "$std/testing/bdd.ts";
+import { afterEach, beforeAll, describe, it } from "@std/testing/bdd";
 import SearchButton from "../../islands/SearchButton.tsx";
 import docsearch from "https://esm.sh/@docsearch/js@3?target=es2020";
 
