@@ -47,7 +47,7 @@ export function PostCard({ post }: { post: Post }) {
             day: "numeric",
           })}
         </time>
-        <div class="mt-4 text-gray-900">
+        <div class="mt-4 text-gray-900 overflow-hidden text-ellipsis">
           {post.snippet}
         </div>
       </a>
