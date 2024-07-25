@@ -7,6 +7,7 @@ export interface Post {
   slug: string;
   title: string;
   publishedAt: Date;
+  mtime?: Date;
   snippet: string;
   content: string;
 }
@@ -43,14 +44,18 @@ export async function getPosts(): Promise<Post[]> {
 }
 
 export async function getPost(slug: string, dir = DIRECTORY): Promise<Post> {
-  const text = await Deno.readTextFile(join(dir, `${slug}.md`));
+  const filename = join(dir, `${slug}.md`);
+  const stat = await Deno.stat(filename);
+  const text = await Deno.readTextFile(filename);
   const { attrs, body } = extract<
     Omit<Post, "published_at"> & { date: string }
   >(text);
+  const publishedAt = new Date(attrs.date);
   return {
     slug,
     title: attrs.title,
-    publishedAt: new Date(attrs.date),
+    publishedAt,
+    mtime: stat.mtime || undefined,
     content: body,
     snippet: attrs.snippet || body.slice(0, 150),
   };
