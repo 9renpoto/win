@@ -21,6 +21,7 @@
       "npm:@9renpoto/textlint-config-ja": "npm:@9renpoto/textlint-config-ja@7.7.4_textlint-filter-rule-comments@1.2.2__textlint@13.4.1_textlint-rule-incremental-headers@0.2.0_textlint-rule-ja-no-mixed-period@3.0.1_textlint-rule-ja-no-successive-word@2.0.1_textlint-rule-ja-no-weak-phrase@2.0.0_textlint-rule-max-ten@4.0.4_textlint-rule-no-dead-link@5.1.2__textlint@13.4.1_textlint-rule-no-double-negative-ja@2.0.1_textlint-rule-no-doubled-conjunction@2.0.4_textlint-rule-no-doubled-conjunctive-particle-ga@2.0.5_textlint-rule-no-doubled-joshi@4.1.0_textlint-rule-no-dropping-the-ra@3.0.0_textlint-rule-no-hankaku-kana@2.0.1_textlint-rule-no-mix-dearu-desumasu@5.0.0_textlint-rule-no-nfd@2.0.2_textlint-rule-preset-ja-spacing@2.3.0_textlint-rule-preset-jtf-style@2.3.14__textlint@13.4.1_textlint@13.4.1",
       "npm:@preact/signals@1.3.0": "npm:@preact/signals@1.3.0_preact@10.22.1",
       "npm:@preact/signals@^1.3.0": "npm:@preact/signals@1.3.0_preact@10.22.1",
+      "npm:@sentry/deno": "npm:@sentry/deno@8.25.0",
       "npm:@types/node": "npm:@types/node@18.16.19",
       "npm:autoprefixer@10.4.17": "npm:autoprefixer@10.4.17_postcss@8.4.35",
       "npm:cssnano@6.0.3": "npm:cssnano@6.0.3_postcss@8.4.35",
@@ -285,6 +286,31 @@
         "dependencies": {
           "@preact/signals-core": "@preact/signals-core@1.7.0",
           "preact": "preact@10.22.1"
+        }
+      },
+      "@sentry/core@8.25.0": {
+        "integrity": "sha512-7KtglbrW1eX4DOHkf6i4rRIExEf2CgtQ99qZ8gn5FUaAmNMg0rK7bb1yZMx0RZtp5G1TSz/S0jQQgxHWebaEig==",
+        "dependencies": {
+          "@sentry/types": "@sentry/types@8.25.0",
+          "@sentry/utils": "@sentry/utils@8.25.0"
+        }
+      },
+      "@sentry/deno@8.25.0": {
+        "integrity": "sha512-NTkLJRWVjwSR+knAzjF2dkzUkeuPJ5w0ItuJNgryc/K3f5ReWLCzMNJEFKvKQP4ZoS1xz/ExmXlIzvlFeYZ82g==",
+        "dependencies": {
+          "@sentry/core": "@sentry/core@8.25.0",
+          "@sentry/types": "@sentry/types@8.25.0",
+          "@sentry/utils": "@sentry/utils@8.25.0"
+        }
+      },
+      "@sentry/types@8.25.0": {
+        "integrity": "sha512-ojim0gDcRhGJPguYrtms4FsprX4xZz3LGNk9Z0hwTbSVEdlhQIInsQ7CYcdM3sjUs+qT7kfpxTRZGUeZNRRJcA==",
+        "dependencies": {}
+      },
+      "@sentry/utils@8.25.0": {
+        "integrity": "sha512-mVlkV7S62ZZ2jM38/kOwWx2xoW8fUv2cjw2IwFKoAIPyLBh3mo1WJtvfdtN/rXGjQWZJBKW53EWaWnD00rkjyA==",
+        "dependencies": {
+          "@sentry/types": "@sentry/types@8.25.0"
         }
       },
       "@sinclair/typebox@0.27.8": {
@@ -3570,6 +3596,7 @@
   },
   "redirects": {
     "https://deno.land/x/hackle/init.ts": "https://deno.land/x/hackle@1.1.1/init.ts",
+    "https://deno.land/x/sentry/index.mjs": "https://deno.land/x/sentry@8.25.0/index.mjs",
     "https://esm.sh/@docsearch/js@3?target=es2020": "https://esm.sh/@docsearch/js@3.6.0?target=es2020",
     "https://esm.sh/@testing-library/jest-dom@6.1.4/types/matchers.d.ts?pin=v133": "https://esm.sh/v135/@testing-library/jest-dom@6.1.4/types/matchers.d.ts",
     "https://esm.sh/v135/@types/babel__helper-validator-identifier@~7/index.d.ts": "https://esm.sh/v135/@types/babel__helper-validator-identifier@7.15.2/index.d.ts"
@@ -4029,6 +4056,7 @@
     "https://deno.land/x/hackle@1.1.1/lib/get-date-format.ts": "9f117dd5e0925c188fe05da0dd4bda0bc3f97f62d43880bc853cc1c6526cb5e9",
     "https://deno.land/x/hackle@1.1.1/mod.ts": "5848364fc9fa40cd8c64b3546ca6c94b56130af6b1aa44cabca3cf437481e930",
     "https://deno.land/x/hackle@1.1.1/tools.ts": "ad92dd10a63d4d8022680d10b504848e5be0ebce81aa05ddc897af9baac9e1e1",
+    "https://deno.land/x/sentry@8.25.0/index.mjs": "89fb005a758d87e17dddd4ad4fcfb4ad7573afed6838a0cb4633cc62516bf8b9",
     "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/activity.tsx": "73fa77de484c74f65e3732c9053992e08aff325f921bc299e1e0ce383e7dc89b",
     "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/brand-github.tsx": "3e7c2e085570ebe78bf72d7ba9ad77e6519930feff5f3b653c3ba5b29b1c863b",
     "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/campfire.tsx": "1962275fac5c2e691d9fc16dae7eadb6721ef1beb00e9df853a72dca858ebe74",
@@ -4125,6 +4153,7 @@
       "jsr:@std/testing@^0.225.3",
       "npm:@preact/signals-core@^1.7.0",
       "npm:@preact/signals@^1.3.0",
+      "npm:@sentry/deno",
       "npm:preact@^10.22.1",
       "npm:tailwindcss@^3.4.6"
     ]
