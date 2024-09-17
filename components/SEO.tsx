@@ -1,6 +1,11 @@
 import { author } from "@/utils/website.ts";
 
-export const SEO = ({ title, description, ogImage, keywords }: {
+export const SEO = ({
+  title,
+  description,
+  ogImage,
+  keywords,
+}: {
   title: string;
   description: string;
   ogImage: string;

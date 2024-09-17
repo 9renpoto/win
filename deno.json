@@ -29,14 +29,8 @@
   },
   "lint": {
     "rules": {
-      "tags": [
-        "fresh",
-        "recommended"
-      ]
+      "tags": ["fresh", "recommended"]
     }
   },
-  "exclude": [
-    "**/_fresh/*",
-    "cache"
-  ]
+  "exclude": ["**/_fresh/*", "cache"]
 }

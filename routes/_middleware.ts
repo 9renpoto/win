@@ -1,4 +1,4 @@
-import { FreshContext } from "$fresh/server.ts";
+import type { FreshContext } from "$fresh/server.ts";
 import type { Event, PrimaryEvent } from "$ga4";
 import { GA4Report, isDocument, isServerError } from "$ga4";
 
@@ -22,74 +22,81 @@ function ga4(
     }
     return;
   }
-  Promise.resolve().then(async () => {
-    // We're tracking page views and file downloads. These are the only two
-    // HTTP methods that _might_ be used.
-    if (!/^(GET|POST)$/.test(request.method)) {
-      return;
-    }
+  Promise.resolve()
+    .then(async () => {
+      // We're tracking page views and file downloads. These are the only two
+      // HTTP methods that _might_ be used.
+      if (!/^(GET|POST)$/.test(request.method)) {
+        return;
+      }
 
-    // If the visitor is using a web browser, only create events when we serve
-    // a top level documents or download; skip assets like css, images, fonts.
-    if (!isDocument(request, response) && error == null) {
-      return;
-    }
+      // If the visitor is using a web browser, only create events when we serve
+      // a top level documents or download; skip assets like css, images, fonts.
+      if (!isDocument(request, response) && error == null) {
+        return;
+      }
 
-    let event: Event | null = null;
-    const contentType = response.headers.get("content-type");
-    if (contentType && /text\/html/.test(contentType)) {
-      event = { name: "page_view", params: {} }; // Probably an old browser.
-    }
+      let event: Event | null = null;
+      const contentType = response.headers.get("content-type");
+      if (contentType && /text\/html/.test(contentType)) {
+        event = { name: "page_view", params: {} }; // Probably an old browser.
+      }
 
-    if (event == null && error == null) {
-      return;
-    }
+      if (event == null && error == null) {
+        return;
+      }
 
-    // If an exception was thrown, build a separate event to report it.
-    let exceptionEvent: PrimaryEvent | null;
-    if (error != null) {
-      exceptionEvent = {
-        name: "exception",
-        params: {
-          description: String(error),
-          fatal: isServerError(response),
+      // If an exception was thrown, build a separate event to report it.
+      let exceptionEvent: PrimaryEvent | null;
+      if (error != null) {
+        exceptionEvent = {
+          name: "exception",
+          params: {
+            description: String(error),
+            fatal: isServerError(response),
+          },
+        };
+      } else {
+        exceptionEvent = null;
+      }
+      const userAgents: Array<string | null> = [
+        "textlint-rule-no-dead-link/1.0",
+      ];
+      if (userAgents.includes(request.headers.get("user-agent"))) {
+        return;
+      }
+      if (conn.url.pathname === "/healthz") {
+        return;
+      }
+      if (response.status === 404) {
+        return;
+      }
+
+      // Create basic report.
+      const measurementId = GA4_MEASUREMENT_ID;
+      const report = new GA4Report({
+        measurementId,
+        request,
+        response,
+        conn: {
+          localAddr: conn.localAddr as Deno.Addr,
+          remoteAddr: conn.remoteAddr,
         },
-      };
-    } else {
-      exceptionEvent = null;
-    }
-    const userAgents: Array<string | null> = ["textlint-rule-no-dead-link/1.0"];
-    if (userAgents.includes(request.headers.get("user-agent"))) {
-      return;
-    }
-    if (conn.url.pathname === "/healthz") {
-      return;
-    }
+      });
 
-    // Create basic report.
-    const measurementId = GA4_MEASUREMENT_ID;
-    const report = new GA4Report({
-      measurementId,
-      request,
-      response,
-      conn: {
-        localAddr: conn.localAddr as Deno.Addr,
-        remoteAddr: conn.remoteAddr,
-      },
+      // Override the default (page_view) event.
+      report.event = event;
+
+      // Add the exception event, if any.
+      if (exceptionEvent != null) {
+        report.events.push(exceptionEvent);
+      }
+
+      await report.send();
+    })
+    .catch((err) => {
+      console.error(`Internal error: ${err}`);
     });
-
-    // Override the default (page_view) event.
-    report.event = event;
-
-    // Add the exception event, if any.
-    if (exceptionEvent != null) {
-      report.events.push(exceptionEvent);
-    }
-
-    await report.send();
-  }).catch((err) => {
-    console.error(`Internal error: ${err}`);
-  });
 }
 
 export async function handler(
@@ -113,12 +120,6 @@ export async function handler(
     err = e;
     throw e;
   } finally {
-    ga4(
-      req,
-      conn,
-      res,
-      start,
-      err,
-    );
+    ga4(req, conn, res, start, err);
   }
 }

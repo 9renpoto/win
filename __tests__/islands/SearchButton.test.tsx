@@ -1,9 +1,9 @@
-import { assert } from "@std/testing/asserts";
+import docsearch from "https://esm.sh/@docsearch/js@3?target=es2020";
 import { cleanup, render, setup } from "$fresh-testing-library/components.ts";
 import { fn } from "$fresh-testing-library/expect.ts";
+import { assert } from "@std/testing/asserts";
 import { afterEach, beforeAll, describe, it } from "@std/testing/bdd";
 import SearchButton from "../../islands/SearchButton.tsx";
-import docsearch from "https://esm.sh/@docsearch/js@3?target=es2020";
 
 describe("islands/SearchButton.tsx", () => {
   beforeAll(setup);
@@ -12,12 +12,14 @@ describe("islands/SearchButton.tsx", () => {
   it("should contain class applied in props", () => {
     // create mock implementation of docsearch
     // @ts-ignore mock impl
-    const dsearch = fn(docsearch).mockImplementation((
-      _applId: string,
-      _apiKey: string,
-      _indexName: string,
-      _container: HTMLElement | string,
-    ) => {});
+    const dsearch = fn(docsearch).mockImplementation(
+      (
+        _applId: string,
+        _apiKey: string,
+        _indexName: string,
+        _container: HTMLElement | string,
+      ) => {},
+    );
     const { getByTitle } = render(
       <SearchButton class="font-bold" docsearch={dsearch} />,
     );
