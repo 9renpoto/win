@@ -1,5 +1,5 @@
-import { defineConfig } from "$fresh/server.ts";
 import tailwind from "$fresh/plugins/tailwind.ts";
+import { defineConfig } from "$fresh/server.ts";
 import { freshSEOPlugin } from "$fresh_seo";
 import manifest from "./fresh.gen.ts";
 import { getPosts } from "./utils/posts.ts";
