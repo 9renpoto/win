@@ -5,7 +5,7 @@ import IconActivity from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/activit
 export function Header({ title }: { title: string }) {
   const menus = [
     { name: <IconRss />, href: "/rss.xml" },
-    { name: <IconActivity />, href: "https://status.9renpoto.win" },
+    { name: <IconActivity />, href: "https://9renpoto.github.io/upptime" },
     { name: <>About me</>, href: "/about" },
   ];
   return (
