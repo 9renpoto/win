@@ -65,6 +65,9 @@ function ga4(
     if (conn.url.pathname === "/healthz") {
       return;
     }
+    if (response.status === 404) {
+      return;
+    }
 
     // Create basic report.
     const measurementId = GA4_MEASUREMENT_ID;
