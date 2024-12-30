@@ -10,5 +10,3 @@ jobs:
         with:
           incremental_files_only: true
           strict: false
-words:
-  - textlint
