@@ -11,7 +11,7 @@ import * as $healthz from "./routes/healthz.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $rss_xml from "./routes/rss.xml.ts";
 import * as $SearchButton from "./islands/SearchButton.tsx";
-import { type Manifest } from "$fresh/server.ts";
+import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
