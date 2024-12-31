@@ -13,6 +13,7 @@ title: About me
 
 |            | 会社経歴                                                       | 部門     |
 | :--------- | :------------------------------------------------------------- | :------- |
+| 2023年11月 | [ROLLCAKE株式会社](https://rollcake.co/) 参画                  | 開発部門 |
 | 2020年7月  | [キャディ株式会社](https://caddi.com/company/overview/) 参画   | 開発部門 |
 | 2018年6月  | 開業(フリーランス)                                             | 開発部門 |
 | 2014年10月 | [株式会社 UNCOVER TRUTH](https://www.uncovertruth.co.jp/) 入社 | 開発部門 |
@@ -33,7 +34,7 @@ title: About me
 
 ## 個人的な活動
 
-- nest.js / graphql / next.js / preact / deno周りのエコシステムの調査
+- NestJS / GraphQL / Next.js / Preact / Deno周りのエコシステムの調査
   - [mentos1386/nest-raven](https://github.com/mentos1386/nest-raven)のメンテナンス
   - [g59/nestjs-plugins](https://github.com/g59/nestjs-plugins)のメンテナンス
 - monorepo関連の技術調査
