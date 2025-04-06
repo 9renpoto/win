@@ -1,8 +1,8 @@
-import { Handlers, PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
-import { getPosts, Post } from "@/utils/posts.ts";
-import { description, title } from "@/utils/website.ts";
+import type { Handlers, PageProps } from "$fresh/server.ts";
 import { SEO } from "@/components/SEO.tsx";
+import { getPosts, type Post } from "@/utils/posts.ts";
+import { description, title } from "@/utils/website.ts";
 
 export const handler: Handlers<Post[]> = {
   async GET(_req, ctx) {
@@ -23,9 +23,7 @@ export default function HealthPage(props: PageProps<Post[]>) {
           ogImage="https://avatars3.githubusercontent.com/u/520693?s=460&v=4"
         />
       </Head>
-      <main class="flex-grow">
-        This blog has {posts.length} entries.
-      </main>
+      <main class="flex-grow">This blog has {posts.length} entries.</main>
     </>
   );
 }

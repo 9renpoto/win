@@ -19,7 +19,9 @@ export async function getPosts(): Promise<Post[]> {
       for await (const e2 of Deno.readDir(join(DIRECTORY, e1.name))) {
         if (e2.isDirectory) {
           for await (
-            const e3 of Deno.readDir(join(DIRECTORY, e1.name, e2.name))
+            const e3 of Deno.readDir(
+              join(DIRECTORY, e1.name, e2.name),
+            )
           ) {
             if (e3.isDirectory) {
               for await (
