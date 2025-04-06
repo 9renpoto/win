@@ -1,4 +1,4 @@
-import { title: siteTitle } from "@/utils/website.ts";
+import { title as siteTitle } from "@/utils/website.ts";
 
 export const SEO = ({
   title,
@@ -19,7 +19,7 @@ export const SEO = ({
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:sien_name" content={siteTitle} />
+    <meta property="og:site_name" content={siteTitle} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="jp_JA" />
     <meta name="twitter:card" content="summary" />
