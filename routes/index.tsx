@@ -1,9 +1,9 @@
-import { Handlers, PageProps } from "$fresh/server.ts";
-import { getPosts, type Post } from "@/utils/posts.ts";
-import { Bio } from "@/components/Bio.tsx";
-import { author, description, title } from "@/utils/website.ts";
-import { SEO } from "@/components/SEO.tsx";
 import { Head } from "$fresh/runtime.ts";
+import type { Handlers, PageProps } from "$fresh/server.ts";
+import { Bio } from "@/components/Bio.tsx";
+import { SEO } from "@/components/SEO.tsx";
+import { getPosts, type Post } from "@/utils/posts.ts";
+import { author, description, title } from "@/utils/website.ts";
 
 export const handler: Handlers<Post[]> = {
   async GET(_req, ctx) {
@@ -26,7 +26,9 @@ export default function BlogIndexPage({ data: posts }: PageProps<Post[]>) {
       <main class="max-w-screen-md w-full px-4 pt-4 mx-auto">
         <Bio author={author} />
         <div class="mt-8">
-          {posts.map((post) => <PostCard post={post} />)}
+          {posts.map((post, i) => (
+            <PostCard post={post} key={`${post.title}-${i}`} />
+          ))}
         </div>
       </main>
     </>
@@ -37,9 +39,7 @@ export function PostCard({ post }: { post: Post }) {
   return (
     <div class="flex-grow py-8 border-t border-gray-200">
       <a class="sm:col-span-2" href={`/entry/${post.slug}`}>
-        <h3 class="text-2xl text-gray-900 font-bold">
-          {post.title}
-        </h3>
+        <h3 class="text-2xl text-gray-900 font-bold">{post.title}</h3>
         <time class="text-gray-500">
           {new Date(post.publishedAt).toLocaleDateString("en-us", {
             year: "numeric",

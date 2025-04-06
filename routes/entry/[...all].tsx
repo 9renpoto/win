@@ -1,9 +1,9 @@
-import { Handlers, PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
-import { getPost, Post } from "@/utils/posts.ts";
-import { CSS, render } from "@deno/gfm";
-import { description, title } from "@/utils/website.ts";
+import type { Handlers, PageProps } from "$fresh/server.ts";
 import { SEO } from "@/components/SEO.tsx";
+import { getPost, type Post } from "@/utils/posts.ts";
+import { description, title } from "@/utils/website.ts";
+import { CSS, render } from "@deno/gfm";
 
 import "https://esm.sh/prismjs@1.29.0/components/prism-typescript?no-check";
 import "https://esm.sh/prismjs@1.29.0/components/prism-bash?no-check";

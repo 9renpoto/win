@@ -1,4 +1,4 @@
-import { Handlers } from "$fresh/server.ts";
+import type { Handlers } from "$fresh/server.ts";
 import { getDomainUrl } from "@/utils/net.ts";
 import { getPosts } from "@/utils/posts.ts";
 import { author, title } from "@/utils/website.ts";
@@ -36,11 +36,7 @@ export const handler: Handlers = {
           `
           <item>
             <title><![CDATA[${escapeCdata(postTitle)}]]></title>
-            <description><![CDATA[${
-            escapeHtml(
-              snippet,
-            )
-          }]]></description>
+            <description><![CDATA[${escapeHtml(snippet)}]]></description>
             <author><![CDATA[${escapeCdata(author)}]]></author>
             <pubDate>${publishedAt}</pubDate>
             <link>${domainUrl}/entry/${slug}</link>
