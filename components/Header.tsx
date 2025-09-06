@@ -1,8 +1,19 @@
 import IconActivity from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/activity.tsx";
 import Campfire from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/campfire.tsx";
 import IconRss from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/rss.tsx";
+import Search from "@/islands/Search.tsx";
 
-export function Header({ title }: { title: string }) {
+interface HeaderProps {
+  title: string;
+  algolia?: {
+    appId: string;
+    searchKey: string;
+    indexName: string;
+  };
+}
+
+export function Header(props: HeaderProps) {
+  const { title, algolia } = props;
   const menus = [
     { name: <IconRss />, href: "/rss.xml" },
     { name: <IconActivity />, href: "https://9renpoto.github.io/upptime" },
@@ -27,6 +38,15 @@ export function Header({ title }: { title: string }) {
             </a>
           </li>
         ))}
+        {algolia && (
+          <li>
+            <Search
+              appId={algolia.appId}
+              searchKey={algolia.searchKey}
+              indexName={algolia.indexName}
+            />
+          </li>
+        )}
       </ul>
     </header>
   );
