@@ -1,8 +1,8 @@
 ---
-title: '読書 Team Geek'
-date: '2013-12-25'
-permalink: '/entry/2013/12/25/team-geak/'
-category: 'book'
+title: "読書 Team Geek"
+date: "2013-12-25"
+permalink: "/entry/2013/12/25/team-geak/"
+category: "book"
 ---
 
 # メモ

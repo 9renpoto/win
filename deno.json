@@ -1,11 +1,17 @@
 {
   "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
-  "nodeModulesDir": "auto",
+  "nodeModulesDir": true,
   "tasks": {
     "start": "deno run -A --unstable-kv --watch=static/,routes/,islands/ dev.ts",
     "build": "deno run -A dev.ts build",
     "lint": "deno run -A npm:textlint",
     "preview": "deno run -A main.ts"
+  },
+  "fmt": {
+    "exclude": [
+      "static/",
+      "posts/"
+    ]
   },
   "compilerOptions": {
     "jsx": "react-jsx",

@@ -1,10 +1,10 @@
 ---
-title: '入門chef'
-date: '2013-12-22'
-permalink: '/entry/2013/12/22/my-first-chef/'
+title: "入門chef"
+date: "2013-12-22"
+permalink: "/entry/2013/12/22/my-first-chef/"
 categories:
-  - 'ruby'
-  - 'chef'
+  - "ruby"
+  - "chef"
 ---
 
 # chef memo

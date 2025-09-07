@@ -1,9 +1,9 @@
 ---
-title: 'riak meetup tokyoに参加してきました'
-date: '2013-03-12'
-permalink: '/entry/2013/03/02/riak-meetoup-tokyo/'
+title: "riak meetup tokyoに参加してきました"
+date: "2013-03-12"
+permalink: "/entry/2013/03/02/riak-meetoup-tokyo/"
 categories:
-  - 'erlang'
+  - "erlang"
 ---
 
 # Riak intro & RICON 報告
