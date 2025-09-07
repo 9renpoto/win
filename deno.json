@@ -27,7 +27,8 @@
     "@std/testing": "jsr:@std/testing@^0.225.3",
     "preact": "https://esm.sh/preact@10.22.0",
     "preact/": "https://esm.sh/preact@10.22.0/",
-    "tailwindcss": "npm:tailwindcss@^3.4.6"
+    "tailwindcss": "npm:tailwindcss@^3.4.6",
+    "algoliasearch": "https://esm.sh/algoliasearch@4.20.0"
   },
   "lint": {
     "rules": {
