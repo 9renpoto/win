@@ -1,5 +1,3 @@
-import type { h } from "preact";
-
 interface Heading {
   level: number;
   text: string;
