@@ -70,6 +70,7 @@ export async function getPost(slug: string, dir = DIRECTORY): Promise<Post> {
       .replace(/^-+|-+$/g, "");
 
   const renderer = new marked.Renderer();
+  // @ts-ignore: The types for marked@4 are incorrect for the heading function
   renderer.heading = (text: string, level: number, raw: string) => {
     const slug = slugify(raw);
     headings.push({ level, text, slug });
