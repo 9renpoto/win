@@ -23,7 +23,7 @@ export default function BlogIndexPage({ data: posts }: PageProps<Post[]>) {
           ogImage="https://avatars3.githubusercontent.com/u/520693?s=460&v=4"
         />
       </Head>
-      <main class="max-w-screen-md w-full px-4 pt-4 mx-auto">
+      <main class="max-w-screen-lg w-full px-4 pt-4 mx-auto">
         <Bio author={author} />
         <div class="mt-8">
           {posts.map((post, i) => (
