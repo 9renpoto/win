@@ -47,9 +47,7 @@ export default function LikeButton({ slug }: LikeButtonProps) {
   };
 
   return (
-    <div
-      class="z-10 fixed bottom-4 right-4 flex flex-row items-center p-2 bg-white rounded-lg shadow-lg md:flex-col md:static md:p-0 md:bg-transparent md:shadow-none"
-    >
+    <div class="flex flex-col items-center">
       <button
         onClick={handleClick}
         class={`flex items-center justify-center w-12 h-12 rounded-full transition-colors duration-200 ${
@@ -73,7 +71,7 @@ export default function LikeButton({ slug }: LikeButtonProps) {
           </path>
         </svg>
       </button>
-      <span class="ml-2 text-sm text-gray-500 md:mt-2 md:ml-0">{likeCount}</span>
+      <span class="mt-2 text-sm text-gray-500">{likeCount}</span>
     </div>
   );
 }
