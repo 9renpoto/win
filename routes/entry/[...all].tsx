@@ -31,8 +31,8 @@ export default function PostPage(props: PageProps<Post>) {
       </Head>
       <div class="flex-grow max-w-screen-lg mx-auto w-full">
         <div class="flex flex-row">
-          <div class="w-20 py-8">
-            <div class="sticky">
+          <div class="py-8 w-0 md:w-20">
+            <div class="sticky top-20">
               <LikeButton slug={post.slug} />
             </div>
           </div>
