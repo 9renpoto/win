@@ -25,7 +25,7 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
           <li key={node.slug}>
             <a href={`#${node.slug}`}>{node.text}</a>
             {children.length > 0 && renderList(children, level + 1)}
-          </li>
+          </li>,
         );
       } else {
         nodes.unshift(node);

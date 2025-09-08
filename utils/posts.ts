@@ -70,9 +70,9 @@ export async function getPost(slug: string, dir = DIRECTORY): Promise<Post> {
       .replace(/^-+|-+$/g, "");
 
   const renderer = new marked.Renderer();
-  renderer.heading = (text: string, level: number) => {
-    const slug = slugify(text);
-    headings.push({ level, text, slug });
+  renderer.heading = (text: string, level: any, raw: string) => {
+    const slug = slugify(raw);
+    headings.push({ level: parseInt(level, 10), text, slug });
     return `<h${level} id="${slug}">${text}</h${level}>`;
   };
   marked.use({ renderer });
