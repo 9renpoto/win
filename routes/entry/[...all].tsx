@@ -1,5 +1,6 @@
 import { Head } from "$fresh/runtime.ts";
 import type { Handlers, PageProps } from "$fresh/server.ts";
+import { TableOfContents } from "@/components/TableOfContents.tsx";
 import { SEO } from "@/components/SEO.tsx";
 import LikeButton from "@/islands/LikeButton.tsx";
 import { getPost, type Post } from "@/utils/posts.ts";
@@ -36,7 +37,7 @@ export default function PostPage(props: PageProps<Post>) {
               <LikeButton slug={post.slug} />
             </div>
           </div>
-          <main class="w-full">
+          <main class="w-full lg:w-3/4">
             <h1 class="text-2xl font-bold">{post.title}</h1>
             <div class="grid grid-cols-2 gap-4">
               <time class="text-gray-500">
@@ -53,6 +54,11 @@ export default function PostPage(props: PageProps<Post>) {
               dangerouslySetInnerHTML={{ __html: render(post.content) }}
             />
           </main>
+          <aside class="hidden lg:block w-1/4 pl-8">
+            <div class="sticky top-20">
+              <TableOfContents headings={post.headings} />
+            </div>
+          </aside>
         </div>
       </div>
       <div class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-white border-t border-gray-200 flex items-center justify-center">

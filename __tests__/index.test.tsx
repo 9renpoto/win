@@ -16,6 +16,7 @@ describe("PostCard", () => {
           title: "title",
           publishedAt: new Date(),
           snippet: "snippet",
+          headings: [],
         }}
       />,
     );

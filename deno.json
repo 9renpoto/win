@@ -31,6 +31,8 @@
     "@std/front-matter": "jsr:@std/front-matter@^0.224.3",
     "@std/path": "jsr:@std/path@^1.0.0",
     "@std/testing": "jsr:@std/testing@^0.225.3",
+    "marked": "https://cdn.jsdelivr.net/npm/marked@4/lib/marked.esm.js",
+    "@types/marked": "npm:@types/marked@^4.0.8",
     "preact": "https://esm.sh/preact@10.22.0",
     "preact/": "https://esm.sh/preact@10.22.0/",
     "tailwindcss": "npm:tailwindcss@^3.4.6"

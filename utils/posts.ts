@@ -1,7 +1,14 @@
 import { extract } from "@std/front-matter/any";
 import { join } from "@std/path/posix";
+import { marked } from "marked";
 
 const DIRECTORY = "./posts";
+
+export interface Heading {
+  level: number;
+  text: string;
+  slug: string;
+}
 
 export interface Post {
   slug: string;
@@ -10,6 +17,7 @@ export interface Post {
   mtime?: Date;
   snippet: string;
   content: string;
+  headings: Heading[];
 }
 
 export async function getPosts(): Promise<Post[]> {
@@ -50,8 +58,27 @@ export async function getPost(slug: string, dir = DIRECTORY): Promise<Post> {
   const stat = await Deno.stat(filename);
   const text = await Deno.readTextFile(filename);
   const { attrs, body } = extract<
-    Omit<Post, "published_at"> & { date: string }
+    Omit<Post, "published_at" | "headings"> & { date: string }
   >(text);
+
+  const headings: Heading[] = [];
+  const slugify = (text: string) =>
+    text
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, "")
+      .replace(/[\s_-]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+
+  const renderer = new marked.Renderer();
+  // @ts-ignore: The types for marked@4 are incorrect for the heading function
+  renderer.heading = (text: string, level: number, raw: string) => {
+    const slug = slugify(raw);
+    headings.push({ level, text, slug });
+    return `<h${level} id="${slug}">${text}</h${level}>`;
+  };
+  marked.use({ renderer });
+  marked.parse(body);
+
   const publishedAt = new Date(attrs.date);
   return {
     slug,
@@ -60,5 +87,6 @@ export async function getPost(slug: string, dir = DIRECTORY): Promise<Post> {
     mtime: stat.mtime || undefined,
     content: body,
     snippet: attrs.snippet || body.slice(0, 150),
+    headings,
   };
 }

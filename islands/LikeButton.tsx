@@ -54,6 +54,7 @@ export default function LikeButton(
   return (
     <div class={`flex items-center ${isFooter ? "flex-row" : "flex-col"}`}>
       <button
+        type="button"
         onClick={handleClick}
         class={`flex items-center justify-center transition-colors duration-200 ${
           isFooter
