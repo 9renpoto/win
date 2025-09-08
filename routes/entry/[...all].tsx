@@ -29,24 +29,32 @@ export default function PostPage(props: PageProps<Post>) {
         />
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
-      <main class="flex-grow max-w-screen-md w-full px-4 pt-4 mx-auto">
-        <h1 class="text-2xl font-bold">{post.title}</h1>
-        <LikeButton slug={post.slug} />
-        <div class="grid grid-cols-2 gap-4">
-          <time class="text-gray-500">
-            {new Date(post.publishedAt).toLocaleDateString("en-us", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </time>
-          <p class="text-gray-500">Number of word {post.content.length}</p>
+      <div class="flex-grow max-w-screen-lg mx-auto w-full">
+        <div class="flex flex-row">
+          <div class="w-20 py-8">
+            <div class="sticky">
+              <LikeButton slug={post.slug} />
+            </div>
+          </div>
+          <main class="w-full">
+            <h1 class="text-2xl font-bold">{post.title}</h1>
+            <div class="grid grid-cols-2 gap-4">
+              <time class="text-gray-500">
+                {new Date(post.publishedAt).toLocaleDateString("en-us", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </time>
+              <p class="text-gray-500">Number of word {post.content.length}</p>
+            </div>
+            <div
+              class="mt-8 markdown-body"
+              dangerouslySetInnerHTML={{ __html: render(post.content) }}
+            />
+          </main>
         </div>
-        <div
-          class="mt-8 markdown-body"
-          dangerouslySetInnerHTML={{ __html: render(post.content) }}
-        />
-      </main>
+      </div>
     </>
   );
 }
