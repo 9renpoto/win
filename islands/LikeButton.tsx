@@ -3,9 +3,12 @@ import { useSignal } from "@preact/signals";
 
 interface LikeButtonProps {
   slug: string;
+  variant?: "default" | "footer";
 }
 
-export default function LikeButton({ slug }: LikeButtonProps) {
+export default function LikeButton(
+  { slug, variant = "default" }: LikeButtonProps,
+) {
   const likeCount = useSignal(0);
   const [isLiked, setIsLiked] = useState(false);
 
@@ -46,14 +49,22 @@ export default function LikeButton({ slug }: LikeButtonProps) {
     }
   };
 
+  const isFooter = variant === "footer";
+
   return (
-    <div class="flex flex-col items-center">
+    <div class={`flex items-center ${isFooter ? "flex-row" : "flex-col"}`}>
       <button
         onClick={handleClick}
-        class={`flex items-center justify-center w-12 h-12 rounded-full transition-colors duration-200 ${
-          isLiked
-            ? "bg-red-100 text-red-500"
-            : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+        class={`flex items-center justify-center transition-colors duration-200 ${
+          isFooter
+            ? `p-2 ${
+              isLiked ? "text-red-500" : "text-gray-500 hover:text-gray-900"
+            }`
+            : `w-12 h-12 rounded-full ${
+              isLiked
+                ? "bg-red-100 text-red-500"
+                : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+            }`
         }`}
         aria-label="Like this post"
       >
@@ -71,7 +82,9 @@ export default function LikeButton({ slug }: LikeButtonProps) {
           </path>
         </svg>
       </button>
-      <span class="mt-2 text-sm text-gray-500">{likeCount}</span>
+      <span class={`text-sm text-gray-500 ${isFooter ? "ml-1" : "mt-2"}`}>
+        {likeCount}
+      </span>
     </div>
   );
 }
