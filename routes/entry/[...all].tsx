@@ -31,12 +31,12 @@ export default function PostPage(props: PageProps<Post>) {
       </Head>
       <div class="flex-grow max-w-screen-lg mx-auto w-full">
         <div class="flex flex-row">
-          <div class="w-1/4 py-8">
+          <div class="w-20 py-8">
             <div class="sticky top-20">
               <LikeButton slug={post.slug} />
             </div>
           </div>
-          <main class="w-3/4">
+          <main class="w-full">
             <h1 class="text-2xl font-bold">{post.title}</h1>
             <div class="grid grid-cols-2 gap-4">
               <time class="text-gray-500">
