@@ -56,7 +56,7 @@ export default function PostPage(props: PageProps<Post>) {
         </div>
       </div>
       <div class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-white border-t border-gray-200 flex items-center justify-center">
-        <LikeButton slug={post.slug} />
+        <LikeButton slug={post.slug} variant="footer" />
       </div>
     </>
   );
