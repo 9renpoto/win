@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.toc {
+  @apply border-l-2 border-gray-200 pl-4;
+}
+
+.toc h2 {
+  @apply text-lg font-bold mb-2;
+}
+
+.toc ul {
+  @apply list-none pl-4;
+}
+
+.toc li {
+  @apply mb-1;
+}
+
+.toc a {
+  @apply text-gray-600 hover:text-gray-900;
+}
+
+.toc-level-2 {
+  @apply pl-4;
+}
+
+.toc-level-3 {
+  @apply pl-8;
+}
