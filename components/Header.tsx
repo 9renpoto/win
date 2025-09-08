@@ -9,7 +9,7 @@ export function Header({ title }: { title: string }) {
     { name: <>About me</>, href: "/about" },
   ];
   return (
-    <header class="w-full border-b">
+    <header class="w-full">
       <div class="max-w-screen-lg w-full mx-auto py-6 px-4 flex flex-col md:flex-row gap-4">
         <div class="flex items-center flex-1">
           <Campfire />

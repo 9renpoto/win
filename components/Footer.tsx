@@ -13,7 +13,7 @@ export function Footer() {
   ];
 
   return (
-    <footer class="w-full border-t">
+    <footer class="w-full">
       <div class="max-w-screen-lg w-full mx-auto flex flex-col md:flex-row gap-8 md:gap-16 px-4 py-8 text-sm">
         <div class="flex-1">
           <div class="flex items-center gap-1">
