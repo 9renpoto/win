@@ -1,7 +1,7 @@
 ---
-title: 'クラス図を簡単に - PlantUML'
-date: '2013-11-13'
-permalink: '/entry/2013/11/13/escape-ime/'
+title: "クラス図を簡単に - PlantUML"
+date: "2013-11-13"
+permalink: "/entry/2013/11/13/escape-ime/"
 ---
 
 # PlantUML

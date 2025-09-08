@@ -1,8 +1,8 @@
 ---
-title: 'elixir install'
-date: '2012-12-20'
-permalink: '/entry/2012/12/20/elixir-install/'
-category: 'elixir'
+title: "elixir install"
+date: "2012-12-20"
+permalink: "/entry/2012/12/20/elixir-install/"
+category: "elixir"
 ---
 
 # Elixirはじめよう

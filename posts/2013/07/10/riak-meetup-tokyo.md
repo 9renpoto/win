@@ -1,9 +1,9 @@
 ---
-title: 'riak meetup tokyo 2 に参加してきました'
-date: '2013-07-10'
-permalink: '/entry/2013/07/10/riak-meetup-tokyo/'
+title: "riak meetup tokyo 2 に参加してきました"
+date: "2013-07-10"
+permalink: "/entry/2013/07/10/riak-meetup-tokyo/"
 categories:
-  - 'erlang'
+  - "erlang"
 ---
 
 # riak meetup tokyo 2 memo

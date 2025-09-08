@@ -1,9 +1,9 @@
 ---
-title: 'Python Developer Festa 参加してきました'
-date: '2012-11-24'
-permalink: '/entry/2012/11/24/developer-festa/'
+title: "Python Developer Festa 参加してきました"
+date: "2012-11-24"
+permalink: "/entry/2012/11/24/developer-festa/"
 categories:
-  - 'python'
+  - "python"
 ---
 
 # Python Developer Festa 参加してきたので、そのメモ

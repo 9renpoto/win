@@ -1,8 +1,8 @@
 ---
-title: 'リーダブルコード読みました'
-date: '2013-02-03'
-permalink: '/entry/2013/02/03/readable-code/'
-category: 'book'
+title: "リーダブルコード読みました"
+date: "2013-02-03"
+permalink: "/entry/2013/02/03/readable-code/"
+category: "book"
 ---
 
 # リーダーブルコードよんだメモ

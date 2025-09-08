@@ -1,9 +1,9 @@
 ---
-title: 'Go Conference 2013 spring参加してきました #gocon'
-date: '2013-04-13'
-permalink: '/entry/2013/04/13/gocon/'
+title: "Go Conference 2013 spring参加してきました #gocon"
+date: "2013-04-13"
+permalink: "/entry/2013/04/13/gocon/"
 categories:
-  - 'go'
+  - "go"
 ---
 
 # Go Conference 参加メモ

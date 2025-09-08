@@ -1,6 +1,7 @@
 import { Head } from "$fresh/runtime.ts";
 import type { Handlers, PageProps } from "$fresh/server.ts";
 import { SEO } from "@/components/SEO.tsx";
+import LikeButton from "@/islands/LikeButton.tsx";
 import { getPost, type Post } from "@/utils/posts.ts";
 import { description, title } from "@/utils/website.ts";
 import { CSS, render } from "@deno/gfm";
@@ -30,6 +31,7 @@ export default function PostPage(props: PageProps<Post>) {
       </Head>
       <main class="flex-grow max-w-screen-md w-full px-4 pt-4 mx-auto">
         <h1 class="text-2xl font-bold">{post.title}</h1>
+        <LikeButton slug={post.slug} />
         <div class="grid grid-cols-2 gap-4">
           <time class="text-gray-500">
             {new Date(post.publishedAt).toLocaleDateString("en-us", {
