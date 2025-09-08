@@ -29,7 +29,7 @@ export default function PostPage(props: PageProps<Post>) {
         />
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
-      <div class="flex-grow max-w-screen-lg mx-auto w-full">
+      <div class="flex-grow max-w-screen-lg mx-auto w-full px-4 pt-4">
         <div class="flex flex-row">
           <div class="hidden md:block w-20 py-8">
             <div class="sticky top-20">
