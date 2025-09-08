@@ -1,2 +1,0 @@
-[0m[33mWarning[0m `"nodeModulesDir": true` is deprecated in Deno 2.0. Use `"nodeModulesDir": "auto"` instead.
-    at file:///app/deno.json
