@@ -18,6 +18,7 @@ export default function HamburgerButton(
         onClick={toggleMenu}
         class="p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
         aria-expanded={isOpen}
+        title="Open menu"
       >
         {isOpen ? <IconX /> : <IconMenu2 />}
       </button>
