@@ -14,3 +14,9 @@ deno task start
 This will watch the project directory and restart as necessary.
 
 [![Made with Fresh](https://fresh.deno.dev/fresh-badge.svg)](https://fresh.deno.dev)
+
+## Dev Container
+
+- Open the folder in VS Code and choose "Reopen in Container" (requires the Dev Containers extension).
+- The container includes Deno `1.45.x` (kept in sync with `.mise.toml`) and forwards port `8000`.
+- Once attached, run `deno task start` to launch the Fresh dev server.
