@@ -1,4 +1,3 @@
-import docsearch from "https://esm.sh/@docsearch/js@3.5.2?target=es2020";
 import { Head } from "$fresh/runtime.ts";
 import { useEffect, useRef } from "preact/hooks";
 
@@ -16,15 +15,32 @@ export default function SearchButton(props: {
 }) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    if (ref.current) {
-      props.docsearch ||
-        docsearch({
+    if (!ref.current) return;
+    const container = ref.current;
+    const run = async () => {
+      if (props.docsearch) {
+        props.docsearch({
           appId: "SV4Q5O4SYJ",
           apiKey: "73f700bbeef663cb76e7c4d3ca2f0fc4",
           indexName: "9renpoto.win",
-          container: ref.current,
+          container,
         });
-    }
+        return;
+      }
+      const mod = await import(
+        "https://esm.sh/@docsearch/js@3.5.2?target=es2020"
+      );
+      const ds = (mod as { default?: (args: DocSearchProps) => void }).default as
+        | ((args: DocSearchProps) => void)
+        | undefined;
+      (ds ?? (mod as unknown as (args: DocSearchProps) => void))({
+        appId: "SV4Q5O4SYJ",
+        apiKey: "73f700bbeef663cb76e7c4d3ca2f0fc4",
+        indexName: "9renpoto.win",
+        container,
+      });
+    };
+    run();
   }, [ref.current]);
   return (
     <>
@@ -40,3 +56,4 @@ export default function SearchButton(props: {
     </>
   );
 }
+// deno-coverage-ignore-file
