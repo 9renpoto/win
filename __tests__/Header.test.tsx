@@ -3,7 +3,6 @@ import {
   fireEvent,
   render,
   setup,
-  waitFor,
 } from "$fresh-testing-library/components.ts";
 import { Header } from "@/components/Header.tsx";
 import { assertExists } from "@std/assert";
