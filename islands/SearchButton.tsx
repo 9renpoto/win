@@ -30,9 +30,10 @@ export default function SearchButton(props: {
       const mod = await import(
         "https://esm.sh/@docsearch/js@3.5.2?target=es2020"
       );
-      const ds = (mod as { default?: (args: DocSearchProps) => void }).default as
-        | ((args: DocSearchProps) => void)
-        | undefined;
+      const ds = (mod as { default?: (args: DocSearchProps) => void })
+        .default as
+          | ((args: DocSearchProps) => void)
+          | undefined;
       (ds ?? (mod as unknown as (args: DocSearchProps) => void))({
         appId: "SV4Q5O4SYJ",
         apiKey: "73f700bbeef663cb76e7c4d3ca2f0fc4",
