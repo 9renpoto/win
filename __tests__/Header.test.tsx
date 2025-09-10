@@ -20,14 +20,15 @@ describe("Header", () => {
   });
 
   it("should open menu when hamburger button is clicked", async () => {
-    const { getByTitle, getByText } = render(<Header title="title" />);
+    const { getByTitle, container } = render(<Header title="title" />);
 
     const hamburgerButton = getByTitle("Open menu");
     fireEvent.click(hamburgerButton);
 
-    await waitFor(() => {
-      const aboutMenu = getByText("About me");
-      assertExists(aboutMenu);
-    });
+    // Allow state update to flush
+    await new Promise((r) => setTimeout(r, 0));
+
+    const aboutMenu = container.querySelector('a[href="/about"]');
+    assertExists(aboutMenu);
   });
 });
