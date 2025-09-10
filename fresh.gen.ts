@@ -11,6 +11,7 @@ import * as $entry_all_ from "./routes/entry/[...all].tsx";
 import * as $healthz from "./routes/healthz.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $rss_xml from "./routes/rss.xml.ts";
+import * as $HamburgerButton from "./islands/HamburgerButton.tsx";
 import * as $LikeButton from "./islands/LikeButton.tsx";
 import * as $SearchButton from "./islands/SearchButton.tsx";
 import type { Manifest } from "$fresh/server.ts";
@@ -28,6 +29,7 @@ const manifest = {
     "./routes/rss.xml.ts": $rss_xml,
   },
   islands: {
+    "./islands/HamburgerButton.tsx": $HamburgerButton,
     "./islands/LikeButton.tsx": $LikeButton,
     "./islands/SearchButton.tsx": $SearchButton,
   },
