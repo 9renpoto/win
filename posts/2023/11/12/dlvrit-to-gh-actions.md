@@ -1,5 +1,5 @@
 ---
-date: '2023-11-12'
+date: "2023-11-12"
 title: dlvrit をやめてGithub Actions でRSSからSNSに投稿する
 snippet: share new articles via gh-actions
 ---
@@ -10,7 +10,7 @@ snippet: share new articles via gh-actions
 
 - twitterからx.comへ変化の時代
 - [bsky.app](https://bsky.app/profile/9renpoto.bsky.social) や
-  [www.threads.net](https://www.threads.net/@9renpoto) に人が分散した
+  [www.threads.com](https://www.threads.com/@9renpoto) に人が分散した
 - IFTTTやZapierなどのX(旧Twitter) 連携が減っている
 - <https://github.com/lwojcik/github-action-feed-to-social-media> を使ってみる
 
