@@ -4,5 +4,4 @@
 /// <reference lib="dom.asynciterable" />
 /// <reference lib="deno.ns" />
 
-import "npm:textlint";
-import "npm:@9renpoto/textlint-config-ja";
+// Textlint is executed via Bun in CI now; no Deno npm imports here.

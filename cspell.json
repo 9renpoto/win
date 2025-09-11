@@ -24,6 +24,11 @@
     "healthz",
     "preact",
     "tailwindcss",
-    "textlint"
+    "textlint",
+    "asynciterable",
+    "joshi",
+    "hankaku",
+    "dearu",
+    "desumasu"
   ]
 }
