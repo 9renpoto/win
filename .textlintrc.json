@@ -12,7 +12,12 @@
     },
     "no-dead-link": {
       "checkRelative": true,
-      "checkAbsolute": false
+      "checkAbsolute": false,
+      "ignore": [
+        "/entry/.*",
+
+        "/.*\\.(?:png|jpg|jpeg|gif|svg)"
+      ]
     },
     "no-double-negative-ja": true,
     "no-doubled-conjunction": true,

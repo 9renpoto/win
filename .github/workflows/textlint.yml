@@ -26,10 +26,10 @@ jobs:
       - name: Setup repo
         uses: actions/checkout@v5
 
-      - name: Setup Deno
+      - name: Setup Deno (1.x for textlint)
         uses: denoland/setup-deno@v2
         with:
-          deno-version: v2.x
+          deno-version: v1.x
 
       - run: deno cache __tests__/deps.ts --reload
       - run: find posts/${{ matrix.year }} -name '*.md' | sort | xargs -n1 deno task lint
