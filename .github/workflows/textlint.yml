@@ -26,10 +26,14 @@ jobs:
       - name: Setup repo
         uses: actions/checkout@v5
 
-      - name: Setup Deno (1.x for textlint)
-        uses: denoland/setup-deno@v2
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          deno-version: v1.x
+          bun-version: latest
 
-      - run: deno cache __tests__/deps.ts --reload
-      - run: find posts/${{ matrix.year }} -name '*.md' | sort | xargs -n1 deno task lint
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run textlint with Bun
+        run: |
+          find posts/${{ matrix.year }} -name '*.md' | sort | xargs -n1 bun x textlint

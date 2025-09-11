@@ -25,6 +25,7 @@
     "preact",
     "tailwindcss",
     "textlint",
+    "asynciterable",
     "joshi",
     "hankaku",
     "dearu",

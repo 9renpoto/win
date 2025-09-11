@@ -15,7 +15,6 @@
       "checkAbsolute": false,
       "ignore": [
         "/entry/.*",
-
         "/.*\\.(?:png|jpg|jpeg|gif|svg)"
       ]
     },
