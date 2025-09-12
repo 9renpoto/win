@@ -41,12 +41,6 @@ jobs:
       - run: deno test -A --unstable-kv --coverage=coverage
       - run: deno coverage ./coverage --lcov > coverage.lcov
 
-      - run: deno task build
-      - name: Run Codecov Bundle Analyzer
-        run: npx @codecov/bundle-analyzer ./_fresh --bundle-name=main-bundle
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5
         with:
