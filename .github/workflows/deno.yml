@@ -43,7 +43,7 @@ jobs:
 
       - run: deno task build
       - name: Run Codecov Bundle Analyzer
-        run: npx @codecov/bundle-analyzer ./_fresh
+        run: npx @codecov/bundle-analyzer ./_fresh --bundle-name=main-bundle
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
