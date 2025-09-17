@@ -2,7 +2,6 @@
   "name": "win",
   "private": true,
   "devDependencies": {
-    "@9renpoto/textlint-config-ja": "^7.9.0",
     "textlint": "^15.2.2",
     "textlint-filter-rule-comments": "^1.2.2",
     "textlint-rule-incremental-headers": "^0.2.0",
