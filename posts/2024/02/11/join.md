@@ -33,7 +33,5 @@ ROLLCAKEでは「体験設計書」を通して「ゴール」の定義にこだ
 
 ## Refs
 
-- [26.[前編] ROLLCAKEの体験設計書とユーザーの課題とゴールのどちらにフォーカスするか問題と ゲスト: 伊野亘輝 (@memocamela)](https://takejune.com/podcast/26-memocamera)
-- [27.[後編] MUSEUMと新規事業を生む仕組みとデザインするときのチェックリストと ゲスト: 伊野亘輝 (@memocamela)](https://takejune.com/podcast/27-memocamera)
 - [地方移住を検討](https://9renpoto.win/entry/2023/09/09/migration-plan)
 - [CADDi株式会社にJoinしました](https://9renpoto.win/entry/2020/12/05/join)
