@@ -6,7 +6,7 @@ snippet: node:test を動かしたかった
 
 # TL;DR 🚶‍♂️🚶‍♂️🚶‍♂️
 
-- Output: <https://github.com/g59/bot/pull/1037>
+- Output: <https://github.com/9renpoto/bot/pull/1037>
 - Must be used with a loader to use TypeScript
   - <https://github.com/nodejs/help/issues/3902#issuecomment-1217235905>
 - The `assert` syntax can be used
