@@ -22,7 +22,6 @@
     "$fresh-testing-library/": "https://deno.land/x/fresh_testing_library@0.12.0/",
     "$fresh/": "https://deno.land/x/fresh@1.7.3/",
     "$fresh_seo": "https://deno.land/x/fresh_seo@1.0.1/mod.ts",
-    "$ga4": "https://raw.githubusercontent.com/denoland/ga4/main/mod.ts",
     "./": "./",
     "@/": "./",
     "@deno/gfm": "jsr:@deno/gfm@^0.8.2",
