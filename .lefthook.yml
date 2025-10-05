@@ -1,0 +1,11 @@
+pre-commit:
+  parallel: true
+  commands:
+    deno-fmt:
+      glob: "*.{ts,tsx,js,jsx,json,md}"
+      run: deno fmt {staged_files}
+    deno-lint:
+      glob: "*.{ts,tsx,js,jsx}"
+      run: deno lint {staged_files}
+    typos:
+      run: typos {staged_files}
