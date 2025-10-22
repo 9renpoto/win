@@ -1,5 +1,5 @@
-import { Head } from "$fresh/runtime.ts";
-import type { Handlers, PageProps } from "$fresh/server.ts";
+import { Head } from "fresh/runtime";
+import { page, type PageProps } from "fresh";
 import { TableOfContents } from "@/components/TableOfContents.tsx";
 import { SEO } from "@/components/SEO.tsx";
 import LikeButton from "@/islands/LikeButton.tsx";
@@ -9,11 +9,12 @@ import { CSS, render } from "@deno/gfm";
 
 import "https://esm.sh/prismjs@1.29.0/components/prism-typescript?no-check";
 import "https://esm.sh/prismjs@1.29.0/components/prism-bash?no-check";
+import { Handlers } from "fresh/compat";
 
 export const handler: Handlers<Post> = {
-  async GET(_req, ctx) {
+  async GET(ctx) {
     const post = await getPost(ctx.params.all);
-    return ctx.render(post as Post);
+    return page(post as Post);
   },
 };
 

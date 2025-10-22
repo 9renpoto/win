@@ -1,10 +1,10 @@
-import { getPost } from "@/utils/posts.ts";
 import { assertEquals } from "@std/assert";
 import { describe, it } from "@std/testing/bdd";
 import { basename, dirname } from "@std/path";
+import { getPost } from "@/utils/posts.ts";
 
 describe("getPost", () => {
-  it("should extract headings from markdown", async () => {
+  it("extracts headings from markdown", async () => {
     const markdown = `---
 title: Test Post
 date: 2025-01-01
@@ -14,6 +14,7 @@ date: 2025-01-01
 ## Heading 2
 ### Heading 3
 `;
+
     const tempFile = await Deno.makeTempFile({ suffix: ".md" });
     await Deno.writeTextFile(tempFile, markdown);
 

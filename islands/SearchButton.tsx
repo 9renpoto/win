@@ -1,4 +1,4 @@
-import { Head } from "$fresh/runtime.ts";
+import { Head } from "fresh/runtime";
 import { useEffect, useRef } from "preact/hooks";
 
 // Copied from algolia source code

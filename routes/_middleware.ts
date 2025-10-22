@@ -1,7 +1,6 @@
-import type { FreshContext } from "$fresh/server.ts";
+import type { FreshContext } from "fresh";
 
 export function handler(
-  _req: Request,
   ctx: FreshContext,
 ): Promise<Response> {
   return ctx.next();

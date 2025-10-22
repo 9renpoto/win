@@ -1,9 +1,10 @@
-import type { Handlers } from "$fresh/server.ts";
+import { Handlers } from "fresh/compat";
 
 const kv = await Deno.openKv();
 
 export const handler: Handlers = {
-  async GET(req) {
+  async GET(ctx) {
+    const req = ctx.req;
     const slug = new URL(req.url).searchParams.get("slug");
     if (!slug) {
       return new Response("slug is required", { status: 400 });
@@ -14,7 +15,8 @@ export const handler: Handlers = {
     });
   },
 
-  async POST(req) {
+  async POST(ctx) {
+    const req = ctx.req;
     const { slug, action } = await req.json();
     if (!slug) {
       return new Response("slug is required", { status: 400 });

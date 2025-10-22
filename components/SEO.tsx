@@ -28,6 +28,5 @@ export const SEO = ({
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image:src" content={ogImage} />
     <meta name="keywords" content={keywords} />
-    <link rel="stylesheet" href="/styles.css" />
   </>
 );

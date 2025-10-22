@@ -1,14 +1,15 @@
-import { Head } from "$fresh/runtime.ts";
-import type { Handlers, PageProps } from "$fresh/server.ts";
+import { Head } from "fresh/runtime";
+import { page, type PageProps } from "fresh";
 import { Bio } from "@/components/Bio.tsx";
 import { SEO } from "@/components/SEO.tsx";
 import { getPosts, type Post } from "@/utils/posts.ts";
 import { author, description, title } from "@/utils/website.ts";
+import { Handlers } from "fresh/compat";
 
 export const handler: Handlers<Post[]> = {
-  async GET(_req, ctx) {
+  async GET(_ctx) {
     const posts = await getPosts();
-    return ctx.render(posts);
+    return page(posts);
   },
 };
 
