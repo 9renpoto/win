@@ -1,6 +1,6 @@
-import IconActivity from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/activity.tsx";
-import Campfire from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/campfire.tsx";
-import IconRss from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/rss.tsx";
+import IconActivity from "@/components/icons/Activity.tsx";
+import Campfire from "@/components/icons/Campfire.tsx";
+import IconRss from "@/components/icons/Rss.tsx";
 import HamburgerButton from "../islands/HamburgerButton.tsx";
 
 export function Header({ title }: { title: string }) {

@@ -1,6 +1,6 @@
+import IconMenu2 from "@/components/icons/Menu.tsx";
+import IconX from "@/components/icons/X.tsx";
 import { useState } from "preact/hooks";
-import IconMenu2 from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/menu-2.tsx";
-import IconX from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/x.tsx";
 import { ComponentChildren } from "preact";
 
 export default function HamburgerButton(
