@@ -1,8 +1,9 @@
+import "@/utils/window-polyfill.ts";
 import { App, staticFiles } from "fresh";
 import { freshSEOPlugin } from "$fresh_seo";
 import { getPosts } from "./utils/posts.ts";
 import { walk } from "jsr:@std/fs@^1.0.0/walk";
-import { fromFileUrl, relative } from "@std/path";
+import { join, relative } from "@std/path";
 
 export const app = new App();
 
@@ -32,7 +33,7 @@ interface FreshManifest {
 }
 
 async function buildManifest(): Promise<FreshManifest> {
-  const routesDir = fromFileUrl(new URL("./routes", import.meta.url));
+  const routesDir = join(Deno.cwd(), "routes");
   const routes: Record<string, unknown> = {};
 
   for await (
