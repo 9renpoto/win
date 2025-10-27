@@ -10,4 +10,12 @@ export default defineConfig({
       plugins: [tailwindcss(), autoprefixer()],
     },
   },
+  build: {
+    rollupOptions: {
+      external: ["npm:marked@^12"],
+    },
+  },
+  ssr: {
+    external: ["npm:marked@^12"],
+  },
 });
