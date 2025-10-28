@@ -7,7 +7,7 @@
     "build": "vite build",
     "lint": "deno lint",
     "preview": "deno task build && deno serve -A server.ts",
-    "test": "deno test -A __tests__/utils/posts.test.ts"
+    "test": "deno test -A"
   },
   "fmt": { "exclude": ["static/", "posts/"] },
   "compilerOptions": {

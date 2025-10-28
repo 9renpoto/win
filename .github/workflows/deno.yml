@@ -39,7 +39,7 @@ jobs:
       - run: deno fmt --check
       - run: deno lint
       - run: deno task build
-      - run: deno test -A --coverage=coverage __tests__/utils/posts.test.ts
+      - run: deno test -A --coverage=coverage
       - run: deno coverage ./coverage --lcov > coverage.lcov
 
       - name: Upload coverage reports to Codecov
