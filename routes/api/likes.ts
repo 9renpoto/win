@@ -1,13 +1,9 @@
 import { Handlers } from "fresh/compat";
-import { createKvU64, getKv, kvAvailable } from "@/utils/kv-support.ts";
 
-const kv = kvAvailable ? await getKv() : null;
+const kv = await Deno.openKv();
 
 export const handler: Handlers = {
   async GET(ctx) {
-    if (!kv) {
-      return new Response("KV is unavailable", { status: 503 });
-    }
     const req = ctx.req;
     const slug = new URL(req.url).searchParams.get("slug");
     if (!slug) {
@@ -21,9 +17,6 @@ export const handler: Handlers = {
   },
 
   async POST(ctx) {
-    if (!kv) {
-      return new Response("KV is unavailable", { status: 503 });
-    }
     const req = ctx.req;
     const { slug, action } = await req.json();
     if (!slug) {
@@ -35,7 +28,7 @@ export const handler: Handlers = {
       .mutate({
         type: "sum",
         key: ["likes", slug],
-        value: createKvU64(delta),
+        value: new Deno.KvU64(delta),
       })
       .commit();
     return new Response("ok");

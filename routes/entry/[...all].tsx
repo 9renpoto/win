@@ -5,7 +5,6 @@ import { SEO } from "@/components/SEO.tsx";
 import LikeButton from "@/islands/LikeButton.tsx";
 import { getPost, type Post } from "@/utils/posts.ts";
 import { description, title } from "@/utils/website.ts";
-import { kvAvailable } from "@/utils/kv-support.ts";
 import { CSS, render } from "@deno/gfm";
 
 import "https://esm.sh/prismjs@1.29.0/components/prism-typescript?no-check";
@@ -21,7 +20,6 @@ export const handler: Handlers<Post> = {
 
 export default function PostPage(props: PageProps<Post>) {
   const post = props.data;
-  const showLikes = kvAvailable;
   return (
     <>
       <Head>
@@ -35,13 +33,11 @@ export default function PostPage(props: PageProps<Post>) {
       </Head>
       <div class="flex-grow max-w-screen-lg mx-auto w-full px-4 pt-4">
         <div class="flex flex-row">
-          {showLikes && (
-            <div class="hidden md:block w-20">
-              <div class="sticky top-20">
-                <LikeButton slug={post.slug} />
-              </div>
+          <div class="hidden md:block w-20">
+            <div class="sticky top-20">
+              <LikeButton slug={post.slug} />
             </div>
-          )}
+          </div>
           <main class="w-full lg:w-3/4">
             <h1 class="text-2xl font-bold">{post.title}</h1>
             <div class="grid grid-cols-2 gap-4">
@@ -66,11 +62,9 @@ export default function PostPage(props: PageProps<Post>) {
           </aside>
         </div>
       </div>
-      {showLikes && (
-        <div class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-white border-t border-gray-200 flex items-center justify-center">
-          <LikeButton slug={post.slug} variant="footer" />
-        </div>
-      )}
+      <div class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-white border-t border-gray-200 flex items-center justify-center">
+        <LikeButton slug={post.slug} variant="footer" />
+      </div>
     </>
   );
 }
