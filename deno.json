@@ -6,8 +6,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "deno lint",
-    "preview": "deno task build && deno serve -A server.ts",
-    "test": "deno test -A"
+    "preview": "deno task build && deno serve -A --unstable-kv server.ts",
+    "test": "deno test -A --unstable-kv"
   },
   "fmt": { "exclude": ["static/", "posts/"] },
   "compilerOptions": {
