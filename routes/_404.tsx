@@ -1,4 +1,4 @@
-import type { UnknownPageProps } from "$fresh/server.ts";
+import { UnknownPageProps } from "fresh/compat";
 
 export default function NotFoundPage({ url }: UnknownPageProps) {
   return (

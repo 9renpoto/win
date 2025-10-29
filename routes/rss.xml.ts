@@ -1,7 +1,7 @@
-import type { Handlers } from "$fresh/server.ts";
 import { getDomainUrl } from "@/utils/net.ts";
 import { getPosts } from "@/utils/posts.ts";
 import { author, title } from "@/utils/website.ts";
+import { Handlers } from "fresh/compat";
 
 function escapeCdata(value: string) {
   return value.replace(/]]>/g, "]]]]><![CDATA[>");
