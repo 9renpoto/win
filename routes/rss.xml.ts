@@ -17,8 +17,8 @@ function escapeHtml(html: string) {
 }
 
 export const handler: Handlers = {
-  async GET(request) {
-    const domainUrl = getDomainUrl(request);
+  async GET(ctx) {
+    const domainUrl = getDomainUrl(ctx.req);
 
     const allPosts = await getPosts();
 
