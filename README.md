@@ -5,7 +5,8 @@
 
 ## Usage
 
-This project targets Deno 2.x (aligned with the [CI workflow](.github/workflows/deno.yml)).
+This project targets Deno 2.x (aligned with the
+[CI workflow](.github/workflows/deno.yml)).
 
 Start the project:
 
@@ -32,11 +33,3 @@ deno task preview
 This launches the prerendered build on port `8000`.
 
 [![Made with Fresh](https://fresh.deno.dev/fresh-badge.svg)](https://fresh.deno.dev)
-
-## Dev Container
-
-- Open the folder in VS Code and choose "Reopen in Container" (requires the Dev
-  Containers extension).
-- The container includes Deno `2.x` (matching the version used in [CI](.github/workflows/deno.yml)) and
-  forwards port `8000`.
-- Once attached, run `deno task start` to launch the Fresh dev server.
