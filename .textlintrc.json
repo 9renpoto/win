@@ -13,7 +13,7 @@
     "no-dead-link": {
       "checkRelative": false,
       "checkAbsolute": false,
-      "ignore": ["/entry/.*", "/.*\\.(?:png|jpg|jpeg|gif|svg)"]
+      "ignore": ["^/?entry/.*", "/.*\\.(?:png|jpg|jpeg|gif|svg)"]
     },
     "no-double-negative-ja": true,
     "no-doubled-conjunction": true,
