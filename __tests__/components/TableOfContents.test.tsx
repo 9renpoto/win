@@ -30,4 +30,11 @@ describe("TableOfContents", () => {
     assert(nestedList, "Nested list should exist for deeper headings");
     assertEquals(headings, snapshot);
   });
+
+  it("renders nothing when headings is empty", () => {
+    const { container } = render(<TableOfContents headings={[]} />);
+    // should render nothing (no aside element)
+    const aside = container.querySelector("aside.toc");
+    assertEquals(aside, null);
+  });
 });

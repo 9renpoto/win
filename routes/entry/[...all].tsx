@@ -1,17 +1,17 @@
-import { Head } from "fresh/runtime";
+import { CSS, render } from "@deno/gfm";
 import { page, type PageProps } from "fresh";
-import { TableOfContents } from "@/components/TableOfContents.tsx";
+import { Head } from "fresh/runtime";
 import { SEO } from "@/components/SEO.tsx";
+import { TableOfContents } from "@/components/TableOfContents.tsx";
 import LikeButton from "@/islands/LikeButton.tsx";
 import { getPost, type Post } from "@/utils/posts.ts";
 import { description, title } from "@/utils/website.ts";
-import { CSS, render } from "@deno/gfm";
 
 import "https://esm.sh/prismjs@1.29.0/components/prism-typescript?no-check";
 import "https://esm.sh/prismjs@1.29.0/components/prism-bash?no-check";
-import { Handlers } from "fresh/compat";
+import type { RouteHandler } from "fresh";
 
-export const handler: Handlers<Post> = {
+export const handler: RouteHandler<Post, Record<string, never>> = {
   async GET(ctx) {
     const post = await getPost(ctx.params.all);
     return page(post as Post);
@@ -55,11 +55,13 @@ export default function PostPage(props: PageProps<Post>) {
               dangerouslySetInnerHTML={{ __html: render(post.content) }}
             />
           </main>
-          <aside class="hidden lg:block w-1/4 pl-8">
-            <div class="sticky top-20">
-              <TableOfContents headings={post.headings} />
-            </div>
-          </aside>
+          {post.headings && post.headings.length > 0 && (
+            <aside class="hidden lg:block w-1/4 pl-8">
+              <div class="sticky top-20">
+                <TableOfContents headings={post.headings} />
+              </div>
+            </aside>
+          )}
         </div>
       </div>
       <div class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-white border-t border-gray-200 flex items-center justify-center">

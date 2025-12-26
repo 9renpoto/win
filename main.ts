@@ -27,14 +27,14 @@ for (const route of seoPlugin.routes) {
 app.fsRoutes();
 
 interface FreshManifest {
-  routes: Record<string, unknown>;
-  islands: Record<string, unknown>;
+  routes: Record<PropertyKey, never>;
+  islands: Record<PropertyKey, never>;
   baseUrl: string;
 }
 
 async function buildManifest(): Promise<FreshManifest> {
   const routesDir = join(Deno.cwd(), "routes");
-  const routes: Record<string, unknown> = {};
+  const routes: Record<PropertyKey, never> = {};
 
   for await (
     const entry of walk(routesDir, {
