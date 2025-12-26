@@ -1,9 +1,6 @@
 /// <reference lib="deno.unstable" />
 import type { RouteHandler } from "fresh";
 
-// Wrapper type for Kv wrapper objects (e.g. Deno.KvU64)
-type KvWrapper = { value: bigint };
-
 const kv = await Deno.openKv();
 
 export const handler: RouteHandler<Response, Record<string, never>> = {
@@ -14,19 +11,26 @@ export const handler: RouteHandler<Response, Record<string, never>> = {
       return new Response("slug is required", { status: 400 });
     }
     const entry = await kv.get(["likes", slug]);
-    // entry.value may be {} according to the inferred types; narrow it to number | bigint
-    let count: number | bigint = (entry.value as number | bigint) ?? 0;
-    // Kv may store values as BigInt (e.g. Deno.KvU64) or wrapper objects
-    // with a `value` field that is a BigInt. Normalize to a number for JSON
-    // serialization. If counts could exceed Number.MAX_SAFE_INTEGER,
-    // consider returning a string instead.
+    type KvWrapper = { value: bigint };
+    const raw = entry.value;
+
+    // entry.value can be a number, bigint, or a wrapper object like Deno.KvU64.
+    // Narrow types safely without `any`.
+    const isKvWrapper = (v: unknown): v is KvWrapper => (
+      typeof v === "object" && v !== null && typeof (v as KvWrapper).value === "bigint"
+    );
+
+    let count: number | bigint = 0;
+    if (typeof raw === "bigint" || typeof raw === "number") {
+      count = raw as number | bigint;
+    } else if (isKvWrapper(raw)) {
+      count = raw.value;
+    }
+
+    // Convert bigint to number for JSON serialization. If counts could exceed
+    // Number.MAX_SAFE_INTEGER, consider returning a string instead.
     if (typeof count === "bigint") {
       count = Number(count);
-    } else if (
-      typeof count === "object" && count !== null &&
-      typeof (count as KvWrapper).value === "bigint"
-    ) {
-      count = Number((count as KvWrapper).value);
     }
 
     return new Response(JSON.stringify({ count }), {
@@ -49,7 +53,7 @@ export const handler: RouteHandler<Response, Record<string, never>> = {
       .mutate({
         type: "sum",
         key: ["likes", slug],
-        value: delta as unknown as Deno.KvU64,
+        value: delta as unknown,
       })
       .commit();
     return new Response("ok");

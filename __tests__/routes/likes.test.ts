@@ -2,8 +2,6 @@
 import { assertEquals } from "@std/assert";
 import { handler } from "@/routes/api/likes.ts";
 
-type KvWrapper = { value: bigint };
-
 Deno.test("GET returns 400 without slug", async () => {
   const request = new Request("http://127.0.0.1/api/likes");
 
@@ -53,8 +51,8 @@ Deno.test("POST like increments count", async () => {
   const val = entry.value;
   const numeric = typeof val === "bigint"
     ? Number(val)
-    : (val && typeof (val as KvWrapper).value === "bigint"
-      ? Number((val as KvWrapper).value)
+    : (val && typeof (val as { value?: unknown }).value === "bigint"
+      ? Number((val as { value: bigint }).value)
       : val);
   assertEquals(numeric, 1);
   await kv.close();
