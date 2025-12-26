@@ -2,7 +2,7 @@ pre-commit:
   parallel: true
   commands:
     deno-fmt:
-      glob: "*.{ts,tsx,js,jsx,json,md}"
+      glob: "*.{ts,tsx,js,jsx,json}"
       run: deno fmt {staged_files}
     deno-lint:
       glob: "*.{ts,tsx,js,jsx}"
