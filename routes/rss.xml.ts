@@ -1,7 +1,7 @@
+import type { RouteHandler } from "fresh";
 import { getDomainUrl } from "@/utils/net.ts";
 import { getPosts } from "@/utils/posts.ts";
 import { author, title } from "@/utils/website.ts";
-import { Handlers } from "fresh/compat";
 
 function escapeCdata(value: string) {
   return value.replace(/]]>/g, "]]]]><![CDATA[>");
@@ -16,7 +16,7 @@ function escapeHtml(html: string) {
     .replace(/'/g, "&#039;");
 }
 
-export const handler: Handlers = {
+export const handler: RouteHandler<Response, Record<string, never>> = {
   async GET(ctx) {
     const domainUrl = getDomainUrl(ctx.req);
 

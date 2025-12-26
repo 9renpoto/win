@@ -1,11 +1,11 @@
-import { Head } from "fresh/runtime";
+import type { RouteHandler } from "fresh";
 import { page, type PageProps } from "fresh";
+import { Head } from "fresh/runtime";
 import { SEO } from "@/components/SEO.tsx";
 import { getPosts, type Post } from "@/utils/posts.ts";
 import { description, title } from "@/utils/website.ts";
-import { Handlers } from "fresh/compat";
 
-export const handler: Handlers<Post[]> = {
+export const handler: RouteHandler<Post[], Record<string, never>> = {
   async GET(_ctx) {
     const posts = await getPosts();
     return page(posts);

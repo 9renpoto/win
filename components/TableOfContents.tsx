@@ -9,6 +9,8 @@ interface TableOfContentsProps {
 }
 
 export function TableOfContents({ headings }: TableOfContentsProps) {
+  if (!headings || headings.length === 0) return null;
+
   const renderList = (nodes: Heading[], level = 1) => {
     const list = [];
     while (nodes.length > 0) {
