@@ -17,7 +17,8 @@ export const handler: RouteHandler<Response, Record<string, never>> = {
     // entry.value can be a number, bigint, or a wrapper object like Deno.KvU64.
     // Narrow types safely without `any`.
     const isKvWrapper = (v: unknown): v is KvWrapper => (
-      typeof v === "object" && v !== null && typeof (v as KvWrapper).value === "bigint"
+      typeof v === "object" && v !== null &&
+      typeof (v as KvWrapper).value === "bigint"
     );
 
     let count: number | bigint = 0;
