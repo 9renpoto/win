@@ -1,4 +1,4 @@
-import { UnknownPageProps } from "fresh/compat";
+import type { UnknownPageProps } from "fresh/compat";
 
 export default function NotFoundPage({ url }: UnknownPageProps) {
   return (
