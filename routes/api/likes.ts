@@ -54,7 +54,7 @@ export const handler: RouteHandler<Response, Record<string, never>> = {
       .mutate({
         type: "sum",
         key: ["likes", slug],
-        value: delta as unknown,
+        value: new Deno.KvU64(delta),
       })
       .commit();
     return new Response("ok");
