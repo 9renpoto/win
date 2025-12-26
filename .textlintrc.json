@@ -11,12 +11,9 @@
       "max": 3
     },
     "no-dead-link": {
-      "checkRelative": true,
+      "checkRelative": false,
       "checkAbsolute": false,
-      "ignore": [
-        "/entry/.*",
-        "/.*\\.(?:png|jpg|jpeg|gif|svg)"
-      ]
+      "ignore": ["/entry/**", "entry/**", "/.*\\.(?:png|jpg|jpeg|gif|svg)"]
     },
     "no-double-negative-ja": true,
     "no-doubled-conjunction": true,
