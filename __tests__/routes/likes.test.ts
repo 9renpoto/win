@@ -1,5 +1,8 @@
+/// <reference lib="deno.unstable" />
 import { assertEquals } from "@std/assert";
 import { handler } from "@/routes/api/likes.ts";
+
+type KvWrapper = { value: bigint };
 
 Deno.test("GET returns 400 without slug", async () => {
   const request = new Request("http://127.0.0.1/api/likes");
@@ -27,6 +30,7 @@ Deno.test("GET returns count as number when stored as KvU64", async () => {
   const json = await response.json();
   assertEquals(typeof json.count, "number");
   assertEquals(json.count, 2);
+  await kv.close();
 });
 
 Deno.test("POST like increments count", async () => {
@@ -47,5 +51,11 @@ Deno.test("POST like increments count", async () => {
 
   const entry = await kv.get(["likes", "test-slug-post"]);
   const val = entry.value;
-  assertEquals(typeof val === "bigint" ? Number(val) : val, 1);
+  const numeric = typeof val === "bigint"
+    ? Number(val)
+    : (val && typeof (val as KvWrapper).value === "bigint"
+      ? Number((val as KvWrapper).value)
+      : val);
+  assertEquals(numeric, 1);
+  await kv.close();
 });
