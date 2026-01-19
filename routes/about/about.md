@@ -1,5 +1,5 @@
 ---
-date: 2023-09-01
+date: 2026-01-19
 title: About me
 ---
 
@@ -21,12 +21,9 @@ title: About me
 
 ## 仕事的な活動
 
-- Node / Python / Ruby / ScalaなどによるWebアプリケーションの開発
+- Node / Ruby / Go などによるWebアプリケーションの開発
+- AWS CDK / Terraformなどを用いたクラウド環境の構築
 - Web解析ツールの利用、開発
-- Terraformなどを用いたクラウド環境の構築
-- Reactを用いたフロントエンド開発
-- クライアントサイドJavaScriptの解析
-- ソーシャルゲーム開発の業務知識
 
 ## 大学研究
 
@@ -34,15 +31,12 @@ title: About me
 
 ## 個人的な活動
 
-- NestJS / GraphQL / Next.js / Preact / Deno周りのエコシステムの調査
-  - [mentos1386/nest-raven](https://github.com/mentos1386/nest-raven)のメンテナンス
-  - [g59/nestjs-plugins](https://github.com/g59/nestjs-plugins)のメンテナンス
-- monorepo関連の技術調査
+- NestJS / Preact / Deno Fresh 周りのエコシステムの調査
+- Vibe Coding
 
 ## やっていて苦ではないこと
 
 - ボトルネックを解消すること
-- テストを書くこと
 - プロジェクトを回すこと
 - 今やるべきことを選択すること
 
