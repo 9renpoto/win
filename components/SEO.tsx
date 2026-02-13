@@ -8,7 +8,7 @@ export const SEO = ({
 }: {
   title: string;
   description: string;
-  ogImage: string;
+  ogImage?: string;
   keywords: string;
 }) => (
   <>
@@ -18,15 +18,19 @@ export const SEO = ({
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
     <meta property="og:site_name" content={siteTitle} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="jp_JA" />
-    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:card"
+      content={ogImage ? "summary_large_image" : "summary"}
+    />
     <meta name="twitter:creator" content="9renpoto" />
+    <meta name="twitter:site" content="9renpoto" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image:src" content={ogImage} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
     <meta name="keywords" content={keywords} />
   </>
 );
