@@ -3,9 +3,8 @@
 {
   "name": "Debian",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "mcr.microsoft.com/devcontainers/base:trixie",
-  "features": {
-    "ghcr.io/devcontainer-community/devcontainer-features/deno.com:1": {}
+  "build": {
+    "dockerfile": "Dockerfile"
   }
   // Features to add to the dev container. More info: https://containers.dev/features.
   // "features": {},

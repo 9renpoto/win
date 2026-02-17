@@ -26,14 +26,9 @@ jobs:
       - name: Setup repo
         uses: actions/checkout@v6
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
+      - name: Build Docker image
+        run: docker build -t textlint-runner .devcontainer
 
-      - name: Install dependencies
-        run: bun install
-
-      - name: Run textlint with Bun
+      - name: Run textlint in Docker
         run: |
-          find posts/${{ matrix.year }} -name '*.md' | sort | xargs -n1 bun x textlint
+          find posts/${{ matrix.year }} -name '*.md' | sort | xargs docker run --rm -v ${{ github.workspace }}:/workspaces/win textlint-runner textlint
