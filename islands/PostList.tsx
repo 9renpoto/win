@@ -59,12 +59,13 @@ export default function PostList(
   return (
     <div>
       {posts.map((post, i) => (
-        <PostCard post={post} key={`${post.slug}-${i}`} />
+        <PostCard
+          post={post}
+          key={`${post.slug}-${i}`}
+        />
       ))}
       <div ref={sentinelRef} />
-      {loading && (
-        <div class="py-8 text-center text-gray-500">Loading...</div>
-      )}
+      {loading && <div class="py-8 text-center text-gray-500">Loading...</div>}
     </div>
   );
 }
