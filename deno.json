@@ -11,6 +11,7 @@
   },
   "fmt": { "exclude": ["static/", "posts/"] },
   "compilerOptions": {
+    "noImplicitAny": true,
     "lib": [
       "dom",
       "dom.asynciterable",
@@ -63,6 +64,7 @@
   "lint": {
     "rules": {
       "tags": ["fresh", "recommended"],
+      "include": ["no-explicit-any"],
       "exclude": ["react-no-danger"]
     }
   },

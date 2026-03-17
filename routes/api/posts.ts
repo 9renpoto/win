@@ -3,7 +3,7 @@ import { getPosts } from "@/utils/posts.ts";
 
 const PAGE_SIZE = 10;
 
-export const handler: RouteHandler = {
+export const handler: RouteHandler<Response, Record<string, never>> = {
   async GET(ctx) {
     const url = new URL(ctx.req.url);
     const page = Math.max(
