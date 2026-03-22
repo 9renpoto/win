@@ -32,4 +32,23 @@ deno task preview
 
 This launches the prerendered build on port `8000`.
 
+## DocSearch (Algolia)
+
+This site can integrate [DocSearch](https://docsearch.algolia.com/).
+
+1. Apply to the DocSearch program and wait for approval.
+2. Set the credentials in your environment.
+3. Start the app with `deno task start`.
+
+Environment variables:
+
+```
+DOCSEARCH_APP_ID=...
+DOCSEARCH_API_KEY=...
+DOCSEARCH_INDEX_NAME=...
+```
+
+When the three variables are present, a search box is rendered in the header.
+If they are missing, the UI stays hidden.
+
 [![Made with Fresh](https://fresh.deno.dev/fresh-badge.svg)](https://fresh.deno.dev)
