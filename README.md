@@ -40,7 +40,7 @@ There are two ways to use the search box in this app:
 
 1. **DocSearch program (free)**: apply and wait for domain approval.
 2. **Your own Algolia setup**: create your own Algolia index/crawler and use
-	those credentials (no DocSearch domain approval required).
+   those credentials (no DocSearch domain approval required).
 
 Then:
 
@@ -67,9 +67,9 @@ crawler** cannot be used for that domain.
 Use one of these options:
 
 1. Re-apply after confirming your production domain is publicly accessible and
-	contains crawlable content.
+   contains crawlable content.
 2. Use your own Algolia crawler/index and set `DOCSEARCH_*` variables from that
-	index.
+   index.
 
 Quick checks after configuration:
 
