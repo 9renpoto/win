@@ -21,19 +21,20 @@ export function Header(
   ];
   return (
     <header class="w-full">
-      <div class="max-w-screen-lg w-full mx-auto py-6 px-4 flex flex-row items-center gap-4">
+      <div class="max-w-screen-lg w-full mx-auto py-6 px-4 flex flex-row flex-wrap items-center gap-4">
         <div class="flex items-center flex-1">
           <Campfire />
           <a href="/">
             <div class="text-2xl ml-1 font-bold">{title}</div>
           </a>
         </div>
-        <div class="hidden md:block w-full max-w-xs">
+        <div class="hidden md:block w-full max-w-sm">
           <DocSearch
             appId={docSearchAppId}
             apiKey={docSearchApiKey}
             indexName={docSearchIndexName}
             placeholder="Search posts"
+            containerId="docsearch-desktop"
           />
         </div>
         <div class="hidden md:flex items-center gap-6">
@@ -58,6 +59,15 @@ export function Header(
             </li>
           ))}
         </HamburgerButton>
+        <div class="md:hidden w-full">
+          <DocSearch
+            appId={docSearchAppId}
+            apiKey={docSearchApiKey}
+            indexName={docSearchIndexName}
+            placeholder="Search posts"
+            containerId="docsearch-mobile"
+          />
+        </div>
       </div>
     </header>
   );

@@ -29,3 +29,45 @@
 .toc-level-3 {
   @apply pl-8;
 }
+
+:root {
+  --docsearch-primary-color: #111827;
+  --docsearch-highlight-color: #111827;
+  --docsearch-text-color: #374151;
+  --docsearch-searchbox-shadow: none;
+  --docsearch-searchbox-focus-background: #ffffff;
+}
+
+.docsearch-root .DocSearch-Button {
+  margin: 0;
+  width: 100%;
+  height: 2.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+  background: #f9fafb;
+  transition: all 0.2s ease;
+}
+
+.docsearch-root .DocSearch-Button:hover,
+.docsearch-root .DocSearch-Button:focus-visible {
+  border-color: #9ca3af;
+  background: #ffffff;
+}
+
+.docsearch-root .DocSearch-Button-Placeholder {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+.docsearch-root .DocSearch-Search-Icon {
+  color: #6b7280;
+}
+
+.docsearch-root .DocSearch-Button-Keys {
+  min-width: 2.5rem;
+}
+
+.docsearch-root .DocSearch-Button-Key {
+  box-shadow: inset 0 -1px 0 #d1d5db;
+  color: #6b7280;
+}

@@ -5,10 +5,17 @@ interface DocSearchProps {
   apiKey?: string;
   indexName?: string;
   placeholder?: string;
+  containerId?: string;
 }
 
 export default function DocSearch(
-  { appId, apiKey, indexName, placeholder = "Search" }: DocSearchProps,
+  {
+    appId,
+    apiKey,
+    indexName,
+    placeholder = "Search",
+    containerId = "docsearch",
+  }: DocSearchProps,
 ) {
   useEffect(() => {
     if (!appId || !apiKey || !indexName) {
@@ -29,7 +36,7 @@ export default function DocSearch(
       const docsearch = docsearchModule.default as unknown as DocSearchInit;
 
       cleanup = docsearch({
-        container: "#docsearch",
+        container: `#${containerId}`,
         appId,
         apiKey,
         indices: [indexName],
@@ -42,11 +49,11 @@ export default function DocSearch(
     return () => {
       cleanup?.();
     };
-  }, [apiKey, appId, indexName, placeholder]);
+  }, [apiKey, appId, containerId, indexName, placeholder]);
 
   if (!appId || !apiKey || !indexName) {
     return null;
   }
 
-  return <div id="docsearch" class="w-full md:w-auto" />;
+  return <div id={containerId} class="docsearch-root w-full md:w-auto" />;
 }
