@@ -1,0 +1,35 @@
+name: Algolia Index Sync
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - posts/**
+      - utils/posts.ts
+      - scripts/sync_algolia_index.ts
+
+permissions:
+  contents: read
+
+jobs:
+  sync-index:
+    runs-on: ubuntu-slim
+    timeout-minutes: 10
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@v6
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - name: Sync Algolia index
+        env:
+          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+          ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
+          DOCSEARCH_INDEX_NAME: ${{ secrets.DOCSEARCH_INDEX_NAME }}
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: deno run -A scripts/sync_algolia_index.ts
