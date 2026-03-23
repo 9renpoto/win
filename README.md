@@ -48,7 +48,7 @@ DOCSEARCH_API_KEY=...
 DOCSEARCH_INDEX_NAME=...
 ```
 
-When the three variables are present, a search box is rendered in the header.
-If they are missing, the UI stays hidden.
+When the three variables are present, a search box is rendered in the header. If
+they are missing, the UI stays hidden.
 
 [![Made with Fresh](https://fresh.deno.dev/fresh-badge.svg)](https://fresh.deno.dev)
