@@ -120,7 +120,11 @@ async function batchIndex(
       const text = await res.text();
       throw new Error(`Failed to batch index: ${res.status} ${text}`);
     }
-    console.log(`Indexed ${Math.min(i + chunkSize, requests.length)} / ${requests.length}`);
+    console.log(
+      `Indexed ${
+        Math.min(i + chunkSize, requests.length)
+      } / ${requests.length}`,
+    );
   }
 }
 
