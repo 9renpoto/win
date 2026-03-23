@@ -7,7 +7,8 @@
     "build": "vite build",
     "lint": "deno lint",
     "preview": "deno task build && deno serve -A --unstable-kv server.ts",
-    "test": "deno test -A --unstable-kv"
+    "test": "deno test -A --unstable-kv",
+    "algolia:sync": "deno run -A scripts/sync_algolia_index.ts"
   },
   "fmt": { "exclude": ["static/", "posts/"] },
   "compilerOptions": {

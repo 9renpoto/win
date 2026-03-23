@@ -5,7 +5,7 @@ on:
   pull_request: null
 jobs:
   spellcheck:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-slim
     steps:
       - uses: actions/checkout@v6
       - uses: streetsidesoftware/cspell-action@v8
