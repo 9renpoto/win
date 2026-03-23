@@ -1,9 +1,19 @@
 import IconActivity from "@/components/icons/Activity.tsx";
 import Campfire from "@/components/icons/Campfire.tsx";
 import IconRss from "@/components/icons/Rss.tsx";
+import DocSearch from "@/islands/DocSearch.tsx";
 import HamburgerButton from "../islands/HamburgerButton.tsx";
 
-export function Header({ title }: { title: string }) {
+interface HeaderProps {
+  title: string;
+  docSearchAppId?: string;
+  docSearchApiKey?: string;
+  docSearchIndexName?: string;
+}
+
+export function Header(
+  { title, docSearchAppId, docSearchApiKey, docSearchIndexName }: HeaderProps,
+) {
   const menus = [
     { name: <IconRss />, href: "/rss.xml" },
     { name: <IconActivity />, href: "https://9renpoto.github.io/upptime" },
@@ -17,6 +27,14 @@ export function Header({ title }: { title: string }) {
           <a href="/">
             <div class="text-2xl ml-1 font-bold">{title}</div>
           </a>
+        </div>
+        <div class="hidden md:block w-full max-w-xs">
+          <DocSearch
+            appId={docSearchAppId}
+            apiKey={docSearchApiKey}
+            indexName={docSearchIndexName}
+            placeholder="Search posts"
+          />
         </div>
         <div class="hidden md:flex items-center gap-6">
           {menus.map((menu) => (

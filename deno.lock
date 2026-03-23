@@ -34,6 +34,9 @@
     "jsr:@std/yaml@^1.0.0-rc.1": "1.0.11",
     "npm:@babel/core@^7.28.0": "7.29.0",
     "npm:@babel/preset-react@^7.27.1": "7.28.5_@babel+core@7.29.0",
+    "npm:@docsearch/css@^3.9.0": "3.9.0",
+    "npm:@docsearch/js@4.6.0": "4.6.0",
+    "npm:@docsearch/js@^4.6.0": "4.6.0",
     "npm:@mjackson/node-fetch-server@0.7": "0.7.0",
     "npm:@opentelemetry/api@^1.9.0": "1.9.0",
     "npm:@preact/signals@^2.2.1": "2.8.1_preact@10.28.3",
@@ -384,6 +387,12 @@
         "@babel/helper-string-parser",
         "@babel/helper-validator-identifier"
       ]
+    },
+    "@docsearch/css@3.9.0": {
+      "integrity": "sha512-cQbnVbq0rrBwNAKegIac/t6a8nWoUAn8frnkLFW6YARaRmAQr5/Eoe6Ln2fqkUCZ40KpdrKbpSAmgrkviOxuWA=="
+    },
+    "@docsearch/js@4.6.0": {
+      "integrity": "sha512-9/rbgkm/BgTq46cwxIohvSAz3koOFjnPpg0mwkJItAfzKbQIj+310PvwtgUY1YITDuGCag6yOL50GW2DBkaaBw=="
     },
     "@esbuild/aix-ppc64@0.25.7": {
       "integrity": "sha512-uD0kKFHh6ETr8TqEtaAcV+dn/2qnYbH/+8wGEdY70Qf7l1l/jmBUbrmQqwiPKAQE6cOQ7dTj6Xr0HzQDGHyceQ==",
@@ -2102,6 +2111,8 @@
       "jsr:@std/front-matter@~0.224.3",
       "jsr:@std/path@1",
       "jsr:@std/testing@~0.225.3",
+      "npm:@docsearch/css@^3.9.0",
+      "npm:@docsearch/js@^4.6.0",
       "npm:@preact/signals@^2.3.2",
       "npm:@testing-library/dom@^9.3.4",
       "npm:@types/marked@^4.0.8",
