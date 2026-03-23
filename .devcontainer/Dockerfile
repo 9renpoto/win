@@ -1,23 +1,9 @@
-# See https://github.com/devcontainers/images/blob/main/src/base-trixie/.devcontainer/Dockerfile
-FROM mcr.microsoft.com/devcontainers/base:trixie
+# See https://github.com/devcontainers/images/tree/main/src/javascript-node
+FROM mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm
 
-# This Dockerfile installs Bun and textlint with its plugins globally.
-
-# Install OS dependencies and Bun globally
+# Install textlint and plugins globally with npm (Node runtime is preinstalled)
 USER root
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends unzip curl \
-    && curl -fsSL https://bun.sh/install | bash \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-SHELL ["/bin/bash", "-c"]
-
-# Add Bun to the PATH
-ENV PATH="/root/.bun/bin:${PATH}"
-
-# Install textlint and plugins globally
-RUN bun add --global \
+RUN npm install -g \
     textlint@^15.2.2 \
     textlint-filter-rule-comments@^1.2.2 \
     textlint-rule-incremental-headers@^0.2.0 \
@@ -35,10 +21,11 @@ RUN bun add --global \
     textlint-rule-no-mix-dearu-desumasu@^6.0.4 \
     textlint-rule-no-nfd@^2.0.2 \
     textlint-rule-preset-ja-spacing@^2.4.3 \
-    textlint-rule-preset-jtf-style@^3.0.2
+    textlint-rule-preset-jtf-style@^3.0.2 \
+    && npm cache clean --force
 
 # Switch to non-root user
-USER vscode
+USER node
 
 # Set working directory for the container
 WORKDIR /workspaces/win
