@@ -40,10 +40,11 @@ export default function AlgoliaSearch(
     let cleanup: (() => void) | undefined;
 
     const setup = async () => {
-      const [{ liteClient: createClient }, { autocomplete }] = await Promise.all([
-        import("algoliasearch/lite"),
-        import("@algolia/autocomplete-js"),
-      ]);
+      const [{ liteClient: createClient }, { autocomplete }] = await Promise
+        .all([
+          import("algoliasearch/lite"),
+          import("@algolia/autocomplete-js"),
+        ]);
 
       if (disposed || !containerRef.current) {
         return;
@@ -76,12 +77,18 @@ export default function AlgoliaSearch(
               },
               templates: {
                 item({ item, html }) {
-                  const href = item.url ?? (item.slug ? `/entry/${item.slug}` : "#");
+                  const href = item.url ??
+                    (item.slug ? `/entry/${item.slug}` : "#");
                   return html`
                     <a class="aa-ItemLink" href="${href}">
                       <div class="aa-ItemContent">
-                        <div class="aa-ItemTitle">${item.title ?? item.slug ?? "Untitled"}</div>
-                        ${item.snippet ? html`<div class="aa-ItemSnippet">${item.snippet}</div>` : ""}
+                        <div class="aa-ItemTitle">${item.title ?? item.slug ??
+                          "Untitled"}</div>
+                        ${item.snippet
+                          ? html`
+                            <div class="aa-ItemSnippet">${item.snippet}</div>
+                          `
+                          : ""}
                       </div>
                     </a>
                   `;
