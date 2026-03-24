@@ -1,7 +1,7 @@
 import IconMenu2 from "@/components/icons/Menu.tsx";
 import IconX from "@/components/icons/X.tsx";
 import { useState } from "preact/hooks";
-import { ComponentChildren } from "preact";
+import type { ComponentChildren } from "preact";
 
 export default function HamburgerButton(
   { children }: { children: ComponentChildren },
@@ -13,7 +13,7 @@ export default function HamburgerButton(
   };
 
   return (
-    <div class="md:hidden">
+    <div class="relative md:hidden">
       <button
         type="button"
         onClick={toggleMenu}
@@ -24,7 +24,7 @@ export default function HamburgerButton(
         {isOpen ? <IconX /> : <IconMenu2 />}
       </button>
       {isOpen && (
-        <div class="absolute top-16 right-4 bg-white shadow-lg rounded-md p-4">
+        <div class="absolute right-0 top-full z-40 mt-3 min-w-48 rounded-md bg-white p-4 shadow-lg">
           <ul class="flex flex-col gap-4">
             {children}
           </ul>
