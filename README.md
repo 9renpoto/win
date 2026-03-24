@@ -32,50 +32,25 @@ deno task preview
 
 This launches the prerendered build on port `8000`.
 
-## DocSearch (Algolia)
+## Algolia search
 
-This site can integrate [DocSearch](https://docsearch.algolia.com/).
+This site uses Algolia search.
 
-There are two ways to use the search box in this app:
+1. Create or choose an Algolia index.
+2. Generate a search-only API key.
+3. Set runtime credentials.
+4. Start the app with `deno task start`.
 
-1. **DocSearch program (free)**: apply and wait for domain approval.
-2. **Your own Algolia setup**: create your own Algolia index/crawler and use
-   those credentials (no DocSearch domain approval required).
+Runtime environment variables:
 
-Then:
-
-1. Set the credentials in your environment.
-2. Start the app with `deno task start`.
-
-Environment variables:
-
-```
-DOCSEARCH_APP_ID=...
-DOCSEARCH_API_KEY=...
-DOCSEARCH_INDEX_NAME=...
+```text
+ALGOLIA_APP_ID=...
+ALGOLIA_SEARCH_API_KEY=...
+ALGOLIA_INDEX_NAME=...
 ```
 
-When the three variables are present, a search box is rendered in the header. If
+When all three variables are present, a search box is rendered in the header. If
 they are missing, the UI stays hidden.
-
-### If your domain is not approved by DocSearch
-
-If you see a message like "Your domain was not approved for DocSearch", the UI
-integration in this repository is still valid, but the **DocSearch-hosted
-crawler** cannot be used for that domain.
-
-Use one of these options:
-
-1. Re-apply after confirming your production domain is publicly accessible and
-   contains crawlable content.
-2. Use your own Algolia crawler/index and set `DOCSEARCH_*` variables from that
-   index.
-
-Quick checks after configuration:
-
-1. Ensure all three env vars are set.
-2. Open devtools and verify no `@docsearch/js` initialization errors appear.
-3. Confirm your index has records and the API key is search-only for that index.
 
 ### Create your own index in deployment steps
 
@@ -97,7 +72,7 @@ Required GitHub secrets/variables:
 Secrets:
 	ALGOLIA_APP_ID
 	ALGOLIA_ADMIN_API_KEY
-	DOCSEARCH_INDEX_NAME
+	ALGOLIA_INDEX_NAME
 
 Variables:
 	SITE_URL=https://9renpoto.win
@@ -108,7 +83,7 @@ Run locally:
 ```bash
 ALGOLIA_APP_ID=... \
 ALGOLIA_ADMIN_API_KEY=... \
-DOCSEARCH_INDEX_NAME=... \
+ALGOLIA_INDEX_NAME=... \
 SITE_URL=https://9renpoto.win \
 deno task algolia:sync
 ```
@@ -122,9 +97,9 @@ ALGOLIA_DRY_RUN=1 deno task algolia:sync
 After indexing, set runtime env vars for search UI:
 
 ```text
-DOCSEARCH_APP_ID=<ALGOLIA_APP_ID>
-DOCSEARCH_API_KEY=<search-only API key>
-DOCSEARCH_INDEX_NAME=<same index name>
+ALGOLIA_APP_ID=<ALGOLIA_APP_ID>
+ALGOLIA_SEARCH_API_KEY=<search-only API key>
+ALGOLIA_INDEX_NAME=<same index name>
 ```
 
 [![Made with Fresh](https://fresh.deno.dev/fresh-badge.svg)](https://fresh.deno.dev)
