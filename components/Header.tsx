@@ -1,18 +1,18 @@
 import IconActivity from "@/components/icons/Activity.tsx";
 import Campfire from "@/components/icons/Campfire.tsx";
 import IconRss from "@/components/icons/Rss.tsx";
-import DocSearch from "@/islands/DocSearch.tsx";
+import AlgoliaSearch from "@/islands/AlgoliaSearch.tsx";
 import HamburgerButton from "../islands/HamburgerButton.tsx";
 
 interface HeaderProps {
   title: string;
-  docSearchAppId?: string;
-  docSearchApiKey?: string;
-  docSearchIndexName?: string;
+  algoliaAppId?: string;
+  algoliaSearchApiKey?: string;
+  algoliaIndexName?: string;
 }
 
 export function Header(
-  { title, docSearchAppId, docSearchApiKey, docSearchIndexName }: HeaderProps,
+  { title, algoliaAppId, algoliaSearchApiKey, algoliaIndexName }: HeaderProps,
 ) {
   const menus = [
     { name: <IconRss />, href: "/rss.xml" },
@@ -29,12 +29,12 @@ export function Header(
           </a>
         </div>
         <div class="hidden md:block w-full max-w-sm">
-          <DocSearch
-            appId={docSearchAppId}
-            apiKey={docSearchApiKey}
-            indexName={docSearchIndexName}
+          <AlgoliaSearch
+            appId={algoliaAppId}
+            apiKey={algoliaSearchApiKey}
+            indexName={algoliaIndexName}
             placeholder="Search posts"
-            containerId="docsearch-desktop"
+            containerId="algolia-search-desktop"
           />
         </div>
         <div class="hidden md:flex items-center gap-6">
@@ -60,12 +60,12 @@ export function Header(
           ))}
         </HamburgerButton>
         <div class="md:hidden w-full">
-          <DocSearch
-            appId={docSearchAppId}
-            apiKey={docSearchApiKey}
-            indexName={docSearchIndexName}
+          <AlgoliaSearch
+            appId={algoliaAppId}
+            apiKey={algoliaSearchApiKey}
+            indexName={algoliaIndexName}
             placeholder="Search posts"
-            containerId="docsearch-mobile"
+            containerId="algolia-search-mobile"
           />
         </div>
       </div>

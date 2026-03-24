@@ -18,7 +18,8 @@ interface AlgoliaRecord {
 
 const ALGOLIA_APP_ID = Deno.env.get("ALGOLIA_APP_ID");
 const ALGOLIA_ADMIN_API_KEY = Deno.env.get("ALGOLIA_ADMIN_API_KEY");
-const DOCSEARCH_INDEX_NAME = Deno.env.get("DOCSEARCH_INDEX_NAME");
+const ALGOLIA_INDEX_NAME = Deno.env.get("ALGOLIA_INDEX_NAME") ??
+  Deno.env.get("DOCSEARCH_INDEX_NAME");
 const SITE_URL = Deno.env.get("SITE_URL") ?? "https://9renpoto.win";
 const DRY_RUN = Deno.env.get("ALGOLIA_DRY_RUN") === "1";
 
@@ -131,7 +132,7 @@ async function batchIndex(
 async function main(): Promise<void> {
   const appId = required("ALGOLIA_APP_ID", ALGOLIA_APP_ID);
   const apiKey = required("ALGOLIA_ADMIN_API_KEY", ALGOLIA_ADMIN_API_KEY);
-  const indexName = required("DOCSEARCH_INDEX_NAME", DOCSEARCH_INDEX_NAME);
+  const indexName = required("ALGOLIA_INDEX_NAME", ALGOLIA_INDEX_NAME);
   const baseUrl = normalizeBaseUrl(SITE_URL);
 
   const posts = await getPosts();

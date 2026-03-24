@@ -30,44 +30,105 @@
   @apply pl-8;
 }
 
-:root {
-  --docsearch-primary-color: #111827;
-  --docsearch-highlight-color: #111827;
-  --docsearch-text-color: #374151;
-  --docsearch-searchbox-shadow: none;
-  --docsearch-searchbox-focus-background: #ffffff;
+.algolia-search-root {
+  position: relative;
 }
 
-.docsearch-root .DocSearch-Button {
+.algolia-search-box {
   margin: 0;
+  width: 100%;
+}
+
+.algolia-search-root .aa-Autocomplete,
+.algolia-search-root .aa-DetachedFormContainer,
+.algolia-search-root .aa-Form,
+.algolia-search-root .aa-Panel {
+  --aa-primary-color-rgb: 17, 24, 39;
+  --aa-text-color-rgb: 17, 24, 39;
+  --aa-muted-color-rgb: 107, 114, 128;
+  --aa-background-color-rgb: 255, 255, 255;
+  --aa-panel-border-color-rgb: 229, 231, 235;
+}
+
+.algolia-search-root .aa-InputWrapper {
+  width: 100%;
+}
+
+.algolia-search-root .aa-Form {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.algolia-search-root .aa-InputWrapperPrefix,
+.algolia-search-root .aa-InputWrapperSuffix,
+.algolia-search-root .aa-SubmitButton,
+.algolia-search-root .aa-ClearButton,
+.algolia-search-root .aa-LoadingIndicator {
+  display: none;
+}
+
+.algolia-search-root .aa-Input {
+  appearance: none;
   width: 100%;
   height: 2.5rem;
   border: 1px solid #d1d5db;
   border-radius: 9999px;
   background: #f9fafb;
+  color: #111827;
+  padding: 0 1rem;
+  font-size: 0.95rem;
   transition: all 0.2s ease;
 }
 
-.docsearch-root .DocSearch-Button:hover,
-.docsearch-root .DocSearch-Button:focus-visible {
+.algolia-search-root .aa-Input::placeholder {
+  color: #6b7280;
+}
+
+.algolia-search-root .aa-Input:hover,
+.algolia-search-root .aa-Input:focus-visible {
   border-color: #9ca3af;
   background: #ffffff;
+  outline: none;
 }
 
-.docsearch-root .DocSearch-Button-Placeholder {
+.algolia-search-root .aa-Panel {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.12);
+  max-height: 26rem;
+  overflow: auto;
+}
+
+.algolia-search-root .aa-ItemLink {
+  text-decoration: none;
+}
+
+.algolia-search-root .aa-Item {
+  border-radius: 0.55rem;
+}
+
+.algolia-search-root .aa-Item:hover,
+.algolia-search-root .aa-Item[aria-selected="true"] {
+  background: #f3f4f6;
+}
+
+.algolia-search-root .aa-ItemTitle {
   font-size: 0.95rem;
-  color: #6b7280;
+  font-weight: 600;
+  color: #111827;
 }
 
-.docsearch-root .DocSearch-Search-Icon {
+.algolia-search-root .aa-ItemSnippet {
+  font-size: 0.85rem;
   color: #6b7280;
-}
-
-.docsearch-root .DocSearch-Button-Keys {
-  min-width: 2.5rem;
-}
-
-.docsearch-root .DocSearch-Button-Key {
-  box-shadow: inset 0 -1px 0 #d1d5db;
-  color: #6b7280;
+  margin-top: 0.15rem;
 }
