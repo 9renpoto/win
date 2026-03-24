@@ -1,8 +1,11 @@
 import { useEffect, useRef } from "preact/hooks";
 
 import * as autocompleteJs from "@algolia/autocomplete-js";
-import type { AutocompleteApi, AutocompleteOptions } from "@algolia/autocomplete-js";
-import { liteClient, type LiteClient } from "algoliasearch/lite";
+import type {
+  AutocompleteApi,
+  AutocompleteOptions,
+} from "@algolia/autocomplete-js";
+import { type LiteClient, liteClient } from "algoliasearch/lite";
 
 interface AlgoliaSearchProps {
   appId?: string;
@@ -21,10 +24,13 @@ interface SearchHit {
   [key: string]: unknown;
 }
 
-type AutocompleteInit =
-  (options: AutocompleteOptions<SearchHit>) => AutocompleteApi<SearchHit>;
+type AutocompleteInit = (
+  options: AutocompleteOptions<SearchHit>,
+) => AutocompleteApi<SearchHit>;
 
-function resolveAutocompleteInit(moduleLike: object): AutocompleteInit | undefined {
+function resolveAutocompleteInit(
+  moduleLike: object,
+): AutocompleteInit | undefined {
   const rootAutocomplete = Reflect.get(moduleLike, "autocomplete");
   if (typeof rootAutocomplete === "function") {
     return rootAutocomplete;
@@ -97,7 +103,9 @@ export default function AlgoliaSearch(
     // component left behind even if the old cleanup hasn't run yet.
     const stale = getWindowInstance();
     if (stale) {
-      try { stale.destroy(); } catch (_) { /* ignore if already destroyed */ }
+      try {
+        stale.destroy();
+      } catch (_) { /* ignore if already destroyed */ }
       clearWindowInstance();
     }
     instanceRef.current = null;
@@ -105,7 +113,9 @@ export default function AlgoliaSearch(
 
     const setup = () => {
       if (!initAutocomplete) {
-        throw new Error("Failed to resolve autocomplete() from @algolia/autocomplete-js module");
+        throw new Error(
+          "Failed to resolve autocomplete() from @algolia/autocomplete-js module",
+        );
       }
 
       const client: LiteClient = liteClient(appId, apiKey);
@@ -176,7 +186,9 @@ export default function AlgoliaSearch(
       const isOwner = instanceRef.current !== null &&
         getWindowInstance() === instanceRef.current;
       if (isOwner) {
-        try { instanceRef.current!.destroy(); } catch (_) { /* ignore */ }
+        try {
+          instanceRef.current!.destroy();
+        } catch (_) { /* ignore */ }
         clearWindowInstance();
         if (containerRef.current) {
           containerRef.current.innerHTML = "";
