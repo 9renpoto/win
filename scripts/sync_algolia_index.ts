@@ -18,8 +18,7 @@ interface AlgoliaRecord {
 
 const ALGOLIA_APP_ID = Deno.env.get("ALGOLIA_APP_ID");
 const ALGOLIA_ADMIN_API_KEY = Deno.env.get("ALGOLIA_ADMIN_API_KEY");
-const ALGOLIA_INDEX_NAME = Deno.env.get("ALGOLIA_INDEX_NAME") ??
-  Deno.env.get("DOCSEARCH_INDEX_NAME");
+const ALGOLIA_INDEX_NAME = Deno.env.get("ALGOLIA_INDEX_NAME");
 const SITE_URL = Deno.env.get("SITE_URL") ?? "https://9renpoto.win";
 const DRY_RUN = Deno.env.get("ALGOLIA_DRY_RUN") === "1";
 
