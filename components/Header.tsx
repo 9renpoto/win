@@ -28,13 +28,12 @@ export function Header(
             <div class="text-2xl ml-1 font-bold">{title}</div>
           </a>
         </div>
-        <div class="hidden md:block w-full max-w-sm">
+        <div class="w-full md:max-w-sm">
           <AlgoliaSearch
             appId={algoliaAppId}
             apiKey={algoliaSearchApiKey}
             indexName={algoliaIndexName}
             placeholder="Search posts"
-            containerId="algolia-search-desktop"
           />
         </div>
         <div class="hidden md:flex items-center gap-6">
@@ -59,15 +58,6 @@ export function Header(
             </li>
           ))}
         </HamburgerButton>
-        <div class="md:hidden w-full">
-          <AlgoliaSearch
-            appId={algoliaAppId}
-            apiKey={algoliaSearchApiKey}
-            indexName={algoliaIndexName}
-            placeholder="Search posts"
-            containerId="algolia-search-mobile"
-          />
-        </div>
       </div>
     </header>
   );
