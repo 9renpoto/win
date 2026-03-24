@@ -21,14 +21,28 @@ export function Header(
   ];
   return (
     <header class="w-full">
-      <div class="max-w-screen-lg w-full mx-auto py-6 px-4 flex flex-row flex-wrap items-center gap-4">
-        <div class="flex items-center flex-1">
-          <Campfire />
-          <a href="/">
-            <div class="text-2xl ml-1 font-bold">{title}</div>
-          </a>
+      <div class="max-w-screen-lg w-full mx-auto py-6 px-4 flex flex-row flex-wrap items-center gap-4 md:gap-6">
+        <div class="flex w-full items-center justify-between gap-4 md:w-auto md:flex-1">
+          <div class="flex min-w-0 items-center">
+            <Campfire />
+            <a href="/" class="min-w-0">
+              <div class="text-2xl ml-1 font-bold break-words">{title}</div>
+            </a>
+          </div>
+          <HamburgerButton>
+            {menus.map((menu) => (
+              <li>
+                <a
+                  href={menu.href}
+                  class="text-gray-500 hover:text-gray-700 py-1 border-gray-500"
+                >
+                  {menu.name}
+                </a>
+              </li>
+            ))}
+          </HamburgerButton>
         </div>
-        <div class="w-full md:max-w-sm">
+        <div class="order-3 w-full md:order-none md:max-w-sm md:flex-none">
           <AlgoliaSearch
             appId={algoliaAppId}
             apiKey={algoliaSearchApiKey}
@@ -36,7 +50,7 @@ export function Header(
             placeholder="Search posts"
           />
         </div>
-        <div class="hidden md:flex items-center gap-6">
+        <div class="hidden md:ml-auto md:flex items-center gap-6">
           {menus.map((menu) => (
             <a
               href={menu.href}
@@ -46,18 +60,6 @@ export function Header(
             </a>
           ))}
         </div>
-        <HamburgerButton>
-          {menus.map((menu) => (
-            <li>
-              <a
-                href={menu.href}
-                class="text-gray-500 hover:text-gray-700 py-1 border-gray-500"
-              >
-                {menu.name}
-              </a>
-            </li>
-          ))}
-        </HamburgerButton>
       </div>
     </header>
   );

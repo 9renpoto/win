@@ -118,14 +118,19 @@ export default function AlgoliaSearch(
         );
       }
 
+      const container = containerRef.current;
+      if (!container) {
+        return;
+      }
+
       const client: LiteClient = liteClient(appId, apiKey);
       const inst = initAutocomplete({
-        container: containerRef.current!,
-        panelContainer: containerRef.current!,
+        container,
+        panelContainer: container,
         placeholder,
-        // On viewports narrower than Tailwind's md (768 px) open as an overlay;
-        // on wider viewports render inline in the header.
-        detachedMediaQuery: "(max-width: 767px)",
+        // Keep the input inline across breakpoints so the header layout stays
+        // consistent and styling remains local to the search container.
+        detachedMediaQuery: "not all",
         openOnFocus: true,
         panelPlacement: "input-wrapper-width",
         getSources({ query }) {
@@ -187,7 +192,7 @@ export default function AlgoliaSearch(
         getWindowInstance() === instanceRef.current;
       if (isOwner) {
         try {
-          instanceRef.current!.destroy();
+          instanceRef.current?.destroy();
         } catch (_) { /* ignore */ }
         clearWindowInstance();
         if (containerRef.current) {
