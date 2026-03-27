@@ -1,9 +1,8 @@
-import { CSS, render } from "@deno/gfm";
 import type { RouteHandler } from "fresh";
 import { page, type PageProps } from "fresh";
 import { Head } from "fresh/runtime";
 import { SEO } from "@/components/SEO.tsx";
-import { getPost, type Post } from "@/utils/posts.ts";
+import { getPost, type Post, renderMarkdown } from "@/utils/posts.ts";
 import { description, title } from "@/utils/website.ts";
 
 export const handler: RouteHandler<Post, Record<string, never>> = {
@@ -24,7 +23,6 @@ export default function AboutPage(props: PageProps<Post>) {
           keywords={["life"].join(",")}
           ogImage="https://avatars3.githubusercontent.com/u/520693?s=460&v=4"
         />
-        <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
       <main class="flex-grow max-w-screen-lg w-full px-4 pt-4 mx-auto">
         <h1 class="text-2xl font-bold">{post.title}</h1>
@@ -36,8 +34,8 @@ export default function AboutPage(props: PageProps<Post>) {
           })}
         </time>
         <div
-          class="mt-8 markdown-body"
-          dangerouslySetInnerHTML={{ __html: render(post.content) }}
+          class="prose prose-slate prose-headings:scroll-mt-24 prose-a:text-sky-700 prose-pre:rounded-xl prose-pre:bg-gray-950 prose-pre:text-gray-100 max-w-none mt-8"
+          dangerouslySetInnerHTML={{ __html: renderMarkdown(post.content) }}
         />
       </main>
     </>
