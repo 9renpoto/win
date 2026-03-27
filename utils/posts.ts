@@ -20,6 +20,28 @@ export interface Post {
   headings: Heading[];
 }
 
+export function slugifyHeading(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, "")
+    .replace(/[\s_-]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+export function renderMarkdown(
+  content: string,
+  headings: Heading[] = [],
+): string {
+  const renderer = new marked.Renderer();
+  renderer.heading = (text: string, level: number, raw: string) => {
+    const slug = slugifyHeading(raw);
+    headings.push({ level, text, slug });
+    return `<h${level} id="${slug}">${text}</h${level}>`;
+  };
+
+  return marked.parse(content, { gfm: true, renderer }) as string;
+}
+
 export async function getPosts(): Promise<Post[]> {
   const promises: ReturnType<typeof getPost>[] = [];
   for await (const e1 of Deno.readDir(DIRECTORY)) {
@@ -62,22 +84,7 @@ export async function getPost(slug: string, dir = DIRECTORY): Promise<Post> {
   >(text);
 
   const headings: Heading[] = [];
-  const slugify = (text: string) =>
-    text
-      .toLowerCase()
-      .replace(/[^\w\s-]/g, "")
-      .replace(/[\s_-]+/g, "-")
-      .replace(/^-+|-+$/g, "");
-
-  const renderer = new marked.Renderer();
-  // @ts-ignore: The types for marked@4 are incorrect for the heading function
-  renderer.heading = (text: string, level: number, raw: string) => {
-    const slug = slugify(raw);
-    headings.push({ level, text, slug });
-    return `<h${level} id="${slug}">${text}</h${level}>`;
-  };
-  marked.use({ renderer });
-  marked.parse(body);
+  renderMarkdown(body, headings);
 
   const publishedAt = new Date(attrs.date);
   return {

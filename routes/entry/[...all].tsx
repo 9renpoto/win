@@ -1,14 +1,10 @@
-import { CSS, render } from "@deno/gfm";
 import { page, type PageProps } from "fresh";
 import { Head } from "fresh/runtime";
 import { SEO } from "@/components/SEO.tsx";
 import { TableOfContents } from "@/components/TableOfContents.tsx";
 import LikeButton from "@/islands/LikeButton.tsx";
-import { getPost, type Post } from "@/utils/posts.ts";
+import { getPost, type Post, renderMarkdown } from "@/utils/posts.ts";
 import { description, title } from "@/utils/website.ts";
-
-import "https://esm.sh/prismjs@1.29.0/components/prism-typescript?no-check";
-import "https://esm.sh/prismjs@1.29.0/components/prism-bash?no-check";
 import type { RouteHandler } from "fresh";
 
 export const handler: RouteHandler<Post, Record<string, never>> = {
@@ -29,7 +25,6 @@ export default function PostPage(props: PageProps<Post>) {
           keywords={["life"].join(",")}
           ogImage="https://avatars3.githubusercontent.com/u/520693?s=460&v=4"
         />
-        <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
       <div class="flex-grow max-w-screen-lg mx-auto w-full px-4 pt-4">
         <div class="flex flex-row">
@@ -51,8 +46,8 @@ export default function PostPage(props: PageProps<Post>) {
               <p class="text-gray-500">Number of word {post.content.length}</p>
             </div>
             <div
-              class="mt-8 markdown-body"
-              dangerouslySetInnerHTML={{ __html: render(post.content) }}
+              class="prose prose-slate prose-headings:scroll-mt-24 prose-a:text-sky-700 prose-pre:rounded-xl prose-pre:bg-gray-950 prose-pre:text-gray-100 max-w-none mt-8"
+              dangerouslySetInnerHTML={{ __html: renderMarkdown(post.content) }}
             />
           </main>
           {post.headings && post.headings.length > 0 && (

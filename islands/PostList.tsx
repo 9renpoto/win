@@ -16,45 +16,67 @@ export default function PostList(
   { initialPosts, initialHasMore }: PostListProps,
 ) {
   const [posts, setPosts] = useState<PostItem[]>(initialPosts);
+  const [hasMore, setHasMore] = useState(initialHasMore);
   const [loading, setLoading] = useState(false);
-  const hasMoreRef = useRef(initialHasMore);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const pageRef = useRef(2);
   const loadingRef = useRef(false);
   const sentinelRef = useRef<HTMLDivElement>(null);
 
+  const loadMore = async () => {
+    if (loadingRef.current || !hasMore) return;
+
+    loadingRef.current = true;
+    setLoading(true);
+    setLoadError(null);
+
+    try {
+      const res = await fetch(`/api/posts?page=${pageRef.current}`);
+      if (!res.ok) {
+        throw new Error(`Failed to fetch page ${pageRef.current}`);
+      }
+
+      const { posts: newPosts, hasMore: nextHasMore } = await res.json();
+      setPosts((prev) => [...prev, ...newPosts]);
+      setHasMore(nextHasMore);
+      pageRef.current++;
+    } catch (_error) {
+      setLoadError("Failed to load more posts");
+    } finally {
+      loadingRef.current = false;
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     const sentinel = sentinelRef.current;
-    if (!sentinel) return;
+    if (!sentinel || !hasMore || typeof IntersectionObserver === "undefined") {
+      return;
+    }
 
     const observer = new IntersectionObserver(
-      async (entries) => {
-        if (
-          !entries[0].isIntersecting ||
-          loadingRef.current ||
-          !hasMoreRef.current
-        ) return;
-
-        loadingRef.current = true;
-        setLoading(true);
-        try {
-          const res = await fetch(`/api/posts?page=${pageRef.current}`);
-          if (res.ok) {
-            const { posts: newPosts, hasMore } = await res.json();
-            setPosts((prev) => [...prev, ...newPosts]);
-            hasMoreRef.current = hasMore;
-            pageRef.current++;
-          }
-        } finally {
-          loadingRef.current = false;
-          setLoading(false);
-        }
+      (entries) => {
+        if (!entries[0]?.isIntersecting) return;
+        void loadMore();
       },
-      { rootMargin: "200px" },
+      { rootMargin: "400px 0px" },
     );
 
     observer.observe(sentinel);
     return () => observer.disconnect();
-  }, []);
+  }, [hasMore, posts.length]);
+
+  useEffect(() => {
+    if (loading || !hasMore || typeof window === "undefined") return;
+
+    const sentinel = sentinelRef.current;
+    if (!sentinel) return;
+
+    const rect = sentinel.getBoundingClientRect();
+    if (rect.top <= globalThis.innerHeight + 400) {
+      void loadMore();
+    }
+  }, [hasMore, loading, posts.length]);
 
   return (
     <div>
@@ -64,8 +86,21 @@ export default function PostList(
           key={`${post.slug}-${i}`}
         />
       ))}
-      <div ref={sentinelRef} />
+      <div ref={sentinelRef} class="h-1" />
       {loading && <div class="py-8 text-center text-gray-500">Loading...</div>}
+      {loadError && <div class="py-4 text-center text-red-600">{loadError}
+      </div>}
+      {hasMore && !loading && (
+        <div class="py-6 text-center">
+          <button
+            type="button"
+            class="rounded-full border border-gray-300 px-4 py-2 text-sm text-gray-700 hover:border-gray-400 hover:text-gray-900"
+            onClick={() => void loadMore()}
+          >
+            Load more
+          </button>
+        </div>
+      )}
     </div>
   );
 }
