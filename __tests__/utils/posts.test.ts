@@ -101,7 +101,12 @@ date: 2025-01-01
       true,
     );
     assertEquals(html.includes('class="bsky-embed-frame"'), true);
-    assertEquals(html.includes('data-bsky-id="bsky-did-plc-z72i7hdynmk6r22z27h6tvur-3l6oveex3hf2v"'), true);
+    assertEquals(
+      html.includes(
+        'data-bsky-id="bsky-did-plc-z72i7hdynmk6r22z27h6tvur-3l6oveex3hf2v"',
+      ),
+      true,
+    );
   });
 
   it("renders bsky.app embed when a paragraph has another link", async () => {
@@ -116,7 +121,9 @@ date: 2025-01-01
       true,
     );
     assertEquals(
-      html.includes('href="https://happyhackingkb.com/jp/news/2026/news20260313.html"'),
+      html.includes(
+        'href="https://happyhackingkb.com/jp/news/2026/news20260313.html"',
+      ),
       true,
     );
   });

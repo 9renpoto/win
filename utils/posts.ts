@@ -46,7 +46,9 @@ async function resolveDid(handle: string): Promise<string | null> {
 
   try {
     const response = await fetch(
-      `https://public.api.bsky.app/xrpc/com.atproto.identity.resolveHandle?handle=${encodeURIComponent(handle)}`,
+      `https://public.api.bsky.app/xrpc/com.atproto.identity.resolveHandle?handle=${
+        encodeURIComponent(handle)
+      }`,
     );
     if (!response.ok) {
       handleDidCache.set(handle, null);
@@ -84,7 +86,9 @@ async function toBlueskyEmbed(html: string): Promise<string> {
 
     const embedId = `bsky-${did.replace(/[^a-zA-Z0-9_-]/g, "-")}-${rkey}`;
     const replacement =
-      `</p><div class="bsky-embed"><iframe class="bsky-embed-frame" data-bsky-id="${embedId}" src="https://embed.bsky.app/embed/${did}/app.bsky.feed.post/${rkey}?id=${encodeURIComponent(embedId)}" loading="lazy" title="Embedded Bluesky post ${rkey}" referrerpolicy="no-referrer-when-downgrade"></iframe></div><p>`;
+      `</p><div class="bsky-embed"><iframe class="bsky-embed-frame" data-bsky-id="${embedId}" src="https://embed.bsky.app/embed/${did}/app.bsky.feed.post/${rkey}?id=${
+        encodeURIComponent(embedId)
+      }" loading="lazy" title="Embedded Bluesky post ${rkey}" referrerpolicy="no-referrer-when-downgrade"></iframe></div><p>`;
     rendered = rendered.replace(fullMatch, replacement);
   }
 
