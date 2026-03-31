@@ -173,3 +173,28 @@
   color: #6b7280;
   margin-top: 0.15rem;
 }
+
+.x-embed {
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.x-embed-frame {
+  width: min(100%, 550px);
+  height: 560px;
+  border: 0;
+}
+
+.bsky-embed {
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.bsky-embed-frame {
+  width: min(100%, 600px);
+  height: 420px;
+  min-height: 360px;
+  border: 0;
+}

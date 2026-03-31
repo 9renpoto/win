@@ -31,10 +31,93 @@ date: 2025-01-01
     ]);
   });
 
-  it("renders headings with anchor ids", () => {
-    const html = renderMarkdown("# Heading 1\n\n## Heading 2");
+  it("renders headings with anchor ids", async () => {
+    const html = await renderMarkdown("# Heading 1\n\n## Heading 2");
 
     assertEquals(html.includes('<h1 id="heading-1">Heading 1</h1>'), true);
     assertEquals(html.includes('<h2 id="heading-2">Heading 2</h2>'), true);
+  });
+
+  it("renders x.com status url as embedded iframe", async () => {
+    const html = await renderMarkdown(
+      "https://x.com/jezailfunder_jp/status/2024795594045505688?s=20",
+    );
+
+    assertEquals(
+      html.includes(
+        'src="https://platform.twitter.com/embed/Tweet.html?id=2024795594045505688&dnt=true"',
+      ),
+      true,
+    );
+    assertEquals(
+      html.includes('class="x-embed-frame"'),
+      true,
+    );
+  });
+
+  it("renders markdown link to x.com status as embedded iframe", async () => {
+    const html = await renderMarkdown(
+      "[Jiffy75](https://x.com/jezailfunder_jp/status/2024795594045505688)",
+    );
+
+    assertEquals(
+      html.includes(
+        'src="https://platform.twitter.com/embed/Tweet.html?id=2024795594045505688&dnt=true"',
+      ),
+      true,
+    );
+    assertEquals(
+      html.includes('<div class="x-embed"><iframe class="x-embed-frame"'),
+      true,
+    );
+  });
+
+  it("renders x.com i/web/status url as embedded iframe", async () => {
+    const html = await renderMarkdown(
+      "https://x.com/i/web/status/2024795594045505688?s=20",
+    );
+
+    assertEquals(
+      html.includes(
+        'src="https://platform.twitter.com/embed/Tweet.html?id=2024795594045505688&dnt=true"',
+      ),
+      true,
+    );
+    assertEquals(
+      html.includes('title="Embedded X post 2024795594045505688"'),
+      true,
+    );
+  });
+
+  it("renders bsky.app post url as embedded iframe", async () => {
+    const html = await renderMarkdown(
+      "https://bsky.app/profile/did:plc:z72i7hdynmk6r22z27h6tvur/post/3l6oveex3hf2v",
+    );
+
+    assertEquals(
+      html.includes(
+        'src="https://embed.bsky.app/embed/did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.post/3l6oveex3hf2v?id=',
+      ),
+      true,
+    );
+    assertEquals(html.includes('class="bsky-embed-frame"'), true);
+    assertEquals(html.includes('data-bsky-id="bsky-did-plc-z72i7hdynmk6r22z27h6tvur-3l6oveex3hf2v"'), true);
+  });
+
+  it("renders bsky.app embed when a paragraph has another link", async () => {
+    const html = await renderMarkdown(
+      "[HHKB Studio](https://happyhackingkb.com/jp/news/2026/news20260313.html)\n[HHKB Studio](https://bsky.app/profile/did:plc:z72i7hdynmk6r22z27h6tvur/post/3l6oveex3hf2v)",
+    );
+
+    assertEquals(
+      html.includes(
+        'src="https://embed.bsky.app/embed/did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.post/3l6oveex3hf2v?id=',
+      ),
+      true,
+    );
+    assertEquals(
+      html.includes('href="https://happyhackingkb.com/jp/news/2026/news20260313.html"'),
+      true,
+    );
   });
 });
