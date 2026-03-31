@@ -6,9 +6,10 @@ interface LikeButtonProps {
   variant?: "default" | "footer";
 }
 
-export default function LikeButton(
-  { slug, variant = "default" }: LikeButtonProps,
-) {
+export default function LikeButton({
+  slug,
+  variant = "default",
+}: LikeButtonProps) {
   const likeCount = useSignal(0);
   const [isLiked, setIsLiked] = useState(false);
 

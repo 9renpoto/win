@@ -3,9 +3,11 @@ import IconX from "@/components/icons/X.tsx";
 import { useState } from "preact/hooks";
 import type { ComponentChildren } from "preact";
 
-export default function HamburgerButton(
-  { children }: { children: ComponentChildren },
-) {
+export default function HamburgerButton({
+  children,
+}: {
+  children: ComponentChildren;
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -25,9 +27,7 @@ export default function HamburgerButton(
       </button>
       {isOpen && (
         <div class="absolute right-0 top-full z-40 mt-3 min-w-48 rounded-md bg-white p-4 shadow-lg">
-          <ul class="flex flex-col gap-4">
-            {children}
-          </ul>
+          <ul class="flex flex-col gap-4">{children}</ul>
         </div>
       )}
     </div>

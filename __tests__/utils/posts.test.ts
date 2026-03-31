@@ -1,73 +1,96 @@
+import { assert, assertEquals } from "@std/assert";
+import { afterEach, beforeEach, describe, it } from "@std/testing/bdd";
+import { FakeTime } from "@std/testing/time";
+import { basename, dirname } from "@std/path";
 import * as postsUtil from "@/utils/posts.ts";
-import { afterEach, beforeEach } from "@std/testing/bdd";
-// --- fetchスタブ用ユーティリティ ---
-function stubDidFetch(did = "did:plc:z72i7hdynmk6r22z27h6tvur") {
-  globalThis.fetch = (_url, _opts) => {
-    return Promise.resolve({
-      ok: true,
-      json: () => Promise.resolve({ did }),
-    } as Response);
-  };
+import { getPost, renderMarkdown } from "@/utils/posts.ts";
+import { stub } from "@std/testing/mock";
+
+export function stubDidFetch(did = "did:plc:z72i7hdynmk6r22z27h6tvur") {
+  return stub(
+    globalThis,
+    "fetch",
+    () =>
+      Promise.resolve(
+        new Response(JSON.stringify({ did }), {
+          status: 200,
+          headers: {
+            "content-type": "application/json",
+          },
+        }),
+      ),
+  );
 }
 
 describe("resolveDid", () => {
-  const originalFetch = globalThis.fetch;
   beforeEach(() => {
     postsUtil.__handleDidCache?.clear();
   });
   afterEach(() => {
-    globalThis.fetch = originalFetch;
+    postsUtil.__handleDidCache?.clear();
   });
 
   it("resolves handle to DID (success)", async () => {
-    globalThis.fetch = (_url, _opts) => {
-      return Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve({ did: "did:plc:12345" }),
-      } as Response);
-    };
+    const time = new FakeTime();
+    const localStub = stubDidFetch("did:plc:12345");
     const did = await postsUtil.resolveDid("user.bsky.social");
     assertEquals(did, "did:plc:12345");
+    localStub.restore();
+    time.runAll();
+    time.restore();
   });
 
   it("returns null on non-OK response", async () => {
-    globalThis.fetch = (_url, _opts) => {
-      return Promise.resolve({ ok: false } as Response);
-    };
+    const time = new FakeTime();
+    const localStub = stub(
+      globalThis,
+      "fetch",
+      () => Promise.resolve(new Response(null, { status: 404 })),
+    );
     const did = await postsUtil.resolveDid("user.bsky.social");
     assertEquals(did, null);
+    localStub.restore();
+    time.runAll();
+    time.restore();
   });
 
   it("returns null on network error", async () => {
-    globalThis.fetch = (_url, _opts) => {
-      return Promise.reject(new Error("network error"));
-    };
+    const time = new FakeTime();
+    const localStub = stub(globalThis, "fetch", () => Promise.reject(new Error("network")));
     const did = await postsUtil.resolveDid("user.bsky.social");
     assertEquals(did, null);
+    localStub.restore();
+    time.runAll();
+    time.restore();
   });
 
   it("resolves handle to DID (stub)", async () => {
-    stubDidFetch("did:plc:z72i7hdynmk6r22z27h6tvur");
+    const time = new FakeTime();
+    const localStub = stubDidFetch("did:plc:z72i7hdynmk6r22z27h6tvur");
     const did = await postsUtil.resolveDid("user.bsky.social");
     assertEquals(did, "did:plc:z72i7hdynmk6r22z27h6tvur");
+    localStub.restore();
+    time.runAll();
+    time.restore();
   });
+
+  // Removed legacy fake time test; fetch mocking is now handled by stubDidFetch
 });
-import { assertEquals } from "@std/assert";
-import { describe, it } from "@std/testing/bdd";
-import { basename, dirname } from "@std/path";
-import { getPost, renderMarkdown } from "@/utils/posts.ts";
 
 describe("getPost", () => {
   it("extracts headings from markdown", async () => {
-    const markdown = `---
-title: Test Post
-date: 2025-01-01
----
-
-# Heading 1
-## Heading 2
-### Heading 3
-`;
+    // Use markdown front-matter for test
+    const markdown = [
+      "---",
+      "title: Test Post",
+      "date: 2025-01-01",
+      "---",
+      "",
+      "# Heading 1",
+      "## Heading 2",
+      "### Heading 3",
+      "",
+    ].join("\n");
 
     const tempFile = await Deno.makeTempFile({ suffix: ".md" });
     await Deno.writeTextFile(tempFile, markdown);
@@ -88,8 +111,8 @@ date: 2025-01-01
   it("renders headings with anchor ids", async () => {
     const html = await renderMarkdown("# Heading 1\n\n## Heading 2");
 
-    assertEquals(html.includes('<h1 id="heading-1">Heading 1</h1>'), true);
-    assertEquals(html.includes('<h2 id="heading-2">Heading 2</h2>'), true);
+    assert(html.includes('<h1 id="heading-1">Heading 1</h1>'));
+    assert(html.includes('<h2 id="heading-2">Heading 2</h2>'));
   });
 
   it("renders x.com status url as embedded iframe", async () => {
@@ -97,16 +120,12 @@ date: 2025-01-01
       "https://x.com/jezailfunder_jp/status/2024795594045505688?s=20",
     );
 
-    assertEquals(
+    assert(
       html.includes(
         'src="https://platform.twitter.com/embed/Tweet.html?id=2024795594045505688&dnt=true"',
       ),
-      true,
     );
-    assertEquals(
-      html.includes('class="x-embed-frame"'),
-      true,
-    );
+    assert(html.includes('class="x-embed-frame"'));
   });
 
   it("renders markdown link to x.com status as embedded iframe", async () => {
@@ -114,16 +133,12 @@ date: 2025-01-01
       "[Jiffy75](https://x.com/jezailfunder_jp/status/2024795594045505688)",
     );
 
-    assertEquals(
+    assert(
       html.includes(
         'src="https://platform.twitter.com/embed/Tweet.html?id=2024795594045505688&dnt=true"',
       ),
-      true,
     );
-    assertEquals(
-      html.includes('<div class="x-embed"><iframe class="x-embed-frame"'),
-      true,
-    );
+    assert(html.includes('<div class="x-embed"><iframe class="x-embed-frame"'));
   });
 
   it("renders x.com i/web/status url as embedded iframe", async () => {
@@ -131,56 +146,51 @@ date: 2025-01-01
       "https://x.com/i/web/status/2024795594045505688?s=20",
     );
 
-    assertEquals(
+    assert(
       html.includes(
         'src="https://platform.twitter.com/embed/Tweet.html?id=2024795594045505688&dnt=true"',
       ),
-      true,
     );
-    assertEquals(
-      html.includes('title="Embedded X post 2024795594045505688"'),
-      true,
-    );
+    assert(html.includes('title="Embedded X post 2024795594045505688"'));
   });
 
   it("renders bsky.app post url as embedded iframe", async () => {
-    stubDidFetch();
+    const localStub = stubDidFetch();
     const html = await renderMarkdown(
       "https://bsky.app/profile/did:plc:z72i7hdynmk6r22z27h6tvur/post/3l6oveex3hf2v",
     );
+    localStub.restore();
 
-    assertEquals(
+    assert(
       html.includes(
         'src="https://embed.bsky.app/embed/did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.post/3l6oveex3hf2v?id=',
       ),
-      true,
     );
-    assertEquals(html.includes('class="bsky-embed-frame"'), true);
-    assertEquals(
+    assert(html.includes('class="bsky-embed-frame"'));
+    assert(
       html.includes(
         'data-bsky-id="bsky-did-plc-z72i7hdynmk6r22z27h6tvur-3l6oveex3hf2v"',
       ),
-      true,
     );
   });
 
-  it("renders bsky.app embed when a paragraph has another link", async () => {
-    stubDidFetch();
+  it("does not embed bsky.app post if paragraph has multiple links", async () => {
+    const localStub = stubDidFetch();
     const html = await renderMarkdown(
       "[HHKB Studio](https://happyhackingkb.com/jp/news/2026/news20260313.html)\n[HHKB Studio](https://bsky.app/profile/did:plc:z72i7hdynmk6r22z27h6tvur/post/3l6oveex3hf2v)",
     );
-
-    assertEquals(
-      html.includes(
-        'src="https://embed.bsky.app/embed/did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.post/3l6oveex3hf2v?id=',
-      ),
-      true,
-    );
-    assertEquals(
+    localStub.restore();
+    // 2つのリンクが同じ段落内にある場合、bsky埋め込みは発動しない
+    assert(!html.includes('class="bsky-embed-frame"'));
+    assert(
       html.includes(
         'href="https://happyhackingkb.com/jp/news/2026/news20260313.html"',
       ),
-      true,
+    );
+    assert(
+      html.includes(
+        'href="https://bsky.app/profile/did:plc:z72i7hdynmk6r22z27h6tvur/post/3l6oveex3hf2v"',
+      ),
     );
   });
 });

@@ -57,7 +57,9 @@ export async function resolveDid(handle: string): Promise<string | null> {
     const timeout = setTimeout(() => controller.abort(), 2000); // 2s timeout
     const response = await fetch(
       `https://public.api.bsky.app/xrpc/com.atproto.identity.resolveHandle?handle=${
-        encodeURIComponent(handle)
+        encodeURIComponent(
+          handle,
+        )
       }`,
       { signal: controller.signal },
     );
@@ -67,7 +69,7 @@ export async function resolveDid(handle: string): Promise<string | null> {
       return null;
     }
 
-    const body = await response.json() as { did?: string };
+    const body = (await response.json()) as { did?: string };
     const did = body.did ?? null;
     handleDidCache.set(handle, did);
     return did;
@@ -91,7 +93,9 @@ async function toBlueskyEmbed(html: string): Promise<string> {
     const embedId = `bsky-${did.replace(/[^a-zA-Z0-9_-]/g, "-")}-${rkey}`;
     const replacement =
       `<div class=\"bsky-embed\"><iframe class=\"bsky-embed-frame\" data-bsky-id=\"${embedId}\" src=\"https://embed.bsky.app/embed/${did}/app.bsky.feed.post/${rkey}?id=${
-        encodeURIComponent(embedId)
+        encodeURIComponent(
+          embedId,
+        )
       }\" loading=\"lazy\" title=\"Embedded Bluesky post ${rkey}\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe></div>`;
     rendered = rendered.replace(fullMatch, replacement);
   }

@@ -19,7 +19,7 @@ Deno.test("getDomainUrl prefers forwarded host headers", () => {
 
 Deno.test("getDomainUrl respects forwarded proto with host header", () => {
   const headers = new Headers({
-    "host": "example.com",
+    host: "example.com",
     "X-Forwarded-Proto": "https",
   });
   const request = new Request("http://internal/rss.xml", { headers });

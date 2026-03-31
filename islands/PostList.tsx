@@ -12,9 +12,10 @@ interface PostListProps {
   initialHasMore: boolean;
 }
 
-export default function PostList(
-  { initialPosts, initialHasMore }: PostListProps,
-) {
+export default function PostList({
+  initialPosts,
+  initialHasMore,
+}: PostListProps) {
   const [posts, setPosts] = useState<PostItem[]>(initialPosts);
   const [hasMore, setHasMore] = useState(initialHasMore);
   const [loading, setLoading] = useState(false);

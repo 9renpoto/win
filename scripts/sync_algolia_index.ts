@@ -122,7 +122,10 @@ async function batchIndex(
     }
     console.log(
       `Indexed ${
-        Math.min(i + chunkSize, requests.length)
+        Math.min(
+          i + chunkSize,
+          requests.length,
+        )
       } / ${requests.length}`,
     );
   }

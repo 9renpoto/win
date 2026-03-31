@@ -27,9 +27,9 @@ export const handler: RouteHandler<IndexData, Record<string, never>> = {
   },
 };
 
-export default function BlogIndexPage(
-  { data: { posts, hasMore } }: PageProps<IndexData>,
-) {
+export default function BlogIndexPage({
+  data: { posts, hasMore },
+}: PageProps<IndexData>) {
   return (
     <>
       <Head>

@@ -81,15 +81,13 @@ function clearWindowInstance(): void {
   }
 }
 
-export default function AlgoliaSearch(
-  {
-    appId,
-    apiKey,
-    indexName,
-    placeholder = "Search",
-    containerId = "algolia-search",
-  }: AlgoliaSearchProps,
-) {
+export default function AlgoliaSearch({
+  appId,
+  apiKey,
+  indexName,
+  placeholder = "Search",
+  containerId = "algolia-search",
+}: AlgoliaSearchProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const instanceRef = useRef<AutocompleteApi<SearchHit> | null>(null);
 
@@ -105,7 +103,9 @@ export default function AlgoliaSearch(
     if (stale) {
       try {
         stale.destroy();
-      } catch (_) { /* ignore if already destroyed */ }
+      } catch (_) {
+        /* ignore if already destroyed */
+      }
       clearWindowInstance();
     }
     instanceRef.current = null;
@@ -193,7 +193,9 @@ export default function AlgoliaSearch(
       if (isOwner) {
         try {
           instanceRef.current?.destroy();
-        } catch (_) { /* ignore */ }
+        } catch (_) {
+          /* ignore */
+        }
         clearWindowInstance();
         if (containerRef.current) {
           containerRef.current.innerHTML = "";

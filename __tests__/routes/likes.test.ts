@@ -5,9 +5,11 @@ import { handler } from "@/routes/api/likes.ts";
 Deno.test("GET returns 400 without slug", async () => {
   const request = new Request("http://127.0.0.1/api/likes");
 
-  const response = await (handler as unknown as {
-    GET: (ctx: { req: Request }) => Promise<Response>;
-  }).GET({ req: request });
+  const response = await (
+    handler as unknown as {
+      GET: (ctx: { req: Request }) => Promise<Response>;
+    }
+  ).GET({ req: request });
 
   assertEquals(response.status, 400);
 });
@@ -20,9 +22,11 @@ Deno.test("GET returns count as number when stored as KvU64", async () => {
     "http://127.0.0.1/api/likes?slug=test-slug-bigint",
   );
 
-  const response = await (handler as unknown as {
-    GET: (ctx: { req: Request }) => Promise<Response>;
-  }).GET({ req: request });
+  const response = await (
+    handler as unknown as {
+      GET: (ctx: { req: Request }) => Promise<Response>;
+    }
+  ).GET({ req: request });
 
   assertEquals(response.status, 200);
   const json = await response.json();
@@ -41,9 +45,11 @@ Deno.test("POST like increments count", async () => {
     body: JSON.stringify({ slug: "test-slug-post", action: "like" }),
   });
 
-  const response = await (handler as unknown as {
-    POST: (ctx: { req: Request }) => Promise<Response>;
-  }).POST({ req: request });
+  const response = await (
+    handler as unknown as {
+      POST: (ctx: { req: Request }) => Promise<Response>;
+    }
+  ).POST({ req: request });
 
   assertEquals(response.status, 200);
 
@@ -51,9 +57,9 @@ Deno.test("POST like increments count", async () => {
   const val = entry.value;
   const numeric = typeof val === "bigint"
     ? Number(val)
-    : (val && typeof (val as { value?: unknown }).value === "bigint"
-      ? Number((val as { value: bigint }).value)
-      : val);
+    : val && typeof (val as { value?: unknown }).value === "bigint"
+    ? Number((val as { value: bigint }).value)
+    : val;
   assertEquals(numeric, 1);
   await kv.close();
 });
