@@ -1,3 +1,9 @@
+// Only fields that appear in front-matter
+export interface PostFrontMatter {
+  title: string;
+  snippet?: string;
+  date: string;
+}
 import { extract } from "@std/front-matter/any";
 import { join } from "@std/path/posix";
 import { marked } from "marked";
@@ -97,7 +103,7 @@ export function slugifyHeading(text: string): string {
 export async function renderMarkdown(
   content: string,
   headings: Heading[] = [],
-  opts?: { skipEmbeds?: boolean }
+  opts?: { skipEmbeds?: boolean },
 ): Promise<string> {
   const renderer = new marked.Renderer();
   renderer.heading = (text: string, level: number, raw: string) => {
@@ -131,7 +137,11 @@ export async function getPosts(): Promise<Post[]> {
               ) {
                 if (file.isFile && file.name.includes(".md")) {
                   const slug = file.name.replace(".md", "");
-                  promises.push(getPost(join(e1.name, e2.name, e3.name, slug), DIRECTORY, { skipEmbeds: true }));
+                  promises.push(
+                    getPost(join(e1.name, e2.name, e3.name, slug), DIRECTORY, {
+                      skipEmbeds: true,
+                    }),
+                  );
                 }
               }
             }
@@ -153,9 +163,7 @@ export async function getPost(
   const filename = join(dir, `${slug}.md`);
   const stat = await Deno.stat(filename);
   const text = await Deno.readTextFile(filename);
-  const { attrs, body } = extract<
-    Omit<Post, "published_at" | "headings"> & { date: string }
-  >(text);
+  const { attrs, body } = extract<PostFrontMatter>(text);
 
   const headings: Heading[] = [];
   const html = await renderMarkdown(body, headings, opts);
