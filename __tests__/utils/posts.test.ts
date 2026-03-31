@@ -1,7 +1,10 @@
 import * as postsUtil from "@/utils/posts.ts";
-import { afterEach } from "@std/testing/bdd";
+import { afterEach, beforeEach } from "@std/testing/bdd";
 describe("resolveDid", () => {
   const originalFetch = globalThis.fetch;
+  beforeEach(() => {
+    postsUtil.__handleDidCache?.clear();
+  });
   afterEach(() => {
     globalThis.fetch = originalFetch;
   });

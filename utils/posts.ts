@@ -28,6 +28,8 @@ export interface Post {
 }
 
 const handleDidCache = new Map<string, string | null>();
+// For test reset
+export const __handleDidCache = handleDidCache;
 
 function toXEmbed(html: string): string {
   const xStatusLinkInParagraph =
