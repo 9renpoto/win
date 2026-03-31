@@ -20,9 +20,7 @@ gtag('config', '${measurementId}');`;
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
       />
-      <script type="text/javascript">
-        {inlineScript}
-      </script>
+      <script type="text/javascript">{inlineScript}</script>
     </Head>
   );
 }

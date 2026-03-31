@@ -3,7 +3,7 @@ import { Head } from "fresh/runtime";
 import { SEO } from "@/components/SEO.tsx";
 import { TableOfContents } from "@/components/TableOfContents.tsx";
 import LikeButton from "@/islands/LikeButton.tsx";
-import { getPost, type Post, renderMarkdown } from "@/utils/posts.ts";
+import { getPost, type Post } from "@/utils/posts.ts";
 import { description, title } from "@/utils/website.ts";
 import type { RouteHandler } from "fresh";
 
@@ -47,7 +47,7 @@ export default function PostPage(props: PageProps<Post>) {
             </div>
             <div
               class="prose prose-slate prose-headings:scroll-mt-24 prose-a:text-sky-700 prose-pre:rounded-xl prose-pre:bg-gray-950 prose-pre:text-gray-100 max-w-none mt-8"
-              dangerouslySetInnerHTML={{ __html: renderMarkdown(post.content) }}
+              dangerouslySetInnerHTML={{ __html: post.html }}
             />
           </main>
           {post.headings && post.headings.length > 0 && (

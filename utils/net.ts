@@ -1,7 +1,9 @@
 export function getDomainUrl(request: Request) {
   const headers = request.headers;
   const forwardedHost = headers.get("X-Forwarded-Host")?.split(",")[0]?.trim();
-  const forwardedProto = headers.get("X-Forwarded-Proto")?.split(",")[0]
+  const forwardedProto = headers
+    .get("X-Forwarded-Proto")
+    ?.split(",")[0]
     ?.trim();
   if (forwardedHost) {
     const protocol = forwardedProto ??

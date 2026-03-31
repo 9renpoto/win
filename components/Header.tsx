@@ -11,9 +11,12 @@ interface HeaderProps {
   algoliaIndexName?: string;
 }
 
-export function Header(
-  { title, algoliaAppId, algoliaSearchApiKey, algoliaIndexName }: HeaderProps,
-) {
+export function Header({
+  title,
+  algoliaAppId,
+  algoliaSearchApiKey,
+  algoliaIndexName,
+}: HeaderProps) {
   const menus = [
     { name: <IconRss />, href: "/rss.xml" },
     { name: <IconActivity />, href: "https://9renpoto.github.io/upptime" },

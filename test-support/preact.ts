@@ -24,8 +24,9 @@ export const render = (ui: VNode): RenderResult => {
         removeProperty: () => "",
         setProperty: () => {},
       }) as unknown as CSSStyleDeclaration;
-    (window as unknown as { getComputedStyle: typeof fallbackComputedStyle })
-      .getComputedStyle = fallbackComputedStyle;
+    (
+      window as unknown as { getComputedStyle: typeof fallbackComputedStyle }
+    ).getComputedStyle = fallbackComputedStyle;
   }
 
   document.body.innerHTML = renderToString(ui);

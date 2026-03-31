@@ -13,10 +13,7 @@ Deno.test("GET /api/posts returns first page with hasMore", async () => {
   });
 
   assertEquals(response.status, 200);
-  assertEquals(
-    response.headers.get("Content-Type"),
-    "application/json",
-  );
+  assertEquals(response.headers.get("Content-Type"), "application/json");
 
   const json = await response.json();
   assertInstanceOf(json.posts, Array);
