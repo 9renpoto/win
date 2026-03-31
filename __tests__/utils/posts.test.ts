@@ -1,5 +1,15 @@
 import * as postsUtil from "@/utils/posts.ts";
 import { afterEach, beforeEach } from "@std/testing/bdd";
+// --- fetchスタブ用ユーティリティ ---
+function stubDidFetch(did = "did:plc:z72i7hdynmk6r22z27h6tvur") {
+  globalThis.fetch = (_url, _opts) => {
+    return Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve({ did }),
+    } as Response);
+  };
+}
+
 describe("resolveDid", () => {
   const originalFetch = globalThis.fetch;
   beforeEach(() => {
@@ -34,6 +44,12 @@ describe("resolveDid", () => {
     };
     const did = await postsUtil.resolveDid("user.bsky.social");
     assertEquals(did, null);
+  });
+
+  it("resolves handle to DID (stub)", async () => {
+    stubDidFetch("did:plc:z72i7hdynmk6r22z27h6tvur");
+    const did = await postsUtil.resolveDid("user.bsky.social");
+    assertEquals(did, "did:plc:z72i7hdynmk6r22z27h6tvur");
   });
 });
 import { assertEquals } from "@std/assert";
@@ -128,6 +144,7 @@ date: 2025-01-01
   });
 
   it("renders bsky.app post url as embedded iframe", async () => {
+    stubDidFetch();
     const html = await renderMarkdown(
       "https://bsky.app/profile/did:plc:z72i7hdynmk6r22z27h6tvur/post/3l6oveex3hf2v",
     );
@@ -148,6 +165,7 @@ date: 2025-01-01
   });
 
   it("renders bsky.app embed when a paragraph has another link", async () => {
+    stubDidFetch();
     const html = await renderMarkdown(
       "[HHKB Studio](https://happyhackingkb.com/jp/news/2026/news20260313.html)\n[HHKB Studio](https://bsky.app/profile/did:plc:z72i7hdynmk6r22z27h6tvur/post/3l6oveex3hf2v)",
     );
