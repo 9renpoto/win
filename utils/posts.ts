@@ -51,11 +51,13 @@ async function resolveDid(handle: string): Promise<string | null> {
   }
 
   try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 2000); // 2s timeout
     const response = await fetch(
-      `https://public.api.bsky.app/xrpc/com.atproto.identity.resolveHandle?handle=${
-        encodeURIComponent(handle)
-      }`,
+      `https://public.api.bsky.app/xrpc/com.atproto.identity.resolveHandle?handle=${encodeURIComponent(handle)}`,
+      { signal: controller.signal },
     );
+    clearTimeout(timeout);
     if (!response.ok) {
       handleDidCache.set(handle, null);
       return null;
@@ -158,7 +160,7 @@ export async function getPosts(): Promise<Post[]> {
 export async function getPost(
   slug: string,
   dir = DIRECTORY,
-  opts?: { skipEmbeds?: boolean }
+  opts?: { skipEmbeds?: boolean },
 ): Promise<Post> {
   const filename = join(dir, `${slug}.md`);
   const stat = await Deno.stat(filename);
