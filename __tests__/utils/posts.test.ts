@@ -56,7 +56,11 @@ describe("resolveDid", () => {
 
   it("returns null on network error", async () => {
     const time = new FakeTime();
-    const localStub = stub(globalThis, "fetch", () => Promise.reject(new Error("network")));
+    const localStub = stub(
+      globalThis,
+      "fetch",
+      () => Promise.reject(new Error("network")),
+    );
     const did = await postsUtil.resolveDid("user.bsky.social");
     assertEquals(did, null);
     localStub.restore();
