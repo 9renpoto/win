@@ -1,3 +1,38 @@
+import * as postsUtil from "@/utils/posts.ts";
+import { afterEach } from "@std/testing/bdd";
+describe("resolveDid", () => {
+  const originalFetch = globalThis.fetch;
+  afterEach(() => {
+    globalThis.fetch = originalFetch;
+  });
+
+  it("resolves handle to DID (success)", async () => {
+    globalThis.fetch = (_url, _opts) => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ did: "did:plc:12345" }),
+      } as Response);
+    };
+    const did = await postsUtil.resolveDid("user.bsky.social");
+    assertEquals(did, "did:plc:12345");
+  });
+
+  it("returns null on non-OK response", async () => {
+    globalThis.fetch = (_url, _opts) => {
+      return Promise.resolve({ ok: false } as Response);
+    };
+    const did = await postsUtil.resolveDid("user.bsky.social");
+    assertEquals(did, null);
+  });
+
+  it("returns null on network error", async () => {
+    globalThis.fetch = (_url, _opts) => {
+      return Promise.reject(new Error("network error"));
+    };
+    const did = await postsUtil.resolveDid("user.bsky.social");
+    assertEquals(did, null);
+  });
+});
 import { assertEquals } from "@std/assert";
 import { describe, it } from "@std/testing/bdd";
 import { basename, dirname } from "@std/path";

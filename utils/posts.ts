@@ -40,7 +40,7 @@ function toXEmbed(html: string): string {
   );
 }
 
-async function resolveDid(handle: string): Promise<string | null> {
+export async function resolveDid(handle: string): Promise<string | null> {
   if (handle.startsWith("did:")) {
     return handle;
   }
@@ -54,7 +54,9 @@ async function resolveDid(handle: string): Promise<string | null> {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 2000); // 2s timeout
     const response = await fetch(
-      `https://public.api.bsky.app/xrpc/com.atproto.identity.resolveHandle?handle=${encodeURIComponent(handle)}`,
+      `https://public.api.bsky.app/xrpc/com.atproto.identity.resolveHandle?handle=${
+        encodeURIComponent(handle)
+      }`,
       { signal: controller.signal },
     );
     clearTimeout(timeout);
