@@ -77,7 +77,10 @@ async function toBlueskyEmbed(html: string): Promise<string> {
     const did = await resolveDid(handle);
     if (!did) continue;
     const embedId = `bsky-${did.replace(/[^a-zA-Z0-9_-]/g, "-")}-${rkey}`;
-    const replacement = `<div class=\"bsky-embed\"><iframe class=\"bsky-embed-frame\" data-bsky-id=\"${embedId}\" src=\"https://embed.bsky.app/embed/${did}/app.bsky.feed.post/${rkey}?id=${encodeURIComponent(embedId)}\" loading=\"lazy\" title=\"Embedded Bluesky post ${rkey}\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe></div>`;
+    const replacement =
+      `<div class=\"bsky-embed\"><iframe class=\"bsky-embed-frame\" data-bsky-id=\"${embedId}\" src=\"https://embed.bsky.app/embed/${did}/app.bsky.feed.post/${rkey}?id=${
+        encodeURIComponent(embedId)
+      }\" loading=\"lazy\" title=\"Embedded Bluesky post ${rkey}\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe></div>`;
     rendered = rendered.replace(fullMatch, replacement);
   }
   return rendered;
@@ -94,6 +97,7 @@ export function slugifyHeading(text: string): string {
 export async function renderMarkdown(
   content: string,
   headings: Heading[] = [],
+  opts?: { skipEmbeds?: boolean }
 ): Promise<string> {
   const renderer = new marked.Renderer();
   renderer.heading = (text: string, level: number, raw: string) => {
@@ -103,6 +107,7 @@ export async function renderMarkdown(
   };
 
   const html = marked.parse(content, { gfm: true, renderer }) as string;
+  if (opts?.skipEmbeds) return html;
   const xEmbedded = toXEmbed(html);
   return await toBlueskyEmbed(xEmbedded);
 }
@@ -126,7 +131,7 @@ export async function getPosts(): Promise<Post[]> {
               ) {
                 if (file.isFile && file.name.includes(".md")) {
                   const slug = file.name.replace(".md", "");
-                  promises.push(getPost(join(e1.name, e2.name, e3.name, slug)));
+                  promises.push(getPost(join(e1.name, e2.name, e3.name, slug), DIRECTORY, { skipEmbeds: true }));
                 }
               }
             }
@@ -140,7 +145,11 @@ export async function getPosts(): Promise<Post[]> {
   return posts;
 }
 
-export async function getPost(slug: string, dir = DIRECTORY): Promise<Post> {
+export async function getPost(
+  slug: string,
+  dir = DIRECTORY,
+  opts?: { skipEmbeds?: boolean }
+): Promise<Post> {
   const filename = join(dir, `${slug}.md`);
   const stat = await Deno.stat(filename);
   const text = await Deno.readTextFile(filename);
@@ -149,7 +158,7 @@ export async function getPost(slug: string, dir = DIRECTORY): Promise<Post> {
   >(text);
 
   const headings: Heading[] = [];
-  const html = await renderMarkdown(body, headings);
+  const html = await renderMarkdown(body, headings, opts);
 
   const publishedAt = new Date(attrs.date);
   return {
