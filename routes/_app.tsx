@@ -14,9 +14,17 @@ window.addEventListener("message", (event) => {
 
   if (event.origin === "https://embed.bsky.app") {
     if (!data || typeof data.id !== "string" || typeof data.height !== "number") return;
-    const frame = document.querySelector('iframe[data-bsky-id="' + data.id + '"]');
-    if (!frame) return;
-    frame.style.height = data.height + "px";
+    const frames = document.querySelectorAll('iframe[data-bsky-id]');
+    for (const frame of frames) {
+      if (
+        frame.dataset &&
+        frame.dataset.bskyId === data.id &&
+        frame.contentWindow === event.source
+      ) {
+        frame.style.height = data.height + "px";
+        break;
+      }
+    }
     return;
   }
 
