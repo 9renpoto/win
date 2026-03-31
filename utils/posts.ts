@@ -66,35 +66,21 @@ async function resolveDid(handle: string): Promise<string | null> {
 }
 
 async function toBlueskyEmbed(html: string): Promise<string> {
-  const blueskyLinkAnchor =
-    /<a href="(https?:\/\/(?:www\.)?bsky\.app\/profile\/([A-Za-z0-9._:-]+)\/post\/([A-Za-z0-9]+)(?:[/?#][^"]*)?)"[^>]*>[^<]*<\/a>/g;
-
-  const matches = Array.from(html.matchAll(blueskyLinkAnchor));
-  if (matches.length === 0) {
-    return html;
-  }
+  // Only match Bluesky links that are the sole content of a <p>...</p> block, like X embeds
+  const blueskyStatusLinkInParagraph =
+    /<p><a href="(https?:\/\/(?:www\.)?bsky\.app\/profile\/([A-Za-z0-9._:-]+)\/post\/([A-Za-z0-9]+)(?:[\/?#][^\"]*)?)"[^>]*>[^<]*<\/a><\/p>/g;
 
   let rendered = html;
+  const matches = Array.from(rendered.matchAll(blueskyStatusLinkInParagraph));
   for (const match of matches) {
-    const fullMatch = match[0];
-    const handle = match[2];
-    const rkey = match[3];
+    const [fullMatch, _url, handle, rkey] = match;
     const did = await resolveDid(handle);
-    if (!did) {
-      continue;
-    }
-
+    if (!did) continue;
     const embedId = `bsky-${did.replace(/[^a-zA-Z0-9_-]/g, "-")}-${rkey}`;
-    const replacement =
-      `</p><div class="bsky-embed"><iframe class="bsky-embed-frame" data-bsky-id="${embedId}" src="https://embed.bsky.app/embed/${did}/app.bsky.feed.post/${rkey}?id=${
-        encodeURIComponent(embedId)
-      }" loading="lazy" title="Embedded Bluesky post ${rkey}" referrerpolicy="no-referrer-when-downgrade"></iframe></div><p>`;
+    const replacement = `<div class=\"bsky-embed\"><iframe class=\"bsky-embed-frame\" data-bsky-id=\"${embedId}\" src=\"https://embed.bsky.app/embed/${did}/app.bsky.feed.post/${rkey}?id=${encodeURIComponent(embedId)}\" loading=\"lazy\" title=\"Embedded Bluesky post ${rkey}\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe></div>`;
     rendered = rendered.replace(fullMatch, replacement);
   }
-
-  return rendered
-    .replace(/<p>\s*<\/p>/g, "")
-    .replace(/<p>\s*(<div class="bsky-embed">[\s\S]*?<\/div>)\s*<\/p>/g, "$1");
+  return rendered;
 }
 
 export function slugifyHeading(text: string): string {
