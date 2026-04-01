@@ -5,7 +5,7 @@ import { Bio } from "@/components/Bio.tsx";
 import { SEO } from "@/components/SEO.tsx";
 import PostList, { type PostItem } from "@/islands/PostList.tsx";
 import { getPosts } from "@/utils/posts.ts";
-import { author, description, title } from "@/utils/website.ts";
+import { author, description, siteUrl, title } from "@/utils/website.ts";
 
 const PAGE_SIZE = 10;
 
@@ -38,6 +38,7 @@ export default function BlogIndexPage({
           description={description}
           keywords={["life"].join(",")}
           ogImage="https://avatars3.githubusercontent.com/u/520693?s=460&v=4"
+          ogUrl={siteUrl}
         />
       </Head>
       <main class="max-w-screen-lg w-full px-4 pt-4 mx-auto">
