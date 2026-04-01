@@ -3,7 +3,7 @@ import { page, type PageProps } from "fresh";
 import { Head } from "fresh/runtime";
 import { SEO } from "@/components/SEO.tsx";
 import { getPost, type Post } from "@/utils/posts.ts";
-import { description, title } from "@/utils/website.ts";
+import { description, siteUrl, title } from "@/utils/website.ts";
 
 export const handler: RouteHandler<Post, Record<string, never>> = {
   async GET(_ctx) {
@@ -22,6 +22,7 @@ export default function AboutPage(props: PageProps<Post>) {
           description={description}
           keywords={["life"].join(",")}
           ogImage="https://avatars3.githubusercontent.com/u/520693?s=460&v=4"
+          ogUrl={`${siteUrl}/about`}
         />
       </Head>
       <main class="flex-grow max-w-screen-lg w-full px-4 pt-4 mx-auto">

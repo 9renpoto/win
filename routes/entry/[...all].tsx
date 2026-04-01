@@ -1,11 +1,11 @@
+import type { RouteHandler } from "fresh";
 import { page, type PageProps } from "fresh";
 import { Head } from "fresh/runtime";
 import { SEO } from "@/components/SEO.tsx";
 import { TableOfContents } from "@/components/TableOfContents.tsx";
 import LikeButton from "@/islands/LikeButton.tsx";
 import { getPost, type Post } from "@/utils/posts.ts";
-import { description, title } from "@/utils/website.ts";
-import type { RouteHandler } from "fresh";
+import { description, siteUrl, title } from "@/utils/website.ts";
 
 export const handler: RouteHandler<Post, Record<string, never>> = {
   async GET(ctx) {
@@ -21,9 +21,12 @@ export default function PostPage(props: PageProps<Post>) {
       <Head>
         <SEO
           title={`${post.title} | ${title}`}
-          description={description}
+          description={post.snippet || description}
           keywords={["life"].join(",")}
           ogImage="https://avatars3.githubusercontent.com/u/520693?s=460&v=4"
+          ogUrl={`${siteUrl}/entry/${post.slug}`}
+          ogType="article"
+          publishedAt={post.publishedAt}
         />
       </Head>
       <div class="flex-grow max-w-screen-lg mx-auto w-full px-4 pt-4">
