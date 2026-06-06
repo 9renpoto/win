@@ -1,5 +1,5 @@
 # See https://github.com/devcontainers/images/tree/main/src/javascript-node
-FROM mcr.microsoft.com/devcontainers/javascript-node:4-24-bookworm@sha256:579a255078c5646fa34306f9488f9eb53e545fda68f7bec7281b6723de94c28f
+FROM mcr.microsoft.com/devcontainers/javascript-node:4-24-bookworm@sha256:21b17a0c1fd000eff7280c9eea21f04779d1825531b144e400e5d028a0d967b1
 
 # Install textlint and plugins globally with npm (Node runtime is preinstalled)
 USER root
