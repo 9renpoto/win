@@ -23,22 +23,23 @@ export const handler: RouteHandler<Response, Record<string, never>> = {
     const allPosts = await getPosts();
 
     const rssString = `
-    <rss xmlns:blogChannel="${domainUrl}" version="2.0">
+    <rss xmlns:blogChannel="${domainUrl}" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
     <channel>
       <title>${title}</title>
       <link>${domainUrl}</link>
       <description>${title}</description>
-      <language>japanese</language>
+      <language>ja</language>
       <ttl>40</ttl>
       ${
       allPosts
-        .map(({ slug, publishedAt, snippet, title: postTitle }) =>
+        .map(({ slug, publishedAt, snippet, title: postTitle, html }) =>
           `
           <item>
             <title><![CDATA[${escapeCdata(postTitle)}]]></title>
             <description><![CDATA[${escapeHtml(snippet)}]]></description>
+            <content:encoded><![CDATA[${escapeCdata(html)}]]></content:encoded>
             <author><![CDATA[${escapeCdata(author)}]]></author>
-            <pubDate>${publishedAt}</pubDate>
+            <pubDate>${publishedAt.toUTCString()}</pubDate>
             <link>${domainUrl}/entry/${slug}</link>
             <guid>${domainUrl}/entry/${slug}</guid>
           </item>

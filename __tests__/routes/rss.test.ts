@@ -13,7 +13,14 @@ Deno.test("rss handler returns valid RSS feed", async () => {
   assertEquals(response.status, 200);
   const body = await response.text();
   assertStringIncludes(body, "<rss xmlns:blogChannel=");
+  assertStringIncludes(
+    body,
+    'xmlns:content="http://purl.org/rss/1.0/modules/content/"',
+  );
   assertStringIncludes(body, "<channel>");
+  assertStringIncludes(body, "<content:encoded><![CDATA[");
+  assertStringIncludes(body, "]]></content:encoded>");
+  assertStringIncludes(body, "<language>ja</language>");
 });
 
 Deno.test("rss handler infers domain from request URL", async () => {
