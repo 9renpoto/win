@@ -16,27 +16,3 @@ updates:
     directory: "/.devcontainer"
     schedule:
       interval: "weekly"
-  - package-ecosystem: "deno"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-  - package-ecosystem: "devcontainers"
-    directory: "/.devcontainer"
-    schedule:
-      interval: "weekly"
-  - package-ecosystem: "deno"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-  - package-ecosystem: "devcontainers"
-    directory: "/.devcontainer"
-    schedule:
-      interval: "weekly"
-  - package-ecosystem: "deno"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-  - package-ecosystem: "devcontainers"
-    directory: "/.devcontainer"
-    schedule:
-      interval: "weekly"
