@@ -44,7 +44,7 @@
     "jsr:@std/toml@^1.0.0-rc.3": "1.0.11",
     "jsr:@std/uuid@^1.0.9": "1.1.1",
     "jsr:@std/yaml@^1.0.0-rc.1": "1.0.11",
-    "npm:@algolia/autocomplete-js@^1.19.4": "1.19.7_algoliasearch@5.49.2_preact-render-to-string@6.7.0__preact@10.29.7",
+    "npm:@algolia/autocomplete-js@^1.19.9": "1.19.9_@algolia+client-search@5.49.2_algoliasearch@5.49.2_search-insights@2.17.3",
     "npm:@babel/core@^7.28.0": "7.29.7",
     "npm:@babel/preset-react@^7.27.1": "7.29.7_@babel+core@7.29.7",
     "npm:@opentelemetry/api@^1.9.0": "1.9.1",
@@ -263,41 +263,44 @@
         "@algolia/requester-node-http"
       ]
     },
-    "@algolia/autocomplete-core@1.19.7_algoliasearch@5.49.2": {
-      "integrity": "sha512-4sqB+Nfo131MkKMledkmsxX08uZHMI4KbscUdsX6U69scchXsgkgENjN9tRVBKHAOn900mBSNEpUdfzKZw8f+A==",
+    "@algolia/autocomplete-core@1.19.9_@algolia+client-search@5.49.2_algoliasearch@5.49.2_search-insights@2.17.3": {
+      "integrity": "sha512-4U2JKLMWlDu0CotYyUkWakDxr8AIav3QtIUXXRpfavYN29aVWfzlwJp9T0rPKEf/dO2QCPAUc0Kq1Tj1GJxo2A==",
       "dependencies": [
         "@algolia/autocomplete-plugin-algolia-insights",
         "@algolia/autocomplete-shared"
       ]
     },
-    "@algolia/autocomplete-js@1.19.7_algoliasearch@5.49.2_preact-render-to-string@6.7.0__preact@10.29.7": {
-      "integrity": "sha512-ExTgOXioDEjM1rpRnxY+3PAQzmlsHM28WwDhdY01VIHLfzr9PoKtIdTWd0N2u6XG8HdaZvDw3PrjGZ3Rno72gg==",
+    "@algolia/autocomplete-js@1.19.9_@algolia+client-search@5.49.2_algoliasearch@5.49.2_search-insights@2.17.3": {
+      "integrity": "sha512-AXtqH+BBjDrTeoqCqOom082umhMtL/RF3+DVQSkoukh/1aaFdevNAtCqxwQSUCKQFLo0YLcDsB0cBItnl1X+bg==",
       "dependencies": [
         "@algolia/autocomplete-core",
         "@algolia/autocomplete-preset-algolia",
         "@algolia/autocomplete-shared",
+        "@algolia/client-search",
         "algoliasearch",
         "htm",
         "preact"
       ]
     },
-    "@algolia/autocomplete-plugin-algolia-insights@1.19.7_algoliasearch@5.49.2": {
-      "integrity": "sha512-5nBYyDNUUXThFGrdYeWA2OkoCaIzHzspIjN2gBPRmURdo4xMQgzay4M+J+XgZginlQcJ+UFYkHKbUYQwfAZ3jw==",
+    "@algolia/autocomplete-plugin-algolia-insights@1.19.9_search-insights@2.17.3_@algolia+client-search@5.49.2_algoliasearch@5.49.2": {
+      "integrity": "sha512-6mExC6X7762s2SV3eJy3QOkB8bdMmnUhQ2agvGVDuzwoGyr3PquGSY/0vPQXCfiAiCaXUz1rXn+lwghgSi0l0w==",
       "dependencies": [
         "@algolia/autocomplete-shared",
         "search-insights"
       ]
     },
-    "@algolia/autocomplete-preset-algolia@1.19.7_algoliasearch@5.49.2": {
-      "integrity": "sha512-PXou3XXPN18v/lJwpP40JwUjatwKVF1zeevoj2dXo1+TKrFB8XxSiGcBbChBQ6RYUEKYoS+ck8WMbpn4LwyHAw==",
+    "@algolia/autocomplete-preset-algolia@1.19.9_@algolia+client-search@5.49.2_algoliasearch@5.49.2": {
+      "integrity": "sha512-x/vKrHNy2Swp83AJ+PX0hhxhkgUqWVNV6bk440LkqQOwT8CfK4EN3M/gHIt8L9YAwbJvOgviE/Vr3g3AOyDwsA==",
       "dependencies": [
         "@algolia/autocomplete-shared",
+        "@algolia/client-search",
         "algoliasearch"
       ]
     },
-    "@algolia/autocomplete-shared@1.19.7_algoliasearch@5.49.2": {
-      "integrity": "sha512-Z6nBmZzPX6A0gV0GUrXDwMPhh6AnrWQshebAfZ/oJ5ioxVoPyRl30SLd3kpCrWr/xXXaaFxUq2qthVeBC2LlVg==",
+    "@algolia/autocomplete-shared@1.19.9_@algolia+client-search@5.49.2_algoliasearch@5.49.2": {
+      "integrity": "sha512-YosP9Uoek6y/Ur1r1qeogk4biMe/hzkyNcgMCciw0//3XpCM7VlYLSHnyt/vOnEOGhCCc0+3v+unEiH6zz+Z1A==",
       "dependencies": [
+        "@algolia/client-search",
         "algoliasearch"
       ]
     },
@@ -2132,7 +2135,7 @@
       "jsr:@std/front-matter@~0.224.3",
       "jsr:@std/path@1",
       "jsr:@std/testing@~0.225.3",
-      "npm:@algolia/autocomplete-js@^1.19.4",
+      "npm:@algolia/autocomplete-js@^1.19.9",
       "npm:@preact/signals@^2.3.2",
       "npm:@tailwindcss/typography@~0.5.16",
       "npm:@testing-library/dom@^10.4.1",

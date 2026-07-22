@@ -51,7 +51,7 @@
     "@std/path": "jsr:@std/path@^1.0.0",
     "@std/testing": "jsr:@std/testing@^0.225.3",
     "@testing-library/dom": "npm:@testing-library/dom@^10.4.1",
-    "@algolia/autocomplete-js": "npm:@algolia/autocomplete-js@^1.19.4",
+    "@algolia/autocomplete-js": "npm:@algolia/autocomplete-js@^1.19.9",
     "@tailwindcss/typography": "npm:@tailwindcss/typography@^0.5.16",
     "algoliasearch/lite": "npm:algoliasearch@^5/lite",
     "autoprefixer": "npm:autoprefixer@^10.4.19",
