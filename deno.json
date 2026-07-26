@@ -55,7 +55,7 @@
     "@tailwindcss/typography": "npm:@tailwindcss/typography@^0.5.16",
     "algoliasearch/lite": "npm:algoliasearch@^5/lite",
     "autoprefixer": "npm:autoprefixer@^10.4.19",
-    "fresh": "jsr:@fresh/core@^2.1.2",
+    "fresh": "jsr:@fresh/core@^2.3.3",
     "linkedom": "npm:linkedom@^0.18.4",
     "marked": "npm:marked@^12.0.2",
     "preact": "npm:preact@^10.29.7",
