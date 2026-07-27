@@ -116,8 +116,10 @@ interface MarkedHeadingToken {
   raw: string;
   depth: number;
   text: string;
-  tokens: any[];
+  tokens: Token[];
 }
+
+import type { Token } from "marked";
 
 export async function renderMarkdown(
   content: string,
@@ -126,10 +128,10 @@ export async function renderMarkdown(
 ): Promise<string> {
   const renderer = new marked.Renderer();
   renderer.heading = function (
-    this: any,
+    this: { parser: { parseInline(tokens: Token[]): string } },
     { tokens, depth, text }: MarkedHeadingToken,
   ) {
-    const renderedText = this.parser.parseInline(tokens) as string;
+    const renderedText = this.parser.parseInline(tokens);
     const slug = slugifyHeading(text);
     headings.push({ level: depth, text: renderedText, slug });
     return `<h${depth} id="${slug}">${renderedText}</h${depth}>`;
