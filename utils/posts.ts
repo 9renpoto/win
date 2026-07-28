@@ -110,16 +110,31 @@ export function slugifyHeading(text: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
+// Create a custom Heading type to represent the token parameter for heading in marked
+interface MarkedHeadingToken {
+  type: "heading";
+  raw: string;
+  depth: number;
+  text: string;
+  tokens: Token[];
+}
+
+import type { Token } from "marked";
+
 export async function renderMarkdown(
   content: string,
   headings: Heading[] = [],
   opts?: { skipEmbeds?: boolean },
 ): Promise<string> {
   const renderer = new marked.Renderer();
-  renderer.heading = (text: string, level: number, raw: string) => {
-    const slug = slugifyHeading(raw);
-    headings.push({ level, text, slug });
-    return `<h${level} id="${slug}">${text}</h${level}>`;
+  renderer.heading = function (
+    this: { parser: { parseInline(tokens: Token[]): string } },
+    { tokens, depth, text }: MarkedHeadingToken,
+  ) {
+    const renderedText = this.parser.parseInline(tokens);
+    const slug = slugifyHeading(text);
+    headings.push({ level: depth, text: renderedText, slug });
+    return `<h${depth} id="${slug}">${renderedText}</h${depth}>`;
   };
 
   const html = marked.parse(content, { gfm: true, renderer }) as string;
