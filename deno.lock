@@ -2122,7 +2122,7 @@
       "jsr:@fresh/plugin-vite@^1.1.2",
       "jsr:@std/assert@^1.0.19",
       "jsr:@std/front-matter@~0.224.3",
-      "jsr:@std/path@1",
+      "jsr:@std/path@^1.1.6",
       "jsr:@std/testing@^1.0.19",
       "npm:@algolia/autocomplete-js@^1.19.9",
       "npm:@preact/signals@^2.3.2",
