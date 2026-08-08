@@ -47,7 +47,7 @@
     "@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.1.2",
     "@preact/signals": "npm:@preact/signals@^2.3.2",
     "@std/assert": "jsr:@std/assert@^1.0.19",
-    "@std/front-matter": "jsr:@std/front-matter@^0.224.3",
+    "@std/front-matter": "jsr:@std/front-matter@^1.0.9",
     "@std/path": "jsr:@std/path@^1.1.6",
     "@std/testing": "jsr:@std/testing@^1.0.19",
     "@testing-library/dom": "npm:@testing-library/dom@^10.4.1",
