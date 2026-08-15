@@ -48,7 +48,7 @@
     "npm:@preact/signals@^2.5.1": "2.11.0_preact@10.29.7__preact-render-to-string@6.7.0",
     "npm:@prefresh/vite@^2.4.8": "2.4.12_preact@10.29.7__preact-render-to-string@6.7.0_vite@8.2.0__esbuild@0.25.12_esbuild@0.25.12",
     "npm:@remix-run/node-fetch-server@0.12": "0.12.0",
-    "npm:@tailwindcss/typography@~0.5.16": "0.5.19_tailwindcss@3.4.19__postcss@8.5.6__jiti@1.21.7",
+    "npm:@tailwindcss/typography@~0.5.20": "0.5.20_tailwindcss@3.4.19__postcss@8.5.6__jiti@1.21.7",
     "npm:@testing-library/dom@^10.4.1": "10.4.1",
     "npm:@types/babel__core@^7.20.5": "7.20.5",
     "npm:algoliasearch@^5.56.0": "5.56.0",
@@ -1260,8 +1260,8 @@
       "os": ["win32"],
       "cpu": ["x64"]
     },
-    "@tailwindcss/typography@0.5.19_tailwindcss@3.4.19__postcss@8.5.6__jiti@1.21.7": {
-      "integrity": "sha512-w31dd8HOx3k9vPtcQh5QHP9GwKcgbMp87j58qi6xgiBnFFtKEAgCWnDw4qUT8aHwkCp8bKvb/KGKWWHedP0AAg==",
+    "@tailwindcss/typography@0.5.20_tailwindcss@3.4.19__postcss@8.5.6__jiti@1.21.7": {
+      "integrity": "sha512-hwbzQuNUfcPvbegQFatVPl/MY/tcM9KLl963hQ5laJKPh81TEZ1+dNG9PirGvcaDBkp+BCshExAyKVPW91dozw==",
       "dependencies": [
         "postcss-selector-parser@6.0.10",
         "tailwindcss"
@@ -2340,7 +2340,7 @@
       "jsr:@std/testing@^1.0.19",
       "npm:@algolia/autocomplete-js@^1.19.9",
       "npm:@preact/signals@^2.11.0",
-      "npm:@tailwindcss/typography@~0.5.16",
+      "npm:@tailwindcss/typography@~0.5.20",
       "npm:@testing-library/dom@^10.4.1",
       "npm:algoliasearch@^5.56.0",
       "npm:autoprefixer@^10.4.19",
