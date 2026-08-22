@@ -54,7 +54,7 @@
     "@algolia/autocomplete-js": "npm:@algolia/autocomplete-js@^1.19.9",
     "@tailwindcss/typography": "npm:@tailwindcss/typography@^0.5.20",
     "algoliasearch/lite": "npm:algoliasearch@^5.56.0/lite",
-    "autoprefixer": "npm:autoprefixer@^10.4.19",
+    "autoprefixer": "npm:autoprefixer@^10.5.4",
     "fresh": "jsr:@fresh/core@^2.3.3",
     "linkedom": "npm:linkedom@^0.18.13",
     "marked": "npm:marked@^18.0.10",
