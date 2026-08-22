@@ -40,13 +40,13 @@
     "jsr:@std/toml@^1.0.3": "1.0.11",
     "jsr:@std/uuid@^1.0.9": "1.1.1",
     "jsr:@std/yaml@^1.0.5": "1.2.0",
-    "npm:@algolia/autocomplete-js@^1.19.9": "1.19.9_algoliasearch@5.56.0",
+    "npm:@algolia/autocomplete-js@^1.19.9": "1.19.9_algoliasearch@5.56.0_preact-render-to-string@6.7.0__preact@10.29.8",
     "npm:@babel/core@^7.28.0": "7.29.7",
     "npm:@babel/preset-react@^7.27.1": "7.29.7_@babel+core@7.29.7",
     "npm:@opentelemetry/api@^1.9.0": "1.9.1",
-    "npm:@preact/signals@^2.11.0": "2.11.1_preact@10.29.7__preact-render-to-string@6.7.0",
-    "npm:@preact/signals@^2.5.1": "2.11.1_preact@10.29.7__preact-render-to-string@6.7.0",
-    "npm:@prefresh/vite@^2.4.8": "2.4.12_preact@10.29.7__preact-render-to-string@6.7.0_vite@8.2.0__esbuild@0.25.12_esbuild@0.25.12",
+    "npm:@preact/signals@^2.11.0": "2.11.1_preact@10.29.8__preact-render-to-string@6.7.0_preact-render-to-string@6.7.0__preact@10.29.8",
+    "npm:@preact/signals@^2.5.1": "2.11.1_preact@10.29.8__preact-render-to-string@6.7.0_preact-render-to-string@6.7.0__preact@10.29.8",
+    "npm:@prefresh/vite@^2.4.8": "2.4.12_preact@10.29.8__preact-render-to-string@6.7.0_vite@8.2.0__esbuild@0.25.12_esbuild@0.25.12_preact-render-to-string@6.7.0__preact@10.29.8",
     "npm:@remix-run/node-fetch-server@0.12": "0.12.0",
     "npm:@tailwindcss/typography@~0.5.20": "0.5.20_tailwindcss@3.4.19__postcss@8.5.6__jiti@1.21.7",
     "npm:@testing-library/dom@^10.4.1": "10.4.1",
@@ -58,11 +58,11 @@
     "npm:esbuild@~0.25.5": "0.25.12",
     "npm:linkedom@~0.18.13": "0.18.13",
     "npm:marked@^18.0.9": "18.0.9",
-    "npm:preact-render-to-string@^6.6.3": "6.7.0_preact@10.29.7",
-    "npm:preact-render-to-string@^6.7.0": "6.7.0_preact@10.29.7",
-    "npm:preact@^10.28.2": "10.29.7_preact-render-to-string@6.7.0",
-    "npm:preact@^10.29.1": "10.29.7_preact-render-to-string@6.7.0",
-    "npm:preact@^10.29.7": "10.29.7_preact-render-to-string@6.7.0",
+    "npm:preact-render-to-string@^6.6.3": "6.7.0_preact@10.29.8",
+    "npm:preact-render-to-string@^6.7.0": "6.7.0_preact@10.29.8",
+    "npm:preact@^10.28.2": "10.29.8_preact-render-to-string@6.7.0",
+    "npm:preact@^10.29.1": "10.29.8_preact-render-to-string@6.7.0",
+    "npm:preact@^10.29.8": "10.29.8_preact-render-to-string@6.7.0",
     "npm:rollup@^4.55.1": "4.62.4",
     "npm:tailwindcss@^3.4.6": "3.4.19_postcss@8.5.6_jiti@1.21.7",
     "npm:vite@^7.1.4": "7.3.6",
@@ -253,7 +253,7 @@
         "@algolia/autocomplete-shared"
       ]
     },
-    "@algolia/autocomplete-js@1.19.9_algoliasearch@5.56.0": {
+    "@algolia/autocomplete-js@1.19.9_algoliasearch@5.56.0_preact-render-to-string@6.7.0__preact@10.29.8": {
       "integrity": "sha512-AXtqH+BBjDrTeoqCqOom082umhMtL/RF3+DVQSkoukh/1aaFdevNAtCqxwQSUCKQFLo0YLcDsB0cBItnl1X+bg==",
       "dependencies": [
         "@algolia/autocomplete-core",
@@ -1021,7 +1021,7 @@
     "@preact/signals-core@1.14.4": {
       "integrity": "sha512-HNB6HYeYKhQbJ1aKl+YRjrS4+QWHLKX6qKoUsfS/m0vqzsVaEBiZiaKbG/e+NKk2ch5ALQr/ihWaMHxiCuuWHA=="
     },
-    "@preact/signals@2.11.1_preact@10.29.7__preact-render-to-string@6.7.0": {
+    "@preact/signals@2.11.1_preact@10.29.8__preact-render-to-string@6.7.0_preact-render-to-string@6.7.0__preact@10.29.8": {
       "integrity": "sha512-uYoD+USkacTNU02kfCBkJEV7xabKTmA78W5pnT2GymsuGEC9n/ZO+UT4S96l0dIL6KLDk77VJyUFuOMBvftVHg==",
       "dependencies": [
         "@preact/signals-core",
@@ -1031,7 +1031,7 @@
     "@prefresh/babel-plugin@0.5.3": {
       "integrity": "sha512-57LX2SHs4BX2s1IwCjNzTE2OJeEepRCNf1VTEpbNcUyHfMO68eeOWGDIt4ob9aYlW6PEWZ1SuwNikuoIXANDtQ=="
     },
-    "@prefresh/core@1.5.10_preact@10.29.7__preact-render-to-string@6.7.0": {
+    "@prefresh/core@1.5.10_preact@10.29.8__preact-render-to-string@6.7.0_preact-render-to-string@6.7.0__preact@10.29.8": {
       "integrity": "sha512-7yPTFbG56sutaFu8krp3B4a200KOFUvrtlllKWRuLjsYXo9UUucHOZRcer+gtgMkFTpv6ob8TGcTwA32bSwa1w==",
       "dependencies": [
         "preact"
@@ -1040,7 +1040,7 @@
     "@prefresh/utils@1.2.1": {
       "integrity": "sha512-vq/sIuN5nYfYzvyayXI4C2QkprfNaHUQ9ZX+3xLD8nL3rWyzpxOm1+K7RtMbhd+66QcaISViK7amjnheQ/4WZw=="
     },
-    "@prefresh/vite@2.4.12_preact@10.29.7__preact-render-to-string@6.7.0_vite@8.2.0__esbuild@0.25.12_esbuild@0.25.12": {
+    "@prefresh/vite@2.4.12_preact@10.29.8__preact-render-to-string@6.7.0_vite@8.2.0__esbuild@0.25.12_esbuild@0.25.12_preact-render-to-string@6.7.0__preact@10.29.8": {
       "integrity": "sha512-FY1fzXpUjiuosznMV0YM7XAOPZjB5FIdWS0W24+XnlxYkt9hNAwwsiKYn+cuTEoMtD/ZVazS5QVssBr9YhpCQA==",
       "dependencies": [
         "@babel/core",
@@ -1973,14 +1973,14 @@
         "source-map-js"
       ]
     },
-    "preact-render-to-string@6.7.0_preact@10.29.7": {
+    "preact-render-to-string@6.7.0_preact@10.29.8": {
       "integrity": "sha512-Z4WR8fmLMRpdYqJ9i7vrlXSsSrxVJydwrkEXHapexfARbWfGb7vGcnvNQnIzN0cXciMVOlz/XLoiMCi9gUsy9Q==",
       "dependencies": [
         "preact"
       ]
     },
-    "preact@10.29.7_preact-render-to-string@6.7.0": {
-      "integrity": "sha512-DCHYrK/B10yUD3ZjLfhZ3WIE/9Vf9VFUODcRE2dRomTYDpJk6z6L9wecSfhfE6M9ZTHUdyQkoC46arIDhEV84Q==",
+    "preact@10.29.8_preact-render-to-string@6.7.0": {
+      "integrity": "sha512-ej2aVZ+vZ8WO7tvlQWRM9N63A0KzF9q4mWJfDUHgYaIofWY9hu74QdnQrjoPMmZi2/nZ5gN0bJCQF49xQqx09Q==",
       "dependencies": [
         "preact-render-to-string"
       ],
@@ -2347,7 +2347,7 @@
       "npm:linkedom@~0.18.13",
       "npm:marked@^18.0.9",
       "npm:preact-render-to-string@^6.7.0",
-      "npm:preact@^10.29.7",
+      "npm:preact@^10.29.8",
       "npm:tailwindcss@^3.4.6",
       "npm:vite@^8.2.0"
     ]
