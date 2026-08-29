@@ -7,7 +7,9 @@ describe("HamburgerButton", () => {
   it("renders hamburger button in collapsed state initially", () => {
     const { container, getByRole } = render(
       <HamburgerButton>
-        <li><a href="/about">About</a></li>
+        <li>
+          <a href="/about">About</a>
+        </li>
       </HamburgerButton>,
     );
 

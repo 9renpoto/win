@@ -1,4 +1,4 @@
-import { assertEquals, assert } from "@std/assert";
+import { assert, assertEquals } from "@std/assert";
 import { describe, it } from "@std/testing/bdd";
 import { render } from "@/test-support/preact.ts";
 import PostList from "@/islands/PostList.tsx";

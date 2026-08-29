@@ -12,7 +12,9 @@ describe("LikeButton", () => {
   });
 
   it("renders footer variant", () => {
-    const { getByRole } = render(<LikeButton slug="test-post" variant="footer" />);
+    const { getByRole } = render(
+      <LikeButton slug="test-post" variant="footer" />,
+    );
     const button = getByRole("button");
     assertEquals(button.classList.contains("p-2"), true);
   });

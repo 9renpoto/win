@@ -12,7 +12,10 @@ import { handler as middlewareHandler } from "@/routes/_middleware.ts";
 describe("routes/index.tsx", () => {
   it("handler GET fetches posts and paginates", async () => {
     const req = new Request("https://example.com/");
-    const res = await (handler as { GET: (ctx: { req: Request }) => Promise<any> }).GET({ req });
+    const res =
+      await (handler as { GET: (ctx: { req: Request }) => Promise<any> }).GET({
+        req,
+      });
     assert(res);
     assert(res.data);
     assert(Array.isArray(res.data.posts));
@@ -40,14 +43,23 @@ describe("routes/index.tsx", () => {
 describe("routes/healthz.tsx", () => {
   it("handler GET fetches posts count", async () => {
     const req = new Request("https://example.com/healthz");
-    const res = await (healthHandler as { GET: (ctx: { req: Request }) => Promise<any> }).GET({ req });
+    const res =
+      await (healthHandler as { GET: (ctx: { req: Request }) => Promise<any> })
+        .GET({ req });
     assert(res);
     assert(Array.isArray(res.data));
   });
 
   it("renders HealthPage component", () => {
     const posts = [
-      { slug: "p1", title: "P1", publishedAt: new Date(), snippet: "", content: "", html: "" },
+      {
+        slug: "p1",
+        title: "P1",
+        publishedAt: new Date(),
+        snippet: "",
+        content: "",
+        html: "",
+      },
     ];
     const props = { data: posts } as any;
     const { getByText } = render(<HealthPage {...props} />);
@@ -58,7 +70,9 @@ describe("routes/healthz.tsx", () => {
 describe("routes/about/index.tsx", () => {
   it("handler GET fetches about post", async () => {
     const req = new Request("https://example.com/about");
-    const res = await (aboutHandler as { GET: (ctx: { req: Request }) => Promise<any> }).GET({ req });
+    const res =
+      await (aboutHandler as { GET: (ctx: { req: Request }) => Promise<any> })
+        .GET({ req });
     assert(res);
     assert(res.data);
     assertEquals(res.data.slug, "about");
@@ -81,9 +95,13 @@ describe("routes/about/index.tsx", () => {
 
 describe("routes/entry/[...all].tsx", () => {
   it("handler GET fetches post by slug parameter", async () => {
-    const req = new Request("https://example.com/entry/2020/01/26/paper-stress");
+    const req = new Request(
+      "https://example.com/entry/2020/01/26/paper-stress",
+    );
     const ctx = { req, params: { all: "2020/01/26/paper-stress" } } as any;
-    const res = await (entryHandler as { GET: (ctx: any) => Promise<any> }).GET(ctx);
+    const res = await (entryHandler as { GET: (ctx: any) => Promise<any> }).GET(
+      ctx,
+    );
     assert(res);
     assert(res.data);
     assertEquals(res.data.slug, "2020/01/26/paper-stress");

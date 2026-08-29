@@ -72,8 +72,13 @@ describe("GoogleAnalytics", () => {
     );
     assertEquals(asyncScript !== null, true);
 
-    const inlineScript = container.querySelector('script[type="text/javascript"]');
+    const inlineScript = container.querySelector(
+      'script[type="text/javascript"]',
+    );
     assertEquals(inlineScript !== null, true);
-    assertStringIncludes(inlineScript?.textContent ?? "", "gtag('config', 'G-123456');");
+    assertStringIncludes(
+      inlineScript?.textContent ?? "",
+      "gtag('config', 'G-123456');",
+    );
   });
 });
