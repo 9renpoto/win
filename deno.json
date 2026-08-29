@@ -61,7 +61,7 @@
     "preact": "npm:preact@^10.29.8",
     "preact-render-to-string": "npm:preact-render-to-string@^6.7.0",
     "tailwindcss": "npm:tailwindcss@^3.4.6",
-    "vite": "npm:vite@^8.2.0"
+    "vite": "npm:vite@^8.2.2"
   },
   "lint": {
     "rules": {
