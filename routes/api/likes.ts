@@ -46,7 +46,7 @@ export const handler: RouteHandler<Response, Record<string, never>> = {
       return new Response("slug is required", { status: 400 });
     }
 
-    const delta = action === "like" ? 1n : -1n;
+    const delta = action === "like" ? 1n : 0xFFFFFFFFFFFFFFFFn;
     // Use a primitive bigint for the sum mutation so the stored value is a
     // primitive (bigint) instead of a Kv wrapper object.
     await kv

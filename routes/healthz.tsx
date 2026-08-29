@@ -22,6 +22,7 @@ export default function HealthPage(props: PageProps<Post[]>) {
           description={description}
           keywords={["life"].join(",")}
           ogImage="https://avatars3.githubusercontent.com/u/520693?s=460&v=4"
+          ogUrl="https://9renpoto.win/healthz"
         />
       </Head>
       <main class="flex-grow">This blog has {posts.length} entries.</main>

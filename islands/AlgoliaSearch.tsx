@@ -158,13 +158,17 @@ export default function AlgoliaSearch({
                   return html`
                     <a class="aa-ItemLink" href="${href}">
                       <div class="aa-ItemContent">
-                        <div class="aa-ItemTitle">${item.title ?? item.slug ??
-                          "Untitled"}</div>
-                        ${item.snippet
-                          ? html`
+                        <div class="aa-ItemTitle">${
+                    item.title ?? item.slug ??
+                      "Untitled"
+                  }</div>
+                        ${
+                    item.snippet
+                      ? html`
                             <div class="aa-ItemSnippet">${item.snippet}</div>
                           `
-                          : ""}
+                      : ""
+                  }
                       </div>
                     </a>
                   `;
