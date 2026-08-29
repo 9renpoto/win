@@ -52,7 +52,7 @@
     "npm:@testing-library/dom@^10.4.1": "10.4.1",
     "npm:@types/babel__core@^7.20.5": "7.20.5",
     "npm:algoliasearch@^5.57.0": "5.57.0",
-    "npm:autoprefixer@^10.4.19": "10.4.24_postcss@8.5.6",
+    "npm:autoprefixer@^10.5.4": "10.5.4_postcss@8.5.26",
     "npm:esbuild-wasm@~0.25.11": "0.25.12",
     "npm:esbuild@0.25.7": "0.25.7",
     "npm:esbuild@~0.25.5": "0.25.12",
@@ -1359,13 +1359,14 @@
         "dequal"
       ]
     },
-    "autoprefixer@10.4.24_postcss@8.5.6": {
-      "integrity": "sha512-uHZg7N9ULTVbutaIsDRoUkoS8/h3bdsmVJYZ5l3wv8Cp/6UIIoRDm90hZ+BwxUj/hGBEzLxdHNSKuFpn8WOyZw==",
+    "autoprefixer@10.5.4_postcss@8.5.26": {
+      "integrity": "sha512-MaU0U/za7N3r6brxD4YB/l4NSrFzLPlANv6wEuQVaIPlD3L4W9rFcQPbL/EilY9BHhHvhfcz3gInDLrEtWT4EA==",
       "dependencies": [
         "browserslist",
         "caniuse-lite",
         "fraction.js",
         "picocolors",
+        "postcss",
         "postcss-value-parser"
       ],
       "bin": true
@@ -1965,8 +1966,8 @@
     "postcss-value-parser@4.2.0": {
       "integrity": "sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ=="
     },
-    "postcss@8.5.25": {
-      "integrity": "sha512-DTPx3RWSSnWyzLxQnlH0rJP+EW5ekl16ZU4/psbIhA0e53kJfdgaN5vKM+xP7yJtXVu+nfdVFmlgFDEKAe4Pyw==",
+    "postcss@8.5.26": {
+      "integrity": "sha512-u82N74LFzG8ca+dD8puPnplTXoGH4fTPpVGuIbt36G3qvNlkvfD0lEAZSxaly3KX8TS/L1A1gsCEmvKmBcVbkQ==",
       "dependencies": [
         "nanoid",
         "picocolors",
@@ -2343,7 +2344,7 @@
       "npm:@tailwindcss/typography@~0.5.20",
       "npm:@testing-library/dom@^10.4.1",
       "npm:algoliasearch@^5.57.0",
-      "npm:autoprefixer@^10.4.19",
+      "npm:autoprefixer@^10.5.4",
       "npm:linkedom@~0.18.13",
       "npm:marked@^18.0.10",
       "npm:preact-render-to-string@^6.7.0",
