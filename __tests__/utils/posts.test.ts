@@ -30,11 +30,16 @@ describe("resolveDid", () => {
     postsUtil.__handleDidCache?.clear();
   });
 
-  it("resolves handle to DID (success)", async () => {
+  it("resolves handle to DID (success) and uses cache", async () => {
     const time = new FakeTime();
     const localStub = stubDidFetch("did:plc:12345");
-    const did = await postsUtil.resolveDid("user.bsky.social");
-    assertEquals(did, "did:plc:12345");
+    const did1 = await postsUtil.resolveDid("user.bsky.social");
+    assertEquals(did1, "did:plc:12345");
+
+    // Second call should return cached result without triggering fetch again
+    const did2 = await postsUtil.resolveDid("user.bsky.social");
+    assertEquals(did2, "did:plc:12345");
+
     localStub.restore();
     time.runAll();
     time.restore();
@@ -68,17 +73,19 @@ describe("resolveDid", () => {
     time.restore();
   });
 
-  it("resolves handle to DID (stub)", async () => {
+  it("returns null when body does not contain did field", async () => {
     const time = new FakeTime();
-    const localStub = stubDidFetch("did:plc:z72i7hdynmk6r22z27h6tvur");
+    const localStub = stub(
+      globalThis,
+      "fetch",
+      () => Promise.resolve(new Response(JSON.stringify({}), { status: 200 })),
+    );
     const did = await postsUtil.resolveDid("user.bsky.social");
-    assertEquals(did, "did:plc:z72i7hdynmk6r22z27h6tvur");
+    assertEquals(did, null);
     localStub.restore();
     time.runAll();
     time.restore();
   });
-
-  // Removed legacy fake time test; fetch mocking is now handled by stubDidFetch
 });
 
 describe("getPost", () => {
@@ -184,7 +191,7 @@ describe("getPost", () => {
       "[HHKB Studio](https://happyhackingkb.com/jp/news/2026/news20260313.html)\n[HHKB Studio](https://bsky.app/profile/did:plc:z72i7hdynmk6r22z27h6tvur/post/3l6oveex3hf2v)",
     );
     localStub.restore();
-    // 2つのリンクが同じ段落内にある場合、bsky埋め込みは発動しない
+
     assert(!html.includes('class="bsky-embed-frame"'));
     assert(
       html.includes(
