@@ -11,6 +11,9 @@ describe("Header", () => {
       'a[href="/"]',
     ) as HTMLAnchorElement | null;
     const aboutLink = getByText("About me", { selector: "a" });
+    const graphLink = container.querySelector(
+      'a[href="/graph"]',
+    ) as HTMLAnchorElement | null;
     const rssLink = container.querySelector(
       'a[href="/rss.xml"]',
     ) as HTMLAnchorElement | null;
@@ -24,6 +27,7 @@ describe("Header", () => {
     assert(titleLink, "Title link should exist");
     assertEquals(titleLink?.textContent?.trim(), "win blog");
     assertEquals(aboutLink.textContent?.trim(), "About me");
+    assert(graphLink, "Graph link should exist");
     assert(rssLink, "RSS link should exist");
     assert(statusLink, "Status link should exist");
     assert(menuButton, "Hamburger button should exist");
