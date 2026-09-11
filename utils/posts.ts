@@ -3,6 +3,8 @@ export interface PostFrontMatter {
   title: string;
   snippet?: string;
   date: string;
+  category?: string;
+  categories?: string[];
 }
 import { extract } from "@std/front-matter/any";
 import { join } from "@std/path/posix";
@@ -25,6 +27,7 @@ export interface Post {
   content: string;
   html: string;
   headings: Heading[];
+  category?: string;
 }
 
 const handleDidCache = new Map<string, string | null>();
@@ -203,5 +206,7 @@ export async function getPost(
     html,
     snippet: attrs.snippet || body.slice(0, 150),
     headings,
+    category: attrs.category || (attrs.categories && attrs.categories[0]) ||
+      undefined,
   };
 }

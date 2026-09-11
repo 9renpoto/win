@@ -1,5 +1,6 @@
 import IconActivity from "@/components/icons/Activity.tsx";
 import Campfire from "@/components/icons/Campfire.tsx";
+import IconGraph from "@/components/icons/Graph.tsx";
 import IconRss from "@/components/icons/Rss.tsx";
 import AlgoliaSearch from "@/islands/AlgoliaSearch.tsx";
 import HamburgerButton from "../islands/HamburgerButton.tsx";
@@ -18,6 +19,7 @@ export function Header({
   algoliaIndexName,
 }: HeaderProps) {
   const menus = [
+    { name: <IconGraph />, href: "/graph" },
     { name: <IconRss />, href: "/rss.xml" },
     { name: <IconActivity />, href: "https://9renpoto.github.io/upptime" },
     { name: <>About me</>, href: "/about" },
