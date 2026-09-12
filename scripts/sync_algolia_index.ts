@@ -62,13 +62,15 @@ function toRecord(
   };
 }
 
-async function algoliaRequest(
+async function algoliaWriteRequest(
   appId: string,
   apiKey: string,
   path: string,
   body?: unknown,
 ): Promise<Response> {
-  return await fetch(`https://${appId}-dsn.algolia.net${path}`, {
+  // The Distributed Search Network host (`${appId}-dsn.algolia.net`) is for
+  // search traffic. Indexing requests must go to the primary API endpoint.
+  return await fetch(`https://${appId}.algolia.net${path}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -84,7 +86,7 @@ async function clearIndex(
   apiKey: string,
   indexName: string,
 ): Promise<void> {
-  const res = await algoliaRequest(
+  const res = await algoliaWriteRequest(
     appId,
     apiKey,
     `/1/indexes/${encodeURIComponent(indexName)}/clear`,
@@ -110,7 +112,7 @@ async function batchIndex(
   const chunkSize = 500;
   for (let i = 0; i < requests.length; i += chunkSize) {
     const chunk = requests.slice(i, i + chunkSize);
-    const res = await algoliaRequest(
+    const res = await algoliaWriteRequest(
       appId,
       apiKey,
       `/1/indexes/${encodeURIComponent(indexName)}/batch`,

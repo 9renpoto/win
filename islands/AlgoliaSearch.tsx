@@ -126,11 +126,13 @@ export default function AlgoliaSearch({
       const client: LiteClient = liteClient(appId, apiKey);
       const inst = initAutocomplete({
         container,
-        panelContainer: container,
+        classNames: {
+          panel: "algolia-search-panel",
+        },
         placeholder,
         // Keep the input inline across breakpoints so the header layout stays
         // consistent and styling remains local to the search container.
-        detachedMediaQuery: "not all",
+        detachedMediaQuery: "none",
         openOnFocus: true,
         panelPlacement: "input-wrapper-width",
         getSources({ query }) {
