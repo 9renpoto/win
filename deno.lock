@@ -52,7 +52,7 @@
     "npm:@testing-library/dom@^10.4.1": "10.4.1",
     "npm:@types/babel__core@^7.20.5": "7.20.5",
     "npm:algoliasearch@^5.57.0": "5.57.0",
-    "npm:autoprefixer@^10.5.4": "10.5.4_postcss@8.5.26",
+    "npm:autoprefixer@^10.5.5": "10.5.6_postcss@8.5.28",
     "npm:esbuild-wasm@~0.25.11": "0.25.12",
     "npm:esbuild@0.25.7": "0.25.7",
     "npm:esbuild@~0.25.5": "0.25.12",
@@ -1364,8 +1364,8 @@
         "dequal"
       ]
     },
-    "autoprefixer@10.5.4_postcss@8.5.26": {
-      "integrity": "sha512-MaU0U/za7N3r6brxD4YB/l4NSrFzLPlANv6wEuQVaIPlD3L4W9rFcQPbL/EilY9BHhHvhfcz3gInDLrEtWT4EA==",
+    "autoprefixer@10.5.6_postcss@8.5.28": {
+      "integrity": "sha512-HiH4oYNc5+DQEx/b8FPfMj+WHH/WWUBmbN5r1Uf/ixtfyFkk+wGIlfJT/RD5eAyzlwkeYRtZUCI8qrEi26pl2g==",
       "dependencies": [
         "browserslist",
         "caniuse-lite",
@@ -1376,8 +1376,8 @@
       ],
       "bin": true
     },
-    "baseline-browser-mapping@2.11.14": {
-      "integrity": "sha512-JyJ954WzuIR8/FFzX0o5krdSTrBAkcCSRfWSleRsIHSWV+cZe2FI1PKggVkFke1hBldRs+LRxUczzE9iPmgZww==",
+    "baseline-browser-mapping@2.11.22": {
+      "integrity": "sha512-pWc4w51fBFd7mav43/zKRC+RI6f4yfzQoVlfvE8dECePyfkn1bzLp01Fj0QACcyCZyFhiEMyD2qScfKRWgWibA==",
       "bin": true
     },
     "binary-extensions@2.3.0": {
@@ -1392,8 +1392,8 @@
         "fill-range"
       ]
     },
-    "browserslist@4.28.8": {
-      "integrity": "sha512-V2NpofLblG64mfOtSgDhOJESZEGogzDMBv/q+W6oc4LXWP/q75eOXoOaaOu1EOadB9U4Bwx/e0yzbvwKH8zalA==",
+    "browserslist@4.28.9": {
+      "integrity": "sha512-EWazOblFYUvlGZcfGhPUPmYh3nikUxBVb+y9MJun5f3hBi812X+8MSQTujLBtgK3cf51fJWbWfOjyeO954d+Eg==",
       "dependencies": [
         "baseline-browser-mapping",
         "caniuse-lite",
@@ -1406,8 +1406,8 @@
     "camelcase-css@2.0.1": {
       "integrity": "sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA=="
     },
-    "caniuse-lite@1.0.30001809": {
-      "integrity": "sha512-xxWVywk6a6Arlk+hymeycyn/VgqEfLDxupvhH/xiY5SJ/18kmi9o6MiO320DCUzypORHLtvh0I4i04tUhCNHNQ=="
+    "caniuse-lite@1.0.30001810": {
+      "integrity": "sha512-TITQPUkaz+aVk5GL6NhOdwk1aEaNTSDPsGFWrTuhKGtjTF70jL/Oht2W4c6rXUe5fu7Ie19VIahAXHIIiWWNeg=="
     },
     "chokidar@3.6.0": {
       "integrity": "sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==",
@@ -1521,8 +1521,8 @@
         "domhandler@6.0.1"
       ]
     },
-    "electron-to-chromium@1.5.408": {
-      "integrity": "sha512-SLoprcYpJ/OH2v2ps0+N5biv9H4/KBT3+YmmDew64TwK5y9j2wv7pMOFY7IorVkyMtEyLSCRlXKLsNlakeAlPw=="
+    "electron-to-chromium@1.5.427": {
+      "integrity": "sha512-n14zb3FdsChZ2BNobqNHAJMcP3ifFv4paox2LvCrfVAQcqGiSURgbJl+PfMpHVCNFkStnNc+RRVtPBTVW5PDgw=="
     },
     "entities@4.5.0": {
       "integrity": "sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw=="
@@ -1884,12 +1884,12 @@
         "thenify-all"
       ]
     },
-    "nanoid@3.3.17": {
-      "integrity": "sha512-xQLf0A3HOMlgHq0n247/LRuAOYmB7dXJ/DvAxGvsSBij45XtBSmQycu+F8ODbHwns/XyFZagyL1+J0Offw1E0g==",
+    "nanoid@3.3.19": {
+      "integrity": "sha512-Y2tUNy4ouw6tq5oDSKeQYGOyhkUBhNOcGV/02KC+6kd9eDGqdZd++mjMiIDilrBYvjEnCYvVtsuHCuP+okSfug==",
       "bin": true
     },
-    "node-releases@2.0.53": {
-      "integrity": "sha512-D9UOmYG3UH1V+ENW56t5QXBwJw1YEY18ruVeus89Rw+SyIgjPkCO84bRzO3uNIYosJbNwiabWVn48o3uJLjxFQ=="
+    "node-releases@2.0.55": {
+      "integrity": "sha512-mIrE/Cw9y+9Au6dS5vDKDhQza9YvG6w+ZrS6X+ZzA7yFW/soAeaups4Qzn1bL6g5FVy8WtP79+0j82oPIbqRjQ=="
     },
     "normalize-path@3.0.0": {
       "integrity": "sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA=="
@@ -1971,8 +1971,8 @@
     "postcss-value-parser@4.2.0": {
       "integrity": "sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ=="
     },
-    "postcss@8.5.26": {
-      "integrity": "sha512-u82N74LFzG8ca+dD8puPnplTXoGH4fTPpVGuIbt36G3qvNlkvfD0lEAZSxaly3KX8TS/L1A1gsCEmvKmBcVbkQ==",
+    "postcss@8.5.28": {
+      "integrity": "sha512-RRuzqDtt5Y9h3quz5hWhK+TPnsmVs6WwSU6LkJMeY4HstUEDuYTG8UJSdawMRzmzAtV+KEoG8N3Qg2qLy5vM/A==",
       "dependencies": [
         "nanoid",
         "picocolors",
@@ -2184,8 +2184,8 @@
     "uhyphen@0.2.0": {
       "integrity": "sha512-qz3o9CHXmJJPGBdqzab7qAYuW8kQGKNEuoHFYrBwV6hWIMcpAmxDLXojcHfFr9US1Pe6zUswEIJIbLI610fuqA=="
     },
-    "update-browserslist-db@1.3.1_browserslist@4.28.8": {
-      "integrity": "sha512-ZZ61DsRsOnakl74HAmp3oSN4aXUmEWXf+i/yv0h7tIBfICc3VdrFErQKUUKPgu3AMsTUMbcongALEN4l6GSUrQ==",
+    "update-browserslist-db@1.3.3_browserslist@4.28.9": {
+      "integrity": "sha512-pJ2sYawQS0R/WI928Gj5GlPhTGzbMelq0+4INtSYNDV9ErKJcX6xjGWkoG/VnB3dpUm00zALaqkrUD77pO5TDQ==",
       "dependencies": [
         "browserslist",
         "escalade",
@@ -2350,7 +2350,7 @@
       "npm:@tailwindcss/typography@~0.5.20",
       "npm:@testing-library/dom@^10.4.1",
       "npm:algoliasearch@^5.57.0",
-      "npm:autoprefixer@^10.5.4",
+      "npm:autoprefixer@^10.5.5",
       "npm:linkedom@~0.18.13",
       "npm:marked@^18.0.11",
       "npm:preact-render-to-string@^6.7.0",
