@@ -57,7 +57,7 @@
     "npm:esbuild@0.25.7": "0.25.7",
     "npm:esbuild@~0.25.5": "0.25.12",
     "npm:linkedom@~0.18.13": "0.18.13",
-    "npm:marked@^18.0.11": "18.0.11",
+    "npm:marked@^18.0.12": "18.0.12",
     "npm:preact-render-to-string@^6.6.3": "6.7.0_preact@10.29.8",
     "npm:preact-render-to-string@^6.7.0": "6.7.0_preact@10.29.8",
     "npm:preact@^10.28.2": "10.29.8_preact-render-to-string@6.7.0",
@@ -1859,8 +1859,8 @@
       "integrity": "sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==",
       "bin": true
     },
-    "marked@18.0.11": {
-      "integrity": "sha512-HnslJfsZkRPBDJRHvVtAaWlZHEpSu7u8LgQuJCELjRKuWR+hpq4A7sLq3p8HaI9ypVoXDXxV34CsQJEe1+J5Aw==",
+    "marked@18.0.12": {
+      "integrity": "sha512-LEm4ga2YeI2T3GVHj9b0BaDPPk93LLTHMFeMyQbNIzPxc8vCI0y/scy0ZA6z6lXKyT9j9Nhl/OC6ZYKYGuFScA==",
       "bin": true
     },
     "merge2@1.4.1": {
@@ -2352,7 +2352,7 @@
       "npm:algoliasearch@^5.57.0",
       "npm:autoprefixer@^10.5.4",
       "npm:linkedom@~0.18.13",
-      "npm:marked@^18.0.11",
+      "npm:marked@^18.0.12",
       "npm:preact-render-to-string@^6.7.0",
       "npm:preact@^10.29.8",
       "npm:tailwindcss@^3.4.6",
