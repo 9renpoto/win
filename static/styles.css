@@ -73,7 +73,7 @@
 .algolia-search-root .aa-Autocomplete,
 .algolia-search-root .aa-DetachedFormContainer,
 .algolia-search-root .aa-Form,
-.algolia-search-root .aa-Panel {
+.algolia-search-panel {
   --aa-primary-color-rgb: 17, 24, 39;
   --aa-text-color-rgb: 17, 24, 39;
   --aa-muted-color-rgb: 107, 114, 128;
@@ -129,7 +129,7 @@
   box-shadow: 0 0 0 4px rgba(229, 231, 235, 0.9);
 }
 
-.algolia-search-root .aa-Panel {
+.algolia-search-panel {
   position: absolute;
   z-index: 30;
   top: calc(100% + 0.5rem);
@@ -144,31 +144,31 @@
 }
 
 @media (max-width: 767px) {
-  .algolia-search-root .aa-Panel {
+  .algolia-search-panel {
     max-height: min(24rem, calc(100vh - 12rem));
   }
 }
 
-.algolia-search-root .aa-ItemLink {
+.algolia-search-panel .aa-ItemLink {
   text-decoration: none;
 }
 
-.algolia-search-root .aa-Item {
+.algolia-search-panel .aa-Item {
   border-radius: 0.55rem;
 }
 
-.algolia-search-root .aa-Item:hover,
-.algolia-search-root .aa-Item[aria-selected="true"] {
+.algolia-search-panel .aa-Item:hover,
+.algolia-search-panel .aa-Item[aria-selected="true"] {
   background: #f3f4f6;
 }
 
-.algolia-search-root .aa-ItemTitle {
+.algolia-search-panel .aa-ItemTitle {
   font-size: 0.95rem;
   font-weight: 600;
   color: #111827;
 }
 
-.algolia-search-root .aa-ItemSnippet {
+.algolia-search-panel .aa-ItemSnippet {
   font-size: 0.85rem;
   color: #6b7280;
   margin-top: 0.15rem;
