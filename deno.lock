@@ -49,7 +49,7 @@
     "npm:@prefresh/vite@^2.4.8": "2.4.12_preact@10.29.8__preact-render-to-string@6.7.0_vite@8.2.2__esbuild@0.25.12_esbuild@0.25.12",
     "npm:@remix-run/node-fetch-server@0.12": "0.12.0",
     "npm:@tailwindcss/typography@~0.5.20": "0.5.20_tailwindcss@3.4.19__postcss@8.5.6__jiti@1.21.7",
-    "npm:@testing-library/dom@^10.4.1": "10.4.1",
+    "npm:@testing-library/dom@^10.4.2": "10.4.2",
     "npm:@types/babel__core@^7.20.5": "7.20.5",
     "npm:algoliasearch@^5.57.0": "5.57.0",
     "npm:autoprefixer@^10.5.5": "10.5.6_postcss@8.5.28",
@@ -1275,8 +1275,8 @@
         "tailwindcss"
       ]
     },
-    "@testing-library/dom@10.4.1": {
-      "integrity": "sha512-o4PXJQidqJl82ckFaXUeoAW+XysPLauYI43Abki5hABd853iMhitooc6znOnczgbTYmEP6U6/y1ZyKAIsvMKGg==",
+    "@testing-library/dom@10.4.2": {
+      "integrity": "sha512-yzr2S9HyAIdhz2/6qHgbs665Q7PKVcDF05vsOlHPxG1mo36gKVesdYVeDLnXgfjJ03CrKRk08knc6+E/9m8v2Q==",
       "dependencies": [
         "@babel/code-frame",
         "@babel/runtime",
@@ -2351,7 +2351,7 @@
       "npm:@algolia/autocomplete-js@^1.19.10",
       "npm:@preact/signals@^2.11.2",
       "npm:@tailwindcss/typography@~0.5.20",
-      "npm:@testing-library/dom@^10.4.1",
+      "npm:@testing-library/dom@^10.4.2",
       "npm:algoliasearch@^5.57.0",
       "npm:autoprefixer@^10.5.5",
       "npm:linkedom@~0.18.13",
