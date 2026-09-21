@@ -68,7 +68,10 @@ Deno.test("Visual test - capture homepage screenshot and verify page elements vi
     assertEquals(pageTitle, "win blog");
 
     const screenshot = await page.screenshot();
-    assert(screenshot instanceof Uint8Array, "Screenshot should be a Uint8Array");
+    assert(
+      screenshot instanceof Uint8Array,
+      "Screenshot should be a Uint8Array",
+    );
     assert(screenshot.byteLength > 0, "Screenshot should not be empty");
   } finally {
     await server.shutdown();
