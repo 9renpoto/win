@@ -1,6 +1,6 @@
 # Private blog
 
-[![codecov](https://codecov.io/gh/9renpoto/win/graph/badge.svg?token=m1sd1C4r5f)](https://codecov.io/gh/9renpoto/win)
+![coverage](docs/coverage.svg) ![ratio](docs/ratio.svg) ![time](docs/time.svg)
 
 SvelteKit with TypeScript, Node.js 24 LTS, npm, and the Cloudflare Workers adapter.
 The current milestone is local functionality excluding likes. Deployment and
