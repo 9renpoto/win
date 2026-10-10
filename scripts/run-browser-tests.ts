@@ -15,6 +15,7 @@ const serverOutput = new WeakMap<ChildProcess, string>();
 const environment = {
   ...process.env,
   PATH: dirname(process.execPath) + delimiter + process.env.PATH,
+  WIN_BROWSER_TEST: "1",
 };
 function server(name: string, args: string[], env: NodeJS.ProcessEnv) {
   const log = createWriteStream(`test-results/${name}.log`);

@@ -33,5 +33,15 @@ function contentWatch(): Plugin {
 }
 
 export default defineConfig({
-  plugins: [sveltekit({ adapter: adapter() }), contentWatch()],
+  plugins: [
+    sveltekit({
+      adapter: adapter({
+        // Concurrent test servers must not share local SQLite state.
+        platformProxy: {
+          persist: process.env.WIN_BROWSER_TEST === "1" ? false : undefined,
+        },
+      }),
+    }),
+    contentWatch(),
+  ],
 });
