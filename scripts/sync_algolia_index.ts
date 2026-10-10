@@ -1,65 +1,23 @@
-import { getPosts } from "@/utils/posts.ts";
+import { resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+import type { SearchRecord as AlgoliaRecord } from "../src/lib/types.ts";
+import { loadRepositoryContent } from "./content.ts";
 
 interface AlgoliaBatchRequest {
   action: "updateObject";
   body: AlgoliaRecord;
 }
 
-interface AlgoliaRecord {
-  objectID: string;
-  url: string;
-  slug: string;
-  title: string;
-  snippet: string;
-  content: string;
-  publishedAt: string;
-  mtime?: string;
-}
-
-const ALGOLIA_APP_ID = Deno.env.get("ALGOLIA_APP_ID");
-const ALGOLIA_ADMIN_API_KEY = Deno.env.get("ALGOLIA_ADMIN_API_KEY");
-const ALGOLIA_INDEX_NAME = Deno.env.get("ALGOLIA_INDEX_NAME");
-const SITE_URL = Deno.env.get("SITE_URL") ?? "https://9renpoto.win";
-const DRY_RUN = Deno.env.get("ALGOLIA_DRY_RUN") === "1";
+const ALGOLIA_APP_ID = process.env.ALGOLIA_APP_ID;
+const ALGOLIA_ADMIN_API_KEY = process.env.ALGOLIA_ADMIN_API_KEY;
+const ALGOLIA_INDEX_NAME = process.env.ALGOLIA_INDEX_NAME;
+const DRY_RUN = process.env.ALGOLIA_DRY_RUN === "1";
 
 function required(name: string, value: string | undefined): string {
   if (!value) {
     throw new Error(`Missing required env var: ${name}`);
   }
   return value;
-}
-
-function normalizeBaseUrl(value: string): string {
-  return value.endsWith("/") ? value.slice(0, -1) : value;
-}
-
-function markdownToText(markdown: string): string {
-  return markdown
-    .replace(/```[\s\S]*?```/g, " ")
-    .replace(/`([^`]+)`/g, "$1")
-    .replace(/!\[[^\]]*\]\([^\)]*\)/g, " ")
-    .replace(/\[[^\]]+\]\([^\)]*\)/g, "$1")
-    .replace(/^#+\s+/gm, "")
-    .replace(/[*_~>-]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function toRecord(
-  post: Awaited<ReturnType<typeof getPosts>>[number],
-  baseUrl: string,
-): AlgoliaRecord {
-  const content = markdownToText(post.content).slice(0, 4000);
-  return {
-    objectID: post.slug,
-    slug: post.slug,
-    url: `${baseUrl}/entry/${post.slug}`,
-    title: post.title,
-    snippet: post.snippet,
-    content,
-    publishedAt: post.publishedAt.toISOString(),
-    mtime: post.mtime?.toISOString(),
-  };
 }
 
 async function algoliaWriteRequest(
@@ -123,37 +81,38 @@ async function batchIndex(
       throw new Error(`Failed to batch index: ${res.status} ${text}`);
     }
     console.log(
-      `Indexed ${
-        Math.min(
-          i + chunkSize,
-          requests.length,
-        )
-      } / ${requests.length}`,
+      `Indexed ${Math.min(
+        i + chunkSize,
+        requests.length,
+      )} / ${requests.length}`,
     );
   }
 }
 
 async function main(): Promise<void> {
-  const appId = required("ALGOLIA_APP_ID", ALGOLIA_APP_ID);
-  const apiKey = required("ALGOLIA_ADMIN_API_KEY", ALGOLIA_ADMIN_API_KEY);
-  const indexName = required("ALGOLIA_INDEX_NAME", ALGOLIA_INDEX_NAME);
-  const baseUrl = normalizeBaseUrl(SITE_URL);
+  const root = fileURLToPath(new URL("..", import.meta.url));
+  const { search: records } = await loadRepositoryContent(root);
 
-  const posts = await getPosts();
-  const records = posts.map((post) => toRecord(post, baseUrl));
-
-  console.log(`Prepared ${records.length} records for index ${indexName}.`);
+  console.log(
+    `Prepared ${records.length} records for index ${ALGOLIA_INDEX_NAME ?? "(not configured)"}.`,
+  );
 
   if (DRY_RUN) {
     console.log("ALGOLIA_DRY_RUN=1: skipping write to Algolia.");
     return;
   }
 
+  const appId = required("ALGOLIA_APP_ID", ALGOLIA_APP_ID);
+  const apiKey = required("ALGOLIA_ADMIN_API_KEY", ALGOLIA_ADMIN_API_KEY);
+  const indexName = required("ALGOLIA_INDEX_NAME", ALGOLIA_INDEX_NAME);
   await clearIndex(appId, apiKey, indexName);
   await batchIndex(appId, apiKey, indexName, records);
   console.log("Algolia sync completed.");
 }
 
-if (import.meta.main) {
+if (
+  process.argv[1] &&
+  resolve(process.argv[1]) === fileURLToPath(import.meta.url)
+) {
   await main();
 }

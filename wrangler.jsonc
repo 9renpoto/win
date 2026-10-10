@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "win",
+  "main": ".svelte-kit/cloudflare/_worker.js",
+  "compatibility_date": "2026-10-09",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": { "directory": ".svelte-kit/cloudflare", "binding": "ASSETS" }
+}

@@ -1,0 +1,17 @@
+[files]
+# Keep archived article text and asset names intact during the migration.
+extend-exclude = [
+  ".git/**",
+  ".env",
+  ".env.*",
+  "posts/**",
+  "static/**",
+  "package-lock.json",
+  "node_modules/**",
+  ".svelte-kit/**",
+  ".wrangler/**",
+  "coverage/**",
+  "test-results/**",
+  "playwright-report/**",
+  "src/lib/server/generated/**",
+]

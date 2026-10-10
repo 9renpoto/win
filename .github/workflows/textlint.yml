@@ -2,33 +2,41 @@ name: textlint
 
 on:
   push:
-    branches:
-      - "main"
+    branches: [main]
     paths:
-      - "**.md"
+      - "posts/**/*.md"
+      - ".textlintrc.json"
+      - "package.json"
+      - "package-lock.json"
+      - ".node-version"
+      - ".github/workflows/textlint.yml"
   pull_request:
     paths:
-      - "**.md"
+      - "posts/**/*.md"
+      - ".textlintrc.json"
+      - "package.json"
+      - "package-lock.json"
+      - ".node-version"
+      - ".github/workflows/textlint.yml"
 
 permissions:
   contents: read
 
 jobs:
-  test:
+  lint:
     timeout-minutes: 5
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         year: [2026, 2025, 2024, 2023, 2021]
-
     steps:
       - name: Setup repo
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-
-      - name: Build Docker image
-        run: docker build -t textlint-runner .devcontainer
-
-      - name: Run textlint in Docker
-        run: |
-          find posts/${{ matrix.year }} -name '*.md' | sort | xargs docker run --rm -v ${{ github.workspace }}:/workspaces/win textlint-runner textlint
+      - name: Setup Node
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "24" # Node.js 24 LTS
+          cache: npm
+      - run: npm ci
+      - name: Run textlint
+        run: npm run textlint -- "posts/${{ matrix.year }}/**/*.md"

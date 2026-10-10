@@ -1,0 +1,37 @@
+default_stages = ["pre-commit"]
+exclude = '^(node_modules/|\.svelte-kit/|\.wrangler/|coverage/|test-results/|playwright-report/|src/lib/server/generated/)'
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "biome"
+name = "Biome"
+language = "system"
+entry = "biome check --no-errors-on-unmatched"
+files = '\.(ts|svelte|js|json|jsonc|css|html)$'
+types = ["text"]
+
+[[repos.hooks]]
+id = "typecheck"
+name = "Svelte and TypeScript diagnostics"
+language = "system"
+entry = "npm run check"
+files = '\.(ts|svelte)$'
+pass_filenames = false
+require_serial = true
+
+[[repos.hooks]]
+id = "typos"
+name = "typos"
+language = "system"
+entry = "typos --config typos.toml --force-exclude"
+types = ["text"]
+
+[[repos.hooks]]
+id = "textlint"
+name = "textlint"
+language = "system"
+entry = "npm run textlint --"
+files = '^posts/(2021|2023|2024|2025|2026)/.*\.md$'
+types = ["text"]
