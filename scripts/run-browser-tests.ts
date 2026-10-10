@@ -2,6 +2,7 @@ import { type ChildProcess, spawn } from "node:child_process";
 import { createWriteStream, mkdirSync } from "node:fs";
 import { delimiter, dirname } from "node:path";
 import { setTimeout } from "node:timers/promises";
+import { stripVTControlCharacters } from "node:util";
 
 // Start only test-owned servers. Keep the caller's development server intact.
 mkdirSync("test-results", { recursive: true });
@@ -10,6 +11,7 @@ const configuredURL = "http://127.0.0.1:4175";
 const children: ChildProcess[] = [];
 const listening = new WeakSet<ChildProcess>();
 const logs: ReturnType<typeof createWriteStream>[] = [];
+const serverOutput = new WeakMap<ChildProcess, string>();
 const environment = {
   ...process.env,
   PATH: dirname(process.execPath) + delimiter + process.env.PATH,
@@ -31,7 +33,12 @@ function server(name: string, args: string[], env: NodeJS.ProcessEnv) {
   let output = "";
   child.stdout?.on("data", (chunk: Buffer) => {
     output = (output + chunk.toString()).slice(-10_000);
-    if (output.includes(address)) listening.add(child);
+    serverOutput.set(child, output);
+    if (stripVTControlCharacters(output).includes(address))
+      listening.add(child);
+  });
+  child.stderr?.on("data", (chunk: Buffer) => {
+    serverOutput.set(child, (serverOutput.get(child) ?? "") + chunk.toString());
   });
   child.stdout?.pipe(log, { end: false });
   child.stderr?.pipe(log, { end: false });
@@ -43,7 +50,9 @@ async function ready(child: ChildProcess, url: string) {
   const deadline = Date.now() + 60_000;
   while (Date.now() < deadline) {
     if (child.exitCode !== null || child.signalCode !== null)
-      throw new Error("Test server exited; see test-results server logs");
+      throw new Error(
+        `Test server exited: ${url}\n${serverOutput.get(child) ?? ""}`,
+      );
     if (!listening.has(child)) {
       await setTimeout(100);
       continue;
@@ -56,7 +65,9 @@ async function ready(child: ChildProcess, url: string) {
     }
     await setTimeout(100);
   }
-  throw new Error(`Test server did not become ready: ${url}`);
+  throw new Error(
+    `Test server did not become ready: ${url}\n${serverOutput.get(child) ?? ""}`,
+  );
 }
 async function stop(child: ChildProcess) {
   if (child.exitCode !== null || child.signalCode !== null) return;
