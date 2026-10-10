@@ -1,25 +1,10 @@
 # Repository Guidelines
 
-## Structure
-
-Application CSS lives in static/styles.css; shared design tokens live in
-static/design-tokens.css. Both are authored sources loaded by src/app.html.
-
-- `src/routes/`: SvelteKit pages, layouts, server loads, and endpoints.
-- `src/lib/components/`: Svelte components, including interactive UI.
-- `src/lib/content/`: Pure Markdown, headings, graph, and search transformations.
-- `src/lib/server/`: Server-only manifest access and feed generation.
-- `src/lib/browser/`: Canvas and social embed browser helpers.
-- `scripts/`: Node.js TypeScript content generation and Algolia indexing.
-- `posts/`, `content/`, `static/`: Existing Markdown and public assets.
-- `__tests__/`: node:test tests, including browser checks using the Playwright library.
-- Do not edit generated `.svelte-kit/`, `src/lib/server/generated/`, or legacy `_fresh/` output.
-
 ## Development and Checks
 
-Use Node.js 24 and npm. Install system developer tools with brew bundle install
---file=Brewfile, then npm ci and prek install -f. Brewfile supplies Biome, prek,
-and typos-cli. Biome must not be added to npm dependencies or invoked via npx.
+Use Node.js 24 LTS and npm. CI, .node-version, and package.json target major 24.
+Install system developer tools with brew bundle install --file=Brewfile, then
+npm ci and prek install -f. Brewfile supplies Biome, prek, and typos-cli. Biome must not be added to npm dependencies or invoked via npx.
 The npm scripts invoke the Homebrew-installed biome executable from PATH.
 Use lefthook uninstall before prek install -f when migrating an existing checkout.
 
@@ -51,13 +36,13 @@ textlint and its rules are npm devDependencies; do not install them globally.
 Keep .textlintrc.json and the established CI year scope unless scope changes
 are requested. Dependabot checks npm and GitHub Actions; compatible textlint
 updates are grouped, while major updates remain individual.
-The devcontainer uses a pinned Node.js image directly and runs npm ci.
 
 ## Coding and Tests
 
 Use TypeScript, `<script lang="ts">`, Svelte runes, and SvelteKit server loads.
-Follow SvelteKit routing and lifecycle conventions. Keep filesystem I/O in Node
-build scripts, private configuration in server code, and browser effects in
+Follow SvelteKit routing and lifecycle conventions. Do not edit generated output.
+Keep filesystem I/O in Node build scripts, private configuration in server code,
+and browser effects in
 client lifecycle hooks with cleanup. Use package imports (`#lib/`) and generated
 route types. Prefer small changes and the existing URL and API contracts.
 
@@ -81,7 +66,9 @@ Before requesting review, run formatting, lint, type checks, tests, and the buil
 Keep unrelated changes out of commits. Repository documentation is English first
 with matching Japanese in a closed `<details>` section.
 
-Do not commit credentials. Use `.env` locally and consult `SECURITY.md`.
+Do not commit credentials. Developers manage their environment and supply
+configuration through process variables or deployment bindings;
+consult SECURITY.md.
 Algolia admin credentials belong only in the indexing environment; the browser
 receives a search-only key. Historical data migration is unnecessary. Likes and
 Cloudflare deployment are outside the current local functionality milestone.

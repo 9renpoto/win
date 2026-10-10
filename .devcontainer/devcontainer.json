@@ -1,7 +1,0 @@
-{
-  "name": "win (Node.js 24)",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:4-24-bookworm@sha256:df5c21fdbb9cfa3ee2aae7f05499af7acf073597d250d07476df2d8515c4b853",
-  "postCreateCommand": "npm ci",
-  "forwardPorts": [5173],
-  "remoteUser": "node"
-}

@@ -1,5 +1,5 @@
 default_stages = ["pre-commit"]
-exclude = '^(node_modules/|_fresh/|\.svelte-kit/|\.wrangler/|coverage/|test-results/|playwright-report/|src/lib/server/generated/)'
+exclude = '^(node_modules/|\.svelte-kit/|\.wrangler/|coverage/|test-results/|playwright-report/|src/lib/server/generated/)'
 
 [[repos]]
 repo = "local"

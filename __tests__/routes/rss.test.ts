@@ -1,9 +1,6 @@
 import assert from "node:assert/strict";
 import { it } from "node:test";
 
-const assertEquals = (a: unknown, b: unknown) => assert.deepEqual(a, b);
-const assertStringIncludes = (a: string, b: string) => assert.ok(a.includes(b));
-
 import { GET } from "../../src/routes/rss.xml/+server.ts";
 
 it("rss handler returns valid RSS feed", async () => {
@@ -11,17 +8,16 @@ it("rss handler returns valid RSS feed", async () => {
 
   const response = await GET({ request } as Parameters<typeof GET>[0]);
 
-  assertEquals(response.status, 200);
+  assert.equal(response.status, 200);
   const body = await response.text();
-  assertStringIncludes(body, "<rss xmlns:blogChannel=");
-  assertStringIncludes(
-    body,
-    'xmlns:content="http://purl.org/rss/1.0/modules/content/"',
+  assert.ok(body.includes("<rss xmlns:blogChannel="));
+  assert.ok(
+    body.includes('xmlns:content="http://purl.org/rss/1.0/modules/content/"'),
   );
-  assertStringIncludes(body, "<channel>");
-  assertStringIncludes(body, "<content:encoded><![CDATA[");
-  assertStringIncludes(body, "]]></content:encoded>");
-  assertStringIncludes(body, "<language>ja</language>");
+  assert.ok(body.includes("<channel>"));
+  assert.ok(body.includes("<content:encoded><![CDATA["));
+  assert.ok(body.includes("]]></content:encoded>"));
+  assert.ok(body.includes("<language>ja</language>"));
 });
 
 it("rss handler infers domain from request URL", async () => {
@@ -29,9 +25,9 @@ it("rss handler infers domain from request URL", async () => {
 
   const response = await GET({ request } as Parameters<typeof GET>[0]);
 
-  assertEquals(response.status, 200);
+  assert.equal(response.status, 200);
   const body = await response.text();
-  assertStringIncludes(body, "<link>https://example.com</link>");
+  assert.ok(body.includes("<link>https://example.com</link>"));
 });
 
 it("rss handler honors forwarded proto with host header", async () => {
@@ -43,7 +39,7 @@ it("rss handler honors forwarded proto with host header", async () => {
 
   const response = await GET({ request } as Parameters<typeof GET>[0]);
 
-  assertEquals(response.status, 200);
+  assert.equal(response.status, 200);
   const body = await response.text();
-  assertStringIncludes(body, "<link>https://example.com</link>");
+  assert.ok(body.includes("<link>https://example.com</link>"));
 });

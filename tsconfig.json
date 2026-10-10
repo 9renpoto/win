@@ -7,5 +7,5 @@
     "types": ["$app/types", "node", "vite/client"]
   },
   "include": ["src", "scripts", "__tests__", "*.ts"],
-  "exclude": ["node_modules", "_fresh", ".svelte-kit", "coverage"]
+  "exclude": ["node_modules", ".svelte-kit", "coverage"]
 }

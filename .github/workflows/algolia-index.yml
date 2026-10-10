@@ -29,7 +29,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
-          node-version-file: .node-version
+          node-version: "24" # Node.js 24 LTS
           cache: npm
 
       - run: npm ci

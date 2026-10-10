@@ -5,7 +5,9 @@ Fresh and Deno Deploy. Production cutover has not occurred.
 
 ## Agreed scope
 
-- Use Node.js 24 and npm for development, generation, builds, scripts, and CI.
+- Fix development, generation, builds, scripts, and CI to Node.js 24 LTS
+  and npm. Developers manage environment variables; no environment template
+  or script-level environment file loading is provided.
   Remove Deno runtime, packages, entry points, configuration, and tooling.
 - Use TypeScript throughout SvelteKit and follow its routing, server load,
   component, and lifecycle conventions.
@@ -59,8 +61,8 @@ node:test, Playwright browser automation, and Algolia sync. The Node CI workflow
 publishes LCOV coverage to Codecov. Plain CSS and shared tokens are documented
 in [the design guide](design-system.md). textlint and its rules are npm
 devDependencies, with the existing rules/year scope retained in CI and prek.
-The devcontainer uses a pinned Node.js 24 image directly; its custom Dockerfile
-and global npm installs are removed. Dependabot checks npm and GitHub Actions
+Dev Container configuration, its Dockerfile, and global npm installs are
+removed; development uses host tools. Dependabot checks npm and GitHub Actions
 weekly, groups compatible textlint updates, and keeps major updates separate.
 
 The Cloudflare adapter is configured in vite.config.ts and Workers output in
@@ -126,9 +128,6 @@ provider availability, analytics delivery, or a deployed Worker.
 
 - Resolve the JTF style/PRH dependency findings when a compatible fix is available.
   The existing textlint rules remain enabled.
-- Review the pinned devcontainer base image manually; there are no Dev Container
-  Features or Dockerfile for the removed Dependabot entries to track.
-
 - Choose a later scope for likes. If restored, begin with zero counts and a
   new browser-state namespace; choose and validate storage separately.
 - Configure Cloudflare runtime settings and preview deployment.
@@ -146,6 +145,8 @@ provider availability, analytics delivery, or a deployed Worker.
 
 旧構成は Fresh と Deno Deploy です。Node.js 24 と npm を開発・ビルド・
 スクリプト・CI の基盤にして、Deno 依存を除去します。
+Node.js は24 LTSに固定し、環境変数の管理は開発者に委ねます。
+環境設定テンプレートやスクリプトによる環境ファイルの読み込みは提供しません。
 SvelteKit 内は TypeScript に統一し、ページ、サーバー load、部品、ライフサイクルは
 SvelteKit の慣習に従います。
 Biome・prek・typos は Brewfile から導入し、Biome は npm 依存に含めません。
@@ -179,7 +180,7 @@ SvelteKit はサーバー描画と Svelte 部品で実装し、遷移時には�
 イベント、グラフの描画を片付けます。npm scripts から Biome の format・lint、Svelte の型チェック、
 node:test、Playwright によるブラウザー操作、同期を実行します。CI・Codecov・hooks・Dependabot も Node 対応にします。
 textlint と各ルールは npm の devDependencies に移し、従来のルール・対象年を維持します。
-devcontainer は Node.js 24 の固定イメージを直接使い、独自 Dockerfile と global install を廃止します。
+Dev Container の設定、Dockerfile、global install を廃止し、ホストのツールを使用します。
 Dependabot は npm と GitHub Actions を週次で確認し、textlint の minor・patch 更新をまとめます。
 major 更新は個別に確認します。
 
@@ -212,7 +213,7 @@ Tailwind・typography・autoprefixer・Vitest・専用 Playwright テストラ�
 既存の textlint ルールを追加した後は、JTF style・PRH・sprintf-js 経由で
 開発依存の moderate 指摘6件があります。sprintf-js の修正版は未公開です。
 既存の lint 対象36記事は Node.js 24 の npm 実行で通り、CI 設定も actionlint で確認しました。
-対応する修正版の公開後に依存を更新します。devcontainer の固定イメージも別途確認します。
+対応する修正版の公開後に依存を更新します。
 Biome の npm 依存も除去し、Homebrew の2.5.14をスキーマの基準にしています。
 Brewfile と prek.toml で system tool の導入・hook を定義します。
 prek 0.5.5 の4つの system hook（Biome・型チェック・typos・textlint）は通りました。

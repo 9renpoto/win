@@ -2,13 +2,13 @@
 
 [![codecov](https://codecov.io/gh/9renpoto/win/graph/badge.svg?token=m1sd1C4r5f)](https://codecov.io/gh/9renpoto/win)
 
-SvelteKit with TypeScript, Node.js 24, npm, and the Cloudflare Workers adapter.
+SvelteKit with TypeScript, Node.js 24 LTS, npm, and the Cloudflare Workers adapter.
 The current milestone is local functionality excluding likes. Deployment and
 historical data migration are outside this milestone.
 
 ## Local development
 
-Install the developer tools from [Brewfile](Brewfile), then use Node.js 24 and npm.
+Install the developer tools from [Brewfile](Brewfile), then use Node.js 24 LTS and npm.
 Homebrew provides Biome, prek, and typos; Biome is not an npm dependency.
 Ensure these executables and Node.js 24 are available on PATH.
 
@@ -54,6 +54,9 @@ Biome handles formatting and linting for TypeScript, Svelte, HTML, CSS, and JSON
 Use npm run format to apply formatting. Svelte/HTML support is enabled explicitly
 in biome.json; Markdown and YAML are currently unsupported by Biome.
 
+Node.js is fixed to the 24 LTS major in .node-version, package.json engines,
+and every CI setup step. Minor and patch releases within 24 remain eligible.
+
 ## Text linting and dependency updates
 
 textlint and all rules from the former .devcontainer/Dockerfile are npm
@@ -70,15 +73,12 @@ file, pass its path to npm run textlint --. The prek textlint hook uses the
 same year selection. Historical files outside that selection are not added
 to this migration's lint scope.
 
-The devcontainer directly references the existing pinned Node.js 24 image
-and runs npm ci when created. It no longer builds a custom Dockerfile or
-installs global textlint packages. Install Homebrew and use Brewfile inside
-the container if you also need the system Biome/prek/typos commands.
+Development uses the host Node.js and Homebrew tools. No Dev Container
+configuration or container image is maintained.
 
 Dependabot checks npm and GitHub Actions weekly. Compatible textlint and
 rule updates are grouped; major updates remain separate. Docker and
-devcontainers entries are removed because there is no Dockerfile and no
-Dev Container Features. Review the pinned devcontainer base image separately.
+devcontainers entries are removed along with the container configuration.
 The existing patch-only auto-merge workflow remains unchanged.
 
 The migrated JTF style preset brings npm audit's six moderate findings through
@@ -96,7 +96,9 @@ explains how to map Figma variables and layouts to these files.
 
 ## Configuration and search
 
-Copy [.env.example](.env.example) to .env for optional configuration. Without
+Developers manage their own environment and supply optional configuration
+through process environment variables or Cloudflare deployment bindings.
+Node scripts read process.env; they do not load an environment file. Without
 credentials, the header searches the generated local index through /api/search.
 
 To use Algolia, set ALGOLIA_APP_ID, ALGOLIA_SEARCH_API_KEY, and
@@ -134,7 +136,7 @@ npm run deploy
 <details>
 <summary>日本語</summary>
 
-TypeScript の SvelteKit、Node.js 24、npm を利用します。
+TypeScript の SvelteKit、Node.js 24 LTS、npm を利用します。
 現在の対象は、いいねを除いた既存機能のローカル動作です。
 
 ### 開発と確認
@@ -179,6 +181,9 @@ TypeScript・Svelte・HTML・CSS・JSON の format と lint は Biome に統一�
 biome.json で Svelte/HTML 対応を明示的に有効にしています。
 Markdown と YAML は Biome の対応外のため、既存の文書スタイルを維持します。
 
+Node.js は .node-version・package.json の engines・各 CI の setup で24 LTSに固定します。
+24の範囲で minor・patch 更新を取り込みます。
+
 ### textlint と依存更新
 
 旧 .devcontainer/Dockerfile にあった textlint と各ルールは npm の
@@ -194,14 +199,12 @@ lint:text と prek の対象は2021・2023・2024・2025・2026年の記事で�
 他のファイルは npm run textlint -- にパスを渡して確認できます。
 対象外の過去の記事は今回の lint 範囲に追加しません。
 
-devcontainer は既存の固定した Node.js 24 イメージを直接使い、作成時に npm ci を実行します。
-独自の Dockerfile と textlint の global install は廃止します。
-コンテナ内でも Biome・prek・typos を使う場合は Homebrew を導入し、Brewfile を利用します。
+開発にはホストの Node.js と Homebrew ツールを使います。
+Dev Container 設定とコンテナイメージは管理しません。
 
 Dependabot は npm と GitHub Actions を週次で確認します。
 textlint とルールの minor・patch 更新をまとめ、major 更新は個別に確認します。
-Dockerfile と Dev Container Features がなくなるため、それぞれの更新設定を削除します。
-devcontainer の固定したベースイメージは別途更新を確認します。
+コンテナ設定の削除に合わせて Docker・devcontainers の更新設定も削除します。
 既存の patch 更新のみを対象にした自動 merge workflow は維持します。
 
 移行した JTF style preset には textlint-rule-prh・prh・js-yaml・argparse・
@@ -218,7 +221,9 @@ Figma の変数・レイアウトとの対応は [デザインガイド](docs/de
 
 ### 検索と設定
 
-任意の設定は [.env.example](.env.example) を参考に .env に置きます。
+環境の管理は開発者に委ね、任意の設定はプロセスの環境変数、
+または Cloudflare の deployment binding から渡します。
+Node スクリプトは process.env を読み、環境ファイルの読み込みは行いません。
 認証情報がなければ /api/search を使って生成済みの記事データを検索できます。
 ALGOLIA_APP_ID、ALGOLIA_SEARCH_API_KEY、ALGOLIA_INDEX_NAME を揃えると
 Algolia を使います。admin key はブラウザーへ渡しません。

@@ -3,14 +3,14 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=24"
+    "node": "24.x"
   },
   "imports": {
     "#lib/*": "./src/lib/*"
   },
   "scripts": {
     "prepare": "svelte-kit sync",
-    "content:generate": "node --env-file-if-exists=.env scripts/generate-content.ts",
+    "content:generate": "node scripts/generate-content.ts",
     "predev": "npm run content:generate",
     "dev": "vite --host 127.0.0.1",
     "start": "npm run dev",
@@ -25,7 +25,7 @@
     "test": "node --import ./scripts/register-svelte-tests.ts --test \"__tests__/utils/*.test.ts\" \"__tests__/routes/*.test.ts\" \"__tests__/components/*.test.ts\"",
     "test:coverage": "node scripts/test-coverage.ts",
     "test:browser": "node scripts/run-browser-tests.ts",
-    "algolia:sync": "node --env-file-if-exists=.env scripts/sync_algolia_index.ts",
+    "algolia:sync": "node scripts/sync_algolia_index.ts",
     "deploy": "npm run build && wrangler deploy",
     "precheck": "npm run content:generate",
     "pretest:coverage": "npm run content:generate",

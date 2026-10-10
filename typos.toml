@@ -8,7 +8,6 @@ extend-exclude = [
   "static/**",
   "package-lock.json",
   "node_modules/**",
-  "_fresh/**",
   ".svelte-kit/**",
   ".wrangler/**",
   "coverage/**",
