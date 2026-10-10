@@ -4,6 +4,10 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      actions:
+        patterns:
+          - "actions/*"
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
@@ -13,6 +17,3 @@ updates:
         patterns:
           - "textlint"
           - "textlint-*"
-        update-types:
-          - "minor"
-          - "patch"
