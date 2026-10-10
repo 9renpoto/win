@@ -1,18 +1,18 @@
 version: 2
 updates:
-  - package-ecosystem: github-actions
+  - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
-  - package-ecosystem: "docker"
-    directory: "/.devcontainer"
-    schedule:
-      interval: "weekly"
-  - package-ecosystem: "deno"
+  - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
-  - package-ecosystem: "devcontainers"
-    directory: "/.devcontainer"
-    schedule:
-      interval: "weekly"
+    groups:
+      textlint:
+        patterns:
+          - "textlint"
+          - "textlint-*"
+        update-types:
+          - "minor"
+          - "patch"

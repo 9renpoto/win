@@ -2,3 +2,11 @@ node_modules
 _fresh
 coverage
 .mise.local.toml
+.svelte-kit
+.wrangler
+src/lib/server/generated/
+playwright-report/
+test-results/
+.env
+.env.*
+!.env.example

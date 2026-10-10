@@ -7,7 +7,12 @@ on:
       - main
     paths:
       - posts/**
-      - utils/posts.ts
+      - content/**
+      - src/lib/content/**
+      - src/lib/types.ts
+      - scripts/content.ts
+      - package.json
+      - package-lock.json
       - scripts/sync_algolia_index.ts
 
 permissions:
@@ -21,10 +26,13 @@ jobs:
       - name: Setup repo
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Setup Deno
-        uses: denoland/setup-deno@22d081ff2d3a40755e97629de92e3bcbfa7cf2ed # v2.0.5
+      - name: Setup Node
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
-          deno-version: v2.x
+          node-version-file: .node-version
+          cache: npm
+
+      - run: npm ci
 
       - name: Sync Algolia index
         env:
@@ -32,4 +40,4 @@ jobs:
           ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
           ALGOLIA_INDEX_NAME: ${{ vars.ALGOLIA_INDEX_NAME }}
           SITE_URL: ${{ vars.SITE_URL }}
-        run: deno run -A scripts/sync_algolia_index.ts
+        run: npm run algolia:sync

@@ -1,0 +1,40 @@
+name: Node
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Setup Homebrew
+        uses: Homebrew/actions/setup-homebrew@fccef3b26268fc4a788fd7ad7c189f3a105cbf13
+      - name: Install developer tools
+        run: brew bundle install --file=Brewfile
+      - name: Setup Node
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - run: npm ci
+      - run: npm run content:generate
+      - name: Run prek hooks
+        run: prek run --all-files
+      - run: npm run test:coverage
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:browser
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@fb8b3582c8e4def4969c97caa2f19720cb33a72f # v7.0.0
+        with:
+          files: ./coverage/lcov.info
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

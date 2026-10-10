@@ -1,20 +1,7 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/debian
 {
-  "name": "Debian",
-  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "build": {
-    "dockerfile": "Dockerfile"
-  }
-  // Features to add to the dev container. More info: https://containers.dev/features.
-  // "features": {},
-
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  // "forwardPorts": [],
-
-  // Configure tool-specific properties.
-  // "customizations": {},
-
-  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-  // "remoteUser": "root"
+  "name": "win (Node.js 24)",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:4-24-bookworm@sha256:df5c21fdbb9cfa3ee2aae7f05499af7acf073597d250d07476df2d8515c4b853",
+  "postCreateCommand": "npm ci",
+  "forwardPorts": [5173],
+  "remoteUser": "node"
 }

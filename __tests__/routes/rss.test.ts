@@ -1,14 +1,15 @@
-import { assertEquals, assertStringIncludes } from "@std/assert";
-import { handler } from "@/routes/rss.xml.ts";
+import assert from "node:assert/strict";
+import { it } from "node:test";
 
-Deno.test("rss handler returns valid RSS feed", async () => {
+const assertEquals = (a: unknown, b: unknown) => assert.deepEqual(a, b);
+const assertStringIncludes = (a: string, b: string) => assert.ok(a.includes(b));
+
+import { GET } from "../../src/routes/rss.xml/+server.ts";
+
+it("rss handler returns valid RSS feed", async () => {
   const request = new Request("http://127.0.0.1/rss.xml");
 
-  const response = await (
-    handler as unknown as {
-      GET: (ctx: { req: Request }) => Promise<Response>;
-    }
-  ).GET({ req: request });
+  const response = await GET({ request } as Parameters<typeof GET>[0]);
 
   assertEquals(response.status, 200);
   const body = await response.text();
@@ -23,32 +24,24 @@ Deno.test("rss handler returns valid RSS feed", async () => {
   assertStringIncludes(body, "<language>ja</language>");
 });
 
-Deno.test("rss handler infers domain from request URL", async () => {
+it("rss handler infers domain from request URL", async () => {
   const request = new Request("https://example.com/rss.xml");
 
-  const response = await (
-    handler as unknown as {
-      GET: (ctx: { req: Request }) => Promise<Response>;
-    }
-  ).GET({ req: request });
+  const response = await GET({ request } as Parameters<typeof GET>[0]);
 
   assertEquals(response.status, 200);
   const body = await response.text();
   assertStringIncludes(body, "<link>https://example.com</link>");
 });
 
-Deno.test("rss handler honors forwarded proto with host header", async () => {
+it("rss handler honors forwarded proto with host header", async () => {
   const headers = new Headers({
     host: "example.com",
     "X-Forwarded-Proto": "https",
   });
   const request = new Request("http://internal/rss.xml", { headers });
 
-  const response = await (
-    handler as unknown as {
-      GET: (ctx: { req: Request }) => Promise<Response>;
-    }
-  ).GET({ req: request });
+  const response = await GET({ request } as Parameters<typeof GET>[0]);
 
   assertEquals(response.status, 200);
   const body = await response.text();

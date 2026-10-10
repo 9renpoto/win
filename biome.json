@@ -1,0 +1,59 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.14/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "includes": [
+      "**",
+      "!!**/node_modules",
+      "!!**/_fresh",
+      "!!**/.svelte-kit",
+      "!!**/.wrangler",
+      "!!**/coverage",
+      "!!**/playwright-report",
+      "!!**/test-results",
+      "!!src/lib/server/generated",
+      "!!posts",
+      "!!content",
+      "!package-lock.json",
+      "!!static/**/*.svg"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 80
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "recommended"
+    }
+  },
+  "html": {
+    "experimentalFullSupportEnabled": true,
+    "formatter": {
+      "enabled": true,
+      "indentScriptAndStyle": true,
+      "selfCloseVoidElements": "always"
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["src/lib/components/Search.svelte"],
+      "linter": {
+        "rules": {
+          "a11y": {
+            "noNoninteractiveElementToInteractiveRole": "off",
+            "useFocusableInteractive": "off"
+          }
+        }
+      }
+    }
+  ]
+}
