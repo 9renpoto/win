@@ -42,7 +42,7 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     permissions:
-      actions: write
+      actions: read
       contents: write
       pull-requests: write
     steps:
