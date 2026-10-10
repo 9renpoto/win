@@ -58,7 +58,7 @@ bundle; they do not read repository files.
 Vite generates content before development/build and watches Markdown changes
 during development. npm scripts invoke Biome, Svelte diagnostics,
 node:test, Playwright browser automation, and Algolia sync. The Node CI workflow
-publishes LCOV coverage to Codecov. Plain CSS and shared tokens are documented
+reports LCOV coverage with octocov. Plain CSS and shared tokens are documented
 in [the design guide](design-system.md). textlint and its rules are npm
 devDependencies, with the existing rules/year scope retained in CI and prek.
 Dev Container configuration, its Dockerfile, and global npm installs are
@@ -178,7 +178,7 @@ Node スクリプトで Markdown を読み、YAML と marked を使って記事�
 
 SvelteKit はサーバー描画と Svelte 部品で実装し、遷移時には通信、observer、
 イベント、グラフの描画を片付けます。npm scripts から Biome の format・lint、Svelte の型チェック、
-node:test、Playwright によるブラウザー操作、同期を実行します。CI・Codecov・hooks・Dependabot も Node 対応にします。
+node:test、Playwright によるブラウザー操作、同期を実行します。CI・octocov・hooks・Dependabot も Node 対応にします。
 textlint と各ルールは npm の devDependencies に移し、従来のルール・対象年を維持します。
 Dev Container の設定、Dockerfile、global install を廃止し、ホストのツールを使用します。
 Dependabot は npm と GitHub Actions を週次で確認し、textlint の minor・patch 更新をまとめます。

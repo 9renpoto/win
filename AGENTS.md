@@ -15,7 +15,7 @@ Use lefthook uninstall before prek install -f when migrating an existing checkou
 - `npm run lint:text`: npm-managed textlint for the existing CI year scope.
 - `npm run textlint -- <path>`: textlint for explicit Markdown paths.
 - `npm run check`: Svelte and TypeScript diagnostics.
-- `npm run test:coverage`: Node native coverage with Codecov-compatible LCOV output.
+- `npm run test:coverage`: Node native coverage with octocov-compatible LCOV output.
 - `npm run test:browser`: node:test with Playwright against fresh development and production preview servers.
 
 npm run check:biome combines formatting, lint, and import checks.

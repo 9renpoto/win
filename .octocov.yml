@@ -1,0 +1,29 @@
+coverage:
+  paths:
+    - coverage/lcov.info
+  badge:
+    path: docs/coverage.svg
+codeToTestRatio:
+  code:
+    - 'src/**/*.ts'
+    - 'src/**/*.svelte'
+    - 'scripts/**/*.ts'
+  test:
+    - '__tests__/**/*.ts'
+  badge:
+    path: docs/ratio.svg
+testExecutionTime:
+  if: true
+  badge:
+    path: docs/time.svg
+push:
+  if: is_default_branch
+diff:
+  datastores:
+    - artifact://${GITHUB_REPOSITORY}
+comment:
+  if: is_pull_request
+report:
+  if: is_default_branch
+  datastores:
+    - artifact://${GITHUB_REPOSITORY}
