@@ -26,7 +26,6 @@
     "test:coverage": "node scripts/test-coverage.ts",
     "test:browser": "node scripts/run-browser-tests.ts",
     "algolia:sync": "node scripts/sync_algolia_index.ts",
-    "deploy": "npm run build && wrangler deploy",
     "precheck": "npm run content:generate",
     "pretest:coverage": "npm run content:generate",
     "pretest:browser": "npm run build",
