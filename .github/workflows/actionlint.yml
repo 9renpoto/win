@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - ".github/actions/**"
+      - ".github/actionlint.yaml"
       - ".github/workflows/**"
 
 permissions:

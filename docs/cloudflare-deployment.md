@@ -5,6 +5,10 @@ Pull requests only run checks. A manual run of the Node workflow on main also
 runs checks before deployment. Deployments are serialized; a queued run fails
 before publishing if its commit is no longer the current main commit.
 An already running deployment can finish while a newer commit is being tested.
+The concurrency group uses `queue: max` so an older commit finishing tests late
+cannot replace a newer pending deployment. Up to 100 jobs can wait; additional
+jobs are canceled if the queue is full. Stale queued commits fail the main SHA
+check before publication, leaving the current main job eligible to deploy.
 
 ## Initial setup
 
@@ -74,6 +78,10 @@ Node workflow は main の test job 成功後に Worker `win` を公開します
 PR は検証のみ実行し、main での手動実行でも検証後に公開します。
 公開 job は直列化し、待機中に main が進んだ場合は古いコミットの公開を失敗させます。
 実行中の公開は、新しいコミットの検証中でも完了する場合があります。
+concurrency group に `queue: max` を設定し、検証が遅く終わった古いコミットが
+待機中の新しい公開を置き換えないようにします。最大100件まで待機でき、上限を超えた
+job は取り消されます。古いコミットは公開前の main SHA 確認で失敗し、
+現在の main の job は公開可能な状態で残ります。
 
 初回は既存 Deno と DNS を維持し、workers.dev で確認します。
 Cloudflare の workers.dev サブドメインを設定し、同じ Worker の Workers Builds による
