@@ -1,6 +1,0 @@
-# actionlint 1.7.12 does not recognize GitHub's documented concurrency.queue.
-# Keep this exception limited to this key and workflow until upstream supports it.
-paths:
-  .github/workflows/node.yml:
-    ignore:
-      - '^unexpected key "queue" for "concurrency" section\.'

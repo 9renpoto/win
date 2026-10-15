@@ -127,8 +127,9 @@ currently absent. Existing counts and search indexes will not be copied.
 
 The build generates Cloudflare Workers output using wrangler.jsonc. Production
 bindings, deployment, domain cutover, and live service verification remain
-separate work. Deployment runs through the Node GitHub Actions workflow;
-there is no local deployment npm script.
+separate work. GitHub Actions uses the official Wrangler Action. For local
+deployment, `npm run deploy` builds and runs `npx --yes wrangler@latest deploy
+--keep-vars`, using the latest published Wrangler.
 
 For automatic deployment after main checks pass, follow the
 [Cloudflare deployment guide](docs/cloudflare-deployment.md).
@@ -248,7 +249,8 @@ admin key を Secret に設定します。
 いいね UI と /api/likes は未実装です。既存のいいね数・検索 index の移行は不要です。
 Cloudflare 向けのビルド設定は用意していますが、実際のデプロイ、
 独自ドメイン切り替え、外部サービスの本番確認は別途行います。
-公開は Node の GitHub Actions workflow で行い、ローカル公開用の npm script は設けません。
+Actions は公式 Wrangler Action を使用します。ローカルでは `npm run deploy` で
+ビルド後に `npx --yes wrangler@latest deploy --keep-vars` を実行し、最新の Wrangler を使います。
 main の検証成功後の自動公開設定は
 [Cloudflare デプロイ手順](docs/cloudflare-deployment.md)を参照してください。
 

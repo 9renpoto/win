@@ -34,13 +34,15 @@ check before publication, leaving the current main job eligible to deploy.
    future deployments; it does not stop a job already running.
 
 The deploy job uses Node 24 and npm ci to rebuild the same commit checked by
-the test job. The npm Wrangler dependency remains required by the Cloudflare
-adapter for development and builds. Publication uses the SHA-pinned official
+the test job. Wrangler is not a direct npm dependency; npm still resolves and locks the
+Cloudflare adapter's required Wrangler peer dependency for development and builds. Publication uses the SHA-pinned official
 Wrangler Action with `wranglerVersion: "latest"`; the action installs the current
 Wrangler release instead of reusing the lockfile's version. Future major
 releases are included. Specifying `"4"` would reuse an installed Wrangler 4. An unchanged action
 SHA can therefore deploy with a newer Wrangler. The action logs the selected
-version for troubleshooting. There is no local deployment npm script.
+version for troubleshooting. Local deployment uses `npm run deploy`, which builds and invokes
+`npx --yes wrangler@latest deploy --keep-vars`. Both deployment paths use the
+latest published Wrangler without a separately maintained version constraint.
 Cloudflare credentials are supplied
 only to configuration validation and deployment, not the build or PR checks.
 The optional octocov reporting job does not gate publication. Separate textlint
@@ -103,12 +105,15 @@ workflow が main に入って設定が完了したら、リポジトリの Acti
 以後は main への push と検証成功で自動公開します。この変数を無効にすると以後の
 公開は停止しますが、実行中の job は停止しません。
 公開 job は Node 24 と npm ci で検証と同じコミットを再ビルドします。
-npm の Wrangler 依存は Cloudflare adapter の開発・ビルド要件として残します。
+Wrangler の直接 npm 依存は削除します。開発・ビルド用には Cloudflare adapter の
+必須 peer dependency を npm が解決するため、その分は lockfile に残ります。
 公開には SHA 固定の公式 Wrangler Action と `wranglerVersion: "latest"` を使い、
 lockfile とは別に現在の Wrangler を導入します。将来のメジャー更新も対象です。
 `"4"` を指定すると、インストール済みの Wrangler 4 が再利用されます。そのため、Action の SHA が同じでも
 公開用 Wrangler が更新されます。選択されたバージョンは Action のログで確認できます。
-ローカル公開用の npm script は設けません。
+ローカルは `npm run deploy` でビルド後に
+`npx --yes wrangler@latest deploy --keep-vars` を実行します。
+どちらの公開経路も専用のバージョン制約を管理せず、最新の公開バージョンを使用します。
 Cloudflare 認証情報は設定確認と公開だけに渡し、ビルドと PR 検証には渡しません。
 octocov は公開の条件に含めません。公開が待つのは Node の test job のみです。
 独立した textlint などは必要に応じて main の必須 PR チェックに設定します。
