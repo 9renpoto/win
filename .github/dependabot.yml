@@ -17,8 +17,8 @@ updates:
         patterns:
           - "textlint"
           - "textlint-*"
-      sveltjs:
+      sveltejs:
         patterns:
-          - "@sveltjs/*"
+          - "@sveltejs/*"
           - "svelte"
           - "svelte-checker"
