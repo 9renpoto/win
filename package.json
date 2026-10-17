@@ -35,7 +35,7 @@
     "lint:text": "textlint \"posts/{2021,2023,2024,2025,2026}/**/*.md\""
   },
   "dependencies": {
-    "algoliasearch": "^5.57.0",
+    "algoliasearch": "^5.60.0",
     "marked": "^18.0.12",
     "yaml": "^2.8.1"
   },
