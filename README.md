@@ -8,29 +8,21 @@ historical data migration are outside this milestone.
 
 ## Local development
 
-Install the developer tools from [Brewfile](Brewfile), then use Node.js 24 LTS and npm.
-Homebrew provides Biome, prek, and typos; Biome is not an npm dependency.
-Ensure these executables and Node.js 24 are available on PATH.
+Use hk, Node.js 24 LTS, and npm. Project checks use the npm dependencies
+recorded in package-lock.json.
 
 ```sh
-brew bundle install --file=Brewfile
 npm ci
-prek install -f
+hk install
 npm run dev
 ```
 
-For existing checkouts with lefthook installed, run lefthook uninstall before
-prek install -f. This also removes the old prepare-commit-msg shim. New clones
-only need prek install -f.
+For existing checkouts that use prek, run `prek uninstall` before `hk install`.
 
-[prek.toml](prek.toml) runs system Biome, Svelte/TypeScript diagnostics, and typos
-using [typos.toml](typos.toml). Run prek run --all-files for all maintained files.
-Historical posts and static assets are excluded from spelling checks to preserve
-their original text and names. CI installs the same Brewfile and runs these hooks.
-
-Homebrew tracks current formula releases; Brewfile does not pin tool versions.
-The Biome configuration targets 2.5.14. When upgrading Homebrew Biome, use
-biome migrate --write if the configuration schema needs updating.
+[hk.pkl](hk.pkl) runs Svelte/TypeScript diagnostics and textlint on the supported
+article years. Run `hk check --all` for all maintained files. Biome, typos,
+gitleaks, and zizmor are supplied by the user's global hk configuration and are
+not project dependencies. CI runs only the project checks.
 
 Open http://127.0.0.1:5173. Content generation runs before development and builds.
 Editing Markdown in posts/ or content/ regenerates the manifest during development.
@@ -69,11 +61,11 @@ npm run textlint -- posts/2026/01/01/2026-yew-year.md
 ```
 
 lint:text covers posts from 2021, 2023, 2024, 2025, and 2026. To lint another
-file, pass its path to npm run textlint --. The prek textlint hook uses the
+file, pass its path to npm run textlint --. The hk textlint step uses the
 same year selection. Historical files outside that selection are not added
 to this migration's lint scope.
 
-Development uses the host Node.js and Homebrew tools. No Dev Container
+Development uses the host Node.js and globally managed developer tools. No Dev Container
 configuration or container image is maintained.
 
 Dependabot checks npm and GitHub Actions weekly. Compatible textlint and
@@ -141,30 +133,22 @@ TypeScript の SvelteKit、Node.js 24 LTS、npm を利用します。
 
 ### 開発と確認
 
-[Brewfile](Brewfile) から Biome・prek・typos を導入します。
-Biome は npm 依存に含めず、Homebrew の実行ファイルを利用します。
-Node.js 24 と各ツールを PATH から実行できるようにします。
+hk、Node.js 24、npm を使います。プロジェクトの確認には
+package-lock.json に記録された npm 依存を利用します。
 
 ```sh
-brew bundle install --file=Brewfile
 npm ci
-prek install -f
+hk install
 npm run dev
 ```
 
-既存 checkout で lefthook を使っている場合は、prek install -f の前に
-lefthook uninstall を実行します。古い prepare-commit-msg の hook も解除されます。
-新規 clone は prek install -f だけで設定できます。
+既存 checkout で prek を使っている場合は、`hk install` の前に
+`prek uninstall` を実行します。
 
-[prek.toml](prek.toml) で、PATH 上の Biome、Svelte/TypeScript の型チェック、
-[typos.toml](typos.toml) を使う typos を実行します。
-全ファイルの確認は prek run --all-files で実行します。
-過去の記事と静的アセットは、既存の本文・名前を保持するためスペルチェックから除外します。
-CI も同じ Brewfile と hook 設定を利用します。
-
-Homebrew は現行バージョンを導入し、Brewfile ではバージョンを固定しません。
-Biome 設定の対象は2.5.14です。brew で Biome を更新した際にスキーマ更新が必要なら
-biome migrate --write を実行します。
+[hk.pkl](hk.pkl) で Svelte/TypeScript の診断と対象年の記事への textlint を実行します。
+全対象ファイルの確認には `hk check --all` を使います。Biome・typos・gitleaks・zizmor は
+ユーザーの hk グローバル設定で実行し、プロジェクト依存には含めません。CI は
+プロジェクト固有のチェックだけを実行します。
 
 http://127.0.0.1:5173 を開きます。開発・ビルド前に Markdown から記事、
 グラフ、検索データを生成します。開発中の posts/・content/ の編集にも追従します。
@@ -195,11 +179,11 @@ npm run lint:text
 npm run textlint -- posts/2026/01/01/2026-yew-year.md
 ```
 
-lint:text と prek の対象は2021・2023・2024・2025・2026年の記事です。
+lint:text と hk の対象は2021・2023・2024・2025・2026年の記事です。
 他のファイルは npm run textlint -- にパスを渡して確認できます。
 対象外の過去の記事は今回の lint 範囲に追加しません。
 
-開発にはホストの Node.js と Homebrew ツールを使います。
+開発にはホストの Node.js とグローバルに管理された開発ツールを使います。
 Dev Container 設定とコンテナイメージは管理しません。
 
 Dependabot は npm と GitHub Actions を週次で確認します。
