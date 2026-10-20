@@ -14,10 +14,8 @@ jobs:
     steps:
       - name: Setup repo
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Setup Homebrew
-        uses: Homebrew/actions/setup-homebrew@eb02c69dbabdb66ff183c614f4ce7ab3c077592c
-      - name: Install developer tools
-        run: brew bundle install --file=Brewfile
+        with:
+          persist-credentials: false
       - name: Setup Node
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
@@ -25,8 +23,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run content:generate
-      - name: Run prek hooks
-        run: prek run --all-files
+      - name: Check project code
+        run: npm run check
+      - name: Lint project articles
+        run: npm run lint:text
       - run: npm run test:coverage
       - run: npm run build
       - run: npx playwright install --with-deps chromium

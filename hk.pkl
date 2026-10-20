@@ -1,0 +1,14 @@
+amends "package://github.com/jdx/hk/releases/download/v2.7.1/hk@2.7.1#/Config.pkl"
+
+min_hk_version = "2.7.1"
+
+steps {
+  ["typecheck"] {
+    glob = List("**/*.ts", "**/*.svelte")
+    check = "npm run check"
+  }
+  ["textlint"] {
+    glob = Regex(#"^posts/(2021|2023|2024|2025|2026)/.*\.md$"#)
+    check = "npm run textlint -- {{files}}"
+  }
+}

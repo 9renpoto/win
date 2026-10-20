@@ -3,10 +3,10 @@
 ## Development and Checks
 
 Use Node.js 24 LTS and npm. CI, .node-version, and package.json target major 24.
-Install system developer tools with brew bundle install --file=Brewfile, then
-npm ci and prek install -f. Brewfile supplies Biome, prek, and typos-cli. Biome must not be added to npm dependencies or invoked via npx.
-The npm scripts invoke the Homebrew-installed biome executable from PATH.
-Use lefthook uninstall before prek install -f when migrating an existing checkout.
+Use the globally installed hk, then run npm ci and hk install.
+Project checks use package-lock.json dependencies. Biome, typos, gitleaks, and
+zizmor are configured in the user's global hk config and are not project dependencies.
+Run prek uninstall before hk install when migrating an existing checkout.
 
 - `npm run build` / `npm run preview`: Production build and local preview.
 - `npm run content:generate`: Compile Markdown, graph, and search data.
@@ -18,16 +18,14 @@ Use lefthook uninstall before prek install -f when migrating an existing checkou
 - `npm run test:coverage`: Node native coverage with octocov-compatible LCOV output.
 - `npm run test:browser`: node:test with Playwright against fresh development and production preview servers.
 
-npm run check:biome combines formatting, lint, and import checks.
-prek.toml defines local system hooks for Biome, npm run check, typos,
-and npm-managed textlint.
-Run prek run --all-files for maintained files. CI installs tools from Brewfile
-and runs the same hooks. typos.toml excludes archived posts, static assets,
-lockfiles, and generated output.
-Homebrew formula versions roll forward. The Biome schema currently targets
-2.5.14; migrate the config when the installed Biome requires a newer schema.
-Biome configuration is in biome.json. Full Svelte/HTML support and formatting
-are explicitly enabled. Biome does not format Markdown or YAML; retain the
+hk.pkl defines project hooks for npm run check and npm-managed textlint.
+Run hk check --all for maintained files. CI runs npm run check and
+npm run lint:text directly.
+User-global hk steps provide formatting, spelling, and repository security checks.
+The Biome schema currently targets 2.5.14; migrate the config when the globally
+installed Biome requires a newer schema. Biome configuration is in biome.json.
+Full Svelte/HTML support and formatting are explicitly enabled. Biome does not
+format Markdown or YAML; retain the
 existing documentation style for those files. The search combobox keeps focus on its input using
 aria-activedescendant, so only its listbox/option markup is exempted from two
 generic interactive-role lint rules.
