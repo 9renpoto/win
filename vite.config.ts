@@ -33,6 +33,12 @@ function contentWatch(): Plugin {
 }
 
 export default defineConfig({
+  environments: {
+    ssr: {
+      // Keep route helpers and the SvelteKit runtime on the same HttpError class.
+      optimizeDeps: { exclude: ["@sveltejs/kit"] },
+    },
+  },
   plugins: [
     sveltekit({
       adapter: adapter({
