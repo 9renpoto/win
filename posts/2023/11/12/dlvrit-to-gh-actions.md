@@ -9,9 +9,9 @@ snippet: share new articles via gh-actions
 > Before: [Post blog rss feed via dlvrit](/entry/2023/05/21/twitter-post)
 
 - twitterからx.comへ変化の時代
-- [bsky.app](https://bsky.app/profile/9renpoto.bsky.social) やThreadsに人が分散した
+- [bsky.app](https://bsky.app/profile/9renpoto.bsky.social)やThreadsに人が分散した
 - IFTTTやZapierなどのX（旧Twitter）連携が減っている
-- <https://github.com/lwojcik/github-action-feed-to-social-media> を使ってみる
+- <https://github.com/lwojcik/github-action-feed-to-social-media>を使ってみる
 
 dlvritは数すくない無料で連携可能なサービス。 bluesky, threads,
 mastodonなどにユーザーが分散し次の時代を見定めようとされている。
