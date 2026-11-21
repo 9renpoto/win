@@ -27,8 +27,14 @@ title: 絵本を読む
 
 ## VALUEBOOKS
 
+<!-- The CI link checker can receive HTTP 403 from this storefront. -->
+
+<!-- textlint-disable no-dead-link -->
+
 絵本は現在[VALUEBOOKS](https://www.valuebooks.jp/)という古本買取販売サイトを経由して買っている。
 VALUEBOOKSを知ったきっかけはコテンラジオやゆる言語学ラジオなど様々なチャンネルにスポンサーをしているのがキッカケで知った。
+
+<!-- textlint-enable no-dead-link -->
 
 自分の読みたい本は電子書籍で買うことに寄せていたが、貸すであったり読み聞かせであったり、また手元に残したい本もあるように最近は感じている。
 送られてくる本も古本とは思えないきれいなものも多く便利に気に入っている。

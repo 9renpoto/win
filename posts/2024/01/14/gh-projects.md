@@ -53,18 +53,18 @@ Github
 結果的にはフィルターと組み合わせることで実際のプロジェクトに合わせ使いやすくカスタマイズ可能な要素だと理解できた。
 
 また、Viewはソートの設定やグローバル設定とローカル設定の管理を別々にできるなどこれまた痒いところに手が届いている。
-全体のViewに影響を与えず、手元では `assignee:9renpoto`
+全体のViewに影響を与えず、手元では`assignee:9renpoto`
 などフィルタした状態で膨大なタスクの海を直感的に操作できる。
 
 ### プロジェクト（カンバン）を操作しなくてもステータスを更新できる手段が豊富
 
 > [Understanding fields](https://docs.github.com/en/issues/planning-and-tracking-with-projects/understanding-fields)
 
-Githubにはスタンダードな管理方法として `label` と `milestone`
+Githubにはスタンダードな管理方法として`label`と`milestone`
 があり、長くこれらの機能の組み合わせで開発プロジェクトの運用ができるようルールを設けたりなどしていた。
 これらの標準項目はいずれもリポジトリ固有な設定であり、設定を同期したりそれらの仕組みを組んだりなどが必要であった。
 
-私はずっと [waffle.io](https://github.com/waffleio) というGithub
+私はずっと[waffle.io](https://github.com/waffleio)というGithub
 連携可能なプロジェクト管理ツールが大好きであった。
 その中で一番好きだった機能が「ステータスとラベルの連動機能」だ。いい感じにラベルを操作していたら、カンバンもいい感じになる。カンバンを操作していてもGithub
 にいい感じのラベルがついている。

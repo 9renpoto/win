@@ -8,8 +8,8 @@ categories:
 
 # TL;DR
 
-- <https://www.gatsbyjs.com/> の利用をやめました
-- <https://deno.land/x/fresh@1.1.5/init.ts> を用いてブログ基盤を再構築しました
+- <https://www.gatsbyjs.com/>の利用をやめました
+- <https://deno.land/x/fresh@1.1.5/init.ts>を用いてブログ基盤を再構築しました
 
 ## Why
 
