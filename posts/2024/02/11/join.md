@@ -33,5 +33,5 @@ ROLLCAKEでは「体験設計書」を通して「ゴール」の定義にこだ
 
 ## Refs
 
-- [地方移住を検討](https://9renpoto.win/entry/2023/09/09/migration-plan)
-- [CADDi株式会社にJoinしました](https://9renpoto.win/entry/2020/12/05/join)
+- [地方移住を検討](/entry/2023/09/09/migration-plan)
+- [CADDi株式会社にJoinしました](/entry/2020/12/05/join)
