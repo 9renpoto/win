@@ -3,6 +3,8 @@ date: '2021-02-13T22:30:00+09:00'
 title: GoogleAnalytics 4でカスタムディメンションが設定できておらずハマる
 ---
 
+> この記事は2021年2月時点の記録です。
+
 # TL;DR
 
 - 現在進行形
@@ -24,7 +26,7 @@ title: GoogleAnalytics 4でカスタムディメンションが設定できて�
   - `dataLayer` で設定するか
   - 一時的なものか恒久的なものかで設定の方法が違う？
 - GoogleAnalyticsの設定のデバッグには
-  https://chromewebstore.google.com/detail/google-analytics-debugger/jnkmfdileelhofjcijamephohjechhna?hl=ja
+  https://chromewebstore.google.com/detail/deprecated-google-analyti/jnkmfdileelhofjcijamephohjechhna?hl=ja
   やdebug toolより何がリクエストされているかなどを見ている
 - 元々 firebaseにあったevent debug機能がgoogle analytics
   にも移植されているようで、それも使えそう
